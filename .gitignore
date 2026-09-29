@@ -17,3 +17,4 @@ config.local.php
 *.log
 *.sql
 *.sql.gz
+hgt-config.php

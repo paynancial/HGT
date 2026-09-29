@@ -7,4 +7,4 @@ Not in this repository (server only):
 - `public_html/assets/img/` — image library
 - Database dump
 
-Secrets are never committed. SMTP credentials live in a config file outside the web root (see `public_html/include/mail_config.example.php`).
+Secrets are never committed. SMTP credentials live in a config file outside the web root (copy `config/hgt-config.example.php` to `hgt-config.php` one level above `public_html` on the server).

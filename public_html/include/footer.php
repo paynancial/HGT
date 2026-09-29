@@ -190,100 +190,42 @@
     <script src="assets/js/nice-select.min.js"></script>
     <script src="assets/js/main.js"></script>
     <script>
-    $(document).ready(function() {
-  $('#contactForm1').submit(function(event) {
-    event.preventDefault();
-    var formData = $(this).serialize();
-    
-    
-    $.ajax({
-        url: 'mail.php',
-      type: 'POST',
-      
-      data: formData,
-      success: function(response) {
-          
-          if(response == 1){
-             alert("form submitted"); 
-          }else{
-              alert("form not submitted"); 
-          }
-        
-      }
+    $(function () {
+      var loadedAt = Date.now();
+      var forms = {
+        '#contactForm1': 'mail.php',
+        '#contactForm2': 'mail.php',
+        '#contactForm3': 'mail.php',
+        '#newsletter': 'mail1.php'
+      };
+      $.each(forms, function (selector, url) {
+        var $form = $(selector);
+        if (!$form.length) return;
+        // Honeypot (hidden from people, filled by bots) + page load time + source page.
+        $form.append(
+          '<input type="text" name="website" value="" tabindex="-1" autocomplete="off" aria-hidden="true" ' +
+          'style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden">'
+        );
+        $form.on('submit', function (event) {
+          event.preventDefault();
+          var data = $form.serialize() +
+            '&_ts=' + loadedAt +
+            '&page=' + encodeURIComponent(window.location.href);
+          $.ajax({ url: url, type: 'POST', data: data })
+            .done(function (response) {
+              if ($.trim(response) === '1') {
+                alert('form submitted');
+                $form[0].reset();
+              } else {
+                alert('form not submitted');
+              }
+            })
+            .fail(function () {
+              alert('form not submitted');
+            });
+        });
+      });
     });
-  });
-});
-$(document).ready(function() {
-  $('#contactForm2').submit(function(even2) {
-    event.preventDefault();
-    var formData2 = $(this).serialize();
-    
-    
-    $.ajax({
-        url: 'mail.php',
-      type: 'POST',
-      
-      data: formData2,
-      success: function(response2) {
-          
-          if(response2 == 1){
-             alert("form submitted"); 
-          }else{
-              alert("form not submitted"); 
-          }
-        
-      }
-    });
-  });
-});
-$(document).ready(function() {
-  $('#contactForm3').submit(function(even3) {
-    event.preventDefault();
-    var formData3 = $(this).serialize();
-    
-    
-    $.ajax({
-        url: 'mail.php',
-      type: 'POST',
-      
-      data: formData3,
-      success: function(response3) {
-          
-          if(response3 == 1){
-             alert("form submitted"); 
-          }else{
-              alert("form not submitted"); 
-          }
-        
-      }
-    });
-  });
-});
-
-
- $(document).ready(function() {
-  $('#newsletter').submit(function(event1) {
-    event.preventDefault();
-    var formData1 = $(this).serialize();
-    
-    
-    $.ajax({
-        url: 'mail1.php',
-      type: 'POST',
-      
-      data: formData1,
-      success: function(response1) {
-          
-          if(response1 == 1){
-             alert("form submitted"); 
-          }else{
-              alert("form not submitted"); 
-          }
-        
-      }
-    });
-  });
-});
     </script>
     <script>
                             function validateUsername(input) {
@@ -307,4 +249,4 @@ $(document).ready(function() {
 
 </body>
 
-</html>
+</html>
