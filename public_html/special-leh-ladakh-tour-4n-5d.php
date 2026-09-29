@@ -9,7 +9,7 @@
     <meta name="keywords" content="Leh Ladakh tour, 4N5D Leh itinerary, Leh travel package, Ladakh adventure, Ladakh tourism, Leh Ladakh trip, Leh monasteries, special Ladakh tour, Ladakh travel guide, Leh travel">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="canonical" href="https://holidaygurutravel.in/special-leh-ladakh-tour-4n-5d.php">
+    <link rel="canonical" href="https://holidaygurutravel.in/special-leh-ladakh-tour-4n-5d">
     <meta property="og:site_name" content="Holiday Guru Travel" />
     <meta property="og:description" content="Explore the beauty of Leh Ladakh with our 4 nights and 5 days special tour. Discover the mesmerizing landscapes, ancient monasteries, and unique culture on this unforgettable journey." />
     <?php
@@ -22,7 +22,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Special Leh Ladakh Tour  </h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Special Leh Ladakh Tour</li>
                 </ul>
             </div>

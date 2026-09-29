@@ -9,7 +9,7 @@
     <meta name="keywords" content="travel agency, holiday packages, travel experiences, wanderlust, journey planning, travel companions, cultural immersion, adventure travel, travel stories, exploration, travel memories.">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="canonical" href="https://holidaygurutravel.in/about.php">
+    <link rel="canonical" href="https://holidaygurutravel.in/about">
     <meta property="og:site_name" content="Holiday Guru Travel" />
     <meta property="og:description" content="Discover the art of extraordinary journeys with Holiday Guru Travel. Learn about our passion for wanderlust, commitment to delivering unparalleled travel experiences, and our mission to curate immersive journeys that go beyond the ordinary." />
 </head>
@@ -32,7 +32,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">About Us</h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>About Us</li>
                 </ul>
             </div>

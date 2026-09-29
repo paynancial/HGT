@@ -9,7 +9,7 @@
     <meta name="keywords" content="Mysore Coorg tour, 4-day Mysore Coorg package, South India travel, Mysore palace, Coorg coffee plantations, Mysore attractions, Coorg tourism, Mysore Coorg itinerary, South India tour, Mysore Coorg travel">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="canonical" href="https://holidaygurutravel.in/mysore-coorg-04-days.php">
+    <link rel="canonical" href="https://holidaygurutravel.in/mysore-coorg-04-days">
     <meta property="og:site_name" content="Holiday Guru Travel" />
     <meta property="og:description" content="Embark on a 4-day journey through Mysore and Coorg with our exclusive tour package. Explore the royal heritage of Mysore and the scenic beauty of Coorg's coffee plantations and waterfalls." />
     <?php
@@ -22,7 +22,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Mysore Coorg tour  </h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Mysore Coorg tour</li>
                 </ul>
             </div>

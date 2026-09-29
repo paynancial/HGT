@@ -9,7 +9,7 @@
     <meta name="keywords" content="Dubai deluxe tour, Luxury Dubai tour package, Dubai city tour, Dhow Cruise, Desert Safari, Dubai holidays, UAE travel, Dubai vacation, 4 Nights/5 Days Dubai tour, premium Dubai travel">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="canonical" href="https://holidaygurutravel.in/deluxe-tour-to-dubai-4n5d.php">
+    <link rel="canonical" href="https://holidaygurutravel.in/deluxe-tour-to-dubai-4n5d">
     <meta property="og:site_name" content="Holiday Guru Travel" />
     <meta property="og:description" content="Indulge in luxury with our 4 Nights/5 Days deluxe tour package to Dubai! Enjoy premium accommodations, thrilling desert safaris, and breathtaking city tours. Book now and experience the ultimate Dubai getaway!" />
 </head>
@@ -25,7 +25,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Deluxe Tour to Dubai</h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Deluxe Tour to Dubai</li>
                 </ul>
             </div>

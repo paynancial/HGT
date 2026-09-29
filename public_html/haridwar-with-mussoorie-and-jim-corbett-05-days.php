@@ -9,7 +9,7 @@
     <meta name="keywords" content=" Haridwar with Mussoorie and Jim Corbett tour package, 5-day Uttarakhand pilgrimage tour, Haridwar sightseeing, Mussoorie hill station tour. ">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="canonical" href="https://holidaygurutravel.in/haridwar-with-mussoorie-and-jim-corbett-05-days.php">
+    <link rel="canonical" href="https://holidaygurutravel.in/haridwar-with-mussoorie-and-jim-corbett-05-days">
     <meta property="og:site_name" content="Holiday Guru Travel" />
     <meta property="og:description" content=" Explore the spiritual city of Haridwar, the scenic beauty of Mussoorie, and the wildlife of Jim Corbett with our 5-day tour package. Experience the best of Uttarakhand's pilgrimage, hill stations, and wildlife." />
     <?php
@@ -22,7 +22,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Haridwar with Mussoorie and Jim Corbett</h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Haridwar with Mussoorie and Jim Corbett</li>
                 </ul>
             </div>

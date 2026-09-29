@@ -9,7 +9,7 @@
     <meta name="keywords" content=" Nainital with Kausani and Jim Corbett tour package, 5-day Uttarakhand hill station tour, Nainital lake tour, Kausani sightseeing, Jim Corbett National Park safari, Uttarakhand wildlife tour. ">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="canonical" href="https://holidaygurutravel.in/nainital-with-kausani-and-jim-corbett-05-days.php">
+    <link rel="canonical" href="https://holidaygurutravel.in/nainital-with-kausani-and-jim-corbett-05-days">
     <meta property="og:site_name" content="Holiday Guru Travel" />
     <meta property="og:description" content="Explore the scenic beauty of Nainital, the Switzerland of India - Kausani, and the wildlife of Jim Corbett with our 5-day tour package. Experience the best of Uttarakhand's hill stations, lakes, and wildlife sanctuaries." />
 </head>
@@ -24,7 +24,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Nainital with Kausani and Jim Corbett</h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Nainital with Kausani and Jim Corbett </li>
                 </ul>
             </div>

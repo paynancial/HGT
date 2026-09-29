@@ -9,7 +9,7 @@
     <meta name="keywords" content="kerala tour package, munnar alleppey tour, 4 day tour package, munnar sightseeing, alleppey houseboat stay, kerala backwaters, tea plantations, eravikulam national park, kumarakom bird sanctuary ">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="canonical" href="https://holidaygurutravel.in/munnar-alleppey-tour-package-04-days.php">
+    <link rel="canonical" href="https://holidaygurutravel.in/munnar-alleppey-tour-package-04-days">
     <meta property="og:site_name" content="Holiday Guru Travel" />
     <meta property="og:description" content="Explore the beauty of Munnar and Alleppey with our 4-day tour package. Visit tea plantations, Eravikulam National Park, and enjoy a relaxing houseboat stay in Alleppey. Book now and experience the best of Kerala" />
     <?php
@@ -22,7 +22,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Munnar Alleppey Tour Package </h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Munnar Alleppey Tour Package </li>
                 </ul>
             </div>

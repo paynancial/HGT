@@ -9,7 +9,7 @@
     <meta name="keywords" content="travel services, tour packages, travel coordination, trusted travel solutions, customized travel, holiday planning, travel consultants">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="canonical" href="https://holidaygurutravel.in/service.php">
+    <link rel="canonical" href="https://holidaygurutravel.in/service">
     <meta property="og:site_name" content="Holiday Guru Travel" />
     <meta property="og:description" content="Experience personalized travel services with our expert consultants. We offer customized tour packages, efficient travel coordination, and trusted travel solutions. Get in touch with us to plan your dream trip!" />
     <?php
@@ -26,7 +26,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Car Rental Services from Delhi</h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Services</li>
                 </ul>
             </div>

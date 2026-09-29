@@ -50,7 +50,7 @@ $themes = mysqli_fetch_all($themes_query, MYSQLI_ASSOC);
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title"><?= htmlspecialchars($destination['title'], ENT_QUOTES, 'UTF-8'); ?></h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li><a href="destination_table.php">Destinations</a></li>
                     <li><?= htmlspecialchars($destination['title'], ENT_QUOTES, 'UTF-8'); ?></li>
                 </ul>

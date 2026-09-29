@@ -9,7 +9,7 @@
     <meta name="keywords" content="Manali tour package, Manikaran hot springs, Himachal Pradesh travel, Manali Manikaran tour, Himalayan destinations, spiritual tour, scenic beauty, North India travel, Manikaran pilgrimage, adventure in Manali">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="canonical" href="https://holidaygurutravel.in/manali-with-manikaran.php">
+    <link rel="canonical" href="https://holidaygurutravel.in/manali-with-manikaran">
     <meta property="og:site_name" content="Holiday Guru Travel" />
     <meta property="og:description" content="Experience the best of Manali and Manikaran with our exclusive tour package. Explore the scenic beauty, hot springs, and spiritual charm of these Himalayan destinations." />
 </head>
@@ -24,7 +24,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Manali with Manikaran</h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Manali with Manikaran </li>
                 </ul>
             </div>

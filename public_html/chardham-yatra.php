@@ -13,25 +13,25 @@
     <meta property="og:image" content="https://holidaygurutravel.in/assets/img/destination/ChardhamPackage12DaysExDelhiTour3.jpg"/>
     <meta property="og:type" content="website"/>
     <meta property="og:site_name" content="Holiday Guru Travel"/>
-    <meta property="og:url" content="https://holidaygurutravel.in/chardham-yatra.php"/>
+    <meta property="og:url" content="https://holidaygurutravel.in/chardham-yatra"/>
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:domain" content="https://holidaygurutravel.in/chardham-yatra.php">
+    <meta name="twitter:domain" content="https://holidaygurutravel.in/chardham-yatra">
     <meta name="twitter:image:src" content="https://holidaygurutravel.in/assets/img/destination/ChardhamPackage12DaysExDelhiTour3.jpg"/>
     <meta name="twitter:description" content="Embark on a spiritual journey with our Chardham Tour Package. Visit the holy shrines of Yamunotri, Gangotri, Kedarnath, and Badrinath in the serene Himalayas. Book now for an unforgettable pilgrimage experience!">
     <meta name="twitter:title" content="Chardham Tour Package | Explore the Sacred Dhams of Uttarakhand">
-    <meta name="twitter:url" content="https://holidaygurutravel.in/chardham-yatra.php">
+    <meta name="twitter:url" content="https://holidaygurutravel.in/chardham-yatra">
     <meta itemprop="name" content="Chardham Tour Package | Explore the Sacred Dhams of Uttarakhand">
     <meta itemprop="description" content="Embark on a spiritual journey with our Chardham Tour Package. Visit the holy shrines of Yamunotri, Gangotri, Kedarnath, and Badrinath in the serene Himalayas. Book now for an unforgettable pilgrimage experience!">
     <meta itemprop="image" content="https://holidaygurutravel.in/assets/img/destination/ChardhamPackage12DaysExDelhiTour3.jpg">
     <meta property="locale" content="Delhi, Gurgaon, Mumbai, Noida, Goa, Pune, Uttar Pradesh, Uttarakhand, Rajasthan, Madhya Pradesh, Haryana"> 
-<link rel="canonical" href="https://holidaygurutravel.in/chardham-yatra.php" > 
+<link rel="canonical" href="https://holidaygurutravel.in/chardham-yatra" > 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Article",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://holidaygurutravel.in/chardham-yatra.php"
+    "@id": "https://holidaygurutravel.in/chardham-yatra"
   },
   "headline": "Chardham Tour Package | Explore the Sacred Dhams of Uttarakhand",
   "description": "Embark on a spiritual journey with our Chardham Tour Package. Visit the holy shrines of Yamunotri, Gangotri, Kedarnath, and Badrinath in the serene Himalayas. Book now for an unforgettable pilgrimage experience!aa",
@@ -39,7 +39,7 @@
   "author": {
     "@type": "Organization",
     "name": "Holiday Guru Travel",
-    "url": "https://holidaygurutravel.in/chardham-yatra.php"
+    "url": "https://holidaygurutravel.in/chardham-yatra"
   },  
   "publisher": {
     "@type": "Organization",
@@ -60,9 +60,9 @@
   "@type": "LocalBusiness",
   "name": "Holiday Guru Travel",
   "image": "https://holidaygurutravel.in/assets/img/holidaygurulogo.jpg",
-  "@id": "https://holidaygurutravel.in/chardham-yatra.php",
-  "url": "https://holidaygurutravel.in/chardham-yatra.php",
-  "telephone": "+91-9971754265",
+  "@id": "https://holidaygurutravel.in/chardham-yatra",
+  "url": "https://holidaygurutravel.in/chardham-yatra",
+  "telephone": "+91 99717 54265",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Holiday Guru Travel 2nd floor",
@@ -82,7 +82,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Chardham Tour Packages India</h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Chardham Tour</li>
                 </ul>
             </div>
@@ -105,18 +105,18 @@
                                                 <p class="name">09 NT/10 DYS</p>
                                             </div></div>
                                         <div class="tour-content">
-                                            <h3 class="box-title"><a href="char-dham-yatra-from-haridwar-9n-10d.php">Char Dham yatra from Haridwar</a></h3>
+                                            <h3 class="box-title"><a href="/char-dham-yatra-from-haridwar-9n-10d">Char Dham yatra from Haridwar</a></h3>
                                            
                                             <div class="tour-rating">
                                                 <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
                                                     <span style="width:100%">Rated <strong class="rating">5.00</strong>
                                                         out of 5 based on <span class="rating">4.9</span>(4.9
-                                                        Rating)</span></div><a href="char-dham-yatra-from-haridwar-9n-10d.php"
+                                                        Rating)</span></div><a href="/char-dham-yatra-from-haridwar-9n-10d"
                                                     class="woocommerce-review-link">(<span class="count">4.9</span>
                                                     Rating)</a>
                                             </div>
                                             
-                                            <div class="tour-action"><a href="char-dham-yatra-from-haridwar-9n-10d.php"
+                                            <div class="tour-action"><a href="/char-dham-yatra-from-haridwar-9n-10d"
                                                     class="th-btn style4 th-icon">View More</a></div>
                                         </div>
                                     </div>
@@ -131,17 +131,17 @@
                                             </div>
                                             </div>
                                         <div class="tour-content">
-                                            <h3 class="box-title"><a href="chardham-yatra-from-haridwar-8n-9d.php">Char Dham yatra from Haridwar for 9 Days</a></h3>
+                                            <h3 class="box-title"><a href="/chardham-yatra-from-haridwar-8n-9d">Char Dham yatra from Haridwar for 9 Days</a></h3>
                                             <div class="tour-rating">
                                                 <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
                                                     <span style="width:100%">Rated <strong class="rating">5.00</strong>
                                                         out of 5 based on <span class="rating">4.8</span>(4.8
-                                                        Rating)</span></div><a href="chardham-yatra-from-haridwar-8n-9d.php"
+                                                        Rating)</span></div><a href="/chardham-yatra-from-haridwar-8n-9d"
                                                     class="woocommerce-review-link">(<span class="count">4.8</span>
                                                     Rating)</a>
                                             </div>
                                             
-                                            <div class="tour-action"><a href="chardham-yatra-from-haridwar-8n-9d.php"
+                                            <div class="tour-action"><a href="/chardham-yatra-from-haridwar-8n-9d"
                                                     class="th-btn style4 th-icon">View More</a></div>
                                         </div>
                                     </div>
@@ -156,17 +156,17 @@
                                             </div>
                                             </div>
                                         <div class="tour-content">
-                                            <h3 class="box-title"><a href="char-dham-yatra-from-delhi-10n-11d.php">Char Dham Yatra From Delhi</a></h3>
+                                            <h3 class="box-title"><a href="/char-dham-yatra-from-delhi-10n-11d">Char Dham Yatra From Delhi</a></h3>
                                             <div class="tour-rating">
                                                 <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
                                                     <span style="width:100%">Rated <strong class="rating">5.00</strong>
                                                         out of 5 based on <span class="rating">4.8</span>(4.8
-                                                        Rating)</span></div><a href="char-dham-yatra-from-delhi-10n-11d.php"
+                                                        Rating)</span></div><a href="/char-dham-yatra-from-delhi-10n-11d"
                                                     class="woocommerce-review-link">(<span class="count">4.8</span>
                                                     Rating)</a>
                                             </div>
                                             
-                                            <div class="tour-action"><a href="char-dham-yatra-from-delhi-10n-11d.php"
+                                            <div class="tour-action"><a href="/char-dham-yatra-from-delhi-10n-11d"
                                                     class="th-btn style4 th-icon">View More</a></div>
                                         </div>
                                     </div>
@@ -182,17 +182,17 @@
                                             </div>
                                     </div>
                                         <div class="tour-content">
-                                            <h3 class="box-title"><a href="char-dham-yatra-from-delhi-11n-12d.php">Chardham Yatra From Delhi</a></h3>
+                                            <h3 class="box-title"><a href="/char-dham-yatra-from-delhi-11n-12d">Chardham Yatra From Delhi</a></h3>
                                             <div class="tour-rating">
                                                 <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
                                                     <span style="width:100%">Rated <strong class="rating">5.00</strong>
                                                         out of 5 based on <span class="rating">4.8</span>(4.8
-                                                        Rating)</span></div><a href="char-dham-yatra-from-delhi-11n-12d.php"
+                                                        Rating)</span></div><a href="/char-dham-yatra-from-delhi-11n-12d"
                                                     class="woocommerce-review-link">(<span class="count">4.8</span>
                                                     Rating)</a>
                                             </div>
                                             
-                                            <div class="tour-action"><a href="char-dham-yatra-from-delhi-11n-12d.php"
+                                            <div class="tour-action"><a href="/char-dham-yatra-from-delhi-11n-12d"
                                                     class="th-btn style4 th-icon">View More</a></div>
                                         </div>
                                     </div>
@@ -208,17 +208,17 @@
                                             </div>
                                     </div>
                                         <div class="tour-content">
-                                            <h3 class="box-title"><a href="do-dham-kedar–badri-from-haridwar-4n-5d.php">Do Dham Kedarnath and Badrinath from Haridwar</a></h3>
+                                            <h3 class="box-title"><a href="/do-dham-kedar–badri-from-haridwar-4n-5d">Do Dham Kedarnath and Badrinath from Haridwar</a></h3>
                                             <div class="tour-rating">
                                                 <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
                                                     <span style="width:100%">Rated <strong class="rating">5.00</strong>
                                                         out of 5 based on <span class="rating">4.8</span>(4.8
-                                                        Rating)</span></div><a href="do-dham-kedar–badri-from-haridwar-4n-5d.php"
+                                                        Rating)</span></div><a href="/do-dham-kedar–badri-from-haridwar-4n-5d"
                                                     class="woocommerce-review-link">(<span class="count">4.8</span>
                                                     Rating)</a>
                                             </div>
                                             
-                                            <div class="tour-action"><a href="do-dham-kedar–badri-from-haridwar-4n-5d.php"
+                                            <div class="tour-action"><a href="/do-dham-kedar–badri-from-haridwar-4n-5d"
                                                     class="th-btn style4 th-icon">View More</a></div>
                                         </div>
                                     </div>
@@ -233,17 +233,17 @@
                                             </div>
                                     </div>
                                         <div class="tour-content">
-                                            <h3 class="box-title"><a href="do-dham-kedar–badri-from-haridwar-5n-6d.php">Do Dham Kedarnath and Badrinath from Haridwar 06 Days</a></h3>
+                                            <h3 class="box-title"><a href="/do-dham-kedar–badri-from-haridwar-5n-6d">Do Dham Kedarnath and Badrinath from Haridwar 06 Days</a></h3>
                                             <div class="tour-rating">
                                                 <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
                                                     <span style="width:100%">Rated <strong class="rating">5.00</strong>
                                                         out of 5 based on <span class="rating">4.8</span>(4.8
-                                                        Rating)</span></div><a href="do-dham-kedar–badri-from-haridwar-5n-6d.php"
+                                                        Rating)</span></div><a href="/do-dham-kedar–badri-from-haridwar-5n-6d"
                                                     class="woocommerce-review-link">(<span class="count">4.8</span>
                                                     Rating)</a>
                                             </div>
                                             
-                                            <div class="tour-action"><a href="do-dham-kedar–badri-from-haridwar-5n-6d.php"
+                                            <div class="tour-action"><a href="/do-dham-kedar–badri-from-haridwar-5n-6d"
                                                     class="th-btn style4 th-icon">View More</a></div>
                                         </div>
                                     </div>
@@ -258,17 +258,17 @@
                                             </div>
                                     </div>
                                         <div class="tour-content">
-                                            <h3 class="box-title"><a href="yamunotri-gangotri-do-dham-from-delhi-6n-7d.php">Yamunotri Gangotri Do Dham from Delhi</a></h3>
+                                            <h3 class="box-title"><a href="/yamunotri-gangotri-do-dham-from-delhi-6n-7d">Yamunotri Gangotri Do Dham from Delhi</a></h3>
                                             <div class="tour-rating">
                                                 <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
                                                     <span style="width:100%">Rated <strong class="rating">5.00</strong>
                                                         out of 5 based on <span class="rating">4.8</span>(4.8
-                                                        Rating)</span></div><a href="yamunotri-gangotri-do-dham-from-delhi-6n-7d.php"
+                                                        Rating)</span></div><a href="/yamunotri-gangotri-do-dham-from-delhi-6n-7d"
                                                     class="woocommerce-review-link">(<span class="count">4.8</span>
                                                     Rating)</a>
                                             </div>
                                             
-                                            <div class="tour-action"><a href="yamunotri-gangotri-do-dham-from-delhi-6n-7d.php" class="th-btn style4 th-icon">View More</a></div>
+                                            <div class="tour-action"><a href="/yamunotri-gangotri-do-dham-from-delhi-6n-7d" class="th-btn style4 th-icon">View More</a></div>
                                         </div>
                                     </div>
                                 </div>

@@ -9,7 +9,7 @@
     <meta name="keywords" content="Mussoorie Nainital Jim Corbett tour, 6-day Uttarakhand hill station tour, Mussoorie hill station tour, Nainital lake tour, Jim Corbett National Park safari, Uttarakhand wildlife tour. ">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="canonical" href="https://holidaygurutravel.in/mussoorie-with-nainital-and-jim-corbett-06-days.php">
+    <link rel="canonical" href="https://holidaygurutravel.in/mussoorie-with-nainital-and-jim-corbett-06-days">
     <meta property="og:site_name" content="Holiday Guru Travel" />
     <meta property="og:description" content=" Experience the beauty of Uttarakhand's hill stations with our 6-day tour package. Visit Mussoorie's scenic views, Nainital's lakes, and Jim Corbett's wildlife, and enjoy trekking, boating, and safari in this unforgettable journey." />
     <?php
@@ -22,7 +22,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Mussoorie with Nainital and Jim Corbett</h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Mussoorie with Nainital and Jim Corbett</li>
                 </ul>
             </div>

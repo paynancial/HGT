@@ -9,7 +9,7 @@
     <meta name="keywords" content="Manali Dharamshala Amritsar tour, 6-day itinerary, Himachal Pradesh, Rohtang Pass, Dal Lake, Golden Temple, Dharamshala sightseeing, Amritsar trip, hill station tour.">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="canonical" href="https://holidaygurutravel.in/manali-with-dharamshala-and-amritsar-06-days.php">
+    <link rel="canonical" href="https://holidaygurutravel.in/manali-with-dharamshala-and-amritsar-06-days">
     <meta property="og:site_name" content="Holiday Guru Travel" />
     <meta property="og:description" content="Explore the best of Manali, Dharamshala, and Amritsar with our 5-night, 6-day tour. Enjoy scenic landscapes, local sightseeing, and cultural experiences at destinations like Rohtang Pass, Dal Lake, Golden Temple, and more. Book your Himachal adventure now!" />
     <?php
@@ -22,7 +22,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Manali with Dharamshala and amritsar</h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Manali with Dharamshala and amritsar</li>
                 </ul>
             </div>

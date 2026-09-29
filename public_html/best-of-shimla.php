@@ -9,7 +9,7 @@
     <meta name="keywords" content="Shimla travel package, Shimla tour, Kufri excursion, Himachal Pradesh, 4-day itinerary, Shimla sightseeing, Himachal holiday, Shimla tourism, Kufri yak ride.">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="canonical" href="https://holidaygurutravel.in/best-of-shimla.php">
+    <link rel="canonical" href="https://holidaygurutravel.in/best-of-shimla">
     <meta property="og:site_name" content="Holiday Guru Travel" />
     <meta property="og:description" content="Discover Shimla with our 3-night, 4-day travel package. Explore historic landmarks, the scenic Kufri, and more. Book your Shimla adventure and experience the charm of Himachal Pradesh." />
     <?php
@@ -22,7 +22,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Best of Shimla</h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Best of Shimla</li>
                 </ul>
             </div>

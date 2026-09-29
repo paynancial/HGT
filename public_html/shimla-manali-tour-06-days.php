@@ -9,7 +9,7 @@
     <meta name="keywords" content="Shimla Manali tour, Himachal Pradesh, Rohtang Pass, Solang Valley, Kufri, 6-day itinerary, Shimla sightseeing, Manali vacation, hill station tour, adventure activities.">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="canonical" href="https://holidaygurutravel.in/shimla-manali-tour-06-days.php">
+    <link rel="canonical" href="https://holidaygurutravel.in/shimla-manali-tour-06-days">
     <meta property="og:site_name" content="Holiday Guru Travel" />
     <meta property="og:description" content="Embark on a 5-night, 6-day Shimla and Manali tour. Explore scenic landscapes, visit historic temples, and experience thrilling activities in Kufri, Solang Valley, and Rohtang Pass. Book your Himachal adventure now!" />
     <?php
@@ -22,7 +22,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Shimla Manali Tour</h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Shimla Manali Tour</li>
                 </ul>
             </div>

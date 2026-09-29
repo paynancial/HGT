@@ -9,7 +9,7 @@
     <meta name="keywords" content="Nainital with Ranikhet and Jim Corbett tour package, Uttarakhand hill station tour, Nainital lake tour, Ranikhet sightseeing, Jim Corbett National Park safari, Uttarakhand wildlife tour. ">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="canonical" href="https://holidaygurutravel.in/nainital-with-ranikhet--jim-corbett.php">
+    <link rel="canonical" href="https://holidaygurutravel.in/nainital-with-ranikhet--jim-corbett">
     <meta property="og:site_name" content="Holiday Guru Travel" />
     <meta property="og:description" content="Discover the charm of Nainital's lakes, Ranikhet's scenic beauty, and Jim Corbett's wildlife with our tour package. Experience the best of Uttarakhand's hill stations, lakes, and wildlife sanctuaries." />
     <?php
@@ -22,7 +22,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Nainital with Ranikhet Jim Corbett</h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Nainital with Ranikhet Jim Corbett</li>
                 </ul>
             </div>

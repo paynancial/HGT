@@ -9,7 +9,7 @@
     <meta name="keywords" content="Mysore Wayanad tour, 4-day Mysore Wayanad package, Mysore tourism, Wayanad attractions, South India travel, Mysore palaces, Wayanad wildlife, Mysore Wayanad itinerary, South India tour, heritage and nature tour">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="canonical" href="https://holidaygurutravel.in/mysore-wayand-04-days.php">
+    <link rel="canonical" href="https://holidaygurutravel.in/mysore-wayand-04-days">
     <meta property="og:site_name" content="Holiday Guru Travel" />
     <meta property="og:description" content="Discover the cultural richness of Mysore and the natural beauty of Wayanad on a 4-day tour. Visit historic palaces, lush green landscapes, and enjoy a perfect blend of heritage and nature." />
     <?php
@@ -22,7 +22,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Mysore wayand tour  </h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Mysore wayand tour</li>
                 </ul>
             </div>

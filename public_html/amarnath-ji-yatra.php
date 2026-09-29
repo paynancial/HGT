@@ -13,25 +13,25 @@
     <meta property="og:image" content="https://holidaygurutravel.in/assets/img/destination/amarnathjiyatra.jpg"/>
     <meta property="og:type" content="website"/>
     <meta property="og:site_name" content="Holiday Guru Travel"/>
-    <meta property="og:url" content="https://holidaygurutravel.in/amarnath-ji-yatra.php"/>
+    <meta property="og:url" content="https://holidaygurutravel.in/amarnath-ji-yatra"/>
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:domain" content="https://holidaygurutravel.in/amarnath-ji-yatra.php">
+    <meta name="twitter:domain" content="https://holidaygurutravel.in/amarnath-ji-yatra">
     <meta name="twitter:image:src" content="https://holidaygurutravel.in/assets/img/destination/amarnathjiyatra.jpg"/>
     <meta name="twitter:description" content="Plan your pilgrimage with Holiday Guru Travel's religious travel packages. Discover the divine and seek blessings at revered spiritual sites across the globe.">
     <meta name="twitter:title" content="Amaranath Yatra Tour Packages | Amarnath Ji Yatra Tour">
-    <meta name="twitter:url" content="https://holidaygurutravel.in/amarnath-ji-yatra.php">
+    <meta name="twitter:url" content="https://holidaygurutravel.in/amarnath-ji-yatra">
     <meta itemprop="name" content="Amaranath Yatra Tour Packages | Amarnath Ji Yatra Tour">
     <meta itemprop="description" content="Experience a life-changing journey with our religious tour packages. Visit holy sites, participate in rituals, and immerse yourself in spiritual traditions.">
     <meta itemprop="image" content="https://holidaygurutravel.in/assets/img/destination/amarnathjiyatra.jpg">
     <meta property="locale" content="Delhi, Gurgaon, Mumbai, Noida, Goa, Pune, Uttar Pradesh, Uttarakhand, Rajasthan, Madhya Pradesh, Haryana"> 
-<link rel="canonical" href="https://holidaygurutravel.in/amarnath-ji-yatra.php" > 
+<link rel="canonical" href="https://holidaygurutravel.in/amarnath-ji-yatra" > 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Article",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://holidaygurutravel.in/amarnath-ji-yatra.php"
+    "@id": "https://holidaygurutravel.in/amarnath-ji-yatra"
   },
   "headline": "Amaranath Yatra Tour Packages | Amarnath Ji Yatra Tour",
   "description": "Experience a life-changing journey with our religious tour packages. Visit holy sites, participate in rituals, and immerse yourself in spiritual traditions.",
@@ -39,7 +39,7 @@
   "author": {
     "@type": "Organization",
     "name": "Holiday Guru Travel",
-    "url": "https://holidaygurutravel.in/amarnath-ji-yatra.php"
+    "url": "https://holidaygurutravel.in/amarnath-ji-yatra"
   },  
   "publisher": {
     "@type": "Organization",
@@ -60,9 +60,9 @@
   "@type": "LocalBusiness",
   "name": "Holiday Guru Travel",
   "image": "https://holidaygurutravel.in/assets/img/holidaygurulogo.jpg",
-  "@id": "https://holidaygurutravel.in/amarnath-ji-yatra.php",
-  "url": "https://holidaygurutravel.in/amarnath-ji-yatra.php",
-  "telephone": "+91-9971754265",
+  "@id": "https://holidaygurutravel.in/amarnath-ji-yatra",
+  "url": "https://holidaygurutravel.in/amarnath-ji-yatra",
+  "telephone": "+91 99717 54265",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Holiday Guru Travel 2nd floor",
@@ -82,7 +82,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Amarnath Ji Yatra Tour Packages India</h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Amarnath Tour</li>
                 </ul>
             </div>
@@ -105,18 +105,18 @@
                                                 <p class="name">02 NT/03 DYS</p>
                                             </div></div>
                                         <div class="tour-content">
-                                            <h3 class="box-title"><a href="amarnath-ji-yatra-by-helicopter-2n-3d.php">Amarnath Ji Yatra By Helicopter</a></h3>
+                                            <h3 class="box-title"><a href="/amarnath-ji-yatra-by-helicopter-2n-3d">Amarnath Ji Yatra By Helicopter</a></h3>
                                            
                                             <div class="tour-rating">
                                                 <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
                                                     <span style="width:100%">Rated <strong class="rating">5.00</strong>
                                                         out of 5 based on <span class="rating">4.8</span>(4.8
-                                                        Rating)</span></div><a href="amarnath-ji-yatra-by-helicopter-2n-3d.php"
+                                                        Rating)</span></div><a href="/amarnath-ji-yatra-by-helicopter-2n-3d"
                                                     class="woocommerce-review-link">(<span class="count">4.8</span>
                                                     Rating)</a>
                                             </div>
                                             
-                                            <div class="tour-action"><a href="amarnath-ji-yatra-by-helicopter-2n-3d.php"
+                                            <div class="tour-action"><a href="/amarnath-ji-yatra-by-helicopter-2n-3d"
                                                     class="th-btn style4 th-icon">View More</a></div>
                                         </div>
                                     </div>
@@ -131,17 +131,17 @@
                                             </div>
                                             </div>
                                         <div class="tour-content">
-                                            <h3 class="box-title"><a href="amarnath-ji-yatra-by-helicopter-3n-4d.php">Amarnath Ji Yatra By Helicopter</a></h3>
+                                            <h3 class="box-title"><a href="/amarnath-ji-yatra-by-helicopter-3n-4d">Amarnath Ji Yatra By Helicopter</a></h3>
                                             <div class="tour-rating">
                                                 <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
                                                     <span style="width:100%">Rated <strong class="rating">5.00</strong>
                                                         out of 5 based on <span class="rating">4.8</span>(4.8
-                                                        Rating)</span></div><a href="amarnath-ji-yatra-by-helicopter-3n-4d.php"
+                                                        Rating)</span></div><a href="/amarnath-ji-yatra-by-helicopter-3n-4d"
                                                     class="woocommerce-review-link">(<span class="count">4.8</span>
                                                     Rating)</a>
                                             </div>
                                             
-                                            <div class="tour-action"><a href="amarnath-ji-yatra-by-helicopter-3n-4d.php"
+                                            <div class="tour-action"><a href="/amarnath-ji-yatra-by-helicopter-3n-4d"
                                                     class="th-btn style4 th-icon">View More</a></div>
                                         </div>
                                     </div>
@@ -156,17 +156,17 @@
                                             </div>
                                             </div>
                                         <div class="tour-content">
-                                            <h3 class="box-title"><a href="amarnath-ji-yatra-with-srinagar-4n-5d.php">Amarnath Ji Yatra With Srinagar</a></h3>
+                                            <h3 class="box-title"><a href="/amarnath-ji-yatra-with-srinagar-4n-5d">Amarnath Ji Yatra With Srinagar</a></h3>
                                             <div class="tour-rating">
                                                 <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
                                                     <span style="width:100%">Rated <strong class="rating">5.00</strong>
                                                         out of 5 based on <span class="rating">4.8</span>(4.8
-                                                        Rating)</span></div><a href="amarnath-ji-yatra-with-srinagar-4n-5d.php"
+                                                        Rating)</span></div><a href="/amarnath-ji-yatra-with-srinagar-4n-5d"
                                                     class="woocommerce-review-link">(<span class="count">4.8</span>
                                                     Rating)</a>
                                             </div>
                                             
-                                            <div class="tour-action"><a href="amarnath-ji-yatra-with-srinagar-4n-5d.php"
+                                            <div class="tour-action"><a href="/amarnath-ji-yatra-with-srinagar-4n-5d"
                                                     class="th-btn style4 th-icon">View More</a></div>
                                         </div>
                                     </div>
@@ -180,17 +180,17 @@
                                             </div>
                                     </div>
                                         <div class="tour-content">
-                                            <h3 class="box-title"><a href="amarnath-ji-yatra-via-pahalgam-5n-6d.php">Amarnath Ji Yatra Via Pahalgam</a></h3>
+                                            <h3 class="box-title"><a href="/amarnath-ji-yatra-via-pahalgam-5n-6d">Amarnath Ji Yatra Via Pahalgam</a></h3>
                                             <div class="tour-rating">
                                                 <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
                                                     <span style="width:100%">Rated <strong class="rating">5.00</strong>
                                                         out of 5 based on <span class="rating">4.8</span>(4.8
-                                                        Rating)</span></div><a href="amarnath-ji-yatra-via-pahalgam-5n-6d.php"
+                                                        Rating)</span></div><a href="/amarnath-ji-yatra-via-pahalgam-5n-6d"
                                                     class="woocommerce-review-link">(<span class="count">4.8</span>
                                                     Rating)</a>
                                             </div>
                                             
-                                            <div class="tour-action"><a href="amarnath-ji-yatra-via-pahalgam-5n-6d.php"
+                                            <div class="tour-action"><a href="/amarnath-ji-yatra-via-pahalgam-5n-6d"
                                                     class="th-btn style4 th-icon">View More</a></div>
                                         </div>
                                     </div>

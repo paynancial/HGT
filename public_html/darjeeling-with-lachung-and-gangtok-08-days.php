@@ -9,7 +9,7 @@
     <meta name="keywords" content="Darjeeling tour, Lachung tour, Gangtok tour, 8 days tour package, Eastern Himalayas travel, Sikkim tour, cultural experiences, mountain views, monastery visits, Sikkim and Darjeeling itinerary">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="canonical" href="https://holidaygurutravel.in/darjeeling-with-lachung-and-gangtok-08-days.php">
+    <link rel="canonical" href="https://holidaygurutravel.in/darjeeling-with-lachung-and-gangtok-08-days">
     <meta property="og:site_name" content="Holiday Guru Travel" />
     <meta property="og:description" content="Experience the beauty of Darjeeling, Lachung, and Gangtok with our 8-day tour package. Enjoy breathtaking landscapes, serene monasteries, and vibrant culture in this unforgettable journey through the Eastern Himalayas." />
     <?php
@@ -22,7 +22,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Darjeeling with Lachung and gangtok Tour</h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Darjeeling with Lachung and gangtok Tour </li>
                 </ul>
             </div>

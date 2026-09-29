@@ -9,7 +9,7 @@
     <meta name="keywords" content="Amritsar Dalhousie Dharamshala tour, 6-day itinerary, Himachal Pradesh, Golden Temple, Khajjiar, Dal Lake, McLeod Ganj, Punjab tourism, hill station tour, cultural trip.">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="canonical" href="https://holidaygurutravel.in/amrirsar-with-dalhousie-and-dharamshala-06-days.php">
+    <link rel="canonical" href="https://holidaygurutravel.in/amrirsar-with-dalhousie-and-dharamshala-06-days">
     <meta property="og:site_name" content="Holiday Guru Travel" />
     <meta property="og:description" content="Explore Amritsar, Dalhousie, and Dharamshala with our 5-night, 6-day tour. Visit iconic sites like the Golden Temple, Khajjiar, Dal Lake, and McLeod Ganj. Experience the cultural and natural beauty of Himachal Pradesh and Punjab." />
     <?php
@@ -22,7 +22,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Amrirsar with Dalhousie and Dharamshala </h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Amrirsar with Dalhousie and Dharamshala </li>
                 </ul>
             </div>

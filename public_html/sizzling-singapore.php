@@ -9,7 +9,7 @@
     <meta name="keywords" content="Singapore Tour, Sizzling Singapore, Singapore Holidays, Singapore Vacation, Singapore Tourism, Singapore Attractions, Gardens by the Bay, Marina Bay Sands. ">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="canonical" href="https://holidaygurutravel.in/sizzling-singapore.php">
+    <link rel="canonical" href="https://holidaygurutravel.in/sizzling-singapore">
     <meta property="og:site_name" content="Holiday Guru Travel" />
     <meta property="og:description" content="Experience the vibrant city-state of Singapore with our 4-night, 5-day tour package. Explore Gardens by the Bay, Marina Bay Sands, and Universal Studios Singapore." />
 </head>
@@ -22,7 +22,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Singapore Tour Package</h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Sizzling Singapore</li>
                 </ul>
             </div>
@@ -42,17 +42,17 @@
                                         <div class="tour-box_img global-img"><img src="assets/img/destination/SereneTourtoSingaporewithThailand.jpg"
                                                 alt="SereneTourtoSingaporewithThailand.jpg"></div>
                                         <div class="tour-content">
-                                            <h3 class="box-title"><a href="serene-tour-to-singapore-with-thailand--8n-9d.php">Serene Tour to Singapore with Thailand</a></h3>
+                                            <h3 class="box-title"><a href="/serene-tour-to-singapore-with-thailand--8n-9d">Serene Tour to Singapore with Thailand</a></h3>
                                             <div class="tour-rating">
                                                 <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
                                                     <span style="width:100%">Rated <strong class="rating">5.00</strong>
                                                         out of 5 based on <span class="rating">4.8</span>(4.8
-                                                        Rating)</span></div><a href="serene-tour-to-singapore-with-thailand--8n-9d.php"
+                                                        Rating)</span></div><a href="/serene-tour-to-singapore-with-thailand--8n-9d"
                                                     class="woocommerce-review-link">(<span class="count">4.8</span>
                                                     Rating)</a>
                                             </div>
                                             <h4 class="tour-box_price"><span class="currency"><i class="fa-light fa-clock"></i>8 Nights /9 Days</span></h4>
-                                            <div class="tour-action"><a href="serene-tour-to-singapore-with-thailand--8n-9d.php"
+                                            <div class="tour-action"><a href="/serene-tour-to-singapore-with-thailand--8n-9d"
                                                     class="th-btn style4 th-icon">View More</a></div>
                                         </div>
                                     </div>
@@ -62,17 +62,17 @@
                                         <div class="tour-box_img global-img"><img src="assets/img/destination/SingaporeandKualaLumpurTour.jpg"
                                                 alt="SingaporeandKualaLumpurTour.jpg"></div>
                                         <div class="tour-content">
-                                            <h3 class="box-title"><a href="singapore-and-kuala-lumpur-tour-4n-5d.php">Singapore and Kuala Lumpur Tour</a></h3>
+                                            <h3 class="box-title"><a href="/singapore-and-kuala-lumpur-tour-4n-5d">Singapore and Kuala Lumpur Tour</a></h3>
                                             <div class="tour-rating">
                                                 <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
                                                     <span style="width:100%">Rated <strong class="rating">5.00</strong>
                                                         out of 5 based on <span class="rating">4.8</span>(4.8
-                                                        Rating)</span></div><a href="singapore-and-kuala-lumpur-tour-4n-5d.php"
+                                                        Rating)</span></div><a href="/singapore-and-kuala-lumpur-tour-4n-5d"
                                                     class="woocommerce-review-link">(<span class="count">4.8</span>
                                                     Rating)</a>
                                             </div>
                                             <h4 class="tour-box_price"><span class="currency"><i class="fa-light fa-clock"></i>4 Nights / 5 Days</span></h4>
-                                            <div class="tour-action"><a href="singapore-and-kuala-lumpur-tour-4n-5d.php"
+                                            <div class="tour-action"><a href="/singapore-and-kuala-lumpur-tour-4n-5d"
                                                     class="th-btn style4 th-icon">View More</a></div>
                                         </div>
                                     </div>
@@ -82,17 +82,17 @@
                                         <div class="tour-box_img global-img"><img src="assets/img/destination/TheBestofsingaporeandKualaLumpurwithPattayatour.jpg"
                                                 alt="TheBestofsingaporeandKualaLumpurwithPattayatour.jpg"></div>
                                         <div class="tour-content">
-                                            <h3 class="box-title"><a href="standard-tour-to-dubai-4n5d.php">The Best of Singapore and Kuala Lumpur with Pattaya tour</a></h3>
+                                            <h3 class="box-title"><a href="/standard-tour-to-dubai-4n5d">The Best of Singapore and Kuala Lumpur with Pattaya tour</a></h3>
                                             <div class="tour-rating">
                                                 <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
                                                     <span style="width:100%">Rated <strong class="rating">5.00</strong>
                                                         out of 5 based on <span class="rating">4.8</span>(4.8
-                                                        Rating)</span></div><a href="standard-tour-to-dubai-4n5d.php"
+                                                        Rating)</span></div><a href="/standard-tour-to-dubai-4n5d"
                                                     class="woocommerce-review-link">(<span class="count">4.8</span>
                                                     Rating)</a>
                                             </div>
                                             <h4 class="tour-box_price"><span class="currency"><i class="fa-light fa-clock"></i>8 Nights / 9 Days</span></h4>
-                                            <div class="tour-action"> <a href="standard-tour-to-dubai-4n5d.php"
+                                            <div class="tour-action"> <a href="/standard-tour-to-dubai-4n5d"
                                                     class="th-btn style4 th-icon">View More</a></div>
                                         </div>
                                     </div>
@@ -103,17 +103,17 @@
                                         <div class="tour-box_img global-img"><img src="assets/img/destination/TheMagicalTourtoSingapore.jpg"
                                                 alt="TheMagicalTourtoSingapore.jpg"></div>
                                         <div class="tour-content">
-                                            <h3 class="box-title"><a href="the-magical-tour-to-singapore.php">The Magical Tour to Singapore</a></h3>
+                                            <h3 class="box-title"><a href="/the-magical-tour-to-singapore">The Magical Tour to Singapore</a></h3>
                                             <div class="tour-rating">
                                                 <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
                                                     <span style="width:100%">Rated <strong class="rating">5.00</strong>
                                                         out of 5 based on <span class="rating">4.8</span>(4.8
-                                                        Rating)</span></div><a href="the-magical-tour-to-singapore.php"
+                                                        Rating)</span></div><a href="/the-magical-tour-to-singapore"
                                                     class="woocommerce-review-link">(<span class="count">4.8</span>
                                                     Rating)</a>
                                             </div>
                                             <h4 class="tour-box_price"><span class="currency"><i class="fa-light fa-clock"></i>4 Nights / 5 Days</span></h4>
-                                            <div class="tour-action"> <a href="the-magical-tour-to-singapore.php"
+                                            <div class="tour-action"> <a href="/the-magical-tour-to-singapore"
                                                     class="th-btn style4 th-icon">View More</a></div>
                                         </div>
                                     </div>

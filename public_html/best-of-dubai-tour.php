@@ -9,7 +9,7 @@
     <meta name="keywords" content="Dubai tour package, 2 nights 3 days Dubai trip, Dubai city tour, Burj Khalifa, dhow cruise with dinner, Dubai holiday package, UAE travel">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="canonical" href="https://holidaygurutravel.in/best-of-dubai-tour.php">
+    <link rel="canonical" href="https://holidaygurutravel.in/best-of-dubai-tour">
     <meta property="og:site_name" content="Holiday Guru Travel" />
     <meta property="og:description" content="Experience the best of Dubai with our 2 nights/3 days tour package. Enjoy a traditional dhow cruise with dinner, Dubai city tour with Burj Khalifa, and more. Book now and create unforgettable memories!" />
 </head>
@@ -24,7 +24,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Best of Dubai tour</h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Best of Dubai tour </li>
                 </ul>
             </div>

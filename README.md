@@ -8,3 +8,6 @@ Not in this repository (server only):
 - Database dump
 
 Secrets are never committed. SMTP credentials live in a config file outside the web root (copy `config/hgt-config.example.php` to `hgt-config.php` one level above `public_html` on the server).
+
+Public contact details, GA4 ID and privacy-policy URL: `public_html/include/site_config.php` (public values only).
+Page URLs are extensionless (`/about`); `.htaccess` 301-redirects the old `/about.php` form.

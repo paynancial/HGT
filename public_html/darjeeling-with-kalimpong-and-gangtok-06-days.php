@@ -9,7 +9,7 @@
     <meta name="keywords" content="Darjeeling tour, Kalimpong tour, Gangtok tour, 6 days tour package, Darjeeling Kalimpong Gangtok itinerary, Northeast India travel, scenic tour, hill station trip, Sikkim travel, Himalayan tour">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="canonical" href="https://holidaygurutravel.in/darjeeling-with-kalimpong-and-gangtok-06-days.php">
+    <link rel="canonical" href="https://holidaygurutravel.in/darjeeling-with-kalimpong-and-gangtok-06-days">
     <meta property="og:site_name" content="Holiday Guru Travel" />
     <meta property="og:description" content="Explore the beauty of Darjeeling, Kalimpong, and Gangtok in a 6-day tour package. Experience breathtaking views, vibrant culture, and serene landscapes on this unforgettable journey." />
     <?php
@@ -22,7 +22,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Darjeeling with Kalimpong and Gangtok Tour</h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Darjeeling with Kalimpong and Gangtok Tour </li>
                 </ul>
             </div>

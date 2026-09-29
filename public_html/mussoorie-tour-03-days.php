@@ -9,7 +9,7 @@
     <meta name="keywords" content="Mussoorie tour package, Uttarakhand tour package, 3-day Mussoorie tour, hill station tour in India, Himalayas tour, Kempty Falls tour, Mall Road Mussoorie, North India tour package. ">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="canonical" href="https://holidaygurutravel.in/mussoorie-tour-03-days.php">
+    <link rel="canonical" href="https://holidaygurutravel.in/mussoorie-tour-03-days">
     <meta property="og:site_name" content="Holiday Guru Travel" />
     <meta property="og:description" content=" Experience the queen of hills with our 3-day Mussoorie tour package. Book now and enjoy the breathtaking views of the Himalayas, scenic beauty of Kempty Falls, and the charm of Mall Road." />
     <?php
@@ -22,7 +22,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Mussoorie Tour</h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Mussoorie Tour</li>
                 </ul>
             </div>

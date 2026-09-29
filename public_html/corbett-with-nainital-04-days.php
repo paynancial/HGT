@@ -9,7 +9,7 @@
     <meta name="keywords" content="Corbett with Nainital tour package, 4-day Uttarakhand wildlife tour, Corbett National Park safari, Nainital sightseeing, Himalayan hill station tour, India wildlife tour. ">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="canonical" href="https://holidaygurutravel.in/corbett-with-nainital-04-days.php">
+    <link rel="canonical" href="https://holidaygurutravel.in/corbett-with-nainital-04-days">
     <meta property="og:site_name" content="Holiday Guru Travel" />
     <meta property="og:description" content=" Explore the wilderness of Corbett National Park and the beauty of Nainital with our 4-day tour package. Enjoy jungle safari, scenic views of Nainital, and a relaxing getaway in the Himalayas." />
     <?php
@@ -22,7 +22,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Corbett with Nainital</h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Corbett with Nainital</li>
                 </ul>
             </div>

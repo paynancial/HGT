@@ -9,7 +9,7 @@
     <meta name="keywords" content="Singapore tour package, Singapore travel guide, Gardens by the Bay, Marina Bay Sands, Universal Studios Singapore, Singapore holidays, city breaks, Southeast Asia travel, Singapore vacation">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="canonical" href="https://holidaygurutravel.in/the-magical-tour-to-singapore.php">
+    <link rel="canonical" href="https://holidaygurutravel.in/the-magical-tour-to-singapore">
     <meta property="og:site_name" content="Holiday Guru Travel" />
     <meta property="og:description" content="Experience the magic of Singapore with our exclusive tour package! Explore Gardens by the Bay, Marina Bay Sands, and Universal Studios. Book now and create unforgettable memories in this vibrant city-state" />
     <?php
@@ -22,7 +22,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">The Magical Tour to Singapore  tour</h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>The Magical Tour to Singapore  tour</li>
                 </ul>
             </div>

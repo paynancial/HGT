@@ -9,7 +9,7 @@
     <meta name="keywords" content="Goa tour package, delightful Goa tour, 3 nights 4 days Goa tour, Goa travel, Goa tourism, Goa holiday package, beach tour, India tour package, North Goa tour, South Goa tour">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="canonical" href="https://holidaygurutravel.in/delightful-goa-tour-3n-4d.php">
+    <link rel="canonical" href="https://holidaygurutravel.in/delightful-goa-tour-3n-4d">
     <meta property="og:site_name" content="Holiday Guru Travel" />
     <meta property="og:description" content="Experience the best of Goa with our Delightful Goa Tour package. Explore the beautiful beaches, historic forts, and vibrant culture of Goa in 3 nights and 4 days." />
 </head>
@@ -24,7 +24,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Delightful Goa Tour</h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Delightful Goa Tour </li>
                 </ul>
             </div>

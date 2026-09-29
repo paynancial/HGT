@@ -9,7 +9,7 @@
     <meta name="keywords" content=" Corbett National Park tour, Nainital lake tour, Mussoorie hill station tour, Uttarakhand wildlife tour, Himalayan trekking tour, India hill station tour, North India tour package. ">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="canonical" href="https://holidaygurutravel.in/corbett-with-nainital-and-mussoorie-07-days.php">
+    <link rel="canonical" href="https://holidaygurutravel.in/corbett-with-nainital-and-mussoorie-07-days">
     <meta property="og:site_name" content="Holiday Guru Travel" />
     <meta property="og:description" content="  Explore the wilderness of Corbett National Park, the serenity of Nainital's lakes, and the scenic beauty of Mussoorie with our 7-day tour package." />
     <?php
@@ -22,7 +22,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Corbett With Nainital and mussoorie</h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Corbett With Nainital and mussoorie</li>
                 </ul>
             </div>

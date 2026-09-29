@@ -51,7 +51,7 @@ if ($result->num_rows === 0) {
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title"><?= htmlspecialchars($maintitle) ?></h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li><?= htmlspecialchars($maintitle) ?></li>
                 </ul>
             </div>
@@ -72,18 +72,18 @@ if ($result->num_rows === 0) {
                                         <div class="tour-box_img global-img"><img src="admin/ajax/<?= htmlspecialchars($package['thumb_img']) ?>"
                                                 alt="<?= htmlspecialchars($package['title']) ?>"></div>
                                         <div class="tour-content">
-                                            <h3 class="box-title"><a href="theme-package-details.php?id=<?= htmlspecialchars($package['id']) ?>"><?= htmlspecialchars($package['title']) ?></a></h3>
+                                            <h3 class="box-title"><a href="/theme-package-details?id=<?= htmlspecialchars($package['id']) ?>"><?= htmlspecialchars($package['title']) ?></a></h3>
                                             <div class="tour-rating">
                                                 <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
                                                     <span style="width:100%">Rated <strong class="rating">5.00</strong>
                                                         out of 5 based on <span class="rating">4.8</span>(4.8
-                                                        Rating)</span></div><a href="theme-package-details.php?id=<?= htmlspecialchars($package['id']) ?>"
+                                                        Rating)</span></div><a href="/theme-package-details?id=<?= htmlspecialchars($package['id']) ?>"
                                                     class="woocommerce-review-link">(<span class="count">4.8</span>
                                                     Rating)</a>
                                             </div>
                                             <h4 class="tour-box_price"><span class="currency"><i class="fa-light fa-clock"></i><?= htmlspecialchars($package['days']) ?></span></h4>
                                             
-                                            <div class="tour-action"><a href="theme-package-details.php?id=<?= htmlspecialchars($package['id']) ?>"
+                                            <div class="tour-action"><a href="/theme-package-details?id=<?= htmlspecialchars($package['id']) ?>"
                                                     class="th-btn style4 th-icon">View More</a></div>
                                         </div>
                                     </div>

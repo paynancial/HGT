@@ -13,25 +13,25 @@
     <meta property="og:image" content="https://holidaygurutravel.in/assets/img/breadcumb-bg.jpg"/>
     <meta property="og:type" content="website"/>
     <meta property="og:site_name" content="Holiday Guru Travel"/>
-    <meta property="og:url" content="https://holidaygurutravel.in/international-holidays.php"/>
+    <meta property="og:url" content="https://holidaygurutravel.in/international-holidays"/>
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:domain" content="https://holidaygurutravel.in/international-holidays.php">
+    <meta name="twitter:domain" content="https://holidaygurutravel.in/international-holidays">
     <meta name="twitter:image:src" content="https://holidaygurutravel.in/assets/img/breadcumb-bg.jpg"/>
     <meta name="twitter:description" content="Plan your next adventure with Holiday Guru Travel's international holiday packages. Explore diverse cultures, breathtaking landscapes, and iconic landmarks. Start your journey today!">
     <meta name="twitter:title" content="Book Your Dream Getaway: International Vacation Packages - Holiday Guru Travel">
-    <meta name="twitter:url" content="https://holidaygurutravel.in/international-holidays.php">
+    <meta name="twitter:url" content="https://holidaygurutravel.in/international-holidays">
     <meta itemprop="name" content="Customize Your Adventure: International Travel Deals from Holiday Guru Travel">
     <meta itemprop="description" content="Discover the world with Holiday Guru Travel's curated international vacation packages. From romantic escapes to family adventures, find the perfect itinerary tailored to your preferences.">
-    <meta itemprop="image" content="https://holidaygurutravel.in/international-holidays.php/assets/img/crousel6.jpg">
+    <meta itemprop="image" content="https://holidaygurutravel.in/international-holidays/assets/img/crousel6.jpg">
     <meta property="locale" content="Delhi, Gurgaon, Mumbai, Noida, Goa, Pune, Uttar Pradesh, Uttarakhand, Rajasthan, Madhya Pradesh, Haryana"> 
-    <link rel="canonical" href="https://holidaygurutravel.in/international-holidays.php"> 
+    <link rel="canonical" href="https://holidaygurutravel.in/international-holidays"> 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Article",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://holidaygurutravel.in/international-holidays.php"
+    "@id": "https://holidaygurutravel.in/international-holidays"
   },
   "headline": "Unforgettable Journeys Await: International Holiday Packages - Holiday Guru Travel",
   "description": "Embark on a journey of a lifetime with Holiday Guru Travel's international tours. Enjoy seamless travel planning, expert guides, and unforgettable experiences. Book your getaway now!",
@@ -39,7 +39,7 @@
   "author": {
     "@type": "Organization",
     "name": "Holiday Guru Travel",
-    "url": "https://holidaygurutravel.in/international-holidays.php/"
+    "url": "https://holidaygurutravel.in/international-holidays/"
   },  
   "publisher": {
     "@type": "Organization",
@@ -60,9 +60,9 @@
   "@type": "LocalBusiness",
   "name": "Holiday Guru Travel",
   "image": "https://holidaygurutravel.in/assets/img/breadcumb-bg.jpg",
-  "@id": "https://holidaygurutravel.in/international-holidays.php",
-  "url": "https://holidaygurutravel.in/international-holidays.php",
-  "telephone": "+91-9971754265",
+  "@id": "https://holidaygurutravel.in/international-holidays",
+  "url": "https://holidaygurutravel.in/international-holidays",
+  "telephone": "+91 99717 54265",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Holiday Guru Travel 2nd floor",
@@ -82,7 +82,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">International Holiday Packages</h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>International Holidays</li>
                 </ul>
             </div>
@@ -102,18 +102,18 @@
                                         <div class="tour-box_img global-img"><img src="assets/img/destination/BestofDubaitour2.jpg"
                                                 alt="BestofDubaitour2.jpg"></div>
                                         <div class="tour-content">
-                                            <h3 class="box-title"><a href="best-dubai-tour.php">Best Dubai Tour</a></h3>
+                                            <h3 class="box-title"><a href="/best-dubai-tour">Best Dubai Tour</a></h3>
                                             <div class="tour-rating">
                                                 <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
                                                     <span style="width:100%">Rated <strong class="rating">5.00</strong>
                                                         out of 5 based on <span class="rating">4.8</span>(4.8
-                                                        Rating)</span></div><a href="best-dubai-tour.php"
+                                                        Rating)</span></div><a href="/best-dubai-tour"
                                                     class="woocommerce-review-link">(<span class="count">4.8</span>
                                                     Rating)</a>
                                             </div>
                                             <h4 class="tour-box_price"><span class="currency"><i class="fa-light fa-clock"></i>3 N / 4 D</span></h4>
                                             
-                                            <div class="tour-action"><a href="best-dubai-tour.php"
+                                            <div class="tour-action"><a href="/best-dubai-tour"
                                                     class="th-btn style4 th-icon">View More</a></div>
                                         </div>
                                     </div>
@@ -123,17 +123,17 @@
                                         <div class="tour-box_img global-img"><img src="assets/img/destination/BestDubaiTour1.jpg"
                                                 alt="BestDubaiTour1.jpg"></div>
                                         <div class="tour-content">
-                                            <h3 class="box-title"><a href="best-of-dubai-tour.php">Best of Dubai tour</a></h3>
+                                            <h3 class="box-title"><a href="/best-of-dubai-tour">Best of Dubai tour</a></h3>
                                             <div class="tour-rating">
                                                 <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
                                                     <span style="width:100%">Rated <strong class="rating">5.00</strong>
                                                         out of 5 based on <span class="rating">4.8</span>(4.8
-                                                        Rating)</span></div><a href="best-of-dubai-tour.php"
+                                                        Rating)</span></div><a href="/best-of-dubai-tour"
                                                     class="woocommerce-review-link">(<span class="count">4.8</span>
                                                     Rating)</a>
                                             </div>
                                             <h4 class="tour-box_price"><span class="currency"><i class="fa-light fa-clock"></i>2 N / 3 D</span></h4>
-                                            <div class="tour-action"><a href="best-of-dubai-tour.php"
+                                            <div class="tour-action"><a href="/best-of-dubai-tour"
                                                     class="th-btn style4 th-icon">View More</a></div>
                                         </div>
                                     </div>
@@ -143,17 +143,17 @@
                                         <div class="tour-box_img global-img"><img src="assets/img/destination/DubaiTravelPackages3.jpg"
                                                 alt="DubaiTravelPackages3.jpg"></div>
                                         <div class="tour-content">
-                                            <h3 class="box-title"><a href="dubai-travel-packages.php">Dubai Travel Packages</a></h3>
+                                            <h3 class="box-title"><a href="/dubai-travel-packages">Dubai Travel Packages</a></h3>
                                             <div class="tour-rating">
                                                 <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
                                                     <span style="width:100%">Rated <strong class="rating">5.00</strong>
                                                         out of 5 based on <span class="rating">4.8</span>(4.8
-                                                        Rating)</span></div><a href="dubai-travel-packages.php"
+                                                        Rating)</span></div><a href="/dubai-travel-packages"
                                                     class="woocommerce-review-link">(<span class="count">4.8</span>
                                                     Rating)</a>
                                             </div>
                                             <h4 class="tour-box_price"><span class="currency"><i class="fa-light fa-clock"></i>3 N / 4 D</span></h4>
-                                            <div class="tour-action"> <a href="dubai-travel-packages.php"
+                                            <div class="tour-action"> <a href="/dubai-travel-packages"
                                                     class="th-btn style4 th-icon">View More</a></div>
                                         </div>
                                     </div>
@@ -163,17 +163,17 @@
                                         <div class="tour-box_img global-img"><img src="assets/img/destination/BurjKhalifaTickets4.jpg"
                                                 alt="BurjKhalifaTickets4.jpg"></div>
                                         <div class="tour-content">
-                                            <h3 class="box-title"><a href="dubai-family-trip-with-free-burj-khalifa-tickets.php">Dubai Family Trip with FREE Burj Khalifa Tickets</a></h3>
+                                            <h3 class="box-title"><a href="/dubai-family-trip-with-free-burj-khalifa-tickets">Dubai Family Trip with FREE Burj Khalifa Tickets</a></h3>
                                             <div class="tour-rating">
                                                 <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
                                                     <span style="width:100%">Rated <strong class="rating">5.00</strong>
                                                         out of 5 based on <span class="rating">4.8</span>(4.8
-                                                        Rating)</span></div><a href="dubai-family-trip-with-free-burj-khalifa-tickets.php"
+                                                        Rating)</span></div><a href="/dubai-family-trip-with-free-burj-khalifa-tickets"
                                                     class="woocommerce-review-link">(<span class="count">4.8</span>
                                                     Rating)</a>
                                             </div>
                                             <h4 class="tour-box_price"><span class="currency"><i class="fa-light fa-clock"></i>2 N / 3 D</span></h4>
-                                            <div class="tour-action"> <a href="dubai-family-trip-with-free-burj-khalifa-tickets.php"
+                                            <div class="tour-action"> <a href="/dubai-family-trip-with-free-burj-khalifa-tickets"
                                                     class="th-btn style4 th-icon">View More</a></div>
                                         </div>
                                     </div>
@@ -183,17 +183,17 @@
                                         <div class="tour-box_img global-img"><img src="assets/img/destination/Singapore1.jpg"
                                                 alt="Singapore1.jpg"></div>
                                         <div class="tour-content">
-                                            <h3 class="box-title"><a href="singapore-and-kuala-lumpur-tour-4n-5d.php">Singapore and Kuala Lumpur Tour</a></h3>
+                                            <h3 class="box-title"><a href="/singapore-and-kuala-lumpur-tour-4n-5d">Singapore and Kuala Lumpur Tour</a></h3>
                                             <div class="tour-rating">
                                                 <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
                                                     <span style="width:100%">Rated <strong class="rating">5.00</strong>
                                                         out of 5 based on <span class="rating">4.8</span>(4.8
-                                                        Rating)</span></div><a href="singapore-and-kuala-lumpur-tour-4n-5d.php"
+                                                        Rating)</span></div><a href="/singapore-and-kuala-lumpur-tour-4n-5d"
                                                     class="woocommerce-review-link">(<span class="count">4.8</span>
                                                     Rating)</a>
                                             </div>
                                             <h4 class="tour-box_price"><span class="currency"><i class="fa-light fa-clock"></i>4 N / 5 D</span></h4>
-                                            <div class="tour-action"> <a href="singapore-and-kuala-lumpur-tour-4n-5d.php"
+                                            <div class="tour-action"> <a href="/singapore-and-kuala-lumpur-tour-4n-5d"
                                                     class="th-btn style4 th-icon">View More</a></div>
                                         </div>
                                     </div>
@@ -203,17 +203,17 @@
                                         <div class="tour-box_img global-img"><img src="assets/img/destination/Singapore 2.jpg"
                                                 alt="Singapore 2.jpg"></div>
                                         <div class="tour-content">
-                                            <h3 class="box-title"><a href="the-best-of-singapore-and-kuala-lumpur-with-pattaya-tour-8n-9d.php">The Best of Singapore and Kuala Lumpur with Pattaya tour</a></h3>
+                                            <h3 class="box-title"><a href="/the-best-of-singapore-and-kuala-lumpur-with-pattaya-tour-8n-9d">The Best of Singapore and Kuala Lumpur with Pattaya tour</a></h3>
                                             <div class="tour-rating">
                                                 <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
                                                     <span style="width:100%">Rated <strong class="rating">5.00</strong>
                                                         out of 5 based on <span class="rating">4.8</span>(4.8
-                                                        Rating)</span></div><a href="the-best-of-singapore-and-kuala-lumpur-with-pattaya-tour-8n-9d.php"
+                                                        Rating)</span></div><a href="/the-best-of-singapore-and-kuala-lumpur-with-pattaya-tour-8n-9d"
                                                     class="woocommerce-review-link">(<span class="count">4.8</span>
                                                     Rating)</a>
                                             </div>
                                             <h4 class="tour-box_price"><span class="currency"><i class="fa-light fa-clock"></i>8 N / 9 D</span></h4>
-                                            <div class="tour-action"> <a href="the-best-of-singapore-and-kuala-lumpur-with-pattaya-tour-8n-9d.php"
+                                            <div class="tour-action"> <a href="/the-best-of-singapore-and-kuala-lumpur-with-pattaya-tour-8n-9d"
                                                     class="th-btn style4 th-icon">View More</a></div>
                                         </div>
                                     </div>
@@ -223,17 +223,17 @@
                                         <div class="tour-box_img global-img"><img src="assets/img/destination/Singapore3.jpg"
                                                 alt="Singapore3.jpg"></div>
                                         <div class="tour-content">
-                                            <h3 class="box-title"><a href="the-magical-tour-to-singapore.php">The Magical Tour to Singapore</a></h3>
+                                            <h3 class="box-title"><a href="/the-magical-tour-to-singapore">The Magical Tour to Singapore</a></h3>
                                             <div class="tour-rating">
                                                 <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
                                                     <span style="width:100%">Rated <strong class="rating">5.00</strong>
                                                         out of 5 based on <span class="rating">4.8</span>(4.8
-                                                        Rating)</span></div><a href="the-magical-tour-to-singapore.php"
+                                                        Rating)</span></div><a href="/the-magical-tour-to-singapore"
                                                     class="woocommerce-review-link">(<span class="count">4.8</span>
                                                     Rating)</a>
                                             </div>
                                             <h4 class="tour-box_price"><span class="currency"><i class="fa-light fa-clock"></i>4 N / 5 D</span></h4>
-                                            <div class="tour-action"> <a href="the-magical-tour-to-singapore.php"
+                                            <div class="tour-action"> <a href="/the-magical-tour-to-singapore"
                                                     class="th-btn style4 th-icon">View More</a></div>
                                         </div>
                                     </div>
@@ -243,17 +243,17 @@
                                         <div class="tour-box_img global-img"><img src="assets/img/destination/StandardTourtoDubai5.jpg"
                                                 alt="StandardTourtoDubai5.jpg"></div>
                                         <div class="tour-content">
-                                            <h3 class="box-title"><a href="standard-tour-to-dubai-4n5d.php">Standard Tour to Dubai</a></h3>
+                                            <h3 class="box-title"><a href="/standard-tour-to-dubai-4n5d">Standard Tour to Dubai</a></h3>
                                             <div class="tour-rating">
                                                 <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
                                                     <span style="width:100%">Rated <strong class="rating">5.00</strong>
                                                         out of 5 based on <span class="rating">4.8</span>(4.8
-                                                        Rating)</span></div><a href="standard-tour-to-dubai-4n5d.php"
+                                                        Rating)</span></div><a href="/standard-tour-to-dubai-4n5d"
                                                     class="woocommerce-review-link">(<span class="count">4.8</span>
                                                     Rating)</a>
                                             </div>
                                             <h4 class="tour-box_price"><span class="currency"><i class="fa-light fa-clock"></i>4 N / 5 D</span></h4>
-                                            <div class="tour-action"> <a href="standard-tour-to-dubai-4n5d.php"
+                                            <div class="tour-action"> <a href="/standard-tour-to-dubai-4n5d"
                                                     class="th-btn style4 th-icon">View More</a></div>
                                         </div>
                                     </div>
@@ -263,17 +263,17 @@
                                         <div class="tour-box_img global-img"><img src="assets/img/destination/DeluxeTourtoDubai6.jpg"
                                                 alt="DeluxeTourtoDubai6.jpg"></div>
                                         <div class="tour-content">
-                                            <h3 class="box-title"><a href="deluxe-tour-to-dubai-4n5d.php">Deluxe Tour to Dubai</a></h3>
+                                            <h3 class="box-title"><a href="/deluxe-tour-to-dubai-4n5d">Deluxe Tour to Dubai</a></h3>
                                             <div class="tour-rating">
                                                 <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
                                                     <span style="width:100%">Rated <strong class="rating">5.00</strong>
                                                         out of 5 based on <span class="rating">4.8</span>(4.8
-                                                        Rating)</span></div><a href="deluxe-tour-to-dubai-4n5d.php"
+                                                        Rating)</span></div><a href="/deluxe-tour-to-dubai-4n5d"
                                                     class="woocommerce-review-link">(<span class="count">4.8</span>
                                                     Rating)</a>
                                             </div>
                                             <h4 class="tour-box_price"><span class="currency"><i class="fa-light fa-clock"></i>4 N / 5 D</span></h4>
-                                            <div class="tour-action"> <a href="deluxe-tour-to-dubai-4n5d.php"
+                                            <div class="tour-action"> <a href="/deluxe-tour-to-dubai-4n5d"
                                                     class="th-btn style4 th-icon">View More</a></div>
                                         </div>
                                     </div>
@@ -283,17 +283,17 @@
                                         <div class="tour-box_img global-img"><img src="assets/img/destination/Maldives05Days.jpg"
                                                 alt="Maldives05Days.jpg"></div>
                                         <div class="tour-content">
-                                            <h3 class="box-title"><a href="maldives-05-days.php">Maldives 05 Days</a></h3>
+                                            <h3 class="box-title"><a href="/maldives-05-days">Maldives 05 Days</a></h3>
                                             <div class="tour-rating">
                                                 <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
                                                     <span style="width:100%">Rated <strong class="rating">5.00</strong>
                                                         out of 5 based on <span class="rating">4.8</span>(4.8
-                                                        Rating)</span></div><a href="maldives-05-days.php"
+                                                        Rating)</span></div><a href="/maldives-05-days"
                                                     class="woocommerce-review-link">(<span class="count">4.8</span>
                                                     Rating)</a>
                                             </div>
                                             <h4 class="tour-box_price"><span class="currency"><i class="fa-light fa-clock"></i>4 N / 5 D</span></h4>
-                                            <div class="tour-action"> <a href="maldives-05-days.php"
+                                            <div class="tour-action"> <a href="/maldives-05-days"
                                                     class="th-btn style4 th-icon">View More</a></div>
                                         </div>
                                     </div>

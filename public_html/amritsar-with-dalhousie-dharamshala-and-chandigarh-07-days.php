@@ -9,7 +9,7 @@
     <meta name="keywords" content="Amritsar Dalhousie Dharamshala Chandigarh tour, 7-day itinerary, Golden Temple, Khajjiar, Dal Lake, Rock Garden, Himachal Pradesh, Punjab tourism, cultural tour, hill station trip.">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="canonical" href="https://holidaygurutravel.in/amritsar-with-dalhousie-dharamshala-and-chandigarh-07-days.php">
+    <link rel="canonical" href="https://holidaygurutravel.in/amritsar-with-dalhousie-dharamshala-and-chandigarh-07-days">
     <meta property="og:site_name" content="Holiday Guru Travel" />
     <meta property="og:description" content="Experience a 6-night, 7-day tour across Amritsar, Dalhousie, Dharamshala, and Chandigarh. Visit the Golden Temple, Khajjiar, Dal Lake, and Rock Garden. Enjoy the blend of cultural, historical, and natural beauty in this comprehensive Himachal and Punjab tour." />
     <?php
@@ -22,7 +22,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Amritsar with Dalhousie Dharamshala and Chandigarh</h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Amritsar with Dalhousie Dharamshala and Chandigarh</li>
                 </ul>
             </div>

@@ -9,7 +9,7 @@
     <meta name="keywords" content="Haridwar Rishikesh Mussoorie Nainital Jim Corbett tour, 7-day Uttarakhand pilgrimage and hill station tour, Haridwar temple tour, Rishikesh yoga tour, Mussoorie hill station tour. ">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="canonical" href="https://holidaygurutravel.in/haridwar-with-rishikesh-mussoorie-nainital-and-jim-corbett-07-days.php">
+    <link rel="canonical" href="https://holidaygurutravel.in/haridwar-with-rishikesh-mussoorie-nainital-and-jim-corbett-07-days">
     <meta property="og:site_name" content="Holiday Guru Travel" />
     <meta property="og:description" content=" Embark on a spiritual and scenic journey through Uttarakhand with our 7-day tour package. Visit Haridwar's holy ghats, Rishikesh's yoga and adventure hubs, Mussoorie's scenic views." />
 </head>
@@ -24,7 +24,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Haridwar With Rishikesh Mussoorie Nainital and Jim Corbett </h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Haridwar With Rishikesh Mussoorie Nainital and Jim Corbett </li>
                 </ul>
             </div>

@@ -9,7 +9,7 @@
     <meta name="keywords" content="Singapore and Kuala Lumpur with Pattaya tour, 8 nights 9 days tour package, Singapore travel guide, Kuala Lumpur travel guide, Pattaya travel guide, Southeast Asia holidays, city tours, sightseeing packages">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="canonical" href="https://holidaygurutravel.in/the-best-of-singapore-and-kuala-lumpur-with-pattaya-tour-8n-9d.php">
+    <link rel="canonical" href="https://holidaygurutravel.in/the-best-of-singapore-and-kuala-lumpur-with-pattaya-tour-8n-9d">
     <meta property="og:site_name" content="Holiday Guru Travel" />
     <meta property="og:description" content="Experience the best of Singapore, Kuala Lumpur, and Pattaya on our 8 nights/9 days tour package. Explore vibrant cities, enjoy sightseeing tours, and relax in comfortable accommodations. Book now and create unforgettable memories" />
     <?php
@@ -22,7 +22,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">The Best of Singapore and Kuala Lumpur with Pattaya tour</h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>The Best of Singapore and Kuala Lumpur with Pattaya tour </li>
                 </ul>
             </div>

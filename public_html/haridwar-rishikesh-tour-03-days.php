@@ -9,7 +9,7 @@
     <meta name="keywords" content="Haridwar tour package, Rishikesh tour package, Uttarakhand tour package, 3-day Uttarakhand tour, Haridwar Rishikesh tour, pilgrimage tour in India. ">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="canonical" href="https://holidaygurutravel.in/haridwar-rishikesh-tour-03-days.php">
+    <link rel="canonical" href="https://holidaygurutravel.in/haridwar-rishikesh-tour-03-days">
     <meta property="og:site_name" content="Holiday Guru Travel" />
     <meta property="og:description" content=" Explore the spiritual cities of Haridwar and Rishikesh with our 3-day Uttarakhand pilgrimage tour package. Book now and experience the divine beauty of the Ganges River and the Himalayas." />
     <?php
@@ -22,7 +22,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Haridwar Rishikesh Tour</h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Haridwar Rishikesh Tour </li>
                 </ul>
             </div>

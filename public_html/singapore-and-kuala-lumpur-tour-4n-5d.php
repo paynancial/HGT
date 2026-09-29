@@ -9,7 +9,7 @@
     <meta name="keywords" content="Singapore and Kuala Lumpur tour, 4 nights 5 days tour package, Universal Studios, city tour, Singapore travel guide, Kuala Lumpur travel guide, Southeast Asia holidays">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="canonical" href="https://holidaygurutravel.in/singapore-and-kuala-lumpur-tour-4n-5d.php">
+    <link rel="canonical" href="https://holidaygurutravel.in/singapore-and-kuala-lumpur-tour-4n-5d">
     <meta property="og:site_name" content="Holiday Guru Travel" />
     <meta property="og:description" content="Explore the vibrant cities of Singapore and Kuala Lumpur on our 4 nights/5 days tour package. Enjoy a day at Universal Studios, city tours, and more. Book now and create unforgettable memories" />
     <?php
@@ -22,7 +22,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Singapore and Kuala Lumpur Tour</h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Singapore and Kuala Lumpur Tour </li>
                 </ul>
             </div>

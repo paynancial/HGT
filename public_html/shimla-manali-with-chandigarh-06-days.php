@@ -9,7 +9,7 @@
     <meta name="keywords" content="Shimla Manali Chandigarh tour, 6-day itinerary, Himachal Pradesh, Kufri, Rohtang Pass, Rock Garden, Shimla sightseeing, Manali vacation, Chandigarh tourism, hill station tour.">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="canonical" href="https://holidaygurutravel.in/shimla-manali-with-chandigarh-06-days.php">
+    <link rel="canonical" href="https://holidaygurutravel.in/shimla-manali-with-chandigarh-06-days">
     <meta property="og:site_name" content="Holiday Guru Travel" />
     <meta property="og:description" content="Enjoy a 5-night, 6-day tour covering Shimla, Manali, and Chandigarh. Explore scenic beauty, visit historic temples, and experience the charm of Himachal Pradesh with stops at Kufri, Rohtang Pass, and Chandigarh’s Rock Garden. Book now!" />
 </head>
@@ -24,7 +24,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Shimla Manali with Chandigarh</h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Shimla Manali with Chandigarh</li>
                 </ul>
             </div>

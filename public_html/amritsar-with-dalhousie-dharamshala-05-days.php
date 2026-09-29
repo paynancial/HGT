@@ -9,7 +9,7 @@
     <meta name="keywords" content="Amritsar tour, Dalhousie travel, Dharamshala itinerary, 5-day North India trip, Golden Temple visit, Dalhousie sightseeing, Dharamshala attractions, North India travel package, cultural tour India, scenic North India tour">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="canonical" href="https://holidaygurutravel.in/amritsar-with-dalhousie-dharamshala-05-days.php">
+    <link rel="canonical" href="https://holidaygurutravel.in/amritsar-with-dalhousie-dharamshala-05-days">
     <meta property="og:site_name" content="Holiday Guru Travel" />
     <meta property="og:description" content="Explore the cultural and natural beauty of North India with our 5-day Amritsar, Dalhousie, and Dharamshala tour. Discover the Golden Temple in Amritsar, enjoy the scenic landscapes of Dalhousie, and experience the spiritual ambiance of Dharamshala." />
     <?php
@@ -22,7 +22,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Amritsar with Dalhousie Dharamshala </h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Amritsar with Dalhousie Dharamshala </li>
                 </ul>
             </div>

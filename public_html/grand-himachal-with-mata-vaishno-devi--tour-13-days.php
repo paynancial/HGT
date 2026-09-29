@@ -9,7 +9,7 @@
     <meta name="keywords" content="Himachal Pradesh tour, Mata Vaishno Devi pilgrimage, 13-day Himachal trip, Shimla travel, Manali sightseeing, Dharamshala attractions, Amritsar visit, spiritual tour India, Himachal travel package, North India adventure">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="canonical" href="https://holidaygurutravel.in/grand-himachal-with-mata-vaishno-devi--tour-13-days.php">
+    <link rel="canonical" href="https://holidaygurutravel.in/grand-himachal-with-mata-vaishno-devi--tour-13-days">
     <meta property="og:site_name" content="Holiday Guru Travel" />
     <meta property="og:description" content="Experience an unforgettable 13-day journey through Himachal Pradesh and Mata Vaishno Devi. This grand tour includes visits to Shimla, Manali, Dharamshala, and Amritsar, culminating in a spiritual visit to the Mata Vaishno Devi shrine." />
     <?php
@@ -22,7 +22,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Grand Himachal with Mata vaishno Devi Tour </h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Grand Himachal with Mata vaishno Devi Tour</li>
                 </ul>
             </div>

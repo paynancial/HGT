@@ -9,7 +9,7 @@
     <meta name="keywords" content="dubai travel packages, dubai tour packages, dubai holiday packages, dubai vacation packages, dubai trip packages, dubai flights and hotels, dubai sightseeing tours, dubai travel deals, dubai holiday deals">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="canonical" href="https://holidaygurutravel.in/dubai-travel-packages.php">
+    <link rel="canonical" href="https://holidaygurutravel.in/dubai-travel-packages">
     <meta property="og:site_name" content="Holiday Guru Travel" />
     <meta property="og:description" content="Explore the best of Dubai with our customized travel packages. Get affordable deals on flights, hotels, and sightseeing tours. Book your Dubai trip now and create unforgettable memories " />
     <?php
@@ -22,7 +22,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Dubai Travel Packages </h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Dubai Travel Packages </li>
                 </ul>
             </div>

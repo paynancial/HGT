@@ -9,7 +9,7 @@
     <meta name="keywords" content="Haridwar Rishikesh Mussoorie tour package, Uttarakhand pilgrimage tour, 4-day Uttarakhand tour, spiritual tour in India, Himalayas tour, Ganges River tour. ">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="canonical" href="https://holidaygurutravel.in/haridwar-rishikesh-mussoorie-04-days.php">
+    <link rel="canonical" href="https://holidaygurutravel.in/haridwar-rishikesh-mussoorie-04-days">
     <meta property="og:site_name" content="Holiday Guru Travel" />
     <meta property="og:description" content="Explore the spiritual and scenic beauty of Uttarakhand with our 4-day Haridwar Rishikesh Mussoorie tour package. Visit the holy Ganges, experience the tranquility of Rishikesh, and enjoy the breathtaking views of Mussoorie." />
     <?php
@@ -22,7 +22,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Haridwar Rishikesh Mussoorie</h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Haridwar Rishikesh Mussoorie</li>
                 </ul>
             </div>

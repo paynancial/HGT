@@ -9,7 +9,7 @@
     <meta name="keywords" content=" Nainital with Almora and Jim Corbett tour package, 5-day Uttarakhand hill station tour, Nainital lake tour, Almora sightseeing, Jim Corbett National Park safari, Uttarakhand wildlife tour. ">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="canonical" href="https://holidaygurutravel.in/nainital-with-almora-and-jim-corbett-05-days.php">
+    <link rel="canonical" href="https://holidaygurutravel.in/nainital-with-almora-and-jim-corbett-05-days">
     <meta property="og:site_name" content="Holiday Guru Travel" />
     <meta property="og:description" content="Discover the charm of Nainital's lakes, Almora's cultural heritage, and Jim Corbett's wildlife with our 5-day tour package. Experience the best of Uttarakhand's hill stations, lakes, and wildlife sanctuaries." />
     <?php
@@ -22,7 +22,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Nainital with Almora and jim corbett</h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Nainital with Almora and jim corbett</li>
                 </ul>
             </div>

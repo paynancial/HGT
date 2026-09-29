@@ -9,7 +9,7 @@
     <meta name="keywords" content=" Mussoorie tour, Nainital tour, Almora tour, Jim Corbett National Park tour, Uttarakhand hill station tour, India hill station tour, North India tour package. ">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="canonical" href="https://holidaygurutravel.in/mussoorie-with-nainital-almora-and-jim-corbett--07-days.php">
+    <link rel="canonical" href="https://holidaygurutravel.in/mussoorie-with-nainital-almora-and-jim-corbett--07-days">
     <meta property="og:site_name" content="Holiday Guru Travel" />
     <meta property="og:description" content="  Explore the Queen of Hills, Mussoorie, the Lake City, Nainital, the Cultural Hub, Almora, and the Wildlife Paradise, Jim Corbett National Park with our 7-day tour package." />
     <?php
@@ -22,7 +22,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Mussoorie with Nainital Almora and Jim Corbett</h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Mussoorie with Nainital Almora and Jim Corbett</li>
                 </ul>
             </div>

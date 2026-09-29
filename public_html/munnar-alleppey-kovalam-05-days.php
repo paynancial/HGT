@@ -9,7 +9,7 @@
     <meta name="keywords" content="Kerala Tour Package, Munnar Alleppey Kovalam, 5-Day Tour, Hill Station, Backwaters, Beaches, Kerala Holidays, South India Tourism, Travel Packages. ">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="canonical" href="https://holidaygurutravel.in/munnar-alleppey-kovalam-05-days.php">
+    <link rel="canonical" href="https://holidaygurutravel.in/munnar-alleppey-kovalam-05-days">
     <meta property="og:site_name" content="Holiday Guru Travel" />
     <meta property="og:description" content="Explore the beauty of Kerala with our 5-day Munnar, Alleppey, and Kovalam tour package. Enjoy the scenic hills of Munnar, backwaters of Alleppey, and beaches of Kovalam." />
     <?php
@@ -22,7 +22,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Munnar Alleppey Kovalam</h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Munnar Thekkady Tour Package </li>
                 </ul>
             </div>

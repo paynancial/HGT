@@ -9,7 +9,7 @@
     <meta name="keywords" content="Manali tour package, Delhi to Manali tour, Volvo bus tour to Manali, Manali holiday package, Solang Valley tour, Rohtang Pass visit, Himachal Pradesh travel, Manali sightseeing, Delhi to Manali trip, Manali vacation package">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="canonical" href="https://holidaygurutravel.in/best-of-manali-with-delhi-by-volvo.php">
+    <link rel="canonical" href="https://holidaygurutravel.in/best-of-manali-with-delhi-by-volvo">
     <meta property="og:site_name" content="Holiday Guru Travel" />
     <meta property="og:description" content="Experience the beauty of Manali with our 5-night/6-day package from Delhi by Volvo. Enjoy comfortable travel, scenic views, and exciting activities in Manali, Solang Valley, and Rohtang Pass. Book now!" />
     <?php
@@ -22,7 +22,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Best of Manali with Delhi By Volvo</h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Best of Manali with Delhi By Volvo </li>
                 </ul>
             </div>

@@ -16,7 +16,7 @@
     <meta itemprop="name" content="Char Dham Yatra from Delhi - 10 Nights/11 Days Spiritual Journey">
     <meta itemprop="description" content="Embark on a 9 Nights/10 Days Char Dham Yatra from Haridwar and explore the sacred sites of Yamunotri, Gangotri, Kedarnath, and Badrinath. Experience a spiritual journey with comfortable accommodations, expert guides, and scenic views. Book your yatra now!">
     <meta itemprop="image" content="https://holidaygurutravel.in/assets/img/destination/chardham1.jpg">
-    <link rel="canonical" href="https://holidaygurutravel.in/char-dham-yatra-from-delhi-10n-11d.php">
+    <link rel="canonical" href="https://holidaygurutravel.in/char-dham-yatra-from-delhi-10n-11d">
 
     <script type="application/ld+json">
 {
@@ -32,7 +32,7 @@
   "author": {
     "@type": "Organization",
     "name": "Holiday Guru Travel",
-    "url": "https://holidaygurutravel.in/char-dham-yatra-from-delhi-10n-11d.php"
+    "url": "https://holidaygurutravel.in/char-dham-yatra-from-delhi-10n-11d"
   },  
   "publisher": {
     "@type": "Organization",
@@ -56,7 +56,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Char Dham yatra Package from delhi for 11 Days</h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Char Dham Tour Package</li>
                 </ul>
             </div>

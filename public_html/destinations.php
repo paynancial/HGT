@@ -9,7 +9,7 @@
     <meta name="keywords" content="travel destinations, travel packages, holiday planning, trip planning, travel consultants, travel agency, tour operators, India travel, USA travel, California travel">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="canonical" href="https://holidaygurutravel.in/destinations.php">
+    <link rel="canonical" href="https://holidaygurutravel.in/destinations">
     <meta property="og:site_name" content="Holiday Guru Travel" />
     <meta property="og:description" content="Explore our curated travel destinations and packages. Get expert advice from our friendly consultants and experience a hassle-free trip with our efficient travel planning services." />
 </head>
@@ -22,7 +22,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Holiday Packages for Worldwide Destination</h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Destination</li>
                 </ul>
             </div>
@@ -36,8 +36,8 @@
                     <div class="destination-item_img global-img"><img src="assets/img/destination/ExoticKerala.jpg"
                             alt="ExoticKerala.jpg"></div>
                     <div class="destination-content">
-                        <h3 class="box-title"><a href="exotic-kerala.php">Exotic Kerala</a></h3>
-                        <p class="destination-text">9 Packages</p><a href="exotic-kerala.php"
+                        <h3 class="box-title"><a href="/exotic-kerala">Exotic Kerala</a></h3>
+                        <p class="destination-text">9 Packages</p><a href="/exotic-kerala"
                             class="th-btn style4 th-icon">View more</a>
                     </div>
                 </div>
@@ -47,8 +47,8 @@
                     <div class="destination-item_img global-img"><img src="assets/img/destination/DreamDubai.jpg"
                             alt="DreamDubai.jpg"></div>
                     <div class="destination-content">
-                        <h3 class="box-title"><a href="dream-dubai.php">Dream Dubai</a></h3>
-                        <p class="destination-text">3 Packages</p><a href="dream-dubai.php"
+                        <h3 class="box-title"><a href="/dream-dubai">Dream Dubai</a></h3>
+                        <p class="destination-text">3 Packages</p><a href="/dream-dubai"
                             class="th-btn style4 th-icon">View more</a>
                     </div>
                 </div>
@@ -58,8 +58,8 @@
                     <div class="destination-item_img global-img"><img src="assets/img/destination/SizzlingSingapore.jpg"
                             alt="SizzlingSingapore.jpg"></div>
                     <div class="destination-content">
-                        <h3 class="box-title"><a href="sizzling-singapore.php">Sizzling Singapore</a></h3>
-                        <p class="destination-text">4 Packages</p><a href="sizzling-singapore.php"
+                        <h3 class="box-title"><a href="/sizzling-singapore">Sizzling Singapore</a></h3>
+                        <p class="destination-text">4 Packages</p><a href="/sizzling-singapore"
                             class="th-btn style4 th-icon">View more</a>
                     </div>
                 </div>
@@ -69,8 +69,8 @@
                     <div class="destination-item_img global-img"><img src="assets/img/destination/AmazingGoa.jpg"
                             alt="AmazingGoa.jpg"></div>
                     <div class="destination-content">
-                        <h3 class="box-title"><a href="amazing-goa.php">Amazing Goa</a></h3>
-                        <p class="destination-text">4 Packages</p><a href="amazing-goa.php"
+                        <h3 class="box-title"><a href="/amazing-goa">Amazing Goa</a></h3>
+                        <p class="destination-text">4 Packages</p><a href="/amazing-goa"
                             class="th-btn style4 th-icon">View more</a>
                     </div>
                 </div>
@@ -80,8 +80,8 @@
                     <div class="destination-item_img global-img"><img src="assets/img/destination/MesmerizingUttarakhand.jpg"
                             alt="MesmerizingUttarakhand.jpg"></div>
                     <div class="destination-content">
-                        <h3 class="box-title"><a href="uttarakhand-tour.php">Mesmerizing Uttarakhand</a></h3>
-                        <p class="destination-text">24 Packages</p><a href="uttarakhand-tour.php"
+                        <h3 class="box-title"><a href="/uttarakhand-tour">Mesmerizing Uttarakhand</a></h3>
+                        <p class="destination-text">24 Packages</p><a href="/uttarakhand-tour"
                             class="th-btn style4 th-icon">View more</a>
                     </div>
                 </div>
@@ -91,8 +91,8 @@
                     <div class="destination-item_img global-img"><img src="assets/img/destination/DelightFullHimachal.jpg"
                             alt="DelightFullHimachal.jpg"></div>
                     <div class="destination-content">
-                        <h3 class="box-title"><a href="delight-full-himachal.php">Delight Full Himachal</a></h3>
-                        <p class="destination-text">16 Packages</p><a href="delight-full-himachal.php"
+                        <h3 class="box-title"><a href="/delight-full-himachal">Delight Full Himachal</a></h3>
+                        <p class="destination-text">16 Packages</p><a href="/delight-full-himachal"
                             class="th-btn style4 th-icon">View more</a>
                     </div>
                 </div>
@@ -102,8 +102,8 @@
                     <div class="destination-item_img global-img"><img src="assets/img/destination/DivineTourtoLehLadakh.jpg"
                             alt="DivineTourtoLehLadakh.jpg"></div>
                     <div class="destination-content">
-                        <h3 class="box-title"><a href="leh-ladakh.php">Divine Tour to Leh Ladakh</a></h3>
-                        <p class="destination-text">6 Packages</p><a href="leh-ladakh.php"
+                        <h3 class="box-title"><a href="/leh-ladakh">Divine Tour to Leh Ladakh</a></h3>
+                        <p class="destination-text">6 Packages</p><a href="/leh-ladakh"
                             class="th-btn style4 th-icon">View more</a>
                     </div>
                 </div>
@@ -113,8 +113,8 @@
                     <div class="destination-item_img global-img"><img src="assets/img/destination/JannatEKashmir.jpg"
                             alt="JannatEKashmir.jpg"></div>
                     <div class="destination-content">
-                        <h3 class="box-title"><a href="kashmir-tour.php">Jannat E Kashmir</a></h3>
-                        <p class="destination-text">6 Packages</p><a href="kashmir-tour.php"
+                        <h3 class="box-title"><a href="/kashmir-tour">Jannat E Kashmir</a></h3>
+                        <p class="destination-text">6 Packages</p><a href="/kashmir-tour"
                             class="th-btn style4 th-icon">View more</a>
                     </div>
                 </div>
@@ -124,8 +124,8 @@
                     <div class="destination-item_img global-img"><img src="assets/img/destination/OotyMysorecoorg.jpg"
                             alt="OotyMysorecoorg.jpg"></div>
                     <div class="destination-content">
-                        <h3 class="box-title"><a href="ooty-mysore-coorg.php">Ooty Mysore coorg</a></h3>
-                        <p class="destination-text">6 Packages</p><a href="ooty-mysore-coorg.php"
+                        <h3 class="box-title"><a href="/ooty-mysore-coorg">Ooty Mysore coorg</a></h3>
+                        <p class="destination-text">6 Packages</p><a href="/ooty-mysore-coorg"
                             class="th-btn style4 th-icon">View more</a>
                     </div>
                 </div>
@@ -135,8 +135,8 @@
                     <div class="destination-item_img global-img"><img src="assets/img/destination/DarjeelingSikkim.jpg"
                             alt="DarjeelingSikkim.jpg"></div>
                     <div class="destination-content">
-                        <h3 class="box-title"><a href="darjeeling-sikkim.php">Darjeeling Sikkim</a></h3>
-                        <p class="destination-text">13 Packages</p><a href="darjeeling-sikkim.php"
+                        <h3 class="box-title"><a href="/darjeeling-sikkim">Darjeeling Sikkim</a></h3>
+                        <p class="destination-text">13 Packages</p><a href="/darjeeling-sikkim"
                             class="th-btn style4 th-icon">View more</a>
                     </div>
                 </div>
@@ -146,8 +146,8 @@
                     <div class="destination-item_img global-img"><img src="assets/img/destination/DevotionalToursDomestic.jpg"
                             alt="DevotionalToursDomestic.jpg"></div>
                     <div class="destination-content">
-                        <h3 class="box-title"><a href="devotional-tours-domestic.php">Devotional Tours Domestic</a></h3>
-                        <p class="destination-text">3 Packages</p><a href="devotional-tours-domestic.php"
+                        <h3 class="box-title"><a href="/devotional-tours-domestic">Devotional Tours Domestic</a></h3>
+                        <p class="destination-text">3 Packages</p><a href="/devotional-tours-domestic"
                             class="th-btn style4 th-icon">View more</a>
                     </div>
                 </div>
@@ -157,8 +157,8 @@
             <!--        <div class="destination-item_img global-img"><img src="assets/img/destination/RoyalRajasthan.jpg"-->
             <!--                alt="RoyalRajasthan.jpg"></div>-->
             <!--        <div class="destination-content">-->
-            <!--            <h3 class="box-title"><a href="royal-rajasthan.php">Royal Rajasthan</a></h3>-->
-            <!--            <p class="destination-text">0 Packages</p><a href="royal-rajasthan.php"-->
+            <!--            <h3 class="box-title"><a href="/royal-rajasthan">Royal Rajasthan</a></h3>-->
+            <!--            <p class="destination-text">0 Packages</p><a href="/royal-rajasthan"-->
             <!--                class="th-btn style4 th-icon">View more</a>-->
             <!--        </div>-->
             <!--    </div>-->
@@ -168,8 +168,8 @@
             <!--        <div class="destination-item_img global-img"><img src="assets/img/destination/ThrillerThailand.jpg"-->
             <!--                alt="ThrillerThailand.jpg"></div>-->
             <!--        <div class="destination-content">-->
-            <!--            <h3 class="box-title"><a href="thriller-thailand.php">Thriller Thailand</a></h3>-->
-            <!--            <p class="destination-text">0 Packages</p><a href="thriller-thailand.php"-->
+            <!--            <h3 class="box-title"><a href="/thriller-thailand">Thriller Thailand</a></h3>-->
+            <!--            <p class="destination-text">0 Packages</p><a href="/thriller-thailand"-->
             <!--                class="th-btn style4 th-icon">View more</a>-->
             <!--        </div>-->
             <!--    </div>-->
@@ -187,12 +187,12 @@
                         </div>
                         <div class="destination-content">
                             <h3 class="box-title">
-                                <a href="destination_detail.php?id=<?= htmlspecialchars($destination['id'], ENT_QUOTES, 'UTF-8'); ?>">
+                                <a href="/destination_detail?id=<?= htmlspecialchars($destination['id'], ENT_QUOTES, 'UTF-8'); ?>">
                                     <?= htmlspecialchars($destination['title'], ENT_QUOTES, 'UTF-8'); ?>
                                 </a>
                             </h3>
                             <p class="destination-text"><?= htmlspecialchars($package_count, ENT_QUOTES, 'UTF-8'); ?> Packages</p>
-                            <a href="destination_detail.php?id=<?= htmlspecialchars($destination['id'], ENT_QUOTES, 'UTF-8'); ?>" class="th-btn style4 th-icon">View more</a>
+                            <a href="/destination_detail?id=<?= htmlspecialchars($destination['id'], ENT_QUOTES, 'UTF-8'); ?>" class="th-btn style4 th-icon">View more</a>
                         </div>
                     </div>
                 </div>

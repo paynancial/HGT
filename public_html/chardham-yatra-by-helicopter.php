@@ -9,7 +9,7 @@
     <meta name="keywords" content="Char Dham Yatra by helicopter, Char Dham pilgrimage, helicopter tour Char Dham, Yamunotri Gangotri Kedarnath Badrinath tour, Char Dham Yatra package, spiritual helicopter tour, Uttarakhand pilgrimage, Char Dham helicopter service, Char Dham temple visit">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="canonical" href="https://holidaygurutravel.in/chardham-yatra-by-helicopter.php">
+    <link rel="canonical" href="https://holidaygurutravel.in/chardham-yatra-by-helicopter">
     <meta property="og:site_name" content="Holiday Guru Travel" />
     <meta property="og:description" content="Experience the spiritual journey of a lifetime with our Char Dham Yatra by helicopter. Visit Yamunotri, Gangotri, Kedarnath, and Badrinath with ease and comfort, ensuring a hassle-free pilgrimage." />
     <?php
@@ -22,7 +22,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Chardham Yatra By Helicopter Tour  </h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Chardham Yatra By Helicopter Tour</li>
                 </ul>
             </div>

@@ -9,7 +9,7 @@
     <meta name="keywords" content="Dubai family trip, free Burj Khalifa tickets, Dubai Parks and Resorts, JBR Beach, desert safari, family vacation package, Dubai tour package, Burj Khalifa visit, Dubai travel, UAE travel">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="canonical" href="https://holidaygurutravel.in/dubai-family-trip-with-free-burj-khalifa-tickets.php">
+    <link rel="canonical" href="https://holidaygurutravel.in/dubai-family-trip-with-free-burj-khalifa-tickets">
     <meta property="og:site_name" content="Holiday Guru Travel" />
     <meta property="og:description" content="Experience the ultimate Dubai family trip with free Burj Khalifa tickets! Enjoy a 2 nights/3 days package with visits to Dubai Parks and Resorts, JBR Beach, and a desert safari. Book now and create unforgettable memories with your loved ones." />
 </head>
@@ -24,7 +24,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Dubai Family Trip with FREE Burj Khalifa Tickets </h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Dubai Family Trip with FREE Burj Khalifa Tickets</li>
                 </ul>
             </div>

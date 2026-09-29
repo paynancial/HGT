@@ -9,7 +9,7 @@
     <meta name="keywords" content="Kovalam Kanyakumari tour package, 4-day South India beach tour, Kerala Tamil Nadu tour, beach holiday in India, Kanyakumari sightseeing, Vivekananda Rock Memorial tour.">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="canonical" href="https://holidaygurutravel.in/kovalam-kanyakumari-tour-4-days.php">
+    <link rel="canonical" href="https://holidaygurutravel.in/kovalam-kanyakumari-tour-4-days">
     <meta property="og:site_name" content="Holiday Guru Travel" />
     <meta property="og:description" content="Explore the southernmost tip of India with our 4-day Kovalam Kanyakumari tour package. Relax on the beaches of Kovalam, visit the Vivekananda Rock Memorial, and experience the beauty of Kanyakumari." />
 </head>
@@ -24,7 +24,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Kovalam Kanyakumari Tour</h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Kovalam Kanyakumari Tour</li>
                 </ul>
             </div>

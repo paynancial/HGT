@@ -16,7 +16,7 @@
     <meta itemprop="name" content="Srinagar Gulmarg Tour Package - 3 Nights/4 Days | Kashmir Holiday trip">
     <meta itemprop="description" content="Discover the beauty of Kashmir with our Srinagar Gulmarg Tour Package. Spend 3 nights and 4 days exploring the breathtaking landscapes, serene lakes, and snow-capped mountains. Perfect for a memorable Kashmir holiday, our Gulmarg tour package offers an unforgettable experience with comfortable accommodations and guided sightseeing.">
     <meta itemprop="image" content="https://holidaygurutravel.in/assets/img/destination/SrinagarGulmargTour1.jpg">
-    <link rel="canonical" href="https://holidaygurutravel.in/srinagar-gulmarg-tour-03nt04dy.php">
+    <link rel="canonical" href="https://holidaygurutravel.in/srinagar-gulmarg-tour-03nt04dy">
 
     <script type="application/ld+json">
 {
@@ -32,7 +32,7 @@
   "author": {
     "@type": "Organization",
     "name": "Holiday Guru Travel",
-    "url": "https://holidaygurutravel.in/srinagar-gulmarg-tour-03nt04dy.php"
+    "url": "https://holidaygurutravel.in/srinagar-gulmarg-tour-03nt04dy"
   },  
   "publisher": {
     "@type": "Organization",
@@ -57,7 +57,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Srinagar Gulmarg Tour Package</h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Srinagar Gulmarg Tour</li>
                 </ul>
             </div>

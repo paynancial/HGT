@@ -9,7 +9,7 @@
     <meta name="keywords" content="Nainital tour, Ranikhet travel package, Kausani sightseeing, Jim Corbett safari, Haridwar Ganga Aarti, Uttarakhand 8-day itinerary, travel package, Uttarakhand tourism.">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="canonical" href="https://holidaygurutravel.in/nainital-with-ranikhet-kausani-jim-corbett-and-haridwar-08-days.php">
+    <link rel="canonical" href="https://holidaygurutravel.in/nainital-with-ranikhet-kausani-jim-corbett-and-haridwar-08-days">
     <meta property="og:site_name" content="Holiday Guru Travel" />
     <meta property="og:description" content="Explore the beauty of Uttarakhand with this 8-day tour package covering Nainital, Ranikhet, Kausani, Jim Corbett, and Haridwar. Enjoy sightseeing, nature, and spiritual experiences with comfortable accommodations and guided tours." />
     <?php
@@ -22,7 +22,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Nainital with Ranikhet Kausani jim Corbett and Haridwar</h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Nainital with Ranikhet Kausani jim Corbett and Haridwar</li>
                 </ul>
             </div>

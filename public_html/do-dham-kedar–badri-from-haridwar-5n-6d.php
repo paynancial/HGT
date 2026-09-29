@@ -16,7 +16,7 @@
     <meta itemprop="name" content="6-Day Do Dham Yatra (Kedarnath & Badrinath) Tour from Haridwar | Spiritual Journey">
     <meta itemprop="description" content="Join a 6-day Do Dham Yatra from Haridwar to Kedarnath and Badrinath. Discover divine blessings at two sacred shrines, enjoy breathtaking Himalayan views, and experience a serene spiritual retreat. Book your 6-day pilgrimage package now!">
     <meta itemprop="image" content="https://holidaygurutravel.in/assets/img/destination/chardham1.jpg">
-    <link rel="canonical" href="https://holidaygurutravel.in/do-dham-kedar–badri-from-haridwar-5n-6d.php">
+    <link rel="canonical" href="https://holidaygurutravel.in/do-dham-kedar–badri-from-haridwar-5n-6d">
 
     <script type="application/ld+json">
 {
@@ -32,7 +32,7 @@
   "author": {
     "@type": "Organization",
     "name": "Holiday Guru Travel",
-    "url": "https://holidaygurutravel.in/do-dham-kedar–badri-from-haridwar-5n-6d.php"
+    "url": "https://holidaygurutravel.in/do-dham-kedar–badri-from-haridwar-5n-6d"
   },  
   "publisher": {
     "@type": "Organization",
@@ -56,7 +56,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">6-Day Do Dham Yatra (Kedarnath & Badrinath) Tour from Haridwar</h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Do Dham Yatra Tour Package</li>
                 </ul>
             </div>

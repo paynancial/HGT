@@ -9,7 +9,7 @@
     <meta name="keywords" content="Goa tour package, Sun Kissed Goa Escape, Goa holiday package, 3 Nights 4 Days Goa package, Goa travel, Goa tourism, Goa vacation package">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="canonical" href="https://holidaygurutravel.in/sun-kissed-goa-escape.php">
+    <link rel="canonical" href="https://holidaygurutravel.in/sun-kissed-goa-escape">
     <meta property="og:site_name" content="Holiday Guru Travel" />
     <meta property="og:description" content="Escape to Goa with our 3 Nights / 4 Days Sun Kissed Goa Escape package. Explore the city's stunning beaches, vibrant nightlife, and rich cultural heritage. Book now and experience the best of Goa" />
 </head>
@@ -24,7 +24,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Sun Kissed Goa Escape Tour Package</h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Sun Kissed Goa Escape</li>
                 </ul>
             </div>

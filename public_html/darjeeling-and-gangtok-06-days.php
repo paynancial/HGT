@@ -9,7 +9,7 @@
     <meta name="keywords" content="Darjeeling Gangtok tour, 6 days tour package, Sikkim tourism, Darjeeling travel, Gangtok sightseeing, Himalayan tour, tea gardens, North East India travel, Sikkim and Darjeeling itinerary">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="canonical" href="https://holidaygurutravel.in/darjeeling-and-gangtok-06-days.php">
+    <link rel="canonical" href="https://holidaygurutravel.in/darjeeling-and-gangtok-06-days">
     <meta property="og:site_name" content="Holiday Guru Travel" />
     <meta property="og:description" content="Discover the beauty of Darjeeling and Gangtok with our 6-day tour package. Explore the stunning Himalayan landscapes, tea gardens, and cultural landmarks of these iconic destinations." />
     <?php
@@ -22,7 +22,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Darjeeling and Gangtok Tour</h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Darjeeling and Gangtok Tour </li>
                 </ul>
             </div>

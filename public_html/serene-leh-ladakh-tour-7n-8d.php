@@ -9,7 +9,7 @@
     <meta name="keywords" content="Ladakh tour, 6N7D Ladakh itinerary, Ladakh travel package, Leh Ladakh trip, Ladakh adventure, Ladakh tourism, Ladakh travel guide, Leh travel, Ladakh monasteries, panoramic Ladakh tour">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="canonical" href="https://holidaygurutravel.in/serene-leh-ladakh-tour-7n-8d.php">
+    <link rel="canonical" href="https://holidaygurutravel.in/serene-leh-ladakh-tour-7n-8d">
     <meta property="og:site_name" content="Holiday Guru Travel" />
     <meta property="og:description" content="Embark on a breathtaking 6 nights and 7 days Ladakh tour. Experience the stunning landscapes, rich culture, and serene monasteries of Ladakh in this immersive travel adventure." />
     <?php
@@ -22,7 +22,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Serene Leh Ladakh Tour  </h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Serene Leh Ladakh Tour</li>
                 </ul>
             </div>

@@ -9,7 +9,7 @@
     <meta name="keywords" content="Darjeeling Sikkim Tour, Himalayan Foothills, Tea Gardens, Monasteries, Hill Station Tour, Family Tour, Honeymoon Destinations, West Bengal Tourism, Sikkim Tourism. ">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="canonical" href="https://holidaygurutravel.in/darjeeling-sikkim.php">
+    <link rel="canonical" href="https://holidaygurutravel.in/darjeeling-sikkim">
     <meta property="og:site_name" content="Holiday Guru Travel" />
     <meta property="og:description" content="Explore the beauty of Darjeeling and Sikkim with our tour package. Visit the Himalayan foothills, tea gardens, and monasteries of these scenic destinations." />
 </head>
@@ -22,7 +22,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Darjeeling Sikkim</h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Darjeeling Sikkim</li>
                 </ul>
             </div>
@@ -42,17 +42,17 @@
                                         <div class="tour-box_img global-img"><img src="assets/img/destination/DarjeelingKalimpong.jpg"
                                                 alt="DarjeelingKalimpong.jpg"></div>
                                         <div class="tour-content">
-                                            <h3 class="box-title"><a href="darjeeling-kalimpong-04-days.php">Darjeeling Kalimpong</a></h3>
+                                            <h3 class="box-title"><a href="/darjeeling-kalimpong-04-days">Darjeeling Kalimpong</a></h3>
                                             <div class="tour-rating">
                                                 <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
                                                     <span style="width:100%">Rated <strong class="rating">5.00</strong>
                                                         out of 5 based on <span class="rating">4.8</span>(4.8
-                                                        Rating)</span></div><a href="darjeeling-kalimpong-04-days.php"
+                                                        Rating)</span></div><a href="/darjeeling-kalimpong-04-days"
                                                     class="woocommerce-review-link">(<span class="count">4.8</span>
                                                     Rating)</a>
                                             </div>
                                             <h4 class="tour-box_price"><span class="currency"><i class="fa-light fa-clock"></i>3 Nights / 4 Days</span></h4>
-                                            <div class="tour-action"><a href="darjeeling-kalimpong-04-days.php"
+                                            <div class="tour-action"><a href="/darjeeling-kalimpong-04-days"
                                                     class="th-btn style4 th-icon">View More</a></div>
                                         </div>
                                     </div>
@@ -62,17 +62,17 @@
                                         <div class="tour-box_img global-img"><img src="assets/img/destination/DarjeelingGangtok.jpg"
                                                 alt="DarjeelingGangtok.jpg"></div>
                                         <div class="tour-content">
-                                            <h3 class="box-title"><a href="darjeeling-gangtok-04-days.php">Darjeeling Gangtok</a></h3>
+                                            <h3 class="box-title"><a href="/darjeeling-gangtok-04-days">Darjeeling Gangtok</a></h3>
                                             <div class="tour-rating">
                                                 <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
                                                     <span style="width:100%">Rated <strong class="rating">5.00</strong>
                                                         out of 5 based on <span class="rating">4.8</span>(4.8
-                                                        Rating)</span></div><a href="darjeeling-gangtok-04-days.php"
+                                                        Rating)</span></div><a href="/darjeeling-gangtok-04-days"
                                                     class="woocommerce-review-link">(<span class="count">4.8</span>
                                                     Rating)</a>
                                             </div>
                                             <h4 class="tour-box_price"><span class="currency"><i class="fa-light fa-clock"></i>3 Nights / 4 Days</span></h4>
-                                            <div class="tour-action"><a href="darjeeling-gangtok-04-days.php"
+                                            <div class="tour-action"><a href="/darjeeling-gangtok-04-days"
                                                     class="th-btn style4 th-icon">View More</a></div>
                                         </div>
                                     </div>
@@ -82,17 +82,17 @@
                                         <div class="tour-box_img global-img"><img src="assets/img/destination/GangtokPellingTour.jpg"
                                                 alt="GangtokPellingTour.jpg"></div>
                                         <div class="tour-content">
-                                            <h3 class="box-title"><a href="gangtok-pelling-tour-05-days.php">Gangtok Pelling Tour</a></h3>
+                                            <h3 class="box-title"><a href="/gangtok-pelling-tour-05-days">Gangtok Pelling Tour</a></h3>
                                             <div class="tour-rating">
                                                 <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
                                                     <span style="width:100%">Rated <strong class="rating">5.00</strong>
                                                         out of 5 based on <span class="rating">4.8</span>(4.8
-                                                        Rating)</span></div><a href="gangtok-pelling-tour-05-days.php"
+                                                        Rating)</span></div><a href="/gangtok-pelling-tour-05-days"
                                                     class="woocommerce-review-link">(<span class="count">4.8</span>
                                                     Rating)</a>
                                             </div>
                                             <h4 class="tour-box_price"><span class="currency"><i class="fa-light fa-clock"></i>4 Nights / 5 Days</span></h4>
-                                            <div class="tour-action"> <a href="gangtok-pelling-tour-05-days.php"
+                                            <div class="tour-action"> <a href="/gangtok-pelling-tour-05-days"
                                                     class="th-btn style4 th-icon">View More</a></div>
                                         </div>
                                     </div>
@@ -102,17 +102,17 @@
                                         <div class="tour-box_img global-img"><img src="assets/img/destination/DarjeelingwithKalimpongGangtok.jpg"
                                                 alt="DarjeelingwithKalimpongGangtok.jpg"></div>
                                         <div class="tour-content">
-                                            <h3 class="box-title"><a href="darjeeling-with-kalimpong-and-gangtok-06-days.php">Darjeeling with Kalimpong and Gangtok</a></h3>
+                                            <h3 class="box-title"><a href="/darjeeling-with-kalimpong-and-gangtok-06-days">Darjeeling with Kalimpong and Gangtok</a></h3>
                                             <div class="tour-rating">
                                                 <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
                                                     <span style="width:100%">Rated <strong class="rating">5.00</strong>
                                                         out of 5 based on <span class="rating">4.8</span>(4.8
-                                                        Rating)</span></div><a href="darjeeling-with-kalimpong-and-gangtok-06-days.php"
+                                                        Rating)</span></div><a href="/darjeeling-with-kalimpong-and-gangtok-06-days"
                                                     class="woocommerce-review-link">(<span class="count">4.8</span>
                                                     Rating)</a>
                                             </div>
                                             <h4 class="tour-box_price"><span class="currency"><i class="fa-light fa-clock"></i>5 Nights / 6 Days</span></h4>
-                                            <div class="tour-action"> <a href="darjeeling-with-kalimpong-and-gangtok-06-days.php"
+                                            <div class="tour-action"> <a href="/darjeeling-with-kalimpong-and-gangtok-06-days"
                                                     class="th-btn style4 th-icon">View More</a></div>
                                         </div>
                                     </div>
@@ -122,17 +122,17 @@
                                         <div class="tour-box_img global-img"><img src="assets/img/destination/DarjeelingwithKalimpongpellingLachunggangtok.jpg"
                                                 alt="DarjeelingwithKalimpongpellingLachunggangtok.jpg"></div>
                                         <div class="tour-content">
-                                            <h3 class="box-title"><a href="darjeeling-with-pelling-and-gangtok-06-days.php">Darjeeling with Pelling and Gangtok</a></h3>
+                                            <h3 class="box-title"><a href="/darjeeling-with-pelling-and-gangtok-06-days">Darjeeling with Pelling and Gangtok</a></h3>
                                             <div class="tour-rating">
                                                 <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
                                                     <span style="width:100%">Rated <strong class="rating">5.00</strong>
                                                         out of 5 based on <span class="rating">4.8</span>(4.8
-                                                        Rating)</span></div><a href="darjeeling-with-pelling-and-gangtok-06-days.php"
+                                                        Rating)</span></div><a href="/darjeeling-with-pelling-and-gangtok-06-days"
                                                     class="woocommerce-review-link">(<span class="count">4.8</span>
                                                     Rating)</a>
                                             </div>
                                             <h4 class="tour-box_price"><span class="currency"><i class="fa-light fa-clock"></i>5 Nights / 6 Days</span></h4>
-                                            <div class="tour-action"> <a href="darjeeling-with-pelling-and-gangtok-06-days.php"
+                                            <div class="tour-action"> <a href="/darjeeling-with-pelling-and-gangtok-06-days"
                                                     class="th-btn style4 th-icon">View More</a></div>
                                         </div>
                                     </div>
@@ -142,17 +142,17 @@
                                         <div class="tour-box_img global-img"><img src="assets/img/destination/GangtokwithlachenandLachung.jpg"
                                                 alt="GangtokwithlachenandLachung.jpg"></div>
                                         <div class="tour-content">
-                                            <h3 class="box-title"><a href="gangtok-with-lachen-and-lachung-07-days.php">Gangtok with lachen and Lachung</a></h3>
+                                            <h3 class="box-title"><a href="/gangtok-with-lachen-and-lachung-07-days">Gangtok with lachen and Lachung</a></h3>
                                             <div class="tour-rating">
                                                 <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
                                                     <span style="width:100%">Rated <strong class="rating">5.00</strong>
                                                         out of 5 based on <span class="rating">4.8</span>(4.8
-                                                        Rating)</span></div><a href="gangtok-with-lachen-and-lachung-07-days.php"
+                                                        Rating)</span></div><a href="/gangtok-with-lachen-and-lachung-07-days"
                                                     class="woocommerce-review-link">(<span class="count">4.8</span>
                                                     Rating)</a>
                                             </div>
                                             <h4 class="tour-box_price"><span class="currency"><i class="fa-light fa-clock"></i>6 Nights / 7 Days</span></h4>
-                                            <div class="tour-action"> <a href="gangtok-with-lachen-and-lachung-07-days.php"
+                                            <div class="tour-action"> <a href="/gangtok-with-lachen-and-lachung-07-days"
                                                     class="th-btn style4 th-icon">View More</a></div>
                                         </div>
                                     </div>
@@ -163,17 +163,17 @@
                                         <div class="tour-box_img global-img"><img src="assets/img/destination/GangtokwithPellingandKalimpong.jpg"
                                                 alt="GangtokwithPellingandKalimpong.jpg"></div>
                                         <div class="tour-content">
-                                            <h3 class="box-title"><a href="gangtok-with-pelling-and-kalimpong-tour-07-days.php">Gangtok with Pelling and Kalimpong</a></h3>
+                                            <h3 class="box-title"><a href="/gangtok-with-pelling-and-kalimpong-tour-07-days">Gangtok with Pelling and Kalimpong</a></h3>
                                             <div class="tour-rating">
                                                 <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
                                                     <span style="width:100%">Rated <strong class="rating">5.00</strong>
                                                         out of 5 based on <span class="rating">4.8</span>(4.8
-                                                        Rating)</span></div><a href="gangtok-with-pelling-and-kalimpong-tour-07-days.php"
+                                                        Rating)</span></div><a href="/gangtok-with-pelling-and-kalimpong-tour-07-days"
                                                     class="woocommerce-review-link">(<span class="count">4.8</span>
                                                     Rating)</a>
                                             </div>
                                             <h4 class="tour-box_price"><span class="currency"><i class="fa-light fa-clock"></i>6 Nights / 7 Days</span></h4>
-                                            <div class="tour-action"> <a href="gangtok-with-pelling-and-kalimpong-tour-07-days.php"
+                                            <div class="tour-action"> <a href="/gangtok-with-pelling-and-kalimpong-tour-07-days"
                                                     class="th-btn style4 th-icon">View More</a></div>
                                         </div>
                                     </div>
@@ -183,17 +183,17 @@
                                         <div class="tour-box_img global-img"><img src="assets/img/destination/KalimpongWithGangtokpellingdarjeeling.jpg"
                                                 alt="KalimpongWithGangtokpellingdarjeeling.jpg"></div>
                                         <div class="tour-content">
-                                            <h3 class="box-title"><a href="kalimpong-with-gangtok-pelling-and-darjeeling-08-days.php">Kalimpong With Gangtok pelling and darjeeling</a></h3>
+                                            <h3 class="box-title"><a href="/kalimpong-with-gangtok-pelling-and-darjeeling-08-days">Kalimpong With Gangtok pelling and darjeeling</a></h3>
                                             <div class="tour-rating">
                                                 <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
                                                     <span style="width:100%">Rated <strong class="rating">5.00</strong>
                                                         out of 5 based on <span class="rating">4.8</span>(4.8
-                                                        Rating)</span></div><a href="kalimpong-with-gangtok-pelling-and-darjeeling-08-days.php"
+                                                        Rating)</span></div><a href="/kalimpong-with-gangtok-pelling-and-darjeeling-08-days"
                                                     class="woocommerce-review-link">(<span class="count">4.8</span>
                                                     Rating)</a>
                                             </div>
                                             <h4 class="tour-box_price"><span class="currency"><i class="fa-light fa-clock"></i>7 Nights / 8 Days</span></h4>
-                                            <div class="tour-action"> <a href="kalimpong-with-gangtok-pelling-and-darjeeling-08-days.php"
+                                            <div class="tour-action"> <a href="/kalimpong-with-gangtok-pelling-and-darjeeling-08-days"
                                                     class="th-btn style4 th-icon">View More</a></div>
                                         </div>
                                     </div>
@@ -203,17 +203,17 @@
                                         <div class="tour-box_img global-img"><img src="assets/img/destination/DarjeelingwithLachunggangtok.jpg"
                                                 alt="DarjeelingwithLachunggangtok.jpg"></div>
                                         <div class="tour-content">
-                                            <h3 class="box-title"><a href="darjeeling-with-lachung-and-gangtok-08-days.php">Darjeeling with Lachung and gangtok</a></h3>
+                                            <h3 class="box-title"><a href="/darjeeling-with-lachung-and-gangtok-08-days">Darjeeling with Lachung and gangtok</a></h3>
                                             <div class="tour-rating">
                                                 <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
                                                     <span style="width:100%">Rated <strong class="rating">5.00</strong>
                                                         out of 5 based on <span class="rating">4.8</span>(4.8
-                                                        Rating)</span></div><a href="darjeeling-with-lachung-and-gangtok-08-days.php"
+                                                        Rating)</span></div><a href="/darjeeling-with-lachung-and-gangtok-08-days"
                                                     class="woocommerce-review-link">(<span class="count">4.8</span>
                                                     Rating)</a>
                                             </div>
                                             <h4 class="tour-box_price"><span class="currency"><i class="fa-light fa-clock"></i>7 Nights / 8 Days</span></h4>
-                                            <div class="tour-action"> <a href="darjeeling-with-lachung-and-gangtok-08-days.php"
+                                            <div class="tour-action"> <a href="/darjeeling-with-lachung-and-gangtok-08-days"
                                                     class="th-btn style4 th-icon">View More</a></div>
                                         </div>
                                     </div>
@@ -223,17 +223,17 @@
                                         <div class="tour-box_img global-img"><img src="assets/img/destination/GangtokwithLachungPellingDarjeeling.jpg"
                                                 alt="GangtokwithLachungPellingDarjeeling.jpg"></div>
                                         <div class="tour-content">
-                                            <h3 class="box-title"><a href="gangtok-with-lachung-pelling-and-darjeeling-08-days.php">Gangtok with Lachung Pelling and Darjeeling</a></h3>
+                                            <h3 class="box-title"><a href="/gangtok-with-lachung-pelling-and-darjeeling-08-days">Gangtok with Lachung Pelling and Darjeeling</a></h3>
                                             <div class="tour-rating">
                                                 <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
                                                     <span style="width:100%">Rated <strong class="rating">5.00</strong>
                                                         out of 5 based on <span class="rating">4.8</span>(4.8
-                                                        Rating)</span></div><a href="gangtok-with-lachung-pelling-and-darjeeling-08-days.php"
+                                                        Rating)</span></div><a href="/gangtok-with-lachung-pelling-and-darjeeling-08-days"
                                                     class="woocommerce-review-link">(<span class="count">4.8</span>
                                                     Rating)</a>
                                             </div>
                                             <h4 class="tour-box_price"><span class="currency"><i class="fa-light fa-clock"></i>7 Nights / 8 Days</span></h4>
-                                            <div class="tour-action"> <a href="gangtok-with-lachung-pelling-and-darjeeling-08-days.php"
+                                            <div class="tour-action"> <a href="/gangtok-with-lachung-pelling-and-darjeeling-08-days"
                                                     class="th-btn style4 th-icon">View More</a></div>
                                         </div>
                                     </div>
@@ -243,17 +243,17 @@
                                         <div class="tour-box_img global-img"><img src="assets/img/destination/DarjeelingwithKalimpongpellingLachunggangtok.jpg"
                                                 alt="DarjeelingwithKalimpongpellingLachunggangtok.jpg"></div>
                                         <div class="tour-content">
-                                            <h3 class="box-title"><a href="darjeeling-with-kalimpong-pelling-lachung-and-gangtok-10-days.php">Darjeeling with Kalimpong pelling Lachung and gangtok</a></h3>
+                                            <h3 class="box-title"><a href="/darjeeling-with-kalimpong-pelling-lachung-and-gangtok-10-days">Darjeeling with Kalimpong pelling Lachung and gangtok</a></h3>
                                             <div class="tour-rating">
                                                 <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
                                                     <span style="width:100%">Rated <strong class="rating">5.00</strong>
                                                         out of 5 based on <span class="rating">4.8</span>(4.8
-                                                        Rating)</span></div><a href="darjeeling-with-kalimpong-pelling-lachung-and-gangtok-10-days.php"
+                                                        Rating)</span></div><a href="/darjeeling-with-kalimpong-pelling-lachung-and-gangtok-10-days"
                                                     class="woocommerce-review-link">(<span class="count">4.8</span>
                                                     Rating)</a>
                                             </div>
                                             <h4 class="tour-box_price"><span class="currency"><i class="fa-light fa-clock"></i>9 Nights / 10 Days</span></h4>
-                                            <div class="tour-action"> <a href="darjeeling-with-kalimpong-pelling-lachung-and-gangtok-10-days.php"
+                                            <div class="tour-action"> <a href="/darjeeling-with-kalimpong-pelling-lachung-and-gangtok-10-days"
                                                     class="th-btn style4 th-icon">View More</a></div>
                                         </div>
                                     </div>
@@ -263,17 +263,17 @@
                                         <div class="tour-box_img global-img"><img src="assets/img/destination/DarjeelingandGangtok.jpg"
                                                 alt="DarjeelingandGangtok.jpg"></div>
                                         <div class="tour-content">
-                                            <h3 class="box-title"><a href="darjeeling-and-gangtok-06-days.php">Darjeeling and Gangtok </a></h3>
+                                            <h3 class="box-title"><a href="/darjeeling-and-gangtok-06-days">Darjeeling and Gangtok </a></h3>
                                             <div class="tour-rating">
                                                 <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
                                                     <span style="width:100%">Rated <strong class="rating">5.00</strong>
                                                         out of 5 based on <span class="rating">4.8</span>(4.8
-                                                        Rating)</span></div><a href="darjeeling-and-gangtok-06-days.php"
+                                                        Rating)</span></div><a href="/darjeeling-and-gangtok-06-days"
                                                     class="woocommerce-review-link">(<span class="count">4.8</span>
                                                     Rating)</a>
                                             </div>
                                             <h4 class="tour-box_price"><span class="currency"><i class="fa-light fa-clock"></i>5 Nights / 6 Days</span></h4>
-                                            <div class="tour-action"> <a href="darjeeling-and-gangtok-06-days.php"
+                                            <div class="tour-action"> <a href="/darjeeling-and-gangtok-06-days"
                                                     class="th-btn style4 th-icon">View More</a></div>
                                         </div>
                                     </div>
@@ -283,17 +283,17 @@
                                         <div class="tour-box_img global-img"><img src="assets/img/destination/darjeelinggangtok1.jpg"
                                                 alt="darjeelinggangtok1.jpg"></div>
                                         <div class="tour-content">
-                                            <h3 class="box-title"><a href="darjeeling-gangtok-05-days.php">Darjeeling Gangtok</a></h3>
+                                            <h3 class="box-title"><a href="/darjeeling-gangtok-05-days">Darjeeling Gangtok</a></h3>
                                             <div class="tour-rating">
                                                 <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
                                                     <span style="width:100%">Rated <strong class="rating">5.00</strong>
                                                         out of 5 based on <span class="rating">4.8</span>(4.8
-                                                        Rating)</span></div><a href="darjeeling-gangtok-05-days.php"
+                                                        Rating)</span></div><a href="/darjeeling-gangtok-05-days"
                                                     class="woocommerce-review-link">(<span class="count">4.8</span>
                                                     Rating)</a>
                                             </div>
                                             <h4 class="tour-box_price"><span class="currency"><i class="fa-light fa-clock"></i>4 N / 5 D</span></h4>
-                                            <div class="tour-action"> <a href="darjeeling-gangtok-05-days.php"
+                                            <div class="tour-action"> <a href="/darjeeling-gangtok-05-days"
                                                     class="th-btn style4 th-icon">View More</a></div>
                                         </div>
                                     </div>

@@ -1,25 +1,9 @@
+<?php require_once __DIR__ . '/site_config.php'; ?>
 <style>
     @media only screen and (max-width: 600px) {
  .footer-card{
     text-align:center;
   }
-}
-.flot {
-    position: fixed;
-    width: 60px;
-    width: 140px;
-    bottom: 10px;
-    left: 15px;
-    height: auto;
-    z-index: 99999999999;
-}
-.callFloat {
-    position: fixed;
-    left: 10px;
-    bottom: 70px;
-    width: 140px;
-    height: auto;
-    z-index: 99999999999;
 }
 </style>
 <footer class="footer-wrapper footer-layout1">
@@ -45,7 +29,7 @@
                         <div class="widget footer-widget">
                             <div class="th-widget-about">
                                 
-                                <div class="about-logo"><a href="index.php"><img src="assets/img/logopng.png"
+                                <div class="about-logo"><a href="/"><img src="assets/img/logopng.png"
                                             alt="logopng.png" width="150px"></a></div>
                                 <div class="holiday package">
                                 <i class="icd-ico ich ich_globe pull-left"></i>
@@ -63,12 +47,12 @@
                             <h3 class="widget_title">Themes</h3>
                             <div class="menu-all-pages-container">
                                 <ul class="menu">
-                                            <li><a href="family-holiday.php">Family Holiday</a></li>
-                                            <li><a href="beach-holiday.php">Beach Holiday</a></li>
-                                            <li><a href="hill-station-holidays.php">Hill Station Holidays</a></li>
-                                            <li><a href="honeymoon-holiday.php">Honeymoon Holiday</a></li>
-                                            <li><a href="pilgrim-holidays.php">Pilgrim Holidays</a></li>
-                                            <li><a href="adventure-holiday.php">Adventure Holiday</a></li>
+                                            <li><a href="/family-holiday">Family Holiday</a></li>
+                                            <li><a href="/beach-holiday">Beach Holiday</a></li>
+                                            <li><a href="/hill-station-holidays">Hill Station Holidays</a></li>
+                                            <li><a href="/honeymoon-holiday">Honeymoon Holiday</a></li>
+                                            <li><a href="/pilgrim-holidays">Pilgrim Holidays</a></li>
+                                            <li><a href="/adventure-holiday">Adventure Holiday</a></li>
                                </ul>
                             </div>
                         </div>
@@ -78,10 +62,10 @@
                             <h3 class="widget_title">Related Links</h3>
                             <div class="menu-all-pages-container">
                                 <ul class="menu">
-                                    <li><a href="index.php">Home</a></li>
-                                    <li><a href="about.php">About us</a></li>
-                                    <li><a href="contact.php">Contact Us</a></li>
-                                    <li><a href="service.php">Our Services</a></li>
+                                    <li><a href="/">Home</a></li>
+                                    <li><a href="/about">About us</a></li>
+                                    <li><a href="/contact">Contact Us</a></li>
+                                    <li><a href="/service">Our Services</a></li>
                                     
                                 </ul>
                             </div>
@@ -101,16 +85,14 @@
                                 <div class="info-box_text">
                                     <div class="icon"><img src="assets/img/icon/phone1.png" width="18px" alt="Travel Agency India"></div>
                                     <div class="details">
-                                    <p><a href="tel:+918006692040" class="info-box_link">+91-8006692040</a></p>
-                                        <p><a href="tel:+919971754265" class="info-box_link">+91-9971754265</a></p>
+                                    <p><a href="<?= hg_e(hg_tel_href()) ?>" class="info-box_link" aria-label="Call Holiday Guru Travel on <?= hg_e(HG_PHONE_DISPLAY) ?>"><?= hg_e(HG_PHONE_DISPLAY) ?></a></p>
                                         
                                     </div>
                                 </div>
                                 <div class="info-box_text">
                                     <div class="icon"><img src="assets/img/icon/email.png" alt="Mail to Travel Agency in Delhi"></div>
                                     <div class="details">
-                                        <p><a href="mailto:sales@holidaygurutravel.in"
-                                                class="info-box_link">sales@holidaygurutravel.in</a></p>
+                                        <p><a href="<?= hg_e(hg_mailto_href()) ?>" class="info-box_link"><?= hg_e(HG_EMAIL_DISPLAY) ?></a></p>
                                         
                                     </div>
                                 </div>
@@ -128,8 +110,8 @@
                                     <!--<a href="https://www.linkedin.com/"><i-->
                                     <!--        class="fab fa-linkedin-in"></i>-->
                                     <!--</a>-->
-                                    <a href="https://wa.me/+919971754265/?text= Hello,i want to know more about your services"><i
-                                            class="fab fa-whatsapp"></i>
+                                    <a href="<?= hg_e(hg_whatsapp_href()) ?>" target="_blank" rel="noopener" aria-label="WhatsApp Holiday Guru Travel"><i
+                                        class="fab fa-whatsapp"></i>
                                     </a>
                                     <a href="https://www.instagram.com/holidaygurutravel?igsh=MXFwOHJ5bTFjeGxsZw=="><i
                                             class="fab fa-instagram"></i>
@@ -148,8 +130,9 @@
             <div class="container">
                 <div class="row justify-content-between align-items-center">
                     <div class="col-md-6">
-                        <p class="copyright-text">Copyright 2014 <a href="index.php">Holiday Guru Travels</a>. All Rights
+                        <p class="copyright-text">Copyright 2014 <a href="/">Holiday Guru Travels</a>. All Rights
                             Reserved.</p>
+                        <p class="copyright-text"><button type="button" class="hg-footer-link" data-hg-consent-open>Cookie settings</button></p>
                     </div>
                     <div class="col-md-6 text-end d-md-block">
                         <div class="footer-card"><span class="title">Designed By: <a href="https://sbbjitsolutions.com/" target="blank">SBBJ IT SOLUTIONS</a></span>
@@ -163,18 +146,8 @@
                 style="transition: stroke-dashoffset 10ms linear 0s; stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 307.919;">
             </path>
         </svg></div>
-    <div class="container d-md-none flot-icon" >
-            <div class="row">
-                <a href="https://wa.me/+919971754265/?text= Hello,i want to know more about your services" class="flot" target="_blank">
-                    <img src="assets/img/messagewhat.png" alt="whatsapp_logo" style="width: 140px; height: auto;margin-left:-25px;">
-                </a>    
-            </div>
-             <div class="row">
-                 <a href="tel:+919971754265" class="callFloat" target="_blank">
-                    <img src="assets/img/callnow1.png" alt="call_logo" style="width: 140px; height: auto;margin-left:-28px;">
-                </a>
-            </div>
- </div>
+    <?php include __DIR__ . "/support-widget.php"; ?>
+    <?php include __DIR__ . "/cookie-consent.php"; ?>
     <script src="assets/js/vendor/jquery-3.6.0.min.js"></script>
     <script src="assets/js/swiper-bundle.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
@@ -189,6 +162,7 @@
     <script src="assets/js/matterjs-custom.js"></script>
     <script src="assets/js/nice-select.min.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/hg-site.js" defer></script>
     <script>
     $(function () {
       var loadedAt = Date.now();

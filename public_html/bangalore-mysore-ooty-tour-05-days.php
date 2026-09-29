@@ -9,7 +9,7 @@
     <meta name="keywords" content="Bangalore Mysore Ooty tour, 5-day South India tour, Bangalore tourism, Mysore palaces, Ooty hill station, South India travel, Bangalore Mysore Ooty itinerary, cultural heritage tour, scenic Ooty tour, Mysore attractions">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="canonical" href="https://holidaygurutravel.in/bangalore-mysore-ooty-tour-05-days.php">
+    <link rel="canonical" href="https://holidaygurutravel.in/bangalore-mysore-ooty-tour-05-days">
     <meta property="og:site_name" content="Holiday Guru Travel" />
     <meta property="og:description" content="Explore the vibrant city of Bangalore, the royal charm of Mysore, and the serene beauty of Ooty on this 5-day tour. Experience South India's culture, heritage, and breathtaking landscapes." />
 </head>
@@ -24,7 +24,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Bangalore Mysore Ooty tour  </h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Bangalore Mysore Ooty tour</li>
                 </ul>
             </div>

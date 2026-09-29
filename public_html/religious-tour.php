@@ -13,25 +13,25 @@
     <meta property="og:image" content="https://holidaygurutravel.in/assets/img/destination/amarnathjiyatra.jpg"/>
     <meta property="og:type" content="website"/>
     <meta property="og:site_name" content="Holiday Guru Travel"/>
-    <meta property="og:url" content="https://holidaygurutravel.in/religious-tour.php"/>
+    <meta property="og:url" content="https://holidaygurutravel.in/religious-tour"/>
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:domain" content="https://holidaygurutravel.in/religious-tour.php">
+    <meta name="twitter:domain" content="https://holidaygurutravel.in/religious-tour">
     <meta name="twitter:image:src" content="https://holidaygurutravel.in/assets/img/destination/amarnathjiyatra.jpg"/>
     <meta name="twitter:description" content="Plan your pilgrimage with Holiday Guru Travel's religious travel packages. Discover the divine and seek blessings at revered spiritual sites across the globe.">
     <meta name="twitter:title" content="Discover the Divine: Religious Travel Packages for Sacred Destinations">
-    <meta name="twitter:url" content="https://holidaygurutravel.in/religious-tour.php">
+    <meta name="twitter:url" content="https://holidaygurutravel.in/religious-tour">
     <meta itemprop="name" content="Spiritual Getaways: Religious Pilgrimage Tours by Holiday Guru Travel">
     <meta itemprop="description" content="Experience a life-changing journey with our religious tour packages. Visit holy sites, participate in rituals, and immerse yourself in spiritual traditions.">
     <meta itemprop="image" content="https://holidaygurutravel.in/assets/img/destination/amarnathjiyatra.jpg">
     <meta property="locale" content="Delhi, Gurgaon, Mumbai, Noida, Goa, Pune, Uttar Pradesh, Uttarakhand, Rajasthan, Madhya Pradesh, Haryana"> 
-<link rel="canonical" href="https://holidaygurutravel.in/religious-tour.php" > 
+<link rel="canonical" href="https://holidaygurutravel.in/religious-tour" > 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Article",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://holidaygurutravel.in/religious-tour.php"
+    "@id": "https://holidaygurutravel.in/religious-tour"
   },
   "headline": "Pilgrimage Tours: Tailored Religious Travel Packages by Holiday Guru Travel",
   "description": "Experience a life-changing journey with our religious tour packages. Visit holy sites, participate in rituals, and immerse yourself in spiritual traditions.",
@@ -39,7 +39,7 @@
   "author": {
     "@type": "Organization",
     "name": "Holiday Guru Travel",
-    "url": "https://holidaygurutravel.in/religious-tour.php"
+    "url": "https://holidaygurutravel.in/religious-tour"
   },  
   "publisher": {
     "@type": "Organization",
@@ -60,9 +60,9 @@
   "@type": "LocalBusiness",
   "name": "Holiday Guru Travel",
   "image": "https://holidaygurutravel.in/assets/img/holidaygurulogo.jpg",
-  "@id": "https://holidaygurutravel.in/religious-tour.php",
-  "url": "https://holidaygurutravel.in/religious-tour.php",
-  "telephone": "+91-9971754265",
+  "@id": "https://holidaygurutravel.in/religious-tour",
+  "url": "https://holidaygurutravel.in/religious-tour",
+  "telephone": "+91 99717 54265",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Holiday Guru Travel 2nd floor",
@@ -82,7 +82,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Religious Tour Packages India</h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Religious Tour</li>
                 </ul>
             </div>
@@ -102,17 +102,17 @@
                                         <div class="tour-box_img global-img"><img src="assets/img/destination/amarnathjiyatra.jpg"
                                                 alt="amarnathjiyatra.jpg"></div>
                                         <div class="tour-content">
-                                            <h3 class="box-title"><a href="amarnath-ji-yatra.php">Amarnath Ji Yatra</a></h3>
+                                            <h3 class="box-title"><a href="/amarnath-ji-yatra">Amarnath Ji Yatra</a></h3>
                                             <div class="tour-rating">
                                                 <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
                                                     <span style="width:100%">Rated <strong class="rating">5.00</strong>
                                                         out of 5 based on <span class="rating">4.8</span>(4.8
-                                                        Rating)</span></div><a href="amarnath-ji-yatra.php"
+                                                        Rating)</span></div><a href="/amarnath-ji-yatra"
                                                     class="woocommerce-review-link">(<span class="count">4.8</span>
                                                     Rating)</a>
                                             </div>
                                             
-                                            <div class="tour-action"><a href="amarnath-ji-yatra.php"
+                                            <div class="tour-action"><a href="/amarnath-ji-yatra"
                                                     class="th-btn style4 th-icon">View More</a></div>
                                         </div>
                                     </div>
@@ -122,17 +122,17 @@
                                         <div class="tour-box_img global-img"><img src="assets/img/destination/Chardhamyatra.jpg"
                                                 alt="Chardham yatra"></div>
                                         <div class="tour-content">
-                                            <h3 class="box-title"><a href="chardham-yatra.php">Chardham Yatra</a></h3>
+                                            <h3 class="box-title"><a href="/chardham-yatra">Chardham Yatra</a></h3>
                                             <div class="tour-rating">
                                                 <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
                                                     <span style="width:100%">Rated <strong class="rating">5.00</strong>
                                                         out of 5 based on <span class="rating">4.8</span>(4.8
-                                                        Rating)</span></div><a href="chardham-yatra.php"
+                                                        Rating)</span></div><a href="/chardham-yatra"
                                                     class="woocommerce-review-link">(<span class="count">4.8</span>
                                                     Rating)</a>
                                             </div>
                                             
-                                            <div class="tour-action"><a href="chardham-yatra.php"
+                                            <div class="tour-action"><a href="/chardham-yatra"
                                                     class="th-btn style4 th-icon">View More</a></div>
                                         </div>
                                     </div>

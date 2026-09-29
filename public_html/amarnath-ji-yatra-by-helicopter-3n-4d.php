@@ -16,7 +16,7 @@
     <meta itemprop="name" content="Amarnath Ji Yatra by Helicopter – 3 Nights 4 Days with Srinagar Tour">
     <meta itemprop="description" content="Plan your spiritual journey with our 3 Nights 4 Days Amarnath Ji Yatra by Helicopter package. Begin in Srinagar, visit Sonamarg, and experience a seamless helicopter ride for the holy Amarnath Yatra Darshan. Explore Srinagar's enchanting local attractions before concluding your trip. A perfect blend of devotion and Kashmir's natural beauty awaits. Book now for a divine and unforgettable experience!">
     <meta itemprop="image" content="https://holidaygurutravel.in/assets/img/destination/amarnath2.jpg">
-    <link rel="canonical" href="https://holidaygurutravel.in/amarnath-ji-yatra-by-helicopter-3n-4d.php">
+    <link rel="canonical" href="https://holidaygurutravel.in/amarnath-ji-yatra-by-helicopter-3n-4d">
 
     <script type="application/ld+json">
 {
@@ -32,7 +32,7 @@
   "author": {
     "@type": "Organization",
     "name": "Holiday Guru Travel",
-    "url": "https://holidaygurutravel.in/amarnath-ji-yatra-by-helicopter-3n-4d.php"
+    "url": "https://holidaygurutravel.in/amarnath-ji-yatra-by-helicopter-3n-4d"
   },  
   "publisher": {
     "@type": "Organization",
@@ -58,7 +58,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Amarnath Ji Yatra by Helicopter – 3 Nights 4 Days with Srinagar Tour</h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Amarnath Ji Yatra</li>
                 </ul>
             </div>

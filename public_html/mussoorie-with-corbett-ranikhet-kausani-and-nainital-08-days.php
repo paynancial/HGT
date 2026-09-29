@@ -9,7 +9,7 @@
     <meta name="keywords" content="  Mussoorie tour, Corbett National Park tour, Ranikhet tour, Kausani tour, Nainital tour, Uttarakhand hill station tour, India hill station tour, North India tour package. ">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="canonical" href="https://holidaygurutravel.in/mussoorie-with-corbett-ranikhet-kausani-and-nainital-08-days.php">
+    <link rel="canonical" href="https://holidaygurutravel.in/mussoorie-with-corbett-ranikhet-kausani-and-nainital-08-days">
     <meta property="og:site_name" content="Holiday Guru Travel" />
     <meta property="og:description" content=" Experience the best of Uttarakhand with our 8-day tour package, covering Mussoorie's scenic beauty, Corbett's wildlife adventure, Ranikhet's tranquility, Kausani's charm, and Nainital's lake city attractions. Book now and create unforgettable memories." />
     <?php
@@ -22,7 +22,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Mussoorie with corbett Ranikhet Kausani and Nainital</h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Mussoorie with corbett Ranikhet Kausani and Nainital</li>
                 </ul>
             </div>

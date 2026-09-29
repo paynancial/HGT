@@ -9,7 +9,7 @@
     <meta name="keywords" content="Ooty Mysore tour, 4-day Ooty Mysore package, South India travel, Ooty hill station, Mysore palace, Ooty tourism, Mysore attractions, Ooty Mysore itinerary, South India tour, Ooty Mysore travel">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="canonical" href="https://holidaygurutravel.in/ooty-mysore-04-days.php">
+    <link rel="canonical" href="https://holidaygurutravel.in/ooty-mysore-04-days">
     <meta property="og:site_name" content="Holiday Guru Travel" />
     <meta property="og:description" content="Experience the charm of Ooty and Mysore with our 4-day tour package. Discover beautiful hill stations, lush gardens, and historical landmarks on this enchanting journey through South India." />
 </head>
@@ -24,7 +24,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Ooty Mysore tour  </h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Ooty Mysore tour</li>
                 </ul>
             </div>

@@ -9,7 +9,7 @@
     <meta name="keywords" content="Srinagar, Gulmarg, Pahalgam, Kashmir, Tour Package, Travel, Holiday, Sightseeing, Houseboat, Snow, Mountains, Lakes, Culture, Adventure, Travel Agency, India.">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="canonical" href="https://holidaygurutravel.in/srinagar-gulmarg-sonmarg-pahalgam-katra-tour-package-8-days.php">
+    <link rel="canonical" href="https://holidaygurutravel.in/srinagar-gulmarg-sonmarg-pahalgam-katra-tour-package-8-days">
     <meta property="og:site_name" content="Holiday Guru Travel" />
     <meta property="og:description" content="Explore the enchanting beauty of Srinagar, Gulmarg, and Pahalgam with our 7-day tour package. Discover serene landscapes, snow-capped mountains, and cultural richness in this unforgettable Kashmir journey." />
 </head>
@@ -24,7 +24,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Srinagar Gulmarg Sonmarg Pahalgam Katra Tour  </h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Srinagar Gulmarg Sonmarg Pahalgam Katra Tour</li>
                 </ul>
             </div>

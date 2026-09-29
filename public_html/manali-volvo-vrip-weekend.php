@@ -9,7 +9,7 @@
     <meta name="keywords" content="Manali Volvo trip, weekend getaway, Manali tour package, Solang Valley, Kullu sightseeing, Himachal Pradesh, 5-day itinerary, adventure activities, Manali vacation.">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="canonical" href="https://holidaygurutravel.in/manali-volvo-vrip-weekend.php">
+    <link rel="canonical" href="https://holidaygurutravel.in/manali-volvo-vrip-weekend">
     <meta property="og:site_name" content="Holiday Guru Travel" />
     <meta property="og:description" content="Plan a memorable weekend with our 4-night, 5-day Manali Volvo trip. Enjoy sightseeing in Manali, Solang Valley adventures, and a visit to Kullu. Perfect for a quick getaway from Delhi." />
 </head>
@@ -24,7 +24,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Manali Volvo Trip weekend </h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Manali Volvo Trip weekend </li>
                 </ul>
             </div>

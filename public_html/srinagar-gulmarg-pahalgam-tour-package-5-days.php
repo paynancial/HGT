@@ -16,7 +16,7 @@
     <meta itemprop="name" content="Srinagar Gulmarg Pahalgam Tour Package for 5 Days">
     <meta itemprop="description" content="Discover the charm of Kashmir with our 5-day Srinagar Gulmarg Pahalgam tour package. Explore the valley's beauty, experience the thrill of adventure, and create unforgettable memories.">
     <meta itemprop="image" content="https://holidaygurutravel.in/assets/img/destination/SrinagarGulmargPahalgamTour2.jpg">
-    <link rel="canonical" href="https://holidaygurutravel.in/srinagar-gulmarg-pahalgam-tour-package-5-days.php">
+    <link rel="canonical" href="https://holidaygurutravel.in/srinagar-gulmarg-pahalgam-tour-package-5-days">
 
     <script type="application/ld+json">
 {
@@ -32,7 +32,7 @@
   "author": {
     "@type": "Organization",
     "name": "Holiday Guru Travel",
-    "url": "https://holidaygurutravel.in/srinagar-gulmarg-pahalgam-tour-package-5-days.php"
+    "url": "https://holidaygurutravel.in/srinagar-gulmarg-pahalgam-tour-package-5-days"
   },  
   "publisher": {
     "@type": "Organization",
@@ -56,7 +56,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Srinagar Gulmarg Pahalgam Tour Package</h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Srinagar Gulmarg Pahalgam Tour</li>
                 </ul>
             </div>

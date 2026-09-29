@@ -9,7 +9,7 @@
     <meta name="keywords" content="Munnar Thekkady Alleppey Kovalam Kanyakumari tour package, 7-day Kerala tour, Kerala holiday package, South India tour package, Munnar hill station tour. ">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="canonical" href="https://holidaygurutravel.in/munnar-thekkady-alleppey--kovalam-kanyakumari-07-days.php">
+    <link rel="canonical" href="https://holidaygurutravel.in/munnar-thekkady-alleppey--kovalam-kanyakumari-07-days">
     <meta property="og:site_name" content="Holiday Guru Travel" />
     <meta property="og:description" content=" Explore the best of Kerala with our 7-day tour package covering Munnar, Thekkady, Alleppey, Kovalam, and Kanyakumari. Book now and enjoy a relaxing and adventurous trip." />
     <?php
@@ -22,7 +22,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Munnar Thekkady Alleppey Kovalam Kanyakumari</h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Munnar Thekkady Alleppey Kovalam Kanyakumari </li>
                 </ul>
             </div>

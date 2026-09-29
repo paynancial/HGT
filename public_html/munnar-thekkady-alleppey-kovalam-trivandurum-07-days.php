@@ -9,7 +9,7 @@
     <meta name="keywords" content=" Kerala tour package, Munnar Thekkady Alleppey Kovalam Trivandrum tour, 7-day Kerala backwaters tour, South India tour package, hill station tour in India. ">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="canonical" href="https://holidaygurutravel.in/munnar-thekkady-alleppey-kovalam-trivandurum-07-days.php">
+    <link rel="canonical" href="https://holidaygurutravel.in/munnar-thekkady-alleppey-kovalam-trivandurum-07-days">
     <meta property="og:site_name" content="Holiday Guru Travel" />
     <meta property="og:description" content="Experience the best of Kerala with our 7-day Munnar Thekkady Alleppey Kovalam Trivandrum tour package. Explore the tea gardens of Munnar, wildlife of Thekkady, backwaters of Alleppey, and beaches of Kovalam and Trivandrum." />
     <?php
@@ -22,7 +22,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Munnar Alleppey Tour Package </h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Munnar Alleppey Tour Package </li>
                 </ul>
             </div>

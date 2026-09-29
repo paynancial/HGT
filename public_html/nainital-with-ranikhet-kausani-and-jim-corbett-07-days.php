@@ -9,7 +9,7 @@
     <meta name="keywords" content=" Nainital tour, Ranikhet tour, Kausani tour, Jim Corbett National Park tour, Uttarakhand hill station tour, India hill station tour, North India tour package. ">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="canonical" href="https://holidaygurutravel.in/nainital-with-ranikhet-kausani-and-jim-corbett-07-days.php">
+    <link rel="canonical" href="https://holidaygurutravel.in/nainital-with-ranikhet-kausani-and-jim-corbett-07-days">
     <meta property="og:site_name" content="Holiday Guru Travel" />
     <meta property="og:description" content=" Discover the beauty of Nainital, the tranquility of Ranikhet, the charm of Kausani, and the thrill of Jim Corbett National Park with our 7-day tour package. " />
     <?php
@@ -22,7 +22,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Nainital with Ranikhet kausani and Jim corbett</h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Nainital with Ranikhet kausani and Jim corbett</li>
                 </ul>
             </div>

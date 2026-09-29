@@ -9,7 +9,7 @@
     <meta name="keywords" content="Singapore tour package, Thailand tour package, 8 nights 9 days tour, Universal Studio, Sunway Lagoon Park, Phi Phi Island Tour, Safari World Marine Park, Singapore and Thailand travel, Southeast Asia tour, holiday package, travel package, vacation package">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="canonical" href="https://holidaygurutravel.in/serene-tour-to-singapore-with-thailand--8n-9d.php">
+    <link rel="canonical" href="https://holidaygurutravel.in/serene-tour-to-singapore-with-thailand--8n-9d">
     <meta property="og:site_name" content="Holiday Guru Travel" />
     <meta property="og:description" content="Experience a serene tour to Singapore and Thailand with our 8 nights 9 days package. Explore the beauty of Singapore and Thailand with our expertly curated itinerary, including Universal Studio, Sunway Lagoon Park, Phi Phi Island Tour, and Safari World Marine Park." />
     <?php
@@ -22,7 +22,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Serene Tour to Singapore with Thailand </h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Serene Tour to Singapore with Thailand  </li>
                 </ul>
             </div>

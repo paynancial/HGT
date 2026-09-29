@@ -9,7 +9,7 @@
     <meta name="keywords" content="Bangalore Mysore Coorg tour, 5-day South India tour, Bangalore travel, Mysore palaces, Coorg coffee plantations, Bangalore Mysore itinerary, South India heritage tour, Coorg nature escape, Mysore attractions, Bangalore Mysore Coorg package">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="canonical" href="https://holidaygurutravel.in/banglore-mysore-coorg--tour-05-days.php">
+    <link rel="canonical" href="https://holidaygurutravel.in/banglore-mysore-coorg--tour-05-days">
     <meta property="og:site_name" content="Holiday Guru Travel" />
     <meta property="og:description" content="Discover the perfect blend of urban life, royal history, and natural beauty with our 5-day Bangalore, Mysore, and Coorg tour. Experience the vibrant city of Bangalore, explore Mysore's majestic palaces, and unwind in Coorg's lush coffee plantations." />
     <?php
@@ -22,7 +22,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Banglore Mysore Coorg Tour  </h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Banglore Mysore Coorg Tour</li>
                 </ul>
             </div>

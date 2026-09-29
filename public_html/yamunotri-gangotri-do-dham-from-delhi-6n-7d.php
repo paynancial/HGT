@@ -16,7 +16,7 @@
     <meta itemprop="name" content="Yamunotri Gangotri Do Dham Yatra from Delhi | Sacred Pilgrimage Tour">
     <meta itemprop="description" content="Embark on a spiritual journey with the Yamunotri Gangotri Do Dham Yatra from Delhi. Explore the holy shrines of Yamunotri and Gangotri, surrounded by the serene beauty of the Himalayas. Book your Do Dham pilgrimage package today!">
     <meta itemprop="image" content="https://holidaygurutravel.in/assets/img/destination/chardham1.jpg">
-    <link rel="canonical" href="https://holidaygurutravel.in/yamunotri-gangotri-do-dham-from-delhi-6n-7d.php">
+    <link rel="canonical" href="https://holidaygurutravel.in/yamunotri-gangotri-do-dham-from-delhi-6n-7d">
 
     <script type="application/ld+json">
 {
@@ -32,7 +32,7 @@
   "author": {
     "@type": "Organization",
     "name": "Holiday Guru Travel",
-    "url": "https://holidaygurutravel.in/yamunotri-gangotri-do-dham-from-delhi-6n-7d.php"
+    "url": "https://holidaygurutravel.in/yamunotri-gangotri-do-dham-from-delhi-6n-7d"
   },  
   "publisher": {
     "@type": "Organization",
@@ -56,7 +56,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Yamunotri Gangotri Do Dham Yatra from Delhi</h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Yamunotri Gangotri Do Dham Yatra Tour Package</li>
                 </ul>
             </div>

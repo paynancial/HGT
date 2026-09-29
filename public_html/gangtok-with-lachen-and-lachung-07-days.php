@@ -9,7 +9,7 @@
     <meta name="keywords" content="Gangtok tour, Lachen tour, Lachung tour, 7 days tour package, Sikkim travel, Himalayan adventure, Gangtok Lachen Lachung itinerary, Northeast India travel, mountain landscapes, cultural journey">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="canonical" href="https://holidaygurutravel.in/gangtok-with-lachen-and-lachung-07-days.php">
+    <link rel="canonical" href="https://holidaygurutravel.in/gangtok-with-lachen-and-lachung-07-days">
     <meta property="og:site_name" content="Holiday Guru Travel" />
     <meta property="og:description" content="Explore the beauty of Sikkim with our 7-day tour package covering Gangtok, Lachen, and Lachung. Discover serene landscapes, majestic mountains, and rich cultural experiences on this unforgettable journey." />
     <?php
@@ -22,7 +22,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Gangtok with lachen and Lachung Tour</h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Gangtok with lachen and Lachung Tour </li>
                 </ul>
             </div>

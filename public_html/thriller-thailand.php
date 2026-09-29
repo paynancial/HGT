@@ -9,7 +9,7 @@
     <meta name="keywords" content="Thailand Tour Package, Adventure Travel, Bangkok Tour, Phuket Beaches, Water Sports, Island Hopping, Snorkeling, Scuba Diving, Thai Cuisine, Nightlife. ">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="canonical" href="https://holidaygurutravel.in/thriller-thailand.php">
+    <link rel="canonical" href="https://holidaygurutravel.in/thriller-thailand">
     <meta property="og:site_name" content="Holiday Guru Travel" />
     <meta property="og:description" content="Experience the thrill of Thailand with our adventure tour package. Explore the bustling streets of Bangkok, relax on Phuket's beaches, and indulge in water sports and activities." />
     <?php
@@ -20,7 +20,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Thriller Thailand</h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Thriller Thailand</li>
                 </ul>
             </div>

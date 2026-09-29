@@ -9,7 +9,7 @@
     <meta name="keywords" content=" Goa Tour, Amazing Goa, Goa Holidays, Goa Vacation, Goa Beaches, Goa Tourism, Goa Attractions, Palolem Beach, Baga Beach, Calangute Beach, Fort Aguada. ">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="canonical" href="https://holidaygurutravel.in/amazing-goa.php">
+    <link rel="canonical" href="https://holidaygurutravel.in/amazing-goa">
     <meta property="og:site_name" content="Holiday Guru Travel" />
     <meta property="og:description" content="Relax on the sun-kissed beaches of Goa with our 3-night, 4-day tour package. Explore the historic forts, churches, and vibrant nightlife of this tropical paradise." />
 </head>
@@ -22,7 +22,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Amazing Goa</h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Amazing Goa</li>
                 </ul>
             </div>
@@ -42,17 +42,17 @@
                                         <div class="tour-box_img global-img"><img src="assets/img/destination/DelightfulGoaTour.jpg"
                                                 alt="DelightfulGoaTour.jpg"></div>
                                         <div class="tour-content">
-                                            <h3 class="box-title"><a href="delightful-goa-tour-3n-4d.php">Delightful Goa Tour</a></h3>
+                                            <h3 class="box-title"><a href="/delightful-goa-tour-3n-4d">Delightful Goa Tour</a></h3>
                                             <div class="tour-rating">
                                                 <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
                                                     <span style="width:100%">Rated <strong class="rating">5.00</strong>
                                                         out of 5 based on <span class="rating">4.8</span>(4.8
-                                                        Rating)</span></div><a href="delightful-goa-tour-3n-4d.php"
+                                                        Rating)</span></div><a href="/delightful-goa-tour-3n-4d"
                                                     class="woocommerce-review-link">(<span class="count">4.8</span>
                                                     Rating)</a>
                                             </div>
                                             <h4 class="tour-box_price"><span class="currency"><i class="fa-light fa-clock"></i>3 Nights / 4 Days</span></h4>
-                                            <div class="tour-action"><a href="delightful-goa-tour-3n-4d.php"
+                                            <div class="tour-action"><a href="/delightful-goa-tour-3n-4d"
                                                     class="th-btn style4 th-icon">View More</a></div>
                                         </div>
                                     </div>
@@ -62,17 +62,17 @@
                                         <div class="tour-box_img global-img"><img src="assets/img/destination/EnticingTourtoGoa.jpg"
                                                 alt="EnticingTourtoGoa.jpg"></div>
                                         <div class="tour-content">
-                                            <h3 class="box-title"><a href="enticing-tour-to-goa-3n-4d.php">Enticing Tour to Goa</a></h3>
+                                            <h3 class="box-title"><a href="/enticing-tour-to-goa-3n-4d">Enticing Tour to Goa</a></h3>
                                             <div class="tour-rating">
                                                 <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
                                                     <span style="width:100%">Rated <strong class="rating">5.00</strong>
                                                         out of 5 based on <span class="rating">4.8</span>(4.8
-                                                        Rating)</span></div><a href="enticing-tour-to-goa-3n-4d.php"
+                                                        Rating)</span></div><a href="/enticing-tour-to-goa-3n-4d"
                                                     class="woocommerce-review-link">(<span class="count">4.8</span>
                                                     Rating)</a>
                                             </div>
                                             <h4 class="tour-box_price"><span class="currency"><i class="fa-light fa-clock"></i>3 Nights / 4 Days</span></h4>
-                                            <div class="tour-action"><a href="enticing-tour-to-goa-3n-4d.php"
+                                            <div class="tour-action"><a href="/enticing-tour-to-goa-3n-4d"
                                                     class="th-btn style4 th-icon">View More</a></div>
                                         </div>
                                     </div>
@@ -82,17 +82,17 @@
                                         <div class="tour-box_img global-img"><img src="assets/img/destination/ExclusiveGoaTour.jpg"
                                                 alt="ExclusiveGoaTour.jpg"></div>
                                         <div class="tour-content">
-                                            <h3 class="box-title"><a href="exclusive-goa-tour-3n-4d.php">Exclusive Goa Tour</a></h3>
+                                            <h3 class="box-title"><a href="/exclusive-goa-tour-3n-4d">Exclusive Goa Tour</a></h3>
                                             <div class="tour-rating">
                                                 <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
                                                     <span style="width:100%">Rated <strong class="rating">5.00</strong>
                                                         out of 5 based on <span class="rating">4.8</span>(4.8
-                                                        Rating)</span></div><a href="exclusive-goa-tour-3n-4d.php"
+                                                        Rating)</span></div><a href="/exclusive-goa-tour-3n-4d"
                                                     class="woocommerce-review-link">(<span class="count">4.8</span>
                                                     Rating)</a>
                                             </div>
                                             <h4 class="tour-box_price"><span class="currency"><i class="fa-light fa-clock"></i>3 Nights / 4 Days</span></h4>
-                                            <div class="tour-action"> <a href="exclusive-goa-tour-3n-4d.php"
+                                            <div class="tour-action"> <a href="/exclusive-goa-tour-3n-4d"
                                                     class="th-btn style4 th-icon">View More</a></div>
                                         </div>
                                     </div>
@@ -103,17 +103,17 @@
                                         <div class="tour-box_img global-img"><img src="assets/img/destination/FascinatingTourtoGoa.jpg"
                                                 alt="FascinatingTourtoGoa.jpg"></div>
                                         <div class="tour-content">
-                                            <h3 class="box-title"><a href="fascinating-tour-to-goa-3n-4d.php">Fascinating Tour to Goa</a></h3>
+                                            <h3 class="box-title"><a href="/fascinating-tour-to-goa-3n-4d">Fascinating Tour to Goa</a></h3>
                                             <div class="tour-rating">
                                                 <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
                                                     <span style="width:100%">Rated <strong class="rating">5.00</strong>
                                                         out of 5 based on <span class="rating">4.8</span>(4.8
-                                                        Rating)</span></div><a href="fascinating-tour-to-goa-3n-4d.php"
+                                                        Rating)</span></div><a href="/fascinating-tour-to-goa-3n-4d"
                                                     class="woocommerce-review-link">(<span class="count">4.8</span>
                                                     Rating)</a>
                                             </div>
                                             <h4 class="tour-box_price"><span class="currency"><i class="fa-light fa-clock"></i>3 Nights / 4 Days</span></h4>
-                                            <div class="tour-action"> <a href="fascinating-tour-to-goa-3n-4d.php"
+                                            <div class="tour-action"> <a href="/fascinating-tour-to-goa-3n-4d"
                                                     class="th-btn style4 th-icon">View More</a></div>
                                         </div>
                                     </div>

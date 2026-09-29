@@ -24,7 +24,7 @@
     <meta itemprop="description" content="Explore Holiday Guru Travel, top-rated tour operators in Delhi, specializing in unforgettable journeys across India. Discover our diverse tour packages!">
     <meta itemprop="image" content="https://holidaygurutravel.in/assets/img/crousel6.jpg">
     <meta property="locale" content="Delhi, Gurgaon, Mumbai, Noida, Goa, Pune, Uttar Pradesh, Uttarakhand, Rajasthan, Madhya Pradesh, Haryana"> 
-<link rel="canonical" href="https://holidaygurutravel.in/index.php" > 
+<link rel="canonical" href="https://holidaygurutravel.in/" > 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -61,8 +61,8 @@
   "name": "Holiday Guru Travel",
   "image": "https://holidaygurutravel.in/assets/img/holidaygurulogo.jpg",
   "@id": "https://holidaygurutravel.in",
-  "url": "https://holidaygurutravel.in/index.php",
-  "telephone": "+91-9971754265",
+  "url": "https://holidaygurutravel.in/",
+  "telephone": "+91 99717 54265",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Holiday Guru Travel 2nd floor",
@@ -121,16 +121,16 @@
                         <div class="category-card single">
                             <div class="box-img global-img"><img src="assets/img/FamilyHoliday.jpg" alt="Best Family Holiday Tour Package">
                             </div>
-                            <h3 class="box-title"><a href="family-holiday.php">Family Holiday Tour Package</a></h3><a class="line-btn"
-                                href="family-holiday.php">See more</a>
+                            <h3 class="box-title"><a href="/family-holiday">Family Holiday Tour Package</a></h3><a class="line-btn"
+                                href="/family-holiday">See more</a>
                         </div>
                     </div>
                     <div class="swiper-slide">
                         <div class="category-card single">
                             <div class="box-img global-img"><img src="assets/img/BeachHoliday.jpg" alt="Best Beach Holiday Tour Packages">
                             </div>
-                            <h3 class="box-title"><a href="beach-holiday.php">Beach Holiday Tour Packages</a></h3><a class="line-btn"
-                                href="beach-holiday.php">See more</a>
+                            <h3 class="box-title"><a href="/beach-holiday">Beach Holiday Tour Packages</a></h3><a class="line-btn"
+                                href="/beach-holiday">See more</a>
                         </div>
                     </div>
                     
@@ -138,32 +138,32 @@
                         <div class="category-card single">
                             <div class="box-img global-img"><img src="assets/img/HillStationHolidays.jpg" alt="Best Hill Station Holiday Packages">
                             </div>
-                            <h3 class="box-title"><a href="hill-station-holidays.php">Hill Station Holiday Packages</a></h3><a class="line-btn"
-                                href="hill-station-holidays.php">See more</a>
+                            <h3 class="box-title"><a href="/hill-station-holidays">Hill Station Holiday Packages</a></h3><a class="line-btn"
+                                href="/hill-station-holidays">See more</a>
                         </div>
                     </div>
                     <div class="swiper-slide">
                         <div class="category-card single">
                             <div class="box-img global-img"><img src="assets/img/HoneymoonHoliday.jpg" alt="Honeymoon Packages">
                             </div>
-                            <h3 class="box-title"><a href="honeymoon-holiday.php">Honeymoon Holiday</a></h3><a class="line-btn"
-                                href="honeymoon-holiday.php">See more</a>
+                            <h3 class="box-title"><a href="/honeymoon-holiday">Honeymoon Holiday</a></h3><a class="line-btn"
+                                href="/honeymoon-holiday">See more</a>
                         </div>
                     </div>
                     <div class="swiper-slide">
                         <div class="category-card single">
                             <div class="box-img global-img"><img src="assets/img/PilgrimHolidays.jpg" alt="Pilgrim Holiday Packages">
                             </div>
-                            <h3 class="box-title"><a href="pilgrim-holidays.php">Pilgrim Holidays</a></h3><a class="line-btn"
-                                href="pilgrim-holidays.php">See more</a>
+                            <h3 class="box-title"><a href="/pilgrim-holidays">Pilgrim Holidays</a></h3><a class="line-btn"
+                                href="/pilgrim-holidays">See more</a>
                         </div>
                     </div>
                     <div class="swiper-slide">
                         <div class="category-card single">
                             <div class="box-img global-img"><img src="assets/img/AdventureHoliday.jpg" alt="Adventure Holiday Tour Packages">
                             </div>
-                            <h3 class="box-title"><a href="adventure-holiday.php">Adventure Holiday</a></h3><a class="line-btn"
-                                href="adventure-holiday.php">See more</a>
+                            <h3 class="box-title"><a href="/adventure-holiday">Adventure Holiday</a></h3><a class="line-btn"
+                                href="/adventure-holiday">See more</a>
                         </div>
                     </div>
                    
@@ -186,10 +186,10 @@
                                     alt="exotickerala.jpg">
                                 <div class="destination-content">
                                     <div class="media-left">
-                                        <h4 class="box-title"><a href="exotic-kerala.php">Exotic Kerala</a></h4><span
+                                        <h4 class="box-title"><a href="/exotic-kerala">Exotic Kerala</a></h4><span
                                             class="destination-subtitle">9 Packages</span>
                                     </div>
-                                    <div class=""><a href="exotic-kerala.php" class="th-btn style2 th-icon">View
+                                    <div class=""><a href="/exotic-kerala" class="th-btn style2 th-icon">View
                                             All</a></div>
                                 </div>
                             </div>
@@ -201,10 +201,10 @@
                                     alt="Best Dubai Tour Packages">
                                 <div class="destination-content">
                                     <div class="media-left">
-                                        <h4 class="box-title"><a href="dream-dubai.php">Dream Dubai</a></h4><span
+                                        <h4 class="box-title"><a href="/dream-dubai">Dream Dubai</a></h4><span
                                             class="destination-subtitle">3 Packages</span>
                                     </div>
-                                    <div class=""><a href="dream-dubai.php" class="th-btn style2 th-icon">View
+                                    <div class=""><a href="/dream-dubai" class="th-btn style2 th-icon">View
                                             All</a></div>
                                 </div>
                             </div>
@@ -216,10 +216,10 @@
                                     alt="Sizzling Singapore Tour Packages">
                                 <div class="destination-content">
                                     <div class="media-left">
-                                        <h4 class="box-title"><a href="sizzling-singapore.php">Sizzling Singapore</a></h4><span
+                                        <h4 class="box-title"><a href="/sizzling-singapore">Sizzling Singapore</a></h4><span
                                             class="destination-subtitle">4 Packages</span>
                                     </div>
-                                    <div class=""><a href="sizzling-singapore.php" class="th-btn style2 th-icon">View
+                                    <div class=""><a href="/sizzling-singapore" class="th-btn style2 th-icon">View
                                             All</a></div>
                                 </div>
                             </div>
@@ -231,10 +231,10 @@
                                     alt="Amazing Goa Tour Package">
                                 <div class="destination-content">
                                     <div class="media-left">
-                                        <h4 class="box-title"><a href="amazing-goa.php">Amazing Goa</a></h4><span
+                                        <h4 class="box-title"><a href="/amazing-goa">Amazing Goa</a></h4><span
                                             class="destination-subtitle">4 Packages</span>
                                     </div>
-                                    <div class=""><a href="amazing-goa.php" class="th-btn style2 th-icon">View
+                                    <div class=""><a href="/amazing-goa" class="th-btn style2 th-icon">View
                                             All</a></div>
                                 </div>
                             </div>
@@ -246,10 +246,10 @@
                                     alt="Uttarakhand Tour Packages">
                                 <div class="destination-content">
                                     <div class="media-left">
-                                        <h4 class="box-title"><a href="uttarakhand-tour.php">Mesmerizing <br>Uttarakhand</a></h4><span
+                                        <h4 class="box-title"><a href="/uttarakhand-tour">Mesmerizing <br>Uttarakhand</a></h4><span
                                             class="destination-subtitle">24 Packages</span>
                                     </div>
-                                    <div class=""><a href="uttarakhand-tour.php" class="th-btn style2 th-icon">View
+                                    <div class=""><a href="/uttarakhand-tour" class="th-btn style2 th-icon">View
                                             All</a></div>
                                 </div>
                             </div>
@@ -261,10 +261,10 @@
                                     alt="Himachal Tour Packages">
                                 <div class="destination-content">
                                     <div class="media-left">
-                                        <h4 class="box-title"><a href="delight-full-himachal.php">Delight Full Himachal</a></h4><span
+                                        <h4 class="box-title"><a href="/delight-full-himachal">Delight Full Himachal</a></h4><span
                                             class="destination-subtitle">16 Packages</span>
                                     </div>
-                                    <div class=""><a href="delight-full-himachal.php" class="th-btn style2 th-icon">View
+                                    <div class=""><a href="/delight-full-himachal" class="th-btn style2 th-icon">View
                                             All</a></div>
                                 </div>
                             </div>
@@ -276,10 +276,10 @@
                                     alt="Leh Ladakh Tour Packages">
                                 <div class="destination-content">
                                     <div class="media-left">
-                                        <h4 class="box-title"><a href="leh-ladakh.php">Divine Tour <br>to Leh Ladakh</a></h4><span
+                                        <h4 class="box-title"><a href="/leh-ladakh">Divine Tour <br>to Leh Ladakh</a></h4><span
                                             class="destination-subtitle">6 Packages</span>
                                     </div>
-                                    <div class=""><a href="leh-ladakh.php" class="th-btn style2 th-icon">View
+                                    <div class=""><a href="/leh-ladakh" class="th-btn style2 th-icon">View
                                             All</a></div>
                                 </div>
                             </div>
@@ -291,10 +291,10 @@
                                     alt="Kashmir Tour Packages">
                                 <div class="destination-content">
                                     <div class="media-left">
-                                        <h4 class="box-title"><a href="kashmir-tour.php">Jannat E Kashmir</a></h4><span
+                                        <h4 class="box-title"><a href="/kashmir-tour">Jannat E Kashmir</a></h4><span
                                             class="destination-subtitle">6 Packages</span>
                                     </div>
-                                    <div class=""><a href="kashmir-tour.php" class="th-btn style2 th-icon">View
+                                    <div class=""><a href="/kashmir-tour" class="th-btn style2 th-icon">View
                                             All</a></div>
                                 </div>
                             </div>
@@ -306,10 +306,10 @@
                                     alt="Ooty Mysore coorg Tour Package">
                                 <div class="destination-content">
                                     <div class="media-left">
-                                        <h4 class="box-title"><a href="ooty-mysore-coorg.php">Ooty Mysore coorg</a></h4><span
+                                        <h4 class="box-title"><a href="/ooty-mysore-coorg">Ooty Mysore coorg</a></h4><span
                                             class="destination-subtitle">6 Packages</span>
                                     </div>
-                                    <div class=""><a href="ooty-mysore-coorg.php" class="th-btn style2 th-icon">View
+                                    <div class=""><a href="/ooty-mysore-coorg" class="th-btn style2 th-icon">View
                                             All</a></div>
                                 </div>
                             </div>
@@ -321,10 +321,10 @@
                                     alt="Darjeeling Sikkim Tour Packages">
                                 <div class="destination-content">
                                     <div class="media-left">
-                                        <h4 class="box-title"><a href="darjeeling-sikkim.php">Darjeeling Sikkim</a></h4><span
+                                        <h4 class="box-title"><a href="/darjeeling-sikkim">Darjeeling Sikkim</a></h4><span
                                             class="destination-subtitle">13 Packages</span>
                                     </div>
-                                    <div class=""><a href="darjeeling-sikkim.php" class="th-btn style2 th-icon">View
+                                    <div class=""><a href="/darjeeling-sikkim" class="th-btn style2 th-icon">View
                                             All</a></div>
                                 </div>
                             </div>
@@ -336,10 +336,10 @@
                                     alt="Devotional Tours Packages">
                                 <div class="destination-content">
                                     <div class="media-left">
-                                        <h4 class="box-title"><a href="devotional-tours-domestic.php">Devotional <br>Tours Domestic</a></h4><span
+                                        <h4 class="box-title"><a href="/devotional-tours-domestic">Devotional <br>Tours Domestic</a></h4><span
                                             class="destination-subtitle">3 Packages</span>
                                     </div>
-                                    <div class=""><a href="devotional-tours-domestic.php" class="th-btn style2 th-icon">View
+                                    <div class=""><a href="/devotional-tours-domestic" class="th-btn style2 th-icon">View
                                             All</a></div>
                                 </div>
                             </div>
@@ -382,7 +382,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="mt-35"><a href="about.php" class="th-btn style3 th-icon">Learn More</a></div>
+                        <div class="mt-35"><a href="/about" class="th-btn style3 th-icon">Learn More</a></div>
                     </div>
                 </div>
             </div>
@@ -420,17 +420,17 @@
                                 <div class="tour-box_img global-img"><img src="assets/img/DubaiTravelPackages.jpg"
                                         alt="Dubai Travel Packages"></div>
                                 <div class="tour-content">
-                                    <h3 class="box-title"><a href="dubai-travel-packages.php">Dubai Travel Packages</a></h3>
+                                    <h3 class="box-title"><a href="/dubai-travel-packages">Dubai Travel Packages</a></h3>
                                     <div class="tour-rating">
                                         <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5"><span
                                                 style="width:100%">Rated <strong class="rating">5.00</strong> out of 5
                                                 based on <span class="rating">4.8</span>(4.8 Rating)</span></div><a
-                                            href="dubai-travel-packages.php" class="woocommerce-review-link">(<span
+                                            href="/dubai-travel-packages" class="woocommerce-review-link">(<span
                                                 class="count">4.8</span> Rating)</a>
                                     </div>
                                     
                                     <div class="tour-action"><span><i class="fa-light fa-clock"></i>3 Nights / 4 Days</span> <a
-                                            href="dubai-travel-packages.php" class="th-btn style4 th-icon">Book Now</a></div>
+                                            href="/dubai-travel-packages" class="th-btn style4 th-icon">Book Now</a></div>
                                 </div>
                             </div>
                         </div>
@@ -439,17 +439,17 @@
                                 <div class="tour-box_img global-img"><img src="assets/img/SunKissedGoaEscape.jpg"
                                         alt="Goa Tour Package"></div>
                                 <div class="tour-content">
-                                    <h3 class="box-title"><a href="sun-kissed-goa-escape.php">Sun Kissed Goa Escape</a></h3>
+                                    <h3 class="box-title"><a href="/sun-kissed-goa-escape">Sun Kissed Goa Escape</a></h3>
                                     <div class="tour-rating">
                                         <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5"><span
                                                 style="width:100%">Rated <strong class="rating">5.00</strong> out of 5
                                                 based on <span class="rating">4.8</span>(4.8 Rating)</span></div><a
-                                            href="sun-kissed-goa-escape.php" class="woocommerce-review-link">(<span
+                                            href="/sun-kissed-goa-escape" class="woocommerce-review-link">(<span
                                                 class="count">4.8</span> Rating)</a>
                                     </div>
                                     
                                     <div class="tour-action"><span><i class="fa-light fa-clock"></i>3 Nights / 4 Days</span> <a
-                                            href="sun-kissed-goa-escape.php" class="th-btn style4 th-icon">Book Now</a></div>
+                                            href="/sun-kissed-goa-escape" class="th-btn style4 th-icon">Book Now</a></div>
                                 </div>
                             </div>
                         </div>
@@ -458,17 +458,17 @@
                                 <div class="tour-box_img global-img"><img src="assets/img/UttarakhandMussoorie.jpg"
                                         alt="Uttarakhand Mussoorie With Rishikesh Tour Package"></div>
                                 <div class="tour-content">
-                                    <h3 class="box-title"><a href="uttarakhand-mussoorie-with-rishikesh-flight-inclusive.php">Uttarakhand Mussoorie With Rishikesh Flight Inclusive</a></h3>
+                                    <h3 class="box-title"><a href="/uttarakhand-mussoorie-with-rishikesh-flight-inclusive">Uttarakhand Mussoorie With Rishikesh Flight Inclusive</a></h3>
                                     <div class="tour-rating">
                                         <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5"><span
                                                 style="width:100%">Rated <strong class="rating">5.00</strong> out of 5
                                                 based on <span class="rating">4.8</span>(4.8 Rating)</span></div><a
-                                            href="uttarakhand-mussoorie-with-rishikesh-flight-inclusive.php" class="woocommerce-review-link">(<span
+                                            href="/uttarakhand-mussoorie-with-rishikesh-flight-inclusive" class="woocommerce-review-link">(<span
                                                 class="count">4.8</span> Rating)</a>
                                     </div>
                                     
                                     <div class="tour-action"><span><i class="fa-light fa-clock"></i>2 Nights / 3 Days</span> <a
-                                            href="uttarakhand-mussoorie-with-rishikesh-flight-inclusive.php" class="th-btn style4 th-icon">Book Now</a></div>
+                                            href="/uttarakhand-mussoorie-with-rishikesh-flight-inclusive" class="th-btn style4 th-icon">Book Now</a></div>
                                 </div>
                             </div>
                         </div>
@@ -477,17 +477,17 @@
                                 <div class="tour-box_img global-img"><img src="assets/img/DubaiFamilyTrip.jpg"
                                         alt="Dubai Family Trip with FREE Burj Khalifa Tickets"></div>
                                 <div class="tour-content">
-                                    <h3 class="box-title"><a href="dubai-family-trip-with-free-burj-khalifa-tickets.php">Dubai Family Trip with FREE Burj Khalifa Tickets</a></h3>
+                                    <h3 class="box-title"><a href="/dubai-family-trip-with-free-burj-khalifa-tickets">Dubai Family Trip with FREE Burj Khalifa Tickets</a></h3>
                                     <div class="tour-rating">
                                         <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5"><span
                                                 style="width:100%">Rated <strong class="rating">5.00</strong> out of 5
                                                 based on <span class="rating">4.8</span>(4.8 Rating)</span></div><a
-                                            href="dubai-family-trip-with-free-burj-khalifa-tickets.php" class="woocommerce-review-link">(<span
+                                            href="/dubai-family-trip-with-free-burj-khalifa-tickets" class="woocommerce-review-link">(<span
                                                 class="count">4.8</span> Rating)</a>
                                     </div>
                                     
                                     <div class="tour-action"><span><i class="fa-light fa-clock"></i>2 Nights / 3 Days</span> <a
-                                            href="dubai-family-trip-with-free-burj-khalifa-tickets.php" class="th-btn style4 th-icon">Book Now</a></div>
+                                            href="/dubai-family-trip-with-free-burj-khalifa-tickets" class="th-btn style4 th-icon">Book Now</a></div>
                                 </div>
                             </div>
                         </div>

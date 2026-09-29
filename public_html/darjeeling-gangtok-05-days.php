@@ -9,7 +9,7 @@
     <meta name="keywords" content="Darjeeling Gangtok 4-day tour, Darjeeling travel package, Gangtok sightseeing, Himalayan tour, West Bengal tourism, Sikkim travel, Darjeeling tea gardens, Gangtok monasteries, Northeast India tourism">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="canonical" href="https://holidaygurutravel.in/darjeeling-gangtok-05-days.php">
+    <link rel="canonical" href="https://holidaygurutravel.in/darjeeling-gangtok-05-days">
     <meta property="og:site_name" content="Holiday Guru Travel" />
     <meta property="og:description" content="Experience the charm of Darjeeling and Gangtok on this 4-day tour. Enjoy the scenic beauty, explore tea estates, and visit monasteries in these iconic Himalayan destinations." />
     <?php
@@ -22,7 +22,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Darjeeling Gangtok Tour</h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Darjeeling Gangtok Tour </li>
                 </ul>
             </div>

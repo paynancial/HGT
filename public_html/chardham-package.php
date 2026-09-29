@@ -9,7 +9,7 @@
     <meta name="keywords" content="Char Dham 11-night 12-day package, Char Dham Yatra, Yamunotri Gangotri Kedarnath Badrinath tour, Char Dham pilgrimage, Uttarakhand temple tour, spiritual journey, Char Dham itinerary, religious travel package">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="canonical" href="https://holidaygurutravel.in/chardham-package.php">
+    <link rel="canonical" href="https://holidaygurutravel.in/chardham-package">
     <meta property="og:site_name" content="Holiday Guru Travel" />
     <meta property="og:description" content="Experience the ultimate spiritual journey with our 11-night, 12-day Char Dham package. Visit Yamunotri, Gangotri, Kedarnath, and Badrinath with expert guides, comfortable stays, and seamless travel arrangements." />
     <?php
@@ -22,7 +22,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Chardham Package 12 Days Ex Delhi Tour  </h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Chardham Package 12 Days Ex Delhi Tour</li>
                 </ul>
             </div>

@@ -9,7 +9,7 @@
     <meta name="keywords" content="Haridwar Mussoorie Corbett tour, 6-day Uttarakhand tour package, Haridwar pilgrimage tour, Mussoorie hill station tour, Jim Corbett National Park safari, Uttarakhand wildlife tour. ">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="canonical" href="https://holidaygurutravel.in/haridwar--with-mussoorie-and-corbett-06-days.php">
+    <link rel="canonical" href="https://holidaygurutravel.in/haridwar--with-mussoorie-and-corbett-06-days">
     <meta property="og:site_name" content="Holiday Guru Travel" />
     <meta property="og:description" content="Explore the spiritual city of Haridwar, scenic beauty of Mussoorie, and wildlife of Corbett with our 6-day tour package. Visit famous temples, enjoy trekking, and spot exotic wildlife in Uttarakhand's most popular destinations." />
     <?php
@@ -22,7 +22,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Haridwar with Mussoorie and Corbett </h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Haridwar with Mussoorie and Corbett </li>
                 </ul>
             </div>

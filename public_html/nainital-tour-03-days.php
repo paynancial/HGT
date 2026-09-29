@@ -9,7 +9,7 @@
     <meta name="keywords" content="Nainital tour package, Uttarakhand tour package, 3-day Nainital tour, hill station tour in India, Lake City tour, Himalayas tour, North India tour package. ">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="canonical" href="https://holidaygurutravel.in/nainital-tour-03-days.php">
+    <link rel="canonical" href="https://holidaygurutravel.in/nainital-tour-03-days">
     <meta property="og:site_name" content="Holiday Guru Travel" />
     <meta property="og:description" content="Escape to the scenic beauty of Nainital with our 3-day Uttarakhand hill station tour package. Book now and experience the charm of the Lake City, surrounded by the Himalayas." />
     <?php
@@ -22,7 +22,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Nainital Tour</h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Nainital Tour</li>
                 </ul>
             </div>

@@ -16,7 +16,7 @@
     <meta itemprop="name" content="Do Dham Yatra (Kedarnath - Badrinath) Tour from Haridwar | Divine Pilgrimage">
     <meta itemprop="description" content="Embark on a 9 Nights/10 Days Char Dham Yatra from Haridwar and explore the sacred sites of Yamunotri, Gangotri, Kedarnath, and Badrinath. Experience a spiritual journey with comfortable accommodations, expert guides, and scenic views. Book your yatra now!">
     <meta itemprop="image" content="https://holidaygurutravel.in/assets/img/destination/Badrinath4.jpg.jpg">
-    <link rel="canonical" href="https://holidaygurutravel.in/do-dham-kedar–badri-from-haridwar-4n-5d.php">
+    <link rel="canonical" href="https://holidaygurutravel.in/do-dham-kedar–badri-from-haridwar-4n-5d">
 
     <script type="application/ld+json">
 {
@@ -32,7 +32,7 @@
   "author": {
     "@type": "Organization",
     "name": "Holiday Guru Travel",
-    "url": "https://holidaygurutravel.in/do-dham-kedar–badri-from-haridwar-4n-5d.php"
+    "url": "https://holidaygurutravel.in/do-dham-kedar–badri-from-haridwar-4n-5d"
   },  
   "publisher": {
     "@type": "Organization",
@@ -56,7 +56,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Do Dham Yatra (Kedarnath - Badrinath) Tour from Haridwar 5 Days Package</h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Do Dham Yatra Tour Package</li>
                 </ul>
             </div>

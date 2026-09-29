@@ -9,7 +9,7 @@
     <meta name="keywords" content="Srinagar Gulmarg Pahalgam tour, 5-day Kashmir package, Kashmir valley tour, Pahalgam sightseeing, Gulmarg adventure, Srinagar holiday, Jammu and Kashmir tourism, India travel packages, Kashmir trip planner">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="canonical" href="https://holidaygurutravel.in/srinagar-gulmarg-sonmarg-day-trip-tour-package-5-days.php">
+    <link rel="canonical" href="https://holidaygurutravel.in/srinagar-gulmarg-sonmarg-day-trip-tour-package-5-days">
     <meta property="og:site_name" content="Holiday Guru Travel" />
     <meta property="og:description" content="Discover the charm of Kashmir with our 5-day Srinagar Gulmarg Pahalgam tour package. Explore the valley's beauty, experience the thrill of adventure, and create unforgettable memories." />
 </head>
@@ -24,7 +24,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Srinagar Gulmarg Sonmarg Day Trip Tour  </h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Srinagar Gulmarg Sonmarg Day Trip Tour</li>
                 </ul>
             </div>

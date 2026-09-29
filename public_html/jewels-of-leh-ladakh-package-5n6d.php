@@ -9,7 +9,7 @@
     <meta name="keywords" content="Jewels of Leh Ladakh tour, 5-day Kashmir package, Kashmir valley tour, Pahalgam sightseeing, Gulmarg adventure, Srinagar holiday, Jammu and Kashmir tourism, India travel packages, Kashmir trip planner">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="canonical" href="https://holidaygurutravel.in/jewels-of-leh-ladakh-package-5n6d.php">
+    <link rel="canonical" href="https://holidaygurutravel.in/jewels-of-leh-ladakh-package-5n6d">
     <meta property="og:site_name" content="Holiday Guru Travel" />
     <meta property="og:description" content="Discover the charm of Kashmir with our 5-day Jewels of Leh Ladakh tour package. Explore the valley's beauty, experience the thrill of adventure, and create unforgettable memories." />
     <?php
@@ -22,7 +22,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Jewels of Leh Ladakh Tour  </h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Jewels of Leh Ladakh Tour</li>
                 </ul>
             </div>

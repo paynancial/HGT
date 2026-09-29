@@ -9,7 +9,7 @@
     <meta name="keywords" content="Darjeeling tour, Pelling tour, Gangtok tour, 6 days tour package, Darjeeling Pelling Gangtok itinerary, Northeast India travel, Himalayan tour, hill station trip, Sikkim travel, scenic journey">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="canonical" href="https://holidaygurutravel.in/darjeeling-with-pelling-and-gangtok-06-days.php">
+    <link rel="canonical" href="https://holidaygurutravel.in/darjeeling-with-pelling-and-gangtok-06-days">
     <meta property="og:site_name" content="Holiday Guru Travel" />
     <meta property="og:description" content="Discover the charm of Darjeeling, Pelling, and Gangtok with our 6-day tour package. Experience the majestic Himalayas, stunning landscapes, and rich cultural heritage on this scenic journey." />
     <?php
@@ -22,7 +22,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Darjeeling with Pelling and Gangtok Tour</h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Darjeeling with Pelling and Gangtok Tour </li>
                 </ul>
             </div>

@@ -9,7 +9,7 @@
     <meta name="keywords" content="Dubai tour package, Dubai travel guide, Dubai city tour, Dhow Cruise, Desert Safari, Dubai holidays, UAE travel, Dubai vacation, 4 Nights/5 Days Dubai tour">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="canonical" href="https://holidaygurutravel.in/standard-tour-to-dubai-4n5d.php">
+    <link rel="canonical" href="https://holidaygurutravel.in/standard-tour-to-dubai-4n5d">
     <meta property="og:site_name" content="Holiday Guru Travel" />
     <meta property="og:description" content="Experience the magic of Dubai with our 4 Nights/5 Days standard tour package! Explore iconic landmarks, indulge in thrilling desert safaris, and enjoy luxurious accommodations. Book now and create unforgettable memories in this vibrant city" />
 </head>
@@ -24,7 +24,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Standard Tour to Dubai</h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Standard Tour to Dubai</li>
                 </ul>
             </div>

@@ -9,7 +9,7 @@
     <meta name="keywords" content="Himachal Pradesh tour, Shimla vacation, Amritsar trip, Chandigarh sightseeing, 5-day itinerary, Himachal holiday package, Himachal tourism, hill station tour, Himachal adventure.">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="canonical" href="https://holidaygurutravel.in/blissful-tour-to-himachal-pradesh-4n-5d.php">
+    <link rel="canonical" href="https://holidaygurutravel.in/blissful-tour-to-himachal-pradesh-4n-5d">
     <meta property="og:site_name" content="Holiday Guru Travel" />
     <meta property="og:description" content="Experience the best of Himachal Pradesh with our 4-night, 5-day tour. Explore Amritsar, Chandigarh, and Shimla, including visits to iconic landmarks and scenic spots. Book your blissful Himachal getaway today" />
     <?php
@@ -22,7 +22,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Blissful Tour to Himachal Pradesh</h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Blissful Tour to Himachal Pradesh</li>
                 </ul>
             </div>

@@ -16,7 +16,7 @@
     <meta itemprop="name" content="Amarnath Ji Yatra via Pahalgam – 5 Nights 6 Days Spiritual Journey">
     <meta itemprop="description" content="Embark on a divine adventure with our 5 Nights 6 Days Amarnath Ji Yatra via Pahalgam. Begin your journey in Srinagar, trek through picturesque landscapes from Pahalgam to Sheshnag, Panchtarni, and the holy Amarnath Cave. Return to Srinagar for local sightseeing, exploring iconic attractions, and conclude with a memorable departure. Book this perfect blend of spirituality and natural beauty now!">
     <meta itemprop="image" content="https://holidaygurutravel.in/assets/img/destination/amarnath4.jpg">
-    <link rel="canonical" href="https://holidaygurutravel.in/amarnath-ji-yatra-via-pahalgam-5n-6d.php">
+    <link rel="canonical" href="https://holidaygurutravel.in/amarnath-ji-yatra-via-pahalgam-5n-6d">
 
     <script type="application/ld+json">
 {
@@ -32,7 +32,7 @@
   "author": {
     "@type": "Organization",
     "name": "Holiday Guru Travel",
-    "url": "https://holidaygurutravel.in/amarnath-ji-yatra-via-pahalgam-5n-6d.php"
+    "url": "https://holidaygurutravel.in/amarnath-ji-yatra-via-pahalgam-5n-6d"
   },  
   "publisher": {
     "@type": "Organization",
@@ -58,7 +58,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Amarnath Ji Yatra via Pahalgam 5 Nights 6 Days Spiritual Journey</h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Amarnath Ji via Pahalgam Tour</li>
                 </ul>
             </div>

@@ -9,7 +9,7 @@
     <meta name="keywords" content="Mussoorie with Jim Corbett tour package, 4-day Uttarakhand hill station tour, Mussoorie sightseeing, Jim Corbett National Park safari, Uttarakhand wildlife tour. ">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="canonical" href="https://holidaygurutravel.in/mussoorie-with-jim-corbett-04-days.php">
+    <link rel="canonical" href="https://holidaygurutravel.in/mussoorie-with-jim-corbett-04-days">
     <meta property="og:site_name" content="Holiday Guru Travel" />
     <meta property="og:description" content="Experience the beauty of Mussoorie's hills and the thrill of Jim Corbett's wildlife with our 4-day tour package. Enjoy scenic views, trekking, and jungle safari in the heart of Uttarakhand." />
     <?php
@@ -22,7 +22,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Mussoorie with Jim Corbett</h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Mussoorie with Jim Corbett </li>
                 </ul>
             </div>

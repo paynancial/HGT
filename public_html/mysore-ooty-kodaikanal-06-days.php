@@ -9,7 +9,7 @@
     <meta name="keywords" content="Mysore Ooty Kodaikanal tour, 6-day South India tour, Mysore travel, Ooty tea gardens, Kodaikanal sightseeing, South India hill stations, Mysore palaces, Ooty travel package, Kodaikanal lake, Mysore Ooty Kodaikanal itinerary">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="canonical" href="https://holidaygurutravel.in/mysore-ooty-kodaikanal-06-days.php">
+    <link rel="canonical" href="https://holidaygurutravel.in/mysore-ooty-kodaikanal-06-days">
     <meta property="og:site_name" content="Holiday Guru Travel" />
     <meta property="og:description" content="Embark on a 6-day journey through the scenic landscapes of Mysore, Ooty, and Kodaikanal. Explore the royal heritage of Mysore, the lush tea gardens of Ooty, and the serene beauty of Kodaikanal." />
     <?php
@@ -22,7 +22,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Mysore Ooty Kodaikanal Tour  </h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Mysore Ooty Kodaikanal Tour</li>
                 </ul>
             </div>

@@ -78,7 +78,7 @@ $infoStmt->close();
     <title><?= htmlspecialchars($package['title']) ?> <?= htmlspecialchars($package['days']) ?> | Holiday Guru Travel</title>
          <?= ($package['meta_tags']) ?>
    
-    <link rel="canonical" href="https://holidaygurutravel.in/theme-package-details.php?id=<?= ($package['id']) ?>">
+    <link rel="canonical" href="https://holidaygurutravel.in/theme-package-details?id=<?= ($package['id']) ?>">
 
     <?php
     include "include/header.php";
@@ -90,7 +90,7 @@ $infoStmt->close();
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title"><?= htmlspecialchars($package['title']) ?></h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li><?= htmlspecialchars($package['title']) ?></li>
                 </ul>
             </div>

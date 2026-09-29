@@ -9,7 +9,7 @@
     <meta name="keywords" content="Shimla vacation package, Shimla tour, 3-day itinerary, Himachal Pradesh, Shimla sightseeing, short Shimla trip, Shimla holiday, hill station vacation.">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="canonical" href="https://holidaygurutravel.in/best-of-shimla-vacation.php">
+    <link rel="canonical" href="https://holidaygurutravel.in/best-of-shimla-vacation">
     <meta property="og:site_name" content="Holiday Guru Travel" />
     <meta property="og:description" content="Experience Shimla with our 2-night, 3-day vacation package. Enjoy scenic beauty, lush landscapes, and cozy accommodations. Perfect for a quick getaway to the hills of Himachal Pradesh." />
 </head>
@@ -24,7 +24,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Best of Shimla Vacation</h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Best of Shimla Vacation</li>
                 </ul>
             </div>

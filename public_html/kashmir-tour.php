@@ -9,7 +9,7 @@
     <meta name="keywords" content="Kashmir Tour, Kashmir Holidays, Kashmir Vacation, Kashmir Tourism, Srinagar, Gulmarg, Sonmarg, Pahalgam, Dal Lake, Mughal Gardens, Amarnath Yatra, Vaishno Devi, India Travel, Hill Stations. ">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="canonical" href="https://holidaygurutravel.in/kashmir-tour.php">
+    <link rel="canonical" href="https://holidaygurutravel.in/kashmir-tour">
     <meta property="og:site_name" content="Holiday Guru Travel" />
     <meta property="og:description" content=" Discover the beauty of Kashmir with our 6-night, 7-day tour package. Explore the Valley of Kashmir, Gulmarg, Sonmarg, Pahalgam, and Srinagar, and experience the charm of this Indian paradise." />
 </head>
@@ -22,7 +22,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Jannat E Kashmir</h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Jannat E Kashmir</li>
                 </ul>
             </div>
@@ -42,17 +42,17 @@
                                         <div class="tour-box_img global-img"><img src="assets/img/destination/SrinagarGulmargTour.jpg"
                                                 alt="SrinagarGulmargTour.jpg"></div>
                                         <div class="tour-content">
-                                            <h3 class="box-title"><a href="srinagar-gulmarg-tour-03nt04dy.php">Srinagar Gulmarg Tour</a></h3>
+                                            <h3 class="box-title"><a href="/srinagar-gulmarg-tour-03nt04dy">Srinagar Gulmarg Tour</a></h3>
                                             <div class="tour-rating">
                                                 <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
                                                     <span style="width:100%">Rated <strong class="rating">5.00</strong>
                                                         out of 5 based on <span class="rating">4.8</span>(4.8
-                                                        Rating)</span></div><a href="srinagar-gulmarg-tour-03nt04dy.php"
+                                                        Rating)</span></div><a href="/srinagar-gulmarg-tour-03nt04dy"
                                                     class="woocommerce-review-link">(<span class="count">4.8</span>
                                                     Rating)</a>
                                             </div>
                                             <h4 class="tour-box_price"><span class="currency"><i class="fa-light fa-clock"></i>3 Nights / 4 Days</span></h4>
-                                            <div class="tour-action"><a href="srinagar-gulmarg-tour-03nt04dy.php"
+                                            <div class="tour-action"><a href="/srinagar-gulmarg-tour-03nt04dy"
                                                     class="th-btn style4 th-icon">View More</a></div>
                                         </div>
                                     </div>
@@ -62,17 +62,17 @@
                                         <div class="tour-box_img global-img"><img src="assets/img/destination/SrinagarGulmargPahalgamTour Package.jpg"
                                                 alt="SrinagarGulmargPahalgamTour Package.jpg"></div>
                                         <div class="tour-content">
-                                            <h3 class="box-title"><a href="srinagar-gulmarg-pahalgam-tour-package-5-days.php">Srinagar Gulmarg Pahalgam Tour Package</a></h3>
+                                            <h3 class="box-title"><a href="/srinagar-gulmarg-pahalgam-tour-package-5-days">Srinagar Gulmarg Pahalgam Tour Package</a></h3>
                                             <div class="tour-rating">
                                                 <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
                                                     <span style="width:100%">Rated <strong class="rating">5.00</strong>
                                                         out of 5 based on <span class="rating">4.8</span>(4.8
-                                                        Rating)</span></div><a href="srinagar-gulmarg-pahalgam-tour-package-5-days.php"
+                                                        Rating)</span></div><a href="/srinagar-gulmarg-pahalgam-tour-package-5-days"
                                                     class="woocommerce-review-link">(<span class="count">4.8</span>
                                                     Rating)</a>
                                             </div>
                                             <h4 class="tour-box_price"><span class="currency"><i class="fa-light fa-clock"></i>4 Nights / 5 Days</span></h4>
-                                            <div class="tour-action"><a href="srinagar-gulmarg-pahalgam-tour-package-5-days.php"
+                                            <div class="tour-action"><a href="/srinagar-gulmarg-pahalgam-tour-package-5-days"
                                                     class="th-btn style4 th-icon">View More</a></div>
                                         </div>
                                     </div>
@@ -82,17 +82,17 @@
                                         <div class="tour-box_img global-img"><img src="assets/img/destination/SrinagarGulmargSonmargDayTripTourPackage.jpg"
                                                 alt="SrinagarGulmargSonmargDayTripTourPackage.jpg"></div>
                                         <div class="tour-content">
-                                            <h3 class="box-title"><a href="srinagar-gulmarg-sonmarg-day-trip-tour-package-5-days.php">Srinagar Gulmarg Sonmarg Day Trip Tour Package</a></h3>
+                                            <h3 class="box-title"><a href="/srinagar-gulmarg-sonmarg-day-trip-tour-package-5-days">Srinagar Gulmarg Sonmarg Day Trip Tour Package</a></h3>
                                             <div class="tour-rating">
                                                 <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
                                                     <span style="width:100%">Rated <strong class="rating">5.00</strong>
                                                         out of 5 based on <span class="rating">4.8</span>(4.8
-                                                        Rating)</span></div><a href="srinagar-gulmarg-sonmarg-day-trip-tour-package-5-days.php"
+                                                        Rating)</span></div><a href="/srinagar-gulmarg-sonmarg-day-trip-tour-package-5-days"
                                                     class="woocommerce-review-link">(<span class="count">4.8</span>
                                                     Rating)</a>
                                             </div>
                                             <h4 class="tour-box_price"><span class="currency"><i class="fa-light fa-clock"></i>4 Nights / 5 Days</span></h4>
-                                            <div class="tour-action"> <a href="srinagar-gulmarg-sonmarg-day-trip-tour-package-5-days.php"
+                                            <div class="tour-action"> <a href="/srinagar-gulmarg-sonmarg-day-trip-tour-package-5-days"
                                                     class="th-btn style4 th-icon">View More</a></div>
                                         </div>
                                     </div>
@@ -104,17 +104,17 @@
                                         <div class="tour-box_img global-img"><img src="assets/img/destination/srinagar-pahalgam-gulmargsonmargpackage.jpg"
                                                 alt="srinagar-pahalgam-gulmargsonmargpackage.jpg"></div>
                                         <div class="tour-content">
-                                            <h3 class="box-title"><a href="srinagar-pahalgam-gulmarg-sonmarg-package-6-days.php">srinagar-pahalgam-gulmarg-sonmarg-package-6-days</a></h3>
+                                            <h3 class="box-title"><a href="/srinagar-pahalgam-gulmarg-sonmarg-package-6-days">srinagar-pahalgam-gulmarg-sonmarg-package-6-days</a></h3>
                                             <div class="tour-rating">
                                                 <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
                                                     <span style="width:100%">Rated <strong class="rating">5.00</strong>
                                                         out of 5 based on <span class="rating">4.8</span>(4.8
-                                                        Rating)</span></div><a href="srinagar-pahalgam-gulmarg-sonmarg-package-6-days.php"
+                                                        Rating)</span></div><a href="/srinagar-pahalgam-gulmarg-sonmarg-package-6-days"
                                                     class="woocommerce-review-link">(<span class="count">4.8</span>
                                                     Rating)</a>
                                             </div>
                                             <h4 class="tour-box_price"><span class="currency"><i class="fa-light fa-clock"></i>5 Nights / 6 Days</span></h4>
-                                            <div class="tour-action"> <a href="srinagar-pahalgam-gulmarg-sonmarg-package-6-days.php"
+                                            <div class="tour-action"> <a href="/srinagar-pahalgam-gulmarg-sonmarg-package-6-days"
                                                     class="th-btn style4 th-icon">View More</a></div>
                                         </div>
                                     </div>
@@ -124,17 +124,17 @@
                                         <div class="tour-box_img global-img"><img src="assets/img/destination/SrinagarGulmargPahalgamTourPackage.jpg"
                                                 alt="SrinagarGulmargPahalgamTourPackage.jpg"></div>
                                         <div class="tour-content">
-                                            <h3 class="box-title"><a href="srinagar-gulmarg-pahalgam-tour-package-7-days.php">Srinagar Gulmarg Pahalgam Tour Package</a></h3>
+                                            <h3 class="box-title"><a href="/srinagar-gulmarg-pahalgam-tour-package-7-days">Srinagar Gulmarg Pahalgam Tour Package</a></h3>
                                             <div class="tour-rating">
                                                 <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
                                                     <span style="width:100%">Rated <strong class="rating">5.00</strong>
                                                         out of 5 based on <span class="rating">4.8</span>(4.8
-                                                        Rating)</span></div><a href="srinagar-gulmarg-pahalgam-tour-package-7-days.php"
+                                                        Rating)</span></div><a href="/srinagar-gulmarg-pahalgam-tour-package-7-days"
                                                     class="woocommerce-review-link">(<span class="count">4.8</span>
                                                     Rating)</a>
                                             </div>
                                             <h4 class="tour-box_price"><span class="currency"><i class="fa-light fa-clock"></i>6 Nights / 7 Days</span></h4>
-                                            <div class="tour-action"> <a href="srinagar-gulmarg-pahalgam-tour-package-7-days.php"
+                                            <div class="tour-action"> <a href="/srinagar-gulmarg-pahalgam-tour-package-7-days"
                                                     class="th-btn style4 th-icon">View More</a></div>
                                         </div>
                                     </div>
@@ -144,17 +144,17 @@
                                         <div class="tour-box_img global-img"><img src="assets/img/destination/SrinagarGulmargSonmargPahalgamKatraTourPackage.jpg"
                                                 alt="SrinagarGulmargSonmargPahalgamKatraTourPackage.jpg"></div>
                                         <div class="tour-content">
-                                            <h3 class="box-title"><a href="srinagar-gulmarg-sonmarg-pahalgam-katra-tour-package-8-days.php">Srinagar Gulmarg Sonmarg Pahalgam Katra Tour Package</a></h3>
+                                            <h3 class="box-title"><a href="/srinagar-gulmarg-sonmarg-pahalgam-katra-tour-package-8-days">Srinagar Gulmarg Sonmarg Pahalgam Katra Tour Package</a></h3>
                                             <div class="tour-rating">
                                                 <div class="star-rating" role="img" aria-label="Rated 5.00 out of 5">
                                                     <span style="width:100%">Rated <strong class="rating">5.00</strong>
                                                         out of 5 based on <span class="rating">4.8</span>(4.8
-                                                        Rating)</span></div><a href="srinagar-gulmarg-sonmarg-pahalgam-katra-tour-package-8-days.php"
+                                                        Rating)</span></div><a href="/srinagar-gulmarg-sonmarg-pahalgam-katra-tour-package-8-days"
                                                     class="woocommerce-review-link">(<span class="count">4.8</span>
                                                     Rating)</a>
                                             </div>
                                             <h4 class="tour-box_price"><span class="currency"><i class="fa-light fa-clock"></i>7 Nights / 8 Days</span></h4>
-                                            <div class="tour-action"> <a href="srinagar-gulmarg-sonmarg-pahalgam-katra-tour-package-8-days.php"
+                                            <div class="tour-action"> <a href="/srinagar-gulmarg-sonmarg-pahalgam-katra-tour-package-8-days"
                                                     class="th-btn style4 th-icon">View More</a></div>
                                         </div>
                                     </div>

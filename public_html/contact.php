@@ -13,9 +13,9 @@
     <meta property="og:image" content="https://holidaygurutravel.in/assets/img/crousel1.jpg"/>
     <meta property="og:type" content="website"/>
     <meta property="og:site_name" content="Holiday Guru Travel"/>
-    <meta property="og:url" content="https://holidaygurutravel.in/contact.php"/>
+    <meta property="og:url" content="https://holidaygurutravel.in/contact"/>
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:domain" content="https://holidaygurutravel.in/contact.php">
+    <meta name="twitter:domain" content="https://holidaygurutravel.in/contact">
     <meta name="twitter:image:src" content="https://holidaygurutravel.in/assets/img/crousel2.jpg"/>
     <meta name="twitter:description" content="Looking for travel assistance? Contact Holiday Guru Travel, Delhi's leading travel agency and DMC, for personalized holiday packages, business travel solutions, and expert travel advice.">
     <meta name="twitter:title" content="Contact Us | Holiday Guru Travel – Trusted DMC & Travel Agency in Delhi">
@@ -24,7 +24,7 @@
     <meta itemprop="description" content="For all travel inquiries, contact Holiday Guru Travel, a trusted travel agency in Delhi and DMC India. We offer tailor-made travel packages and corporate travel solutions across India.">
     <meta itemprop="image" content="https://holidaygurutravel.in/assets/img/crousel6.jpg">
     <meta property="locale" content="Delhi, Gurgaon, Mumbai, Noida, Goa, Pune, Uttar Pradesh, Uttarakhand, Rajasthan, Madhya Pradesh, Haryana"> 
-<link rel="canonical" href="https://holidaygurutravel.in/contact.php" > 
+<link rel="canonical" href="https://holidaygurutravel.in/contact" > 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -39,7 +39,7 @@
   "author": {
     "@type": "Organization",
     "name": "Holiday Guru Travel",
-    "url": "https://holidaygurutravel.in/contact.php"
+    "url": "https://holidaygurutravel.in/contact"
   },  
   "publisher": {
     "@type": "Organization",
@@ -61,8 +61,8 @@
   "name": "Holiday Guru Travel",
   "image": "https://holidaygurutravel.in/assets/img/holidaygurulogo.jpg",
   "@id": "nhttps://holidaygurutravel.in",
-  "url": "https://holidaygurutravel.in/contact.php",
-  "telephone": "+91-9971754265",
+  "url": "https://holidaygurutravel.in/contact",
+  "telephone": "+91 99717 54265",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Holiday Guru Travel 2nd floor",
@@ -81,7 +81,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Contact Holiday Guru Travel - Travel Agency Delhi, India</h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Contact Us</li>
                 </ul>
             </div>
@@ -109,8 +109,7 @@
                         <div class="about-contact-icon"><img src="assets/img/icon/call.svg" alt=""></div>
                         <div class="about-contact-details">
                             <h6 class="box-title">Phone Number</h6>
-                            <p class="about-contact-details-text"><a href="tel:+91-8006692040">+91-8006692040</a></p>
-                            <p class="about-contact-details-text"><a href="tel:+91-9971754265">+91-9971754265</a></p>
+                            <p class="about-contact-details-text"><a href="<?= hg_e(hg_tel_href()) ?>" aria-label="Call Holiday Guru Travel on <?= hg_e(HG_PHONE_DISPLAY) ?>"><?= hg_e(HG_PHONE_DISPLAY) ?></a></p>
                         </div>
                     </div>
                 </div>
@@ -119,10 +118,7 @@
                         <div class="about-contact-icon"><img src="assets/img/icon/mail.svg" alt=""></div>
                         <div class="about-contact-details">
                             <h6 class="box-title">Email Address</h6>
-                            <p class="about-contact-details-text"><a
-                                    href="mailto:info@holidaygurutravel.in">Info@holidaygurutravel.in</a></p>
-                            <p class="about-contact-details-text"><a
-                                    href="mailto:holidaygurutravel5@gmail.com">holidaygurutravel5@gmail.com</a></p>
+                            <p class="about-contact-details-text"><a href="<?= hg_e(hg_mailto_href()) ?>"><?= hg_e(HG_EMAIL_DISPLAY) ?></a></p>
                         </div>
                     </div>
                 </div>

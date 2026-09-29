@@ -9,7 +9,7 @@
     <meta name="keywords" content="Darjeeling tour, Kalimpong tour, Pelling tour, Lachung tour, Gangtok tour, 10 days tour package, North East India travel, Sikkim tourism, Himalayan exploration, Sikkim and Darjeeling itinerary">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="canonical" href="https://holidaygurutravel.in/darjeeling-with-kalimpong-pelling-lachung-and-gangtok-10-days.php">
+    <link rel="canonical" href="https://holidaygurutravel.in/darjeeling-with-kalimpong-pelling-lachung-and-gangtok-10-days">
     <meta property="og:site_name" content="Holiday Guru Travel" />
     <meta property="og:description" content="Experience the best of North East India with a 10-day tour through Darjeeling, Kalimpong, Pelling, Lachung, and Gangtok. Explore breathtaking landscapes, vibrant culture, and serene monasteries in this comprehensive travel package." />
     <?php
@@ -22,7 +22,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Darjeeling with Kalimpong pelling Lachung and gangtok Tour</h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Darjeeling with Kalimpong pelling Lachung and gangtok Tour </li>
                 </ul>
             </div>

@@ -9,7 +9,7 @@
     <meta name="keywords" content="Uttarakhand tour package, Mussoorie Rishikesh package, 2 Nights 3 Days Uttarakhand package, Mussoorie travel, Rishikesh tourism, Uttarakhand vacation package, flight inclusive package">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="canonical" href="https://holidaygurutravel.in/uttarakhand-mussoorie-with-rishikesh-flight-inclusive.php">
+    <link rel="canonical" href="https://holidaygurutravel.in/uttarakhand-mussoorie-with-rishikesh-flight-inclusive">
     <meta property="og:site_name" content="Holiday Guru Travel" />
     <meta property="og:description" content="Explore the scenic beauty of Uttarakhand with our 2 Nights / 3 Days Mussoorie with Rishikesh flight inclusive package. Visit Mussoorie's Camel's Back road, Mussoorie Lake, and Mall Road, and experience the spiritual vibes of Rishikesh's Laxman Jhula and Triveni Ghat. " />
 </head>
@@ -23,7 +23,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Uttarakhand Mussoorie With Rishikesh Flight Inclusive</h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Uttarakhand Mussoorie With Rishikesh Flight Inclusive</li>
                 </ul>
             </div>

@@ -9,7 +9,7 @@
     <meta name="keywords" content="Srinagar Gulmarg Pahalgam Tour Package, Kashmir Tour, Kashmir Packages, India Travel, Holiday Packages, Travel Packages, Sightseeing, Houseboat Stay, Deluxe Accommodation, Travel Agency, Book Your Tour, Vacation, Holiday Guru Travel.">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="canonical" href="https://holidaygurutravel.in/srinagar-pahalgam-gulmarg-sonmarg-package-6-days.php">
+    <link rel="canonical" href="https://holidaygurutravel.in/srinagar-pahalgam-gulmarg-sonmarg-package-6-days">
     <meta property="og:site_name" content="Holiday Guru Travel" />
     <meta property="og:description" content="Experience the beauty of Kashmir with our 5-day Srinagar Gulmarg Pahalgam tour package. Enjoy sightseeing, delicious meals, comfortable accommodation, and much more. Book now and create unforgettable memories!" />
     <?php
@@ -22,7 +22,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Srinagar Pahalgam Gulmarg Sonmarg Tour  </h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Srinagar Pahalgam Gulmarg Sonmarg Tour</li>
                 </ul>
             </div>

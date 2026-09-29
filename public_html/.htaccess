@@ -1,15 +1,39 @@
+# Holiday Guru Travel — public URL routing
+# Canonical page URLs are extensionless: /about serves about.php, /about.php 301s to /about.
+# Only root-level pages that exist as <name>.php are affected; assets, sub-folders,
+# PHPMailer, admin and the form endpoints (mail.php, mail1.php) are untouched.
+
+Options -MultiViews
+AcceptPathInfo Off
+DirectoryIndex index.php
 ErrorDocument 404 /404.php
 
 <IfModule mod_rewrite.c>
 RewriteEngine On
 RewriteBase /
 
-# /about -> /about.php (301) when that page exists
-RewriteCond %{REQUEST_FILENAME} !-f
+# 1. /index.php and /index -> /
+RewriteCond %{THE_REQUEST} \s/+index(\.php)?[\s?]
+RewriteRule ^index(\.php)?$ / [R=301,L]
+
+# 2. /page.php -> /page (only when the browser asked for .php; internal rewrites are skipped,
+#    so there is no loop). Query strings are kept. Form endpoints and the 404 page are excluded.
+RewriteCond %{THE_REQUEST} \s/+[^?\s]+\.php[\s?]
+RewriteCond $1 !^(mail|mail1|404)$ [NC]
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^([^/]+)\.php$ /$1 [R=301,L]
+
+# 3. /page/ -> /page
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{DOCUMENT_ROOT}/$1.php -f
-RewriteRule ^([A-Za-z0-9_-]+)/?$ /$1.php [R=301,L]
+RewriteRule ^([^/.]+)/$ /$1 [R=301,L]
 
-# Anything else that does not exist falls through to the 404 page above.
-# (Previously every unknown URL was rewritten to index.php with a 200 status.)
+# 4. /page -> page.php (internal, no redirect)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond $1 !^(mail|mail1|404|index)$ [NC]
+RewriteCond %{DOCUMENT_ROOT}/$1.php -f
+RewriteRule ^([^/.]+)$ $1.php [L]
+
+# Anything else that does not exist gets the real 404 page above (no homepage fallback).
 </IfModule>

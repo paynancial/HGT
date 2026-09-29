@@ -1,3 +1,4 @@
+<?php require_once __DIR__ . '/site_config.php'; ?>
     <link rel="icon" type="image/png" sizes="192x192" href="assets/img/favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com/">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
@@ -9,37 +10,38 @@
     <link rel="stylesheet" href="assets/css/magnific-popup.min.css">
     <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/hg-site.css">
 
     
     <div class="th-menu-wrapper onepage-nav">
         <div class="th-menu-area text-center"><button class="th-menu-toggle"><i class="fal fa-times"></i></button>
-            <div class="mobile-logo bg-white"><a href="index.php"><img src="assets/img/holidaygurulogo.jpg" alt="holidaygurulogo.jpg"></a></div>
+            <div class="mobile-logo bg-white"><a href="/"><img src="assets/img/holidaygurulogo.jpg" alt="holidaygurulogo.jpg"></a></div>
             <div class="th-mobile-menu">
               <ul>
                                     
-                                    <li><a href="index.php">Home</a></li>
+                                    <li><a href="/">Home</a></li>
                                     <li class="menu-item-has-children"><a href="#">Category</a>
                                         <ul class="sub-menu">
-                                            <li><a href="international-holidays.php">International Holidays</a></li>
-                                            <li><a href="religious-tour.php">Religious Tour</a></li>
-                                            <li><a href="domestic-holidays.php">Domestic Holidays</a></li>
+                                            <li><a href="/international-holidays">International Holidays</a></li>
+                                            <li><a href="/religious-tour">Religious Tour</a></li>
+                                            <li><a href="/domestic-holidays">Domestic Holidays</a></li>
                                         </ul>
                                     </li>
                                     <li class="menu-item-has-children"><a href="#">Themes</a>
                                         <ul class="sub-menu">
-                                            <li><a href="family-holiday.php">Family Holiday</a></li>
-                                            <li><a href="beach-holiday.php">Beach Holiday</a></li>
-                                            <li><a href="hill-station-holidays.php">Hill Station Holidays</a></li>
-                                            <li><a href="honeymoon-holiday.php">Honeymoon Holiday</a></li>
-                                            <li><a href="pilgrim-holidays.php">Pilgrim Holidays</a></li>
-                                            <li><a href="adventure-holiday.php">Adventure Holiday</a></li>
+                                            <li><a href="/family-holiday">Family Holiday</a></li>
+                                            <li><a href="/beach-holiday">Beach Holiday</a></li>
+                                            <li><a href="/hill-station-holidays">Hill Station Holidays</a></li>
+                                            <li><a href="/honeymoon-holiday">Honeymoon Holiday</a></li>
+                                            <li><a href="/pilgrim-holidays">Pilgrim Holidays</a></li>
+                                            <li><a href="/adventure-holiday">Adventure Holiday</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="destinations.php">Destinations</a></li>
+                                    <li><a href="/destinations">Destinations</a></li>
                                     
-                                    <li><a href="about.php">About Us</a></li>
-                                    <li><a href="contact.php">Contact Us</a></li>
-                                    <li><a href="service.php">Services</a></li>
+                                    <li><a href="/about">About Us</a></li>
+                                    <li><a href="/contact">Contact Us</a></li>
+                                    <li><a href="/service">Services</a></li>
                                 </ul>
             </div>
         </div>
@@ -53,8 +55,8 @@
                             
                             <ul>
                                 <li class="d-none d-xl-inline-block"><i class="fa-regular fa-envelope" style="color: #000000;"></i>
-                                    <span><a href="mailto:sales@holidaygurutravel.in" class="info-box_link">sales@holidaygurutravel.in</a></span></li>
-                                <li class="d-none d-xl-inline-block"><i class="fa-solid fa-phone" style="color: #000000;"></i><span><a href="tel:+919971754265" class="info-box_link">+91-9971754265</a></span></li>
+                                <span><a href="<?= hg_e(hg_mailto_href()) ?>" class="info-box_link"><?= hg_e(HG_EMAIL_DISPLAY) ?></a></span></li>
+                                <li class="d-none d-xl-inline-block"><i class="fa-solid fa-phone" style="color: #000000;"></i><span><a href="<?= hg_e(hg_tel_href()) ?>" class="info-box_link" aria-label="Call Holiday Guru Travel on <?= hg_e(HG_PHONE_DISPLAY) ?>"><?= hg_e(HG_PHONE_DISPLAY) ?></a></span></li>
                             </ul>
                         </div>
                     </div>
@@ -80,36 +82,36 @@
                 <div class="container th-container">
                     <div class="row align-items-center justify-content-between">
                         <div class=" col-md-3 col-sm-3 col-lg-3 col-9">
-                            <div class="header-logo"><a href="index.php"><img src="assets/img/holidaygurulogo.jpg"
+                            <div class="header-logo"><a href="/"><img src="assets/img/holidaygurulogo.jpg"
                                         alt="holidaygurulogo.jpg"></a></div>
                         </div>
                         <div class=" col-md-9 col-sm-9 col-lg-9 col-3">
                             <nav class="main-menu d-none  d-xl-block">
                                 <ul>
                                     
-                                    <li><a href="index.php">Home</a></li>
+                                    <li><a href="/">Home</a></li>
                                     <li class="menu-item-has-children"><a href="#">Category</a>
                                         <ul class="sub-menu">
-                                            <li><a href="international-holidays.php">International Holidays</a></li>
-                                            <li><a href="religious-tour.php">Religious Tour</a></li>
-                                            <li><a href="domestic-holidays.php">Domestic Holidays</a></li>
+                                            <li><a href="/international-holidays">International Holidays</a></li>
+                                            <li><a href="/religious-tour">Religious Tour</a></li>
+                                            <li><a href="/domestic-holidays">Domestic Holidays</a></li>
                                         </ul>
                                     </li>
                                     <li class="menu-item-has-children"><a href="#">Themes</a>
                                         <ul class="sub-menu">
-                                            <li><a href="family-holiday.php">Family Holiday</a></li>
-                                            <li><a href="beach-holiday.php">Beach Holiday</a></li>
-                                            <li><a href="hill-station-holidays.php">Hill Station Holidays</a></li>
-                                            <li><a href="honeymoon-holiday.php">Honeymoon Holiday</a></li>
-                                            <li><a href="pilgrim-holidays.php">Pilgrim Holidays</a></li>
-                                            <li><a href="adventure-holiday.php">Adventure Holiday</a></li>
+                                            <li><a href="/family-holiday">Family Holiday</a></li>
+                                            <li><a href="/beach-holiday">Beach Holiday</a></li>
+                                            <li><a href="/hill-station-holidays">Hill Station Holidays</a></li>
+                                            <li><a href="/honeymoon-holiday">Honeymoon Holiday</a></li>
+                                            <li><a href="/pilgrim-holidays">Pilgrim Holidays</a></li>
+                                            <li><a href="/adventure-holiday">Adventure Holiday</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="destinations.php">Destinations</a></li>
+                                    <li><a href="/destinations">Destinations</a></li>
                                     
-                                    <li><a href="about.php">About Us</a></li>
-                                    <li><a href="contact.php">Contact Us</a></li>
-                                    <li><a href="service.php">Services</a></li>
+                                    <li><a href="/about">About Us</a></li>
+                                    <li><a href="/contact">Contact Us</a></li>
+                                    <li><a href="/service">Services</a></li>
                                 </ul>
                             </nav><button type="button" class="th-menu-toggle d-block  d-xl-none" style="float:right;"><i
                                     class="far fa-bars"></i></button>

@@ -9,7 +9,7 @@
     <meta name="keywords" content="Shimla Manali Dalhousie Amritsar tour, 8-day itinerary, Himachal Pradesh, Golden Temple, Rohtang Pass, Khajjiar, Amritsar sightseeing, Dalhousie trip, hill station tour, cultural heritage.">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="canonical" href="https://holidaygurutravel.in/shimla-manali-with-dalhousie-amritsar-08-days.php">
+    <link rel="canonical" href="https://holidaygurutravel.in/shimla-manali-with-dalhousie-amritsar-08-days">
     <meta property="og:site_name" content="Holiday Guru Travel" />
     <meta property="og:description" content="Enjoy an 8-day journey through Shimla, Manali, Dalhousie, and Amritsar. Explore hill stations, historical landmarks, and cultural sites, including Rohtang Pass, Khajjiar, and the Golden Temple. Perfect for those seeking a comprehensive Himachal and Punjab experience." />
 </head>
@@ -24,7 +24,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Shimla Manali with Dalhousie Amritsar</h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Shimla Manali with Dalhousie Amritsar</li>
                 </ul>
             </div>

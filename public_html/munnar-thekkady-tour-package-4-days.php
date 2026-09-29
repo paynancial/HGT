@@ -9,7 +9,7 @@
     <meta name="keywords" content="Munnar Thekkady tour package, 4-day Kerala hill station tour, Kerala wildlife tour, Munnar sightseeing, Thekkady Periyar wildlife sanctuary, hill station tour in India. ">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="canonical" href="https://holidaygurutravel.in/munnar-thekkady-tour-package-4-days.php">
+    <link rel="canonical" href="https://holidaygurutravel.in/munnar-thekkady-tour-package-4-days">
     <meta property="og:site_name" content="Holiday Guru Travel" />
     <meta property="og:description" content=" Experience the beauty of Kerala's hill stations with our 4-day Munnar Thekkady tour package. Explore the tea gardens of Munnar, wildlife of Thekkady, and enjoy the scenic beauty of Kerala's hills." />
     <?php
@@ -22,7 +22,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Munnar Thekkady Tour Package</h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Munnar Thekkady Tour Package </li>
                 </ul>
             </div>

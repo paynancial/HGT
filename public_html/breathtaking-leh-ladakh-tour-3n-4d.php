@@ -9,7 +9,7 @@
     <meta name="keywords" content="Srinagar tour package, Gulmarg travel, Pahalgam trip, Kashmir tour, 7-day Kashmir itinerary, Srinagar Gulmarg Pahalgam, Kashmir holiday package, scenic Kashmir tour, Kashmir travel guide, Srinagar tourism">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="canonical" href="https://holidaygurutravel.in/breathtaking-leh-ladakh-tour-3n-4d.php">
+    <link rel="canonical" href="https://holidaygurutravel.in/breathtaking-leh-ladakh-tour-3n-4d">
     <meta property="og:site_name" content="Holiday Guru Travel" />
     <meta property="og:description" content="Explore the enchanting beauty of Srinagar, Gulmarg, and Pahalgam with our 7-day tour package. Discover serene landscapes, snow-capped mountains, and cultural richness in this unforgettable Kashmir journey." />
     <?php
@@ -22,7 +22,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Breathtaking Leh Ladakh Tour  </h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Breathtaking Leh Ladakh Tour</li>
                 </ul>
             </div>

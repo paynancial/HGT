@@ -9,7 +9,7 @@
     <meta name="keywords" content="Haridwar tour, Mussoorie travel, Corbett National Park, Kausani sightseeing, Nainital tour package, Uttarakhand tourism, spiritual journey, Himalayan adventure, 8-day Uttarakhand tour, nature and wildlife tour">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="canonical" href="https://holidaygurutravel.in/haridwar-with-mussoorie-corbett-kausani-and-nainital-08-days.php">
+    <link rel="canonical" href="https://holidaygurutravel.in/haridwar-with-mussoorie-corbett-kausani-and-nainital-08-days">
     <meta property="og:site_name" content="Holiday Guru Travel" />
     <meta property="og:description" content="Discover the natural beauty and spiritual heritage of Uttarakhand with our 8-day tour package. Explore Haridwar, Mussoorie, Corbett, Kausani, and Nainital for an unforgettable experience." />
     <?php
@@ -22,7 +22,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Haridwar with Mussoorie corbett Kausani and Nainital Tour</h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Haridwar with Mussoorie corbett Kausani and Nainital Tour </li>
                 </ul>
             </div>

@@ -9,7 +9,7 @@
     <meta name="keywords" content="Goa tour package, exclusive Goa tour, 3 nights 4 days Goa tour, Goa travel, Goa tourism, Goa holiday package, beach tour, India tour package">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="canonical" href="https://holidaygurutravel.in/exclusive-goa-tour-3n-4d.php">
+    <link rel="canonical" href="https://holidaygurutravel.in/exclusive-goa-tour-3n-4d">
     <meta property="og:site_name" content="Holiday Guru Travel" />
     <meta property="og:description" content="Explore the best of Goa with our exclusive 3 nights and 4 days tour package. Discover the beautiful beaches, vibrant culture, and exciting activities that Goa has to offer." />
 </head>
@@ -24,7 +24,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Exclusive Goa Tour</h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Exclusive Goa Tour</li>
                 </ul>
             </div>

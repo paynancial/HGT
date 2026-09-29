@@ -9,7 +9,7 @@
     <meta name="keywords" content="Maldives tour package, 5-day Maldives trip, luxury Maldives vacation, beach villa stay, water villa stay, full board meal plan, Maldives holiday package, seaplane transfer, domestic flights transfer, Maldives travel deals">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="canonical" href="https://holidaygurutravel.in/maldives-05-days.php">
+    <link rel="canonical" href="https://holidaygurutravel.in/maldives-05-days">
     <meta property="og:site_name" content="Holiday Guru Travel" />
     <meta property="og:description" content="Experience the ultimate luxury getaway in Maldives with our 5-day package. Enjoy a relaxing vacation in a beach villa and water villa, with a full board meal plan, welcome drink, and transfers by seaplane or domestic flights. Book now and create unforgettable memories" />
     <?php
@@ -22,7 +22,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Maldives</h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Maldives </li>
                 </ul>
             </div>

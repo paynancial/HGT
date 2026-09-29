@@ -9,7 +9,7 @@
     <meta name="keywords" content=" Kerala Tour Package, Munnar Thekkady Alleppey, 5-Day Tour, Hill Station, Wildlife, Backwaters, Kerala Holidays, South India Tourism, Travel Packages. ">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="canonical" href="https://holidaygurutravel.in/munnar-thekkady-alleppey-05-days.php">
+    <link rel="canonical" href="https://holidaygurutravel.in/munnar-thekkady-alleppey-05-days">
     <meta property="og:site_name" content="Holiday Guru Travel" />
     <meta property="og:description" content="Explore the beauty of Kerala with our 5-day Munnar, Thekkady, and Alleppey tour package. Enjoy the scenic hills of Munnar, wildlife of Thekkady, and backwaters of Alleppey. />
     <?php
@@ -22,7 +22,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Munnar Thekkady Alleppey</h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Munnar Thekkady Tour Package </li>
                 </ul>
             </div>

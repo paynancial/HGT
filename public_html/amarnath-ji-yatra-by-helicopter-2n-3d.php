@@ -16,7 +16,7 @@
     <meta itemprop="name" content="Amarnath Ji Yatra by Helicopter – 2 Nights 3 Days Package">
     <meta itemprop="description" content="Embark on a spiritual journey with our 2 Nights 3 Days Amarnath Ji Yatra by Helicopter package. Experience the divine darshan of Lord Shiva at the holy Amarnath Cave, enjoy a comfortable helicopter ride, and explore the serene landscapes of Kashmir. Book now for a hassle-free and spiritually fulfilling yatra!">
     <meta itemprop="image" content="https://holidaygurutravel.in/assets/img/destination/amarnath1.jpg">
-    <link rel="canonical" href="https://holidaygurutravel.in/amarnath-ji-yatra-by-helicopter-2n-3d.php">
+    <link rel="canonical" href="https://holidaygurutravel.in/amarnath-ji-yatra-by-helicopter-2n-3d">
 
     <script type="application/ld+json">
 {
@@ -32,7 +32,7 @@
   "author": {
     "@type": "Organization",
     "name": "Holiday Guru Travel",
-    "url": "https://holidaygurutravel.in/amarnath-ji-yatra-by-helicopter-2n-3d.php"
+    "url": "https://holidaygurutravel.in/amarnath-ji-yatra-by-helicopter-2n-3d"
   },  
   "publisher": {
     "@type": "Organization",
@@ -56,7 +56,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Amarnath Ji Tour Package by Helicopter for 2 Nights 3 Days</h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Amarnath Ji Tour Package</li>
                 </ul>
             </div>

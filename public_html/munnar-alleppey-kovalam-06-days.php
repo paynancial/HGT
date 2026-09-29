@@ -9,7 +9,7 @@
     <meta name="keywords" content="Munnar tour package, Alleppey tour package, Kovalam tour package, Kerala tour package, 6-day Kerala tour, Kerala holiday package, Kerala travel. ">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="canonical" href="https://holidaygurutravel.in/munnar-alleppey-kovalam-06-days.php">
+    <link rel="canonical" href="https://holidaygurutravel.in/munnar-alleppey-kovalam-06-days">
     <meta property="og:site_name" content="Holiday Guru Travel" />
     <meta property="og:description" content="Explore Munnar, Alleppey, and Kovalam with our 6-day Kerala tour package. Book now and experience the best of Kerala's hills, backwaters, and beaches." />
 </head>
@@ -24,7 +24,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Munnar Alleppey Tour Package </h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Munnar Alleppey Tour Package </li>
                 </ul>
             </div>

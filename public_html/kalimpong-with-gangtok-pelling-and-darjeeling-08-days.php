@@ -9,7 +9,7 @@
     <meta name="keywords" content="Kalimpong tour, Gangtok tour, Pelling tour, Darjeeling tour, 8 days tour package, Northeast India travel, hill stations, scenic views, cultural tours, Sikkim and Darjeeling itinerary">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="canonical" href="https://holidaygurutravel.in/kalimpong-with-gangtok-pelling-and-darjeeling-08-days.php">
+    <link rel="canonical" href="https://holidaygurutravel.in/kalimpong-with-gangtok-pelling-and-darjeeling-08-days">
     <meta property="og:site_name" content="Holiday Guru Travel" />
     <meta property="og:description" content="Embark on an 8-day journey through Kalimpong, Gangtok, Pelling, and Darjeeling. Discover the mesmerizing landscapes, rich culture, and scenic beauty of Northeast India with our expertly curated tour package." />
     <?php
@@ -22,7 +22,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Kalimpong With Gangtok pelling and darjeeling Tour</h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Kalimpong With Gangtok pelling and darjeeling Tour </li>
                 </ul>
             </div>

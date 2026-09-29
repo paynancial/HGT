@@ -9,7 +9,7 @@
     <meta name="keywords" content="Leh Ladakh tour, 9-day Ladakh trip, Ladakh travel package, Leh adventure, Discover Ladakh, Leh Ladakh itinerary, Ladakh tourism, high-altitude travel, Ladakh culture, Leh scenic tour">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="canonical" href="https://holidaygurutravel.in/discover-leh-ladakh-tour-8n-9d.php">
+    <link rel="canonical" href="https://holidaygurutravel.in/discover-leh-ladakh-tour-8n-9d">
     <meta property="og:site_name" content="Holiday Guru Travel" />
     <meta property="og:description" content="Embark on an unforgettable 9-day adventure with our Discover Leh Ladakh tour. Experience the rugged beauty, high-altitude landscapes, and rich culture of Leh Ladakh in this comprehensive 8-night journey." />
     <?php
@@ -22,7 +22,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Discover Leh Ladakh Tour  </h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Discover Leh Ladakh Tour</li>
                 </ul>
             </div>

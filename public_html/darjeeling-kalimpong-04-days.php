@@ -9,7 +9,7 @@
     <meta name="keywords" content="Darjeeling Kalimpong 4-day tour, Darjeeling travel package, Kalimpong sightseeing, Darjeeling tea gardens, West Bengal tourism, Himalayan tour, Darjeeling holiday package, Kalimpong attractions">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="canonical" href="https://holidaygurutravel.in/darjeeling-kalimpong-04-days.php">
+    <link rel="canonical" href="https://holidaygurutravel.in/darjeeling-kalimpong-04-days">
     <meta property="og:site_name" content="Holiday Guru Travel" />
     <meta property="og:description" content="Explore the beauty of Darjeeling and Kalimpong in this 4-day tour. Discover breathtaking landscapes, iconic tea gardens, and cultural heritage with comfortable accommodations and guided sightseeing." />
     <?php
@@ -22,7 +22,7 @@
             <div class="breadcumb-content">
                 <h1 class="breadcumb-title">Darjeeling Kalimpong Tour</h1>
                 <ul class="breadcumb-menu">
-                    <li><a href="index.php">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li>Darjeeling Kalimpong Tour </li>
                 </ul>
             </div>
