@@ -8,6 +8,18 @@ AcceptPathInfo Off
 DirectoryIndex index.php
 ErrorDocument 404 /404.php
 
+# Security headers (Phase 0). Deliberately NOT set here yet:
+# - Strict-Transport-Security: needs HTTPS verified on the live host first.
+# - A full Content-Security-Policy: the site relies on inline scripts/styles; only
+#   frame-ancestors is set, which does not restrict scripts, styles or images.
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set Content-Security-Policy "frame-ancestors 'self'"
+    Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
+</IfModule>
+
 <IfModule mod_rewrite.c>
 RewriteEngine On
 RewriteBase /

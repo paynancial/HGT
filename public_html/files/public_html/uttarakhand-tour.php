@@ -9,7 +9,7 @@
     <meta name="keywords" content="Uttarakhand Tour, Uttarakhand Holidays, Uttarakhand Vacation, Uttarakhand Tourism, Mussoorie, Nainital, Haridwar, Rishikesh, Dehradun, Kedarnath. ">
     <meta name="robots" content="INDEX,FOLLOW">
     <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="canonical" href="/uttarakhand-tour">
+    <link rel="canonical" href="https://holidaygurutravel.in/uttarakhand-tour">
     <meta property="og:site_name" content="Holiday Guru Travel" />
     <meta property="og:description" content="Discover the natural beauty of Uttarakhand with our 6-night, 7-day tour package. Explore the scenic hill stations, sacred temples, and majestic Himalayan peaks of this Indian state." />
     <?php

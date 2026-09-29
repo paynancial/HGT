@@ -1,10 +1,11 @@
 /* Holiday Guru Travel — floating support widget + cookie consent.
-   Colours follow the logo: navy lettering, orange "Guru". */
+   Colours measured from the supplied logo (Logo_HGT.png, 2026-09-29):
+   navy lettering #0A163D, orange "Guru" #FE7F16. */
 :root {
-    --hg-navy: #1B2152;
-    --hg-navy-dark: #11163A;
-    --hg-orange: #F58220;
-    --hg-orange-hover: #DC6F12;
+    --hg-navy: #0A163D;
+    --hg-navy-dark: #060E28;
+    --hg-orange: #FE7F16;
+    --hg-orange-hover: #E36A08;
     --hg-surface: #F5F8FC;
     --hg-border: #E3E8F0;
     --hg-text: #1A1F36;
@@ -37,7 +38,7 @@
     color: #fff;
     font-size: 15px;
     font-weight: 600;
-    box-shadow: 0 8px 24px rgba(17, 22, 58, .25);
+    box-shadow: 0 8px 24px rgba(10, 22, 61, .25);
     cursor: pointer;
 }
 .hg-support__toggle i { font-size: 22px; color: var(--hg-orange); }
@@ -54,7 +55,7 @@
     background: #fff;
     border: 1px solid var(--hg-border);
     border-radius: 16px;
-    box-shadow: 0 16px 40px rgba(17, 22, 58, .18);
+    box-shadow: 0 16px 40px rgba(10, 22, 61, .18);
 }
 .hg-support__panel[hidden] { display: none; }
 .hg-support__head {
@@ -168,7 +169,7 @@
     border: 1px solid var(--hg-border);
     border-top: 3px solid var(--hg-orange);
     border-radius: 12px;
-    box-shadow: 0 16px 40px rgba(17, 22, 58, .18);
+    box-shadow: 0 16px 40px rgba(10, 22, 61, .18);
     color: var(--hg-text);
 }
 .hg-consent[hidden] { display: none; }
@@ -199,7 +200,7 @@
     align-items: center;
     justify-content: center;
     padding: 16px;
-    background: rgba(17, 22, 58, .55);
+    background: rgba(10, 22, 61, .55);
 }
 .hg-consent-modal[hidden] { display: none; }
 .hg-consent-modal__box {
@@ -230,7 +231,8 @@
     cursor: pointer;
 }
 
-/* Visible keyboard focus on all new controls */
+/* Visible keyboard focus on all new controls. Navy ring (17.6:1 on white) with a white
+   inner ring so it also shows on dark backgrounds; orange alone is only 2.5:1 on white. */
 .hg-support button:focus-visible,
 .hg-support a:focus-visible,
 .hg-consent button:focus-visible,
@@ -238,8 +240,9 @@
 .hg-consent-modal button:focus-visible,
 .hg-consent-modal input:focus-visible,
 .hg-footer-link:focus-visible {
-    outline: 2px solid var(--hg-orange);
+    outline: 3px solid var(--hg-navy);
     outline-offset: 2px;
+    box-shadow: 0 0 0 2px #fff;
 }
 
 @media (max-width: 575px) {
