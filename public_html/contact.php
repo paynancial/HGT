@@ -98,9 +98,8 @@
                         <div class="about-contact-icon"><img src="assets/img/icon/location-dot2.svg" alt=""></div>
                         <div class="about-contact-details">
                             <h6 class="box-title">Our Address</h6>
-                            <p class="about-contact-details-text">Holiday Guru Travel 2nd floor, B6 Dharampali Palace
-                                Bhoja Market, Sector 27 Noida</p>
-                            <!--<p class="about-contact-details-text">Road, New York, Canada</p>-->
+                            <address class="about-contact-details-text mb-0" style="font-style: normal;"><?= hg_e(HG_ADDRESS_LINE1) ?><br>
+                                <?= hg_e(HG_ADDRESS_LINE2) ?></address>
                         </div>
                     </div>
                 </div>
@@ -182,9 +181,10 @@
     <div class="">
         <div class="container-fluid">
             <div class="contact-map style2"><iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d875.984188709219!2d77.32804442255652!3d28.57166181722829!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce44c1267dce5%3A0x1001590744d7cc9a!2sDharampali%20Place(bhoja%20market)!5e0!3m2!1sen!2sin!4v1721798329482!5m2!1sen!2sin"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2910.825304970541!2d77.327913!3d28.571558999999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce44c1267dce5%3A0x1001590744d7cc9a!2sDharampali%20Place(bhoja%20market)!5e1!3m2!1sen!2sin!4v1790705513426!5m2!1sen!2sin"
+                    title="Map: Holiday Guru Travel office, Bhoja Market, Sector 27 Noida"
                     width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    referrerpolicy="strict-origin-when-cross-origin"></iframe>
                 <div class="contact-icon"><img src="assets/img/icon/location-dot3.svg" alt=""></div>
             </div>
         </div>

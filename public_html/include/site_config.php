@@ -19,8 +19,12 @@ if (!defined('HG_SITE_CONFIG')) {
     define('HG_EMAIL_DISPLAY', 'Info@holidaygurutravel.in');
     define('HG_EMAIL', 'info@holidaygurutravel.in');
 
+    // Official office address (confirmed by the owner, 2026-09-29).
+    define('HG_ADDRESS_LINE1', 'Holiday Guru Travel 2nd floor, B6 Dharampali Palace');
+    define('HG_ADDRESS_LINE2', 'Bhoja Market, Sector 27 Noida');
+
     // GA4 measurement ID. Loaded only after the visitor accepts analytics
-    // cookies (see assets/js/hg-consent.js). Empty string disables GA.
+    // cookies (see assets/js/hg-site.js). Empty string disables GA.
     define('HG_GA4_ID', 'G-5QV5YEX7XG');
 
     // Privacy policy page. Empty until the owner publishes one; the cookie
