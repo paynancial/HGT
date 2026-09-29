@@ -8,11 +8,16 @@
  * Item keys:
  *   label        Text shown to visitors (required)
  *   url          Real published URL. Empty = the page does not exist yet.
- *   status       'auto' (default): link when url is set and the page exists,
- *                otherwise "Coming soon". 'coming_soon': force Coming soon.
- *                'hidden': not shown.
+ *   status       'auto' (default) or 'active': link when url is set and the
+ *                page exists, otherwise "Coming soon" (a missing page never
+ *                becomes a broken link). 'coming_soon': force Coming soon.
+ *                'hidden': not shown (visibility).
+ *   order        Optional number; lower shows first. Default: file order.
+ *   badge        Optional short tag shown after a live link, e.g. 'New'.
  *   target       Optional, e.g. '_blank' for external URLs.
  *   description  Optional note for editors (not shown on the site).
+ *
+ * Section = the array the item sits in. Move an item to change its section.
  *
  * Rule: never point an item at a page that does not match its label.
  * A "Coming soon" item is plain text (no href), so search engines see no link.

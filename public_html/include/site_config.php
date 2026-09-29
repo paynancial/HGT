@@ -85,6 +85,14 @@ if (!defined('HG_SITE_CONFIG')) {
     {
         $sections = include __DIR__ . '/footer_nav.php';
         foreach ($sections as $key => $section) {
+            // Optional 'order' per item; items without one keep their file order.
+            $position = 0;
+            foreach ($section['items'] as $i => $item) {
+                $section['items'][$i]['_sort'] = array(isset($item['order']) ? (int) $item['order'] : PHP_INT_MAX, $position++);
+            }
+            usort($section['items'], function ($a, $b) {
+                return $a['_sort'] < $b['_sort'] ? -1 : ($a['_sort'] > $b['_sort'] ? 1 : 0);
+            });
             $items = array();
             foreach ($section['items'] as $item) {
                 $status = isset($item['status']) ? $item['status'] : 'auto';
