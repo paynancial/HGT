@@ -1,9 +1,15 @@
+ErrorDocument 404 /404.php
+
 <IfModule mod_rewrite.c>
 RewriteEngine On
 RewriteBase /
-RewriteRule ^index.php$ - [L]
+
+# /about -> /about.php (301) when that page exists
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /index.php [L]
-</IfModule>
+RewriteCond %{DOCUMENT_ROOT}/$1.php -f
+RewriteRule ^([A-Za-z0-9_-]+)/?$ /$1.php [R=301,L]
 
+# Anything else that does not exist falls through to the 404 page above.
+# (Previously every unknown URL was rewritten to index.php with a 200 status.)
+</IfModule>
