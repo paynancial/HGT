@@ -53,6 +53,7 @@
     function setDrawer(open) {
         if (!nav) return;
         nav.classList.toggle('is-open', open);
+        document.documentElement.classList.toggle('hg-sheet-open', open);
         menuBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
         scrim.hidden = !open;
         document.documentElement.style.overflow = open ? 'hidden' : '';
@@ -79,6 +80,7 @@
     function setSearch(open, opener) {
         if (!hSearch) return;
         hSearch.classList.toggle('is-open', open);
+        document.documentElement.classList.toggle('hg-sheet-open', open && !desktop.matches);
         $$('[data-hg-search-toggle], [data-hg-search-open]').forEach(function (b) { b.setAttribute('aria-expanded', open ? 'true' : 'false'); });
         document.documentElement.style.overflow = open && !desktop.matches ? 'hidden' : '';
         if (open) {

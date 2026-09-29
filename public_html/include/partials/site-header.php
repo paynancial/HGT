@@ -85,8 +85,8 @@ $hgSoon = function ($label) {
         </form>
         <div class="hg-header__actions">
             <button type="button" class="hg-iconbtn hg-header__searchbtn" aria-controls="hg-header-search" aria-expanded="false" data-hg-search-toggle><?= hg_icon('search') ?><span class="hg-sr">Search holiday packages</span></button>
-            <a class="hg-hcontact" href="<?= hg_e(hg_tel_href()) ?>"><?= hg_icon('phone') ?><span><strong>Call Now</strong><?= hg_e(HG_PHONE_DISPLAY) ?></span></a>
-            <a class="hg-hcontact hg-hcontact--wa" href="<?= hg_e(hg_whatsapp_href()) ?>" target="_blank" rel="noopener"><?= hg_icon('whatsapp') ?><span><strong>WhatsApp</strong><?= hg_e(HG_PHONE_DISPLAY) ?></span></a>
+            <a class="hg-hcontact" href="<?= hg_e(hg_tel_href()) ?>" aria-label="Call <?= hg_e(HG_PHONE_DISPLAY) ?>"><?= hg_icon('phone') ?><span><strong>Call Now</strong><?= hg_e(HG_PHONE_DISPLAY) ?></span></a>
+            <a class="hg-hcontact hg-hcontact--wa" href="<?= hg_e(hg_whatsapp_href()) ?>" target="_blank" rel="noopener" aria-label="WhatsApp <?= hg_e(HG_PHONE_DISPLAY) ?>"><?= hg_icon('whatsapp') ?><span><strong>WhatsApp</strong><?= hg_e(HG_PHONE_DISPLAY) ?></span></a>
             <button type="button" class="hg-iconbtn hg-header__login" data-hg-login-open><?= hg_icon('user') ?><span class="hg-sr">Login</span></button>
         </div>
     </div>

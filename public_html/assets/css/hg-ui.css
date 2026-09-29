@@ -805,7 +805,8 @@
 .hg-secnav__inner { display: flex; align-items: center; gap: 16px; }
 .hg-secnav__inner ul { flex: 1; min-width: 0; }
 .hg-secnav__cta { flex: none; }
-@media (max-width: 1023px) { .hg-secnav__cta { display: none; } }
+.hg-secnav a.hg-secnav__cta { min-height: 40px; padding: 0 16px; border-bottom: 0; color: var(--hg-navy-dark); }
+@media (max-width: 1023px) { .hg-secnav a.hg-secnav__cta { display: none; } }
 .hg-bookcard .hg-form__grid { grid-template-columns: 1fr 1fr !important; }
 .hg-bookcard .hg-field:nth-child(-n+3), .hg-bookcard .hg-field--full { grid-column: 1 / -1; }
 
@@ -850,3 +851,20 @@
 .hg-daylist { margin: 0 0 16px !important; padding-left: 0 !important; list-style: none; display: grid; gap: 8px; }
 .hg-daylist li { padding: 12px 16px; border-left: 3px solid var(--hg-orange); background: var(--hg-surface); border-radius: 0 var(--hg-r-sm) var(--hg-r-sm) 0; }
 .hg-feature .hg-eyebrow, .hg-dhero .hg-eyebrow, .hg-ctaband .hg-eyebrow { color: var(--hg-yellow); }
+
+/* Full-screen sheets live inside the sticky header's stacking context:
+   hide the floating layers while one is open. */
+html.hg-sheet-open .hg-bottombar, html.hg-sheet-open .hg-support { display: none !important; }
+/* Header: keep labels on one line with either the brand or fallback font; wider suggestions */
+.hg-nav__link, .hg-nav__trigger, .hg-nav__item > .hg-soon { white-space: nowrap; }
+.hg-hsearch .hg-ac { min-width: 360px; }
+@media (max-width: 1599px) { .hg-hcontact--wa span { display: none; } }
+@media (max-width: 1023px) { .hg-hsearch .hg-ac { min-width: 0; } }
+@media (min-width: 1024px) {
+    .hg-nav__list { gap: 0; }
+    .hg-nav__link, .hg-nav__trigger { padding: 0 10px; }
+    .hg-nav__item > .hg-soon { padding: 0 8px; }
+}
+@media (min-width: 1024px) and (max-width: 1279px) {
+    .hg-nav__item:has(> .hg-soon) { display: none; } /* "Soon" items return from 1280px; all remain in the mobile drawer */
+}
