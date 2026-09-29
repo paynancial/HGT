@@ -1,0 +1,19 @@
+# OS / editor
+.DS_Store
+__MACOSX/
+Thumbs.db
+.idea/
+.vscode/
+
+# Secrets and server-only config (never commit)
+.env
+.env.*
+!.env.example
+public_html/admin/db.php
+public_html/config/*.local.php
+config.local.php
+
+# Logs / uploads / dumps
+*.log
+*.sql
+*.sql.gz
