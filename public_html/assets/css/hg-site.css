@@ -1,6 +1,8 @@
 /* Holiday Guru Travel — floating support widget + cookie consent.
    Colours measured from the supplied logo (Logo_HGT.png, 2026-09-29):
    navy lettering #0A163D, orange "Guru" #FE7F16. */
+.hg-i { display: inline-block; width: 1em; height: 1em; flex: none; vertical-align: -0.125em; }
+
 :root {
     --hg-navy: #0A163D;
     --hg-navy-dark: #060E28;
@@ -43,7 +45,7 @@
     box-shadow: 0 8px 24px rgba(10, 22, 61, .25);
     cursor: pointer;
 }
-.hg-support__toggle i { font-size: 22px; color: var(--hg-orange); }
+.hg-support__toggle .hg-i { width: 22px; height: 22px; color: var(--hg-orange); }
 .hg-support__toggle:hover { background: var(--hg-navy-dark); }
 .hg-support__toggle-close,
 .hg-support.is-open .hg-support__toggle-open { display: none; }
@@ -271,13 +273,13 @@
     transition: border-color .15s ease-out, background-color .15s ease-out;
 }
 .hg-qlink:hover { border-color: var(--hg-navy); background: #fff; color: var(--hg-navy); }
-.hg-qlink i { font-size: 16px; color: var(--hg-navy); }
+.hg-qlink .hg-i { width: 17px; height: 17px; color: var(--hg-navy); }
 .hg-qlink .hg-qlink__wa { color: #128C4B; }
 .hg-qlink__label { font-weight: 700; }
 .hg-qlink__value { color: #4A5163; }
 .hg-qlink__value::before { content: "\00B7"; margin-right: 10px; color: #7F89A3; }
 .hg-qlink--primary { background: var(--hg-orange); border-color: var(--hg-orange); color: var(--hg-navy-dark); }
-.hg-qlink--primary i, .hg-qlink--primary .hg-qlink__value { color: var(--hg-navy-dark); }
+.hg-qlink--primary .hg-i, .hg-qlink--primary .hg-qlink__value { color: var(--hg-navy-dark); }
 .hg-qlink--primary .hg-qlink__value::before { color: var(--hg-navy-dark); }
 .hg-qlink--primary:hover { background: var(--hg-orange-hover); border-color: var(--hg-orange-hover); color: var(--hg-navy-dark); }
 .hg-footer__social { display: flex; justify-content: center; gap: 10px; }

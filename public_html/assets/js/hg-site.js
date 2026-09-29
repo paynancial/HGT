@@ -53,6 +53,14 @@
         if (gaLoaded && window.gtag) window.gtag('consent', 'update', { analytics_storage: 'denied' });
     }
 
+    // Analytics events for the whole site: sent only when analytics consent is
+    // current and GA has loaded; otherwise silently dropped (never queued).
+    window.hgTrack = function (name, params) {
+        var c = readConsent();
+        if (!gaLoaded || !window.gtag || !c || !c.analytics) return;
+        window.gtag('event', name, params || {});
+    };
+
     function applyConsent(consent) {
         if (consent && consent.analytics) loadAnalytics();
         else removeAnalyticsCookies();

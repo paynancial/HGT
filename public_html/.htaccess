@@ -3,7 +3,7 @@
 # Only root-level pages that exist as <name>.php are affected; assets, sub-folders,
 # PHPMailer, admin and the form endpoints (mail.php, mail1.php) are untouched.
 
-Options -MultiViews
+Options -MultiViews -Indexes
 AcceptPathInfo Off
 DirectoryIndex index.php
 ErrorDocument 404 /404.php
@@ -23,6 +23,22 @@ ErrorDocument 404 /404.php
 <IfModule mod_rewrite.c>
 RewriteEngine On
 RewriteBase /
+
+# 0. Consolidated pages (single 301 hop, also from the old .php URL)
+RewriteRule ^kashmir-tour(\.php)?/?$ /tours/kashmir [R=301,L]
+
+# 0b. Package search / destination results: /tours and /tours/{destination}
+RewriteRule ^tours/$ /tours [R=301,L]
+RewriteRule ^tours/([a-z0-9-]+)/$ /tours/$1 [R=301,L]
+RewriteRule ^tours/([a-z0-9-]+)$ tours.php?dest=$1 [QSA,L]
+
+# 0c. Travel guides: /travel-guide/{slug} serves travel-guide/{slug}.php
+RewriteCond %{THE_REQUEST} \s/+travel-guide/[^?\s]+\.php[\s?]
+RewriteRule ^travel-guide/([a-z0-9-]+)\.php$ /travel-guide/$1 [R=301,L]
+RewriteRule ^travel-guide/([a-z0-9-]+)/$ /travel-guide/$1 [R=301,L]
+RewriteCond %{DOCUMENT_ROOT}/travel-guide/$1.php -f
+RewriteRule ^travel-guide/([a-z0-9-]+)$ travel-guide/$1.php [L]
+RewriteRule ^travel-guide/?$ - [R=404,L]
 
 # 1. /index.php and /index -> /
 RewriteCond %{THE_REQUEST} \s/+index(\.php)?[\s?]

@@ -1,0 +1,18 @@
+{
+  "_note": "content = include/content/{content}.php with rich destination content (only then is /tours/{key} a full destination page). Destination groups used by navigation, listings, search and the package data build (tools/build_package_data.py). Order = display order. hub_url must be a real page. match = regex on package slugs.",
+  "groups": [
+    {"key": "kashmir", "name": "Kashmir", "region": "india", "area": "North India", "hub_url": "/tours/kashmir", "content": "kashmir", "match": "srinagar|gulmarg|pahalgam|kashmir", "keywords": "srinagar gulmarg pahalgam sonmarg katra dal lake jammu"},
+    {"key": "ladakh", "name": "Leh Ladakh", "region": "india", "area": "North India", "hub_url": "/leh-ladakh", "match": "ladakh", "keywords": "leh ladakh nubra pangong"},
+    {"key": "himachal", "name": "Himachal Pradesh", "region": "india", "area": "North India", "hub_url": "/delight-full-himachal", "match": "shimla|manali|dalhousie|dharam|amri?r?t?sar|himachal|amrirsar", "keywords": "shimla manali dalhousie dharamshala amritsar kullu"},
+    {"key": "uttarakhand", "name": "Uttarakhand", "region": "india", "area": "North India", "hub_url": "/uttarakhand-tour", "match": "nainital|mussoorie|corbett|ranikhet|kausani|almora|rishikesh|uttarakhand", "keywords": "nainital mussoorie jim corbett rishikesh haridwar ranikhet kausani almora"},
+    {"key": "char-dham", "name": "Char Dham Yatra", "region": "india", "area": "Pilgrimage", "hub_url": "/chardham-yatra", "match": "dham|chardham|yamunotri", "keywords": "chardham char dham kedarnath badrinath yamunotri gangotri do dham pilgrimage yatra"},
+    {"key": "amarnath", "name": "Amarnath Yatra", "region": "india", "area": "Pilgrimage", "hub_url": "/amarnath-ji-yatra", "match": "amarnath", "keywords": "amarnath yatra baltal pahalgam helicopter pilgrimage"},
+    {"key": "sikkim-darjeeling", "name": "Darjeeling & Sikkim", "region": "india", "area": "East & North East", "hub_url": "/darjeeling-sikkim", "match": "gangtok|darjeeling|pelling|kalimpong|lachung|lachen|sikkim", "keywords": "gangtok darjeeling pelling kalimpong lachung lachen sikkim north east"},
+    {"key": "kerala", "name": "Kerala", "region": "india", "area": "South India", "hub_url": "/exotic-kerala", "match": "munnar|kerala|alleppey|kovalam|cochin|thekk", "keywords": "munnar alleppey thekkady kovalam cochin kochi backwaters houseboat"},
+    {"key": "south-india", "name": "Ooty, Mysore & Coorg", "region": "india", "area": "South India", "hub_url": "/ooty-mysore-coorg", "match": "ooty|mysore|coorg|bangalore|banglore|kodaikanal|wayand|kanyakumari", "keywords": "ooty mysore coorg bangalore kodaikanal wayanad karnataka tamil nadu"},
+    {"key": "goa", "name": "Goa", "region": "india", "area": "West India", "hub_url": "/amazing-goa", "match": "goa", "keywords": "goa beach"},
+    {"key": "dubai", "name": "Dubai", "region": "international", "area": "Middle East", "hub_url": "/dream-dubai", "match": "dubai", "keywords": "dubai uae burj khalifa desert safari"},
+    {"key": "singapore-malaysia", "name": "Singapore & Malaysia", "region": "international", "area": "South-East Asia", "hub_url": "/sizzling-singapore", "match": "singapore|thailand|kuala|pattaya", "keywords": "singapore malaysia kuala lumpur thailand pattaya"},
+    {"key": "maldives", "name": "Maldives", "region": "international", "area": "Indian Ocean", "hub_url": "/maldives-05-days", "match": "maldives", "keywords": "maldives island resort"}
+  ]
+}
