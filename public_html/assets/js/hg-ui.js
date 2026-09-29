@@ -233,7 +233,22 @@
 
     /* ---------------- Enquiry + newsletter forms ---------------- */
     var loadedAt = Date.now();
+    // Campaign source (utm_*) is kept for this visit and sent with enquiries.
+    var UTM = ['utm_source', 'utm_medium', 'utm_campaign'];
+    (function () {
+        var q = new URLSearchParams(window.location.search);
+        UTM.forEach(function (k) { var v = q.get(k); if (v) { try { sessionStorage.setItem('hg_' + k, v.slice(0, 100)); } catch (e) {} } });
+    })();
+    function addUtm(form) {
+        UTM.forEach(function (k) {
+            var v = null;
+            try { v = sessionStorage.getItem('hg_' + k); } catch (e) {}
+            if (!v || form.querySelector('input[name="' + k + '"]')) return;
+            var h = document.createElement('input'); h.type = 'hidden'; h.name = k; h.value = v; form.appendChild(h);
+        });
+    }
     function guardFields(form) {
+        addUtm(form);
         if (form.querySelector('input[name="website"]')) return;
         var hp = document.createElement('input');
         hp.type = 'text'; hp.name = 'website'; hp.tabIndex = -1; hp.autocomplete = 'off';
@@ -275,7 +290,8 @@
                 if (ok) {
                     status(form, 'Thank you. A travel expert will contact you shortly on phone or WhatsApp.', true);
                     form.reset();
-                    track('generate_lead', { form_id: form.id });
+                    var pk = form.querySelector('[name="package_url"]');
+                    track('enquiry_submit', { form_id: form.id, package_url: pk ? pk.value : '' });
                 } else {
                     status(form, 'Sorry, we could not send this. Please call or WhatsApp +91 99717 54265.', false);
                 }
@@ -309,6 +325,10 @@
         if (d && m && /^\d{4}-\d{2}/.test(d) && $('option[value="' + d.slice(0, 7) + '"]', m)) m.value = d.slice(0, 7);
         form.addEventListener('focusin', function once() { track('enquiry_start', { form_id: form.id }); form.removeEventListener('focusin', once); });
     });
+
+    /* Package page view (slug only; package number once the registry exists) */
+    var pv = $('[data-hg-package-view]');
+    if (pv) track('package_view', { package_slug: pv.getAttribute('data-hg-package-view'), package_number: pv.getAttribute('data-package-number') || '' });
 
     /* ---------------- Section nav highlight ---------------- */
     var secLinks = $$('.hg-secnav a');

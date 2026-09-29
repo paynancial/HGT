@@ -480,13 +480,13 @@ if (!defined('HG_UI_CORE')) {
     }
 
     /** Page-local section navigation (sticky). $items = [[id, label], ...] */
-    function hg_section_nav(array $items, $label = 'On this page')
+    function hg_section_nav(array $items, $label = 'On this page', $ctaHtml = '')
     {
-        $out = '<nav class="hg-secnav" aria-label="' . hg_e($label) . '"><div class="hg-container"><ul>';
+        $out = '<nav class="hg-secnav" aria-label="' . hg_e($label) . '"><div class="hg-container hg-secnav__inner"><ul>';
         foreach ($items as $it) {
             $out .= '<li><a href="#' . hg_e($it[0]) . '">' . hg_e($it[1]) . '</a></li>';
         }
-        return $out . '</ul></div></nav>';
+        return $out . '</ul>' . $ctaHtml . '</div></nav>';
     }
 
     /**

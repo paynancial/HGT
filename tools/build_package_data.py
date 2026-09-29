@@ -23,6 +23,7 @@ SEARCH_OUT = os.path.join(ROOT, 'assets', 'data', 'search-index.json')
 
 # Destination groups come from include/data/destinations.json. Pilgrimage groups
 # are matched first because e.g. "amarnath-ji-yatra-with-srinagar" also matches Kashmir.
+SOURCES = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'package-sources')
 DEST_GROUPS = json.load(open(DEST, encoding='utf-8'))['groups']
 GROUPS = [(g['key'], g['match']) for g in sorted(DEST_GROUPS, key=lambda g: g['area'] != 'Pilgrimage')]
 
@@ -173,7 +174,14 @@ def main():
     for f in sorted(os.listdir(ROOT)):
         if not f.endswith('.php') or f[:-4] in NOT_PACKAGES:
             continue
-        p = parse(os.path.join(ROOT, f))
+        path = os.path.join(ROOT, f)
+        # Pages converted to the Phase 1 template keep their original content in
+        # tools/package-sources/ (not web-served); extract from that copy.
+        if 'hg_render_package(' in open(path, encoding='utf-8', errors='replace').read():
+            path = os.path.join(SOURCES, f)
+            if not os.path.exists(path):
+                sys.exit('missing source for templated page: ' + f)
+        p = parse(path)
         if p:
             pkgs.append(enrich(p))
     os.makedirs(os.path.dirname(OUT), exist_ok=True)

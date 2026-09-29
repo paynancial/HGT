@@ -2,6 +2,9 @@
 require_once __DIR__ . '/../ui/core.php';
 $hgGroups = hg_groups();
 $hgS = hg_search_state();
+if ($hgS['destination'] === '' && !empty($GLOBALS['hgMeta']['search_destination'])) {
+    $hgS['destination'] = $GLOBALS['hgMeta']['search_destination']; // e.g. Kashmir on a Kashmir package page
+}
 $hgArea = function ($region) use ($hgGroups) {
     $areas = array();
     foreach ($hgGroups as $g) {

@@ -1,6 +1,7 @@
 <?php
 // Enquiry form endpoint (contactForm1/2/3). Responds "1" on success, "0" on failure.
 require __DIR__ . '/include/mail_helper.php';
+require_once __DIR__ . '/include/site_config.php';
 
 hgt_guard_request();
 
@@ -37,11 +38,38 @@ $optional = array(
     'hotel_category' => 'Hotel category',
     'duration'       => 'Trip length',
     'country'        => 'Country of residence',
+    'package_url'    => 'Package URL',
+    'displayed_rate' => 'Rate shown at enquiry',
+    'utm_source'     => 'UTM source',
+    'utm_medium'     => 'UTM medium',
+    'utm_campaign'   => 'UTM campaign',
 );
 foreach ($optional as $key => $label) {
     $value = hgt_field($key, 150);
     if ($value !== '') {
         $rows[$label] = $value;
+    }
+}
+// Package enquiries: take the package name from our own data (by URL path),
+// never from the submitted text, so it cannot be spoofed or mistyped.
+if (isset($rows['Package URL'])) {
+    $path = parse_url($rows['Package URL'], PHP_URL_PATH);
+    $slug = is_string($path) ? trim($path, '/') : '';
+    $known = null;
+    $data = __DIR__ . '/include/data/packages.json';
+    if ($slug !== '' && is_file($data)) {
+        foreach ((array) json_decode((string) file_get_contents($data), true) as $pkg) {
+            if (isset($pkg['slug']) && $pkg['slug'] === $slug) {
+                $known = $pkg;
+                break;
+            }
+        }
+    }
+    if ($known) {
+        $rows['Package'] = $known['title'];
+        $rows['Package URL'] = rtrim(HG_SITE_URL, '/') . '/' . $known['slug'];
+    } else {
+        unset($rows['Package URL']);
     }
 }
 $rows['Message'] = $message;
