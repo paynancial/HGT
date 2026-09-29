@@ -1,12 +1,6 @@
 <?php require_once __DIR__ . '/site_config.php'; ?>
-<style>
-    @media only screen and (max-width: 600px) {
- .footer-card{
-    text-align:center;
-  }
-}
-</style>
-<footer class="footer-wrapper footer-layout1">
+<?php $hgFooterNav = hg_footer_nav(); ?>
+<footer class="footer-wrapper footer-layout1 hg-footer">
         <div class="widget-area">
             <div class="container">
                 <div class="newsletter-area">
@@ -24,119 +18,61 @@
                         </div>
                     </div>
                 </div>
-                <div class="row justify-content-between">
-                    <div class="col-md-6 col-xl-3">
-                        <div class="widget footer-widget">
-                            <div class="th-widget-about">
-                                
-                                <div class="about-logo"><a href="/"><img src="assets/img/logopng.png"
-                                            alt="logopng.png" width="150px"></a></div>
-                                <div class="holiday package">
-                                <i class="icd-ico ich ich_globe pull-left"></i>
-                                <p style="text-align: justify;">Born from a love for travel and a desire to share the joy of exploration, Holiday Guru Travel was founded with a vision to redefine the way you experience the world. We understand that travel is not just about reaching a destination; it's about the moments, the connections, and the memories that last a lifetime.</p>
-                                
-                                </div>
-                                </div>
-                                </div>
-                                </div>
-                                <!--<p class="about-text">Rapidiously myocardinate cross-platform intellectual capital-->
-                                <!--    model. Appropriately create interactive infrastructures</p>-->
-                                
-                   <div class="col-md-6 col-xl-auto">
-                        <div class="widget widget_nav_menu footer-widget">
-                            <h3 class="widget_title">Themes</h3>
-                            <div class="menu-all-pages-container">
-                                <ul class="menu">
-                                            <li><a href="/family-holiday">Family Holiday</a></li>
-                                            <li><a href="/beach-holiday">Beach Holiday</a></li>
-                                            <li><a href="/hill-station-holidays">Hill Station Holidays</a></li>
-                                            <li><a href="/honeymoon-holiday">Honeymoon Holiday</a></li>
-                                            <li><a href="/pilgrim-holidays">Pilgrim Holidays</a></li>
-                                            <li><a href="/adventure-holiday">Adventure Holiday</a></li>
-                               </ul>
-                            </div>
+
+                <div class="hg-footer__top">
+                    <div class="hg-footer__brand">
+                        <a href="/" class="hg-footer__logo"><img src="assets/img/logopng.png" alt="Holiday Guru Travel" width="180"></a>
+                        <p class="hg-footer__tagline">Your journey. Your way.</p>
+                        <p class="hg-footer__intro">Holiday packages across India and abroad, planned by the Holiday Guru Travel team from our office in Noida.</p>
+                        <div class="hg-footer__social">
+                            <a href="https://www.facebook.com/share/dPbbE3G2et8VmGMu/?mibextid=qi2Omg" target="_blank" rel="noopener" aria-label="Holiday Guru Travel on Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                            <a href="https://www.instagram.com/holidaygurutravel?igsh=MXFwOHJ5bTFjeGxsZw==" target="_blank" rel="noopener" aria-label="Holiday Guru Travel on Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                            <a href="<?= hg_e(hg_whatsapp_href()) ?>" target="_blank" rel="noopener" aria-label="Holiday Guru Travel on WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
                         </div>
                     </div>
-                    <div class="col-md-6 col-xl-auto">
-                        <div class="widget widget_nav_menu footer-widget">
-                            <h3 class="widget_title">Related Links</h3>
-                            <div class="menu-all-pages-container">
-                                <ul class="menu">
-                                    <li><a href="/">Home</a></li>
-                                    <li><a href="/about">About us</a></li>
-                                    <li><a href="/contact">Contact Us</a></li>
-                                    <li><a href="/service">Our Services</a></li>
-                                    
-                                </ul>
-                            </div>
+                    <div class="hg-footer__contact">
+                        <h2 class="hg-footer__heading">Talk to a travel expert</h2>
+                        <dl class="hg-footer__details">
+                            <div><dt>Phone</dt><dd><a href="<?= hg_e(hg_tel_href()) ?>"><?= hg_e(HG_PHONE_DISPLAY) ?></a></dd></div>
+                            <div><dt>WhatsApp</dt><dd><a href="<?= hg_e(hg_whatsapp_href()) ?>" target="_blank" rel="noopener"><?= hg_e(HG_PHONE_DISPLAY) ?></a></dd></div>
+                            <div><dt>Email</dt><dd><a href="<?= hg_e(hg_mailto_href()) ?>"><?= hg_e(HG_EMAIL_DISPLAY) ?></a></dd></div>
+                            <div><dt>Office</dt><dd><address><?= hg_e(HG_ADDRESS_LINE1) ?>, <?= hg_e(HG_ADDRESS_LINE2) ?></address></dd></div>
+                        </dl>
+                        <div class="hg-footer__ctas">
+                            <a class="hg-fbtn hg-fbtn--primary" href="<?= hg_e(hg_tel_href()) ?>"><i class="fa-solid fa-phone" aria-hidden="true"></i> Call Now</a>
+                            <a class="hg-fbtn" href="<?= hg_e(hg_whatsapp_href()) ?>" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> WhatsApp Expert</a>
+                            <a class="hg-fbtn" href="<?= hg_e(hg_mailto_href()) ?>"><i class="fa-regular fa-envelope" aria-hidden="true"></i> Email Us</a>
                         </div>
                     </div>
-                    <div class="col-md-6 col-xl-auto">
-                        <div class="widget footer-widget">
-                            <h3 class="widget_title">Contact Us</h3>
-                            <div class="th-widget-contact">
-                                <div class="info-box_text">
-                                    <div class="icon"><img src="assets/img/icon/add.png" alt="add.png"></div>
-                                    <div class="details">
-                                        <p>India</p>
-                                        
-                                    </div>
-                                </div>
-                                <div class="info-box_text">
-                                    <div class="icon"><img src="assets/img/icon/phone1.png" width="18px" alt="Travel Agency India"></div>
-                                    <div class="details">
-                                    <p><a href="<?= hg_e(hg_tel_href()) ?>" class="info-box_link" aria-label="Call Holiday Guru Travel on <?= hg_e(HG_PHONE_DISPLAY) ?>"><?= hg_e(HG_PHONE_DISPLAY) ?></a></p>
-                                        
-                                    </div>
-                                </div>
-                                <div class="info-box_text">
-                                    <div class="icon"><img src="assets/img/icon/email.png" alt="Mail to Travel Agency in Delhi"></div>
-                                    <div class="details">
-                                        <p><a href="<?= hg_e(hg_mailto_href()) ?>" class="info-box_link"><?= hg_e(HG_EMAIL_DISPLAY) ?></a></p>
-                                        
-                                    </div>
-                                </div>
-                                
-                                
-                            </div>
-                            <h3 class="widget_title mt-4">Connect With Us</h3>
-                                <div class="th-social">
-                                    <a href="https://www.facebook.com/share/dPbbE3G2et8VmGMu/?mibextid=qi2Omg"><i
-                                            class="fab fa-facebook-f"></i>
-                                    </a>
-                                    <!--<a href="https://www.twitter.com/"><i-->
-                                    <!--        class="fab fa-twitter"></i>-->
-                                    <!--</a>-->
-                                    <!--<a href="https://www.linkedin.com/"><i-->
-                                    <!--        class="fab fa-linkedin-in"></i>-->
-                                    <!--</a>-->
-                                    <a href="<?= hg_e(hg_whatsapp_href()) ?>" target="_blank" rel="noopener" aria-label="WhatsApp Holiday Guru Travel"><i
-                                        class="fab fa-whatsapp"></i>
-                                    </a>
-                                    <a href="https://www.instagram.com/holidaygurutravel?igsh=MXFwOHJ5bTFjeGxsZw=="><i
-                                            class="fab fa-instagram"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                   
-                    
-                    
                 </div>
+
+                <nav class="hg-footer__nav" aria-label="Footer">
+                    <?php foreach ($hgFooterNav as $hgKey => $hgSection) { ?>
+                    <details class="hg-fnav" id="footer-<?= hg_e($hgKey) ?>" open data-hg-fnav>
+                        <summary class="hg-fnav__summary"><h2 class="hg-fnav__title"><?= hg_e($hgSection['title']) ?></h2><span class="hg-fnav__icon" aria-hidden="true"></span></summary>
+                        <ul class="hg-fnav__list">
+                            <?php foreach ($hgSection['items'] as $hgItem) { ?>
+                            <?php if ($hgItem['state'] === 'active') { ?>
+                            <li><a class="hg-fnav__link" href="<?= hg_e($hgItem['url']) ?>"<?= !empty($hgItem['target']) ? ' target="' . hg_e($hgItem['target']) . '" rel="noopener"' : '' ?>><?= hg_e($hgItem['label']) ?></a></li>
+                            <?php } else { ?>
+                            <li><span class="hg-fnav__soon"><?= hg_e($hgItem['label']) ?> <span class="hg-fnav__badge">Coming soon</span></span></li>
+                            <?php } ?>
+                            <?php } ?>
+                        </ul>
+                    </details>
+                    <?php } ?>
+                </nav>
             </div>
         </div>
-        <div class="copyright-wrap" data-bg-src="assets/img/copyright_bg_1.jpg">
+        <div class="hg-footer__bottom">
             <div class="container">
-                <div class="row justify-content-between align-items-center">
-                    <div class="col-md-6">
-                        <p class="copyright-text">Copyright 2014 <a href="/">Holiday Guru Travels</a>. All Rights
-                            Reserved.</p>
-                        <p class="copyright-text"><button type="button" class="hg-footer-link" data-hg-consent-open>Cookie settings</button></p>
-                    </div>
-                    <div class="col-md-6 text-end d-md-block">
-                        <div class="footer-card"><span class="title">Designed By: <a href="https://sbbjitsolutions.com/" target="blank">SBBJ IT SOLUTIONS</a></span>
-                    </div>
+                <div class="hg-footer__legal">
+                    <p class="hg-footer__entity"><span class="hg-footer__entity-label">Legal Name:</span> <?= hg_e(HG_LEGAL_NAME) ?><span class="hg-footer__sep" aria-hidden="true">|</span><span class="hg-footer__entity-label">CIN:</span> <?= hg_e(HG_CIN) ?></p>
+                    <p class="hg-footer__copy">&copy; Holiday Guru Travel. All Rights Reserved.</p>
+                </div>
+                <div class="hg-footer__meta">
+                    <button type="button" class="hg-footer-link" data-hg-consent-open>Cookie settings</button>
+                    <span class="hg-footer__credit">Designed by <a href="https://sbbjitsolutions.com/" target="_blank" rel="noopener">SBBJ IT SOLUTIONS</a></span>
                 </div>
             </div>
         </div>

@@ -23,6 +23,10 @@ if (!defined('HG_SITE_CONFIG')) {
     define('HG_ADDRESS_LINE1', 'Holiday Guru Travel 2nd floor, B6 Dharampali Palace');
     define('HG_ADDRESS_LINE2', 'Bhoja Market, Sector 27 Noida');
 
+    // Legal entity (confirmed by the owner, 2026-09-29).
+    define('HG_LEGAL_NAME', 'M/S Swaasthik Vocation Pvt. Ltd.');
+    define('HG_CIN', 'U74999UP2021PTC154544');
+
     // GA4 measurement ID. Loaded only after the visitor accepts analytics
     // cookies (see assets/js/hg-site.js). Empty string disables GA.
     define('HG_GA4_ID', 'G-5QV5YEX7XG');
@@ -44,6 +48,57 @@ if (!defined('HG_SITE_CONFIG')) {
     function hg_mailto_href()
     {
         return 'mailto:' . HG_EMAIL;
+    }
+
+    /**
+     * True when an internal URL points at a page that exists in this site.
+     * '/'        -> index.php
+     * '/about'   -> about.php (extensionless public URL)
+     * '/a/b/'    -> a/b/index.php or a/b.php (future folder URLs)
+     * External https:// URLs are trusted as configured.
+     */
+    function hg_page_exists($url)
+    {
+        if (preg_match('#^https?://#i', $url)) {
+            return true;
+        }
+        $path = parse_url($url, PHP_URL_PATH);
+        if (!is_string($path) || $path === '' || $path[0] !== '/' || strpos($path, '..') !== false) {
+            return false;
+        }
+        $root = dirname(__DIR__);
+        $trimmed = trim($path, '/');
+        if ($trimmed === '') {
+            return is_file($root . '/index.php');
+        }
+        return is_file($root . '/' . $trimmed . '.php')
+            || is_file($root . '/' . $trimmed . '/index.php')
+            || (strpos(basename($trimmed), '.') !== false && is_file($root . '/' . $trimmed));
+    }
+
+    /**
+     * Footer navigation from include/footer_nav.php with each item's state
+     * resolved: 'active' (real page, rendered as a link) or 'coming_soon'
+     * (plain text). Hidden items are removed.
+     */
+    function hg_footer_nav()
+    {
+        $sections = include __DIR__ . '/footer_nav.php';
+        foreach ($sections as $key => $section) {
+            $items = array();
+            foreach ($section['items'] as $item) {
+                $status = isset($item['status']) ? $item['status'] : 'auto';
+                if ($status === 'hidden') {
+                    continue;
+                }
+                $url = isset($item['url']) ? trim($item['url']) : '';
+                $item['state'] = ($status !== 'coming_soon' && $url !== '' && hg_page_exists($url))
+                    ? 'active' : 'coming_soon';
+                $items[] = $item;
+            }
+            $sections[$key]['items'] = $items;
+        }
+        return $sections;
     }
 
     /** wa.me link with an optional pre-filled message. */
