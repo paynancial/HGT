@@ -202,6 +202,7 @@ if ($content) {
 hg_layout_start(array(
     'title' => $title, 'description' => $desc, 'path' => $base, 'index' => $indexable,
     'image' => $content ? $content['image'] : '', 'breadcrumbs' => $crumbs, 'schema' => $schema,
+    'search_destination' => $group ? $group['name'] : '',
 ));
 
 /* ---------- Render helpers ---------- */
@@ -441,7 +442,7 @@ $check = function ($name, $value, $label, $count, $checked) {
         <section class="hg-answer" id="how-many-days" aria-labelledby="q-days">
             <h3 class="hg-h3" id="q-days">How many days are enough for <?= hg_e($name) ?>?</h3>
             <p class="hg-answer__direct"><?= hg_e($c['days_answer']) ?></p>
-            <div class="hg-tablewrap"><table class="hg-table"><thead><tr><th scope="col">Trip length</th><th scope="col">What it covers</th><th scope="col">Itinerary</th></tr></thead><tbody>
+            <div class="hg-tablewrap" tabindex="0" role="region" aria-label="Table"><table class="hg-table"><thead><tr><th scope="col">Trip length</th><th scope="col">What it covers</th><th scope="col">Itinerary</th></tr></thead><tbody>
             <?php foreach ($c['days_rows'] as $r) { $pp = hg_package($r[2]); ?><tr><td><?= hg_e($r[0]) ?></td><td><?= hg_e($r[1]) ?></td><td><?php if ($pp) { ?><a href="<?= hg_e($pp['url'] . $context) ?>"><?= hg_e($pp['title']) ?></a><?php } ?></td></tr><?php } ?>
             </tbody></table></div>
         </section>
@@ -449,7 +450,7 @@ $check = function ($name, $value, $label, $count, $checked) {
         <section class="hg-answer" id="best-time" aria-labelledby="q-best">
             <h3 class="hg-h3" id="q-best">What is the best time to visit <?= hg_e($name) ?>?</h3>
             <p class="hg-answer__direct"><?= hg_e($c['best_time_answer']) ?></p>
-            <div class="hg-tablewrap"><table class="hg-table"><thead><tr><th scope="col">Months</th><th scope="col">Season</th><th scope="col">What to expect</th></tr></thead><tbody>
+            <div class="hg-tablewrap" tabindex="0" role="region" aria-label="Table"><table class="hg-table"><thead><tr><th scope="col">Months</th><th scope="col">Season</th><th scope="col">What to expect</th></tr></thead><tbody>
             <?php foreach ($c['best_time'] as $r) { ?><tr><td><?= hg_e($r[0]) ?></td><td><?= hg_e($r[1]) ?></td><td><?= hg_e($r[2]) ?></td></tr><?php } ?>
             </tbody></table></div>
         </section>

@@ -230,10 +230,10 @@
                                     alt="Kashmir Tour Packages">
                                 <div class="destination-content">
                                     <div class="media-left">
-                                        <h4 class="box-title"><a href="/kashmir-tour">Jannat E Kashmir</a></h4><span
+                                        <h4 class="box-title"><a href="/tours/kashmir">Jannat E Kashmir</a></h4><span
                                             class="destination-subtitle">6 Packages</span>
                                     </div>
-                                    <div class=""><a href="/kashmir-tour" class="th-btn style2 th-icon">View
+                                    <div class=""><a href="/tours/kashmir" class="th-btn style2 th-icon">View
                                             All</a></div>
                                 </div>
                             </div>

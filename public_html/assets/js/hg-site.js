@@ -242,9 +242,15 @@
 
     // Package pages carry the enquiry sidebar (#contactForm3) and the package
     // name in the page H1: pre-fill WhatsApp with that package.
+    // Phase 1 package pages provide the full contextual message (package, date,
+    // travellers, departure) on their own WhatsApp button: reuse it.
+    var ctxWa = document.querySelector('.hg-bookcard .hg-btn--wa');
     var heading = document.querySelector('h1.breadcumb-title');
     var packageName = document.getElementById('contactForm3') && heading ? heading.textContent.replace(/\s+/g, ' ').trim() : '';
-    if (packageName) {
+    if (ctxWa) {
+        var wl = widget.querySelectorAll('[data-hg-whatsapp]');
+        for (var k = 0; k < wl.length; k++) wl[k].setAttribute('href', ctxWa.getAttribute('href'));
+    } else if (packageName) {
         var message = 'Hi Holiday Guru Travel,\nI am interested in the ' + packageName +
             ' package.\nPlease share the details and best available quote.';
         var links = widget.querySelectorAll('[data-hg-whatsapp]');

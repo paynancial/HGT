@@ -234,7 +234,8 @@ if (!defined('HG_UI_CORE')) {
                 . '" height="' . (int) $height . '"' . ($eager ? ' fetchpriority="high"' : ' loading="lazy"') . ' decoding="async">';
         }
         $label = HG_DEV_MODE ? '<span class="hg-ph__label">Image: ' . hg_e($path !== '' ? basename($path) : 'to be supplied') . '</span>' : '';
-        return '<div class="' . hg_e($cls) . ' hg-ph" role="img" aria-label="' . hg_e($alt) . '" style="aspect-ratio:' . (int) $width . '/' . (int) $height . '">'
+        $a11y = $alt === '' ? 'aria-hidden="true"' : 'role="img" aria-label="' . hg_e($alt) . '"';
+        return '<div class="' . hg_e($cls) . ' hg-ph" ' . $a11y . ' style="aspect-ratio:' . (int) $width . '/' . (int) $height . '">'
             . '<svg class="hg-ph__icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M6 38l11-14 8 9 6-7 11 12z" fill="currentColor" opacity=".55"/><circle cx="34" cy="14" r="5" fill="currentColor" opacity=".55"/></svg>'
             . $label . '</div>';
     }
@@ -324,6 +325,7 @@ if (!defined('HG_UI_CORE')) {
     <meta name="twitter:card" content="summary_large_image">
     <meta name="theme-color" content="#0A163D">
     <link rel="icon" type="image/png" href="/assets/img/favicon.png">
+    <link rel="preload" href="/assets/fonts/hg/plus-jakarta-sans-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/assets/fonts/hg/plus-jakarta-sans-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/assets/fonts/hg/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="/assets/css/hg-site.css">
@@ -493,7 +495,7 @@ if (!defined('HG_UI_CORE')) {
      * Enquiry form (posts to mail.php with the Phase 0 spam guards added by
      * hg-ui.js). $context adds hidden fields such as package or destination.
      */
-    function hg_enquiry_form($id, $title, array $context = array(), $compact = false)
+    function hg_enquiry_form($id, $title, array $context = array(), $compact = false, $extraFields = '')
     {
         static $n = 0;
         $n++;
@@ -516,6 +518,7 @@ if (!defined('HG_UI_CORE')) {
         <div class="hg-field"><label for="<?= $p ?>adults">Adults</label><select id="<?= $p ?>adults" name="adults"><?php for ($i = 1; $i <= 9; $i++) { ?><option<?= $i === $S['adults'] ? ' selected' : '' ?>><?= $i ?></option><?php } ?></select></div>
         <div class="hg-field"><label for="<?= $p ?>children">Children</label><select id="<?= $p ?>children" name="children"><?php for ($i = 0; $i <= 6; $i++) { ?><option<?= $i === $S['children'] ? ' selected' : '' ?>><?= $i ?></option><?php } ?></select></div>
         <div class="hg-field"><label for="<?= $p ?>dep">Departure city</label><select id="<?= $p ?>dep" name="departure_city"><?php foreach ($deps as $v => $l) { ?><option value="<?= hg_e($v === '' ? '' : $l) ?>"<?= $v !== '' && $v === $S['departure'] ? ' selected' : '' ?>><?= hg_e($l) ?></option><?php } ?></select></div>
+        <?= $extraFields ?>
         <div class="hg-field hg-field--full"><label for="<?= $p ?>message">Anything we should know? <span class="hg-optional">(optional)</span></label><textarea id="<?= $p ?>message" name="message" rows="<?= $compact ? 2 : 3 ?>" maxlength="2000"></textarea></div>
     </div>
     <p class="hg-form__status" role="status" aria-live="polite"></p>
@@ -524,6 +527,23 @@ if (!defined('HG_UI_CORE')) {
 </form>
 <?php
         return ob_get_clean();
+    }
+
+    /** Booking FAQs built from the company's real package booking terms. */
+    function hg_booking_faqs()
+    {
+        return array(
+            array('How do I book a holiday package with Holiday Guru Travel?',
+                '<p>Send an enquiry (or call or WhatsApp +91 99717 54265). A travel expert confirms the itinerary, hotels and price with you. Our package booking terms ask for a <strong>35% advance</strong> to confirm, with the balance paid before departure. We issue a booking voucher once the payment is received.</p>'),
+            array('Which payment methods do you accept?',
+                '<p>Net banking, IMPS, NEFT, cheque and UPI (including Google Pay, PhonePe, Paytm and scan-to-pay QR). We do not accept cash. Air and train tickets need full payment at the time of booking.</p>'),
+            array('Can I change the itinerary or hotels in a package?',
+                '<p>Yes. Every package can be used as a starting point: tell us your dates, travellers, hotel preference and anything you want to add or remove, and we send a revised itinerary and quote. Use <a href="/customized-holidays">Customized Holidays</a> for a trip planned from scratch.</p>'),
+            array('Are flights or train tickets included?',
+                '<p>Most packages start and end at the destination (for example, pick-up and drop at Srinagar airport) and list air and train fares under exclusions. Each package page shows exactly what is included and excluded. We can add flights or trains to your quote on request.</p>'),
+            array('Where is your office?',
+                '<p>' . hg_e(HG_ADDRESS_LINE1) . ', ' . hg_e(HG_ADDRESS_LINE2) . '. Holiday Guru Travel is a brand of ' . hg_e(HG_LEGAL_NAME) . ' (CIN ' . hg_e(HG_CIN) . ').</p>'),
+        );
     }
 
     function hg_cta_band($title, $text)

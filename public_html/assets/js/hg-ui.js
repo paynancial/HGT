@@ -195,7 +195,7 @@
             if (list.hidden) return;
             if (e.key === 'ArrowDown') { e.preventDefault(); setActive(Math.min(options.length - 1, active + 1)); }
             else if (e.key === 'ArrowUp') { e.preventDefault(); setActive(Math.max(0, active - 1)); }
-            else if (e.key === 'Escape') { close(); }
+            else if (e.key === 'Escape') { e.preventDefault(); close(); } // keep the typed text (search inputs clear on Escape)
             else if (e.key === 'Enter' && active >= 0) { e.preventDefault(); choose(options[active]); }
         });
         // Search forms (data-hg-ac-fill): a destination fills the field so the

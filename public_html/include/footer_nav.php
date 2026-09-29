@@ -28,7 +28,7 @@ return array(
         'title' => 'Domestic',
         'items' => array(
             array('label' => 'Domestic Tour Packages', 'url' => '/domestic-holidays'),
-            array('label' => 'Kashmir', 'url' => '/kashmir-tour', 'description' => 'Kashmir hub: lists the Srinagar, Gulmarg, Pahalgam and Katra packages.'),
+            array('label' => 'Kashmir', 'url' => '/tours/kashmir', 'description' => 'Kashmir destination page: lists the Srinagar, Gulmarg, Pahalgam and Katra packages.'),
             array('label' => 'Kerala', 'url' => '/exotic-kerala', 'description' => 'Kerala hub: lists the Munnar, Thekkady, Alleppey and Kovalam packages.'),
             array('label' => 'Goa', 'url' => '/amazing-goa', 'description' => 'Goa hub: lists the Goa packages.'),
             array('label' => 'Popular Indian Destinations', 'url' => '',
@@ -64,7 +64,7 @@ return array(
         'items' => array(
             // Inbound pages are written for travellers visiting India from abroad.
             // Do not point these at the domestic pages.
-            array('label' => 'India Tours for Foreign Travellers', 'url' => ''),
+            array('label' => 'India Tours for Foreign Travellers', 'url' => '/india-tours'),
             array('label' => 'Rajasthan', 'url' => ''),
             array('label' => 'Kerala', 'url' => ''),
             array('label' => 'Kashmir', 'url' => ''),
@@ -89,7 +89,7 @@ return array(
     'legal' => array(
         'title' => 'Legal & Support',
         'items' => array(
-            array('label' => 'FAQs', 'url' => ''),
+            array('label' => 'FAQs', 'url' => '/faqs'),
             array('label' => 'Contact Support', 'url' => '/contact'),
             array('label' => 'Privacy Policy', 'url' => ''),
             array('label' => 'Cookie Policy', 'url' => ''),

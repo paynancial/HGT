@@ -98,9 +98,15 @@ if (!function_exists('hg_render_package')) {
             if (!$d['stay']) continue;
             $last = count($stays) - 1;
             if ($last >= 0 && $stays[$last]['place'] === $d['stay']) $stays[$last]['nights']++;
-            else $stays[] = array('place' => $d['stay'], 'nights' => 1, 'from' => $d['n']);
+            else { $stays[] = array('place' => $d['stay'], 'nights' => 1, 'from' => $d['n'], 'hb' => false); $last++; }
+            if (stripos($d['text'], 'houseboat') !== false) $stays[$last]['hb'] = true;
         }
         $houseboat = in_array('Houseboat stay', $p['features'], true);
+        $hbNights = 0;
+        foreach ($p['inclusions'] as $i) { if (preg_match('/(\d+)\s*nights?\s*house ?boat/i', $i, $m)) $hbNights = (int) $m[1]; }
+        $hbText = $hbNights ? $hbNights . ' houseboat night' . ($hbNights > 1 ? 's' : '') : 'houseboat stay';
+        $similarHotel = (bool) preg_grep('/similar standard/i', $p['terms']);
+        $hotelNote = 'Hotel names are confirmed with your booking.' . ($similarHotel ? ' If a listed hotel is unavailable, a hotel of similar standard is arranged.' : '');
 
         // Pricing facts come only from this package's own terms.
         $priceFacts = array();
@@ -124,7 +130,7 @@ if (!function_exists('hg_render_package')) {
                 ? '<p>This package includes: ' . hg_e(implode('; ', $external)) . '. Anything not listed in the inclusions is not included.</p>'
                 : '<p>No. The package starts ' . ($days ? 'on arrival in ' . hg_e($days[0]['stay'] ?: $route[0]) : 'at the destination') . ' and the standard package cost excludes airfare, train fare and bus fare. We can quote tickets separately.</p>'),
         );
-        if ($p['hotel']) $faqs[] = array('Which hotels are used?', '<p>' . hg_e($p['hotel']) . ' category hotels' . ($houseboat ? ', with one night on a houseboat' : '') . '. Hotel names are confirmed at booking; if a listed hotel is unavailable, a hotel of similar standard is arranged.</p>');
+        if ($p['hotel']) $faqs[] = array('Which hotels are used?', '<p>' . hg_e($p['hotel']) . ' category hotels' . ($houseboat ? ', with ' . $hbText : '') . '. ' . hg_e($hotelNote) . '</p>');
         foreach ($p['booking'] as $t) {
             if (stripos($t, 'advance') !== false) { $faqs[] = array('How do I book this package?', '<p>' . hg_e(ltrim($t, '# ')) . ' A booking voucher is issued once payment is received.</p>'); break; }
         }
@@ -173,7 +179,7 @@ if (!function_exists('hg_render_package')) {
             <h1 class="hg-pkghead__title" id="pkg-title"><?= hg_e($name) ?></h1>
             <p class="hg-pkghead__meta"><strong><?= hg_e($p['duration']) ?></strong><?php if ($route) { ?> <span aria-hidden="true">·</span> <?= hg_e(implode(' – ', $route)) ?><?php } ?></p>
             <ul class="hg-pkghead__facts">
-                <?php if ($p['hotel']) { ?><li><?= hg_icon('bed') ?><?= hg_e($p['hotel']) ?> hotels<?= $houseboat ? ' + houseboat night' : '' ?></li><?php } ?>
+                <?php if ($p['hotel']) { ?><li><?= hg_icon('bed') ?><?= hg_e($p['hotel']) ?> hotels<?= $houseboat ? ' + ' . hg_e($hbText) : '' ?></li><?php } ?>
                 <?php if ($p['meals']) { ?><li><?= hg_icon('meal') ?><?= hg_e($p['meals']) ?></li><?php } ?>
                 <?php if ($p['transfers']) { ?><li><?= hg_icon('car') ?><?= hg_e($p['transfers']) ?> transfers &amp; sightseeing</li><?php } ?>
                 <li><?= hg_icon('route') ?>Customizable itinerary</li>
@@ -210,7 +216,7 @@ if (!function_exists('hg_render_package')) {
                 <div><dt>Duration</dt><dd><?= hg_e($p['duration']) ?></dd></div>
                 <div><dt>Places</dt><dd><?= hg_e(implode(', ', $p['places'])) ?></dd></div>
                 <?php if ($days && $days[0]['stay']) { ?><div><dt>Starts / ends</dt><dd><?= hg_e($days[0]['stay']) ?> / <?= hg_e(end($days)['stay'] ?: $days[0]['stay']) ?></dd></div><?php } ?>
-                <?php if ($p['hotel']) { ?><div><dt>Stay</dt><dd><?= hg_e($p['hotel']) ?> category, twin sharing<?= $houseboat ? '; 1 houseboat night' : '' ?></dd></div><?php } ?>
+                <?php if ($p['hotel']) { ?><div><dt>Stay</dt><dd><?= hg_e($p['hotel']) ?> category, twin sharing<?= $houseboat ? '; ' . hg_e($hbText) : '' ?></dd></div><?php } ?>
                 <?php if ($p['meals']) { ?><div><dt>Meals</dt><dd><?= hg_e($p['meals']) ?></dd></div><?php } ?>
                 <?php if ($p['transfers']) { ?><div><dt>Transport</dt><dd><?= hg_e($p['transfers']) ?></dd></div><?php } ?>
                 <?php if ($content) { ?><div><dt>Best time</dt><dd><?= hg_e($content['best_time_answer']) ?></dd></div><?php } ?>
@@ -266,11 +272,11 @@ if (!function_exists('hg_render_package')) {
         <section class="hg-pkgsec" id="hotels" aria-labelledby="ho-title">
             <h2 class="hg-h2" id="ho-title">Where you stay</h2>
             <?php if ($stays) { ?>
-            <div class="hg-tablewrap"><table class="hg-table"><thead><tr><th scope="col">Nights</th><th scope="col">Place</th><th scope="col">Stay</th></tr></thead><tbody>
-            <?php foreach ($stays as $st) { ?><tr><td><?= $st['nights'] > 1 ? 'Nights ' . $st['from'] . '–' . ($st['from'] + $st['nights'] - 1) : 'Night ' . $st['from'] ?></td><td><?= hg_e($st['place']) ?></td><td><?= hg_e($p['hotel'] ?: 'Hotel') ?> category<?= ($houseboat && $st['from'] === 1) ? ' — includes 1 houseboat night' : '' ?></td></tr><?php } ?>
+            <div class="hg-tablewrap" tabindex="0" role="region" aria-label="Table"><table class="hg-table"><thead><tr><th scope="col">Nights</th><th scope="col">Place</th><th scope="col">Stay</th></tr></thead><tbody>
+            <?php foreach ($stays as $st) { ?><tr><td><?= $st['nights'] > 1 ? 'Nights ' . $st['from'] . '–' . ($st['from'] + $st['nights'] - 1) : 'Night ' . $st['from'] ?></td><td><?= hg_e($st['place']) ?></td><td><?= hg_e($p['hotel'] ?: 'Hotel') ?> category<?= ($houseboat && $st['hb']) ? ' — includes ' . hg_e($hbText) : '' ?></td></tr><?php } ?>
             </tbody></table></div>
             <?php } ?>
-            <p class="hg-muted">Hotel names are confirmed with your booking. If a listed hotel is unavailable, a hotel of similar standard is arranged. Ask us to upgrade any night.</p>
+            <p class="hg-muted"><?= hg_e($hotelNote) ?> Ask us to upgrade any night.</p>
         </section>
 
         <section class="hg-pkgsec" id="price" aria-labelledby="pr-title">

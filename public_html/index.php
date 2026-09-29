@@ -18,18 +18,7 @@ foreach (array('srinagar-gulmarg-pahalgam-tour-package-5-days', 'char-dham-yatra
     if ($p = hg_package($slug)) $featured[] = $p;
 }
 
-$faqs = array(
-    array('How do I book a holiday package with Holiday Guru Travel?',
-        '<p>Send an enquiry (or call or WhatsApp +91 99717 54265). A travel expert confirms the itinerary, hotels and price with you. Our package booking terms ask for a <strong>35% advance</strong> to confirm, with the balance paid before departure. We issue a booking voucher once the payment is received.</p>'),
-    array('Which payment methods do you accept?',
-        '<p>Net banking, IMPS, NEFT, cheque and UPI (including Google Pay, PhonePe, Paytm and scan-to-pay QR). We do not accept cash. Air and train tickets need full payment at the time of booking.</p>'),
-    array('Can I change the itinerary or hotels in a package?',
-        '<p>Yes. Every package can be used as a starting point: tell us your dates, travellers, hotel preference and anything you want to add or remove, and we send a revised itinerary and quote. Use <a href="/customized-holidays">Customized Holidays</a> for a trip planned from scratch.</p>'),
-    array('Are flights or train tickets included?',
-        '<p>Most packages start and end at the destination (for example, pick-up and drop at Srinagar airport) and list air and train fares under exclusions. Each package page shows exactly what is included and excluded. We can add flights or trains to your quote on request.</p>'),
-    array('Where is your office?',
-        '<p>' . hg_e(HG_ADDRESS_LINE1) . ', ' . hg_e(HG_ADDRESS_LINE2) . '. Holiday Guru Travel is a brand of ' . hg_e(HG_LEGAL_NAME) . ' (CIN ' . hg_e(HG_CIN) . ').</p>'),
-);
+$faqs = hg_booking_faqs();
 
 hg_layout_start(array(
     'title' => 'Holiday Guru Travel — India & International Holiday Packages',

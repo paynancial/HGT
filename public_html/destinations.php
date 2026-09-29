@@ -113,8 +113,8 @@
                     <div class="destination-item_img global-img"><img src="assets/img/destination/JannatEKashmir.jpg"
                             alt="JannatEKashmir.jpg"></div>
                     <div class="destination-content">
-                        <h3 class="box-title"><a href="/kashmir-tour">Jannat E Kashmir</a></h3>
-                        <p class="destination-text">6 Packages</p><a href="/kashmir-tour"
+                        <h3 class="box-title"><a href="/tours/kashmir">Jannat E Kashmir</a></h3>
+                        <p class="destination-text">6 Packages</p><a href="/tours/kashmir"
                             class="th-btn style4 th-icon">View more</a>
                     </div>
                 </div>
