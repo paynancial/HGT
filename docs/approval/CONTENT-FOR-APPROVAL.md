@@ -17,6 +17,7 @@ These pages are built and live on the branch but **hidden from Google** until yo
 | Leadership | `/leadership` | Draft — awaiting approval |
 | Our team | `/our-team` | Draft — awaiting approval |
 | Grievance Redress | `/grievance-redress` | Draft — awaiting approval |
+| Offers | `/offers` | Draft — awaiting approval |
 
 ---
 
@@ -804,3 +805,44 @@ M/S Swaasthik Vocation Pvt. Ltd. (CIN U74999UP2021PTC154544)
 #### Cancellations and refunds
 
 Requests to cancel or for a refund follow our cancellation policy and refund policy.
+
+---
+
+## Offers — `/offers`
+
+Offers
+
+### Holiday offers
+
+No offers are published right now. Prices depend on your dates, hotel category and group size, so ask a travel expert for the best available price for your trip.
+
+Ask for the best price
+WhatsApp us
+
+#### Popular destinations
+
+Browse our itineraries and ask for a quote on any of them.
+
+##### Kashmir
+
+6 packages · North IndiaView tours →
+
+##### Himachal Pradesh
+
+16 packages · North IndiaView tours →
+
+##### Kerala
+
+9 packages · South IndiaView tours →
+
+##### Goa
+
+5 packages · West IndiaView tours →
+
+##### Leh Ladakh
+
+6 packages · North IndiaView tours →
+
+##### Dubai
+
+6 packages · Middle EastView tours →

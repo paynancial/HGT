@@ -15,4 +15,5 @@ return array(
     '/leadership'           => 'draft',   // photos, names and roles to be supplied by the owner
     '/our-team'             => 'draft',   // photos, names and roles to be supplied by the owner
     '/grievance-redress'    => 'draft',   // officer details supplied by the owner
+    '/offers'               => 'draft',   // offer details, prices and validity to be supplied by the owner
 );

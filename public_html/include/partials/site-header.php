@@ -47,13 +47,8 @@ $hgMegaFeature = function ($title, $text, array $links) {
 <a class="hg-skip" href="#main">Skip to content</a>
 <div class="hg-utility">
     <div class="hg-container hg-utility__inner">
-        <ul class="hg-utility__left" aria-label="Contact">
-            <li><a href="<?= hg_e(hg_tel_href()) ?>"><?= hg_icon('phone') ?><span><?= hg_e(HG_PHONE_DISPLAY) ?></span></a></li>
-            <li><a href="<?= hg_e(hg_whatsapp_href()) ?>" target="_blank" rel="noopener"><?= hg_icon('whatsapp') ?><span>24×7 Support</span></a></li>
-        </ul>
+        <p class="hg-utility__tagline">Premium Holiday Planner</p>
         <ul class="hg-utility__right">
-            <li><?= $hgSoon('Offers') ?></li>
-            <li><?= $hgSoon('Blogs') ?></li>
             <li><button type="button" class="hg-login-btn" data-hg-login-open><?= hg_icon('user') ?><span>Login</span></button></li>
         </ul>
     </div>
@@ -169,6 +164,7 @@ $hgMegaFeature = function ($title, $text, array $links) {
                 </div>
             </li>
             <li class="hg-nav__item"><a class="hg-nav__link" href="/customized-holidays">Customised Tours</a></li>
+            <li class="hg-nav__item"><a class="hg-nav__link" href="/offers">Offers</a></li>
             <li class="hg-nav__item"><a class="hg-nav__link" href="/about">About Us</a></li>
             <li class="hg-nav__item"><a class="hg-nav__link" href="/contact">Contact Us</a></li>
         </ul>

@@ -83,6 +83,7 @@
 .hg-utility a, .hg-login-btn { display: inline-flex; align-items: center; gap: 7px; color: #fff; text-decoration: none; }
 .hg-utility a:hover { color: var(--hg-yellow); }
 .hg-utility .hg-i { width: 15px; height: 15px; }
+.hg-utility__tagline { margin: 0; color: #fff; font-weight: 600; letter-spacing: .04em; }
 .hg-login-btn { min-height: 30px; padding: 0 16px; border: 0; border-radius: 6px; background: var(--hg-orange); color: var(--hg-navy-dark) !important; font-size: 13px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; cursor: pointer; }
 .hg-login-btn:hover { background: var(--hg-yellow); }
 .hg-soon { display: inline-flex; align-items: center; gap: 6px; color: inherit; opacity: .85; cursor: default; }
@@ -417,7 +418,7 @@
 
 @media (max-width: 1023px) {
     :root { --hg-header-h: 64px; --hg-sticky: 64px; }
-    .hg-utility__left li:nth-child(2), .hg-utility__right li:nth-child(-n+2) { display: none; }
+    
     .hg-header__inner { gap: 8px; }
     .hg-header__menu, .hg-header__searchbtn, .hg-header__login { display: inline-flex; }
     .hg-header__logo img { width: 104px; }
