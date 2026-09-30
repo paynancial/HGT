@@ -59,3 +59,19 @@
 @media (min-width: 1024px) {
     .hg-nav__link, .hg-nav__trigger { font-weight: 600; }
 }
+/* Nine tabs (2026-09-30): dropdown triggers are <button>s, so the generic button rule (.hg-body button) was
+   overriding their font; scope it so every tab has the same size and weight. Tighter spacing below 1280px;
+   below 1200px "Contact Us" lives in the About Us menu (and the header phone/WhatsApp stay visible). */
+@media (min-width: 1024px) {
+    .hg-nav .hg-nav__link, .hg-nav .hg-nav__trigger { font-family: var(--hg-font-body); font-size: 15px; font-weight: 600; padding: 0 9px; }
+}
+@media (min-width: 1024px) and (max-width: 1279px) {
+    .hg-nav .hg-nav__link, .hg-nav .hg-nav__trigger { padding: 0 6px; font-size: 14px; }
+    .hg-nav__trigger .hg-i { width: 14px; height: 14px; }
+}
+@media (min-width: 1024px) and (max-width: 1199px) {
+    .hg-nav__item--contact { display: none; }
+}
+@media (max-width: 1023px) {
+    .hg-nav .hg-nav__trigger { font-family: var(--hg-font-body); font-weight: 600; }
+}

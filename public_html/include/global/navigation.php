@@ -1,6 +1,8 @@
 <?php
 /**
  * GLOBAL COMPONENT: primary navigation (#hg-nav) and mobile drawer. Mega-menu panels: mega-menu.php.
+ * Tabs: Domestic · International · Inbound Tours · Special Tours · Fixed Departure (mega menus), Customised Tours,
+ * Offers, About Us (mega menu), Contact Us.
  * Behaviour: [data-hg-nav], [data-hg-mega], [data-hg-menu-*] in assets/js/hg-ui.js.
  */
 ?>
@@ -18,15 +20,25 @@
                 <button type="button" class="hg-nav__trigger" aria-expanded="false" aria-controls="mega-intl" data-hg-mega>International<?= hg_icon('chevron') ?></button>
 <?php $hgMegaPanel = 'intl'; include __DIR__ . '/mega-menu.php'; ?>
             </li>
-            <li class="hg-nav__item"><a class="hg-nav__link" href="/india-tours">Inbound Tours</a></li>
+            <li class="hg-nav__item hg-nav__item--mega">
+                <button type="button" class="hg-nav__trigger" aria-expanded="false" aria-controls="mega-inbound" data-hg-mega>Inbound Tours<?= hg_icon('chevron') ?></button>
+<?php $hgMegaPanel = 'inbound'; include __DIR__ . '/mega-menu.php'; ?>
+            </li>
             <li class="hg-nav__item hg-nav__item--mega">
                 <button type="button" class="hg-nav__trigger" aria-expanded="false" aria-controls="mega-spec" data-hg-mega>Special Tours<?= hg_icon('chevron') ?></button>
 <?php $hgMegaPanel = 'spec'; include __DIR__ . '/mega-menu.php'; ?>
             </li>
+            <li class="hg-nav__item hg-nav__item--mega">
+                <button type="button" class="hg-nav__trigger" aria-expanded="false" aria-controls="mega-fixed" data-hg-mega>Fixed Departure<?= hg_icon('chevron') ?></button>
+<?php $hgMegaPanel = 'fixed'; include __DIR__ . '/mega-menu.php'; ?>
+            </li>
             <li class="hg-nav__item"><a class="hg-nav__link" href="/customized-holidays">Customised Tours</a></li>
             <li class="hg-nav__item"><a class="hg-nav__link" href="/offers">Offers</a></li>
-            <li class="hg-nav__item"><a class="hg-nav__link" href="/about">About Us</a></li>
-            <li class="hg-nav__item"><a class="hg-nav__link" href="/contact">Contact Us</a></li>
+            <li class="hg-nav__item hg-nav__item--mega">
+                <button type="button" class="hg-nav__trigger" aria-expanded="false" aria-controls="mega-about" data-hg-mega>About Us<?= hg_icon('chevron') ?></button>
+<?php $hgMegaPanel = 'about'; include __DIR__ . '/mega-menu.php'; ?>
+            </li>
+            <li class="hg-nav__item hg-nav__item--contact"><a class="hg-nav__link" href="/contact">Contact Us</a></li>
         </ul>
         <div class="hg-nav__drawerfoot">
             <a class="hg-btn hg-btn--primary hg-btn--block" href="/customized-holidays">Enquire now</a>
