@@ -1,4 +1,4 @@
-<?php require_once __DIR__ . '/site_config.php'; ?>
+<?php require_once __DIR__ . '/../site_config.php'; ?>
 <!-- Cookie consent. Choice stored in the first-party cookie "hg_consent". Behaviour: assets/js/hg-site.js -->
 <div class="hg-consent" id="hg-consent" role="region" aria-label="Cookie consent" hidden>
     <p class="hg-consent__text">

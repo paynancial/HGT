@@ -344,7 +344,7 @@ if (!defined('HG_UI_CORE')) {
     {
         $GLOBALS['hgMeta'] = $meta;
         echo "<!doctype html>\n<html lang=\"en-IN\">\n<head>\n" . hg_head($meta) . "</head>\n<body class=\"hg-body\">\n";
-        include __DIR__ . '/../partials/site-header.php';
+        include __DIR__ . '/../global/header.php';
         echo '<main id="main" class="hg-main" tabindex="-1">' . "\n";
         if (!empty($meta['breadcrumbs']) && empty($meta['hide_breadcrumbs'])) {
             echo hg_breadcrumbs($meta['breadcrumbs']);
@@ -354,10 +354,10 @@ if (!defined('HG_UI_CORE')) {
     function hg_layout_end()
     {
         echo "</main>\n";
-        include __DIR__ . '/../partials/site-footer.php';
-        include __DIR__ . '/../support-widget.php';
-        include __DIR__ . '/../cookie-consent.php';
-        include __DIR__ . '/../partials/login-dialog.php';
+        include __DIR__ . '/../global/footer.php';
+        include __DIR__ . '/../global/support-widget.php';
+        include __DIR__ . '/../global/cookie-consent.php';
+        include __DIR__ . '/../global/login-dialog.php';
         echo '<script src="/assets/js/hg-site.js" defer></script>' . "\n";
         echo '<script src="/assets/js/hg-ui.js" defer></script>' . "\n";
         echo "</body>\n</html>\n";

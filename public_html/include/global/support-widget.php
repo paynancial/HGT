@@ -1,4 +1,4 @@
-<?php require_once __DIR__ . '/site_config.php'; ?>
+<?php require_once __DIR__ . '/../site_config.php'; ?>
 <!-- Floating support widget (Chat / Call / WhatsApp / Email). Behaviour: assets/js/hg-site.js -->
 <div class="hg-support" id="hg-support">
     <div class="hg-support__panel" id="hg-support-panel" role="dialog" aria-labelledby="hg-support-title" hidden>
