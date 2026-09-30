@@ -490,21 +490,7 @@
     .hg-body *, .hg-body *::before, .hg-body *::after { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
 }
 
-/* ---------- Footer newsletter on Phase 1 pages (template CSS not loaded) ---------- */
-.hg-body .newsletter-area { padding: 40px 0; border-bottom: 1px solid var(--hg-border); }
-.hg-body .newsletter-top .row { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); gap: 24px; align-items: center; }
-.hg-body .newsletter-title { margin: 0; font-size: clamp(22px, 2.4vw, 28px); font-weight: 800; }
-.hg-body .newsletter-title.text-capitalize::first-letter { text-transform: uppercase; }
-.hg-body .newsletter-form { display: flex; gap: 10px; }
-.hg-body .newsletter-form .form-control { flex: 1; min-width: 0; min-height: 52px; padding: 0 16px; border: 1px solid #C9D2E0; border-radius: var(--hg-r-sm); font-size: 16px; }
-.hg-body .newsletter-form .th-btn { display: inline-flex; align-items: center; gap: 8px; min-height: 52px; padding: 0 22px; border: 0; border-radius: var(--hg-r-sm); background: var(--hg-navy); color: #fff; font-weight: 600; cursor: pointer; }
-.hg-body .newsletter-form .th-btn img { width: 18px; height: 18px; filter: invert(1); }
-.hg-body .newsletter-form .th-btn:hover { background: var(--hg-navy-700); }
-.hg-body .hg-footer .widget-area { padding-top: 0; }
-@media (max-width: 767px) {
-    .hg-body .newsletter-top .row { grid-template-columns: 1fr; }
-    .hg-body .newsletter-form { flex-direction: column; }
-}
+
 
 /* ================================================================== */
 /* Search results / destination page (tours.php)                      */
@@ -814,8 +800,7 @@
 @media (max-width: 767px) { .hg-form--card { padding: 20px; } }
 /* Footer/newsletter markup uses the legacy .container class on Phase 1 pages */
 .hg-body .container { width: 100%; max-width: var(--hg-container); margin: 0 auto; padding-left: var(--hg-gutter); padding-right: var(--hg-gutter); }
-.hg-body .hg-fnav__list, .hg-body .hg-footer__quick { padding-left: 0; }
-.hg-body .hg-footer__credit a { color: #fff; }
+.hg-body .hg-fnav__list { padding-left: 0; }
 
 /* Contact */
 .hg-contactcards { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; margin: 0 !important; padding: 0 !important; list-style: none; }

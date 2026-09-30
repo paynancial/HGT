@@ -9,8 +9,8 @@
  *   label        Text shown to visitors (required)
  *   url          Real published URL. Empty = the page does not exist yet.
  *   status       'auto' (default) or 'active': link when url is set and the
- *                page exists, otherwise "Coming soon" (a missing page never
- *                becomes a broken link). 'coming_soon': force Coming soon.
+ *                page exists, otherwise plain text with no link (a missing page
+ *                never becomes a broken link). 'coming_soon': force plain text.
  *                'hidden': not shown (visibility).
  *   order        Optional number; lower shows first. Default: file order.
  *   badge        Optional short tag shown after a live link, e.g. 'New'.
@@ -20,7 +20,7 @@
  * Section = the array the item sits in. Move an item to change its section.
  *
  * Rule: never point an item at a page that does not match its label.
- * A "Coming soon" item is plain text (no href), so search engines see no link.
+ * An item without a live page is plain text (no href, no badge), so search engines see no link.
  */
 
 return array(
@@ -67,19 +67,19 @@ return array(
     ),
     'company' => array(
         'title' => 'Company',
-        // Owner-specified order (2026-09-30). Pages without content stay "Coming soon".
+        // Owner-specified order (2026-09-30). Pages without content show as plain text (no link).
         'items' => array(
             array('label' => 'About Us', 'url' => '/about'),
             array('label' => 'Why Us?', 'url' => '/about#why-us', 'description' => 'The "Why choose us" section of the About page.'),
-            array('label' => 'Leadership', 'url' => '/leadership', 'description' => 'Shows as Coming soon until approved in page-status.php.'),
-            array('label' => 'Our Team', 'url' => '/our-team', 'description' => 'Shows as Coming soon until approved in page-status.php.'),
+            array('label' => 'Leadership', 'url' => '/leadership', 'description' => 'Shows as plain text (no link) until approved in page-status.php.'),
+            array('label' => 'Our Team', 'url' => '/our-team', 'description' => 'Shows as plain text (no link) until approved in page-status.php.'),
             array('label' => 'Blog', 'url' => '', 'description' => 'No articles yet (blog.html was a template demo and now returns 404).'),
             array('label' => 'Career', 'url' => '', 'description' => 'Needs current openings from the owner.'),
         ),
     ),
     'legal' => array(
         'title' => 'Legal & Support',
-        // Owner-specified order (2026-09-30). Pages awaiting approval show as Coming soon.
+        // Owner-specified order (2026-09-30). Pages awaiting approval show as plain text (no link).
         'items' => array(
             array('label' => 'Cancellation Policy', 'url' => '/cancellation-policy'),
             array('label' => 'Refund Policy', 'url' => '/refund-policy'),
