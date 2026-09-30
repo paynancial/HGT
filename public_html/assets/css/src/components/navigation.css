@@ -1,0 +1,61 @@
+.hg-soon { display: inline-flex; align-items: center; gap: 6px; color: inherit; opacity: .85; cursor: default; }
+.hg-soon__tag { padding: 0 6px; border-radius: 999px; background: #FFF4D1; color: #6B4E00; font-size: 10.5px; font-weight: 600; line-height: 17px; letter-spacing: .02em; }
+/* ---------- Primary navigation ---------- */
+.hg-nav { border-top: 1px solid var(--hg-border); background: #fff; }
+.hg-nav__drawerhead, .hg-nav__drawerfoot, .hg-nav__scrim { display: none; }
+.hg-nav__list { display: flex; align-items: center; gap: 4px; margin-top: 0; margin-bottom: 0; list-style: none; }
+.hg-nav__item { position: static; }
+.hg-nav__link, .hg-nav__trigger { display: inline-flex; align-items: center; gap: 6px; min-height: 50px; padding: 0 12px; border: 0; background: none; color: var(--hg-navy); font-size: 15px; font-weight: 600; text-decoration: none; cursor: pointer; }
+.hg-nav__trigger .hg-i { width: 16px; height: 16px; transition: transform .2s ease-out; }
+.hg-nav__trigger[aria-expanded="true"] .hg-i { transform: rotate(180deg); }
+.hg-nav__link:hover, .hg-nav__trigger:hover, .hg-nav__trigger[aria-expanded="true"] { color: var(--hg-orange-text); }
+.hg-nav__item > .hg-soon { min-height: 50px; padding: 0 10px; font-size: 15px; font-weight: 600; color: #6A7287; opacity: 1; }
+.hg-tags li .hg-soon__tag { margin-left: 6px; }
+@media (max-width: 1199px) {
+    .hg-nav__link, .hg-nav__trigger { padding: 0 9px; font-size: 14.5px; }
+    .hg-nav__item > .hg-soon { padding: 0 7px; font-size: 14.5px; }
+}
+@media (max-width: 1023px) {
+    .hg-nav { position: fixed; top: 0; bottom: 0; left: 0; z-index: 1300; width: min(360px, 88vw); overflow-y: auto; border: 0; box-shadow: var(--hg-sh-lg); transform: translateX(-102%); transition: transform .25s ease-out; visibility: hidden; }
+    .hg-nav.is-open { transform: none; visibility: visible; }
+    .hg-nav__scrim:not([hidden]) { display: block; position: fixed; inset: 0; z-index: 1250; background: rgba(10, 22, 61, .5); }
+    .hg-nav__drawerhead { display: flex; align-items: center; justify-content: space-between; padding: 10px 12px 10px 20px; border-bottom: 1px solid var(--hg-border); }
+    .hg-nav__drawertitle { font-family: var(--hg-font-head); font-weight: 800; color: var(--hg-navy); }
+    .hg-nav__list { display: block; padding: 8px 0; }
+    .hg-nav__item { border-bottom: 1px solid var(--hg-border); }
+    .hg-nav__link, .hg-nav__trigger { display: flex; width: 100%; justify-content: space-between; min-height: 52px; padding: 0 20px; font-size: 16px; }
+    .hg-nav__item > .hg-soon { display: flex; justify-content: space-between; min-height: 52px; padding: 0 20px; font-size: 16px; }
+    .hg-nav__drawerfoot { display: block; padding: 20px; }
+    .hg-nav__quick { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin: 14px 0; }
+    .hg-nav__quick a { display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 10px 4px; border: 1px solid var(--hg-border); border-radius: var(--hg-r-sm); font-size: 13px; font-weight: 600; text-decoration: none; }
+    .hg-nav__quick .hg-i { width: 20px; height: 20px; }
+    .hg-nav__secondary { display: flex; gap: 20px; margin: 0; padding: 0; list-style: none; }
+    .hg-nav__secondary a { display: inline-flex; min-height: 44px; align-items: center; }
+}
+/* Header: keep labels on one line with either the brand or fallback font; wider suggestions */
+.hg-nav__link, .hg-nav__trigger, .hg-nav__item > .hg-soon { white-space: nowrap; }
+@media (min-width: 1024px) {
+    .hg-nav__list { gap: 0; }
+    .hg-nav__link, .hg-nav__trigger { padding: 0 10px; }
+    .hg-nav__item > .hg-soon { padding: 0 8px; }
+}
+@media (min-width: 1024px) and (max-width: 1279px) {
+    /* "Soon" items return from 1280px; all remain in the mobile drawer */
+    .hg-nav__item:has(> .hg-soon) { display: none; }
+}
+/* ---------- Header alignment (owner review 2026-09-30) ---------- */
+/* The nav list is a <ul>; the generic ".hg-body ul" margin reset was cancelling
+   the container's auto margins, pinning the menu to the left edge. */
+.hg-body .hg-nav__list { margin: 0 auto; }
+/* no generic list margins: they leaked a 16px gap under the header */
+@media (min-width: 1024px) {
+    .hg-body .hg-nav__list { padding-left: var(--hg-gutter); padding-right: var(--hg-gutter); }
+}
+@media (min-width: 1024px) {
+    /* first menu label lines up with the logo and the breadcrumb */
+    .hg-nav__list > .hg-nav__item:first-child > .hg-nav__trigger { padding-left: 0; }
+}
+/* Menu tabs: one weight for all seven tabs */
+@media (min-width: 1024px) {
+    .hg-nav__link, .hg-nav__trigger { font-weight: 600; }
+}

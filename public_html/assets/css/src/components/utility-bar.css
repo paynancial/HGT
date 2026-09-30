@@ -1,0 +1,9 @@
+/* ---------- Utility bar ---------- */
+.hg-utility { background: var(--hg-navy); color: #D6DBE7; font-size: 13px; }
+.hg-utility__inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 40px; }
+.hg-utility ul { display: flex; align-items: center; gap: 22px; margin: 0; padding: 0; list-style: none; }
+.hg-utility a { display: inline-flex; align-items: center; gap: 7px; color: #fff; text-decoration: none; }
+.hg-utility a:hover { color: var(--hg-yellow); }
+.hg-utility .hg-i { width: 15px; height: 15px; }
+.hg-utility__tagline { margin: 0; color: #fff; font-weight: 600; letter-spacing: .04em; }
+.hg-utility .hg-soon { color: #C4CAD9; opacity: 1; }

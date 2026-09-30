@@ -1,0 +1,44 @@
+.hg-skip { position: absolute; left: 12px; top: -60px; z-index: 2000; padding: 10px 16px; background: var(--hg-navy); color: #fff !important; border-radius: var(--hg-r-sm); font-weight: 600; text-decoration: none; }
+.hg-skip:focus { top: 12px; }
+.hg-iconbtn { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border: 0; border-radius: 50%; background: transparent; color: var(--hg-navy); cursor: pointer; text-decoration: none; }
+.hg-iconbtn:hover { background: var(--hg-surface); }
+.hg-iconbtn .hg-i { width: 22px; height: 22px; }
+.hg-iconbtn--wa { color: #128C4B; }
+/* ---------- Header ---------- */
+.hg-header { position: sticky; top: 0; z-index: 1020; background: #fff; box-shadow: 0 1px 0 var(--hg-border); }
+.hg-header__inner { display: flex; align-items: center; gap: 24px; min-height: var(--hg-header-h); }
+.hg-header__logo { flex: none; display: block; }
+.hg-header__logo img { width: 122px; height: auto; }
+.hg-header__menu, .hg-header__searchbtn, .hg-header__login { display: none; }
+.hg-header__actions { display: flex; align-items: center; gap: 8px; flex: none; }
+.hg-hcontact { display: inline-flex; align-items: center; gap: 10px; padding: 0 6px; color: var(--hg-navy); text-decoration: none; font-weight: 600; font-size: 13.5px; white-space: nowrap; }
+.hg-hcontact span { display: flex; flex-direction: column; line-height: 1.2; }
+.hg-hcontact strong { font-size: 14px; font-weight: 700; }
+.hg-hcontact--wa .hg-i { background: #E7F7EE !important; color: #128C4B !important; }
+.hg-hcontact .hg-i { width: 20px; height: 20px; padding: 10px; box-sizing: content-box; border-radius: 50%; background: var(--hg-orange-50); color: var(--hg-orange-text); }
+/* ---------- Responsive ---------- */
+@media (max-width: 1365px) {
+    .hg-hcontact--wa span { display: none; }
+}
+@media (max-width: 1199px) {
+    .hg-hcontact span { display: none; }
+}
+@media (max-width: 1023px) {
+    .hg-header__inner { gap: 8px; }
+    .hg-header__menu, .hg-header__searchbtn, .hg-header__login { display: inline-flex; }
+    .hg-header__logo img { width: 104px; }
+    .hg-header__logo { margin-right: auto; }
+    .hg-hcontact { display: none; }
+}
+/* Full-screen sheets live inside the sticky header's stacking context:
+   hide the floating layers while one is open. */
+html.hg-sheet-open .hg-bottombar, html.hg-sheet-open .hg-support { display: none !important; }
+/* Call and WhatsApp shown the same way: both labelled from 1280px, both icons below */
+@media (min-width: 1200px) and (max-width: 1279px) {
+    .hg-hcontact span { display: none; }
+}
+@media (min-width: 1280px) {
+    /* room for dd/mm/yyyy + picker icon */
+    .hg-header__inner { gap: 20px; }
+    .hg-hcontact span { display: flex; }
+}

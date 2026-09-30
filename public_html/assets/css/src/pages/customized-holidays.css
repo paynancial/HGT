@@ -1,0 +1,5 @@
+/* Customized holidays form */
+.hg-form--card { padding: 28px; border: 1px solid var(--hg-border); border-radius: var(--hg-r-lg); background: #fff; box-shadow: var(--hg-sh-sm); }
+@media (max-width: 767px) {
+    .hg-form--card { padding: 20px; }
+}

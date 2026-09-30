@@ -1,0 +1,9 @@
+.hg-login-btn { display: inline-flex; align-items: center; gap: 7px; color: #fff; text-decoration: none; }
+.hg-login-btn { min-height: 30px; padding: 0 16px; border: 0; border-radius: 6px; background: var(--hg-orange); color: var(--hg-navy-dark) !important; font-size: 13px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; cursor: pointer; }
+.hg-login-btn:hover { background: var(--hg-yellow); }
+.hg-dialog { width: min(460px, calc(100vw - 32px)); padding: 28px; border: 0; border-radius: var(--hg-r-lg); box-shadow: var(--hg-sh-lg); color: var(--hg-text); }
+.hg-dialog::backdrop { background: rgba(10, 22, 61, .55); }
+.hg-dialog__close-form { position: absolute; right: 12px; top: 12px; margin: 0; }
+.hg-dialog__title { font-size: 24px; margin-bottom: 16px; }
+.hg-dialog__alt { display: grid; gap: 10px; margin-top: 18px; padding-top: 18px; border-top: 1px solid var(--hg-border); }
+.hg-login-btn { min-height: 28px; padding-top: 0; padding-bottom: 0; }

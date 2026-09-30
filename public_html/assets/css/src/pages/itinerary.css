@@ -1,0 +1,44 @@
+/* Itinerary timeline */
+.hg-timeline { position: relative; margin: 0; padding: 0; list-style: none; }
+.hg-timeline::before { content: ""; position: absolute; left: 19px; top: 8px; bottom: 8px; width: 2px; background: var(--hg-border); }
+.hg-timeline > li { position: relative; padding: 0 0 28px 60px; }
+.hg-timeline__day { position: absolute; left: 0; top: 0; display: flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background: var(--hg-navy); color: #fff; font-family: var(--hg-font-head); font-weight: 800; font-size: 15px; }
+.hg-timeline h3 { margin: 6px 0 8px; font-size: 18px; }
+.hg-timeline p { margin: 0; color: var(--hg-muted-2); font-size: 15.5px; }
+@media (max-width: 767px) {
+    .hg-timeline > li { padding-left: 52px; }
+}
+.hg-timeline--pkg > li { padding-bottom: 0; margin-bottom: 16px; }
+.hg-timeline--pkg > li > h3, .hg-timeline--pkg > li > p { margin-left: 0; }
+.hg-timeline--pkg > li { padding: 18px 20px 18px 72px; border: 1px solid var(--hg-border); border-radius: var(--hg-r-md); background: #fff; }
+.hg-timeline--pkg::before { left: 19px; }
+.hg-timeline--pkg .hg-timeline__day { left: 16px; top: 18px; background: var(--hg-orange); color: var(--hg-navy-dark); }
+.hg-timeline--pkg h3 { margin-top: 4px !important; }
+.hg-timeline__stay { display: flex; align-items: center; gap: 7px; margin-top: 10px !important; font-size: 14px !important; font-weight: 600; color: var(--hg-navy) !important; }
+.hg-timeline__stay .hg-i { width: 17px; height: 17px; }
+.hg-routebox { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; margin-top: 8px; padding: 16px 18px; border-radius: var(--hg-r-md); background: var(--hg-surface); }
+.hg-routebox p { margin: 0 !important; }
+@media (max-width: 767px) {
+    .hg-timeline--pkg > li { padding: 16px 16px 16px 60px; }
+    .hg-timeline--pkg .hg-timeline__day { left: 12px; width: 36px; height: 36px; }
+}
+/* ---------- Package itinerary: day badges on a connecting line, cards aligned ---------- */
+.hg-body .hg-timeline--pkg { position: relative; padding-left: 56px !important; }
+.hg-timeline--pkg::before { left: 19px; top: 24px; bottom: 24px; width: 2px; background: repeating-linear-gradient(to bottom, #F5B77A 0 6px, transparent 6px 12px); }
+.hg-timeline--pkg > li { margin: 0 0 14px; padding: 18px 22px; border: 1px solid var(--hg-border); border-radius: var(--hg-r-md); background: #fff; box-shadow: var(--hg-sh-sm); transition: box-shadow .2s ease-out; }
+.hg-timeline--pkg > li:hover { box-shadow: var(--hg-sh-md); }
+.hg-timeline--pkg .hg-timeline__day { left: -56px; top: 16px; width: 40px; height: 40px; box-shadow: 0 0 0 4px #fff; }
+.hg-timeline--pkg > li > p:not(.hg-timeline__stay) { line-height: 1.7; }
+@media (max-width: 767px) {
+    .hg-body .hg-timeline--pkg { padding-left: 44px !important; }
+    .hg-timeline--pkg::before { left: 15px; }
+    .hg-timeline--pkg > li { padding: 16px; }
+    .hg-timeline--pkg .hg-timeline__day { left: -44px; width: 32px; height: 32px; font-size: 14px; }
+}
+.hg-ithead__id dd { font-family: var(--hg-font-head); letter-spacing: .04em; }
+.hg-ithead { display: flex; flex-wrap: wrap; gap: 0; margin: 0 0 24px; overflow: hidden; border: 1px solid var(--hg-border); border-radius: var(--hg-r-md); background: #F7F8FC; }
+.hg-ithead > div { flex: 1 1 150px; padding: 12px 16px; border-right: 1px solid var(--hg-border); }
+.hg-ithead > div:last-child { border-right: 0; }
+.hg-ithead dt { font-size: 12px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--hg-muted-2); }
+.hg-ithead dd { margin: 2px 0 0; font-weight: 600; color: var(--hg-navy); }
+.hg-ithead__tour { flex: 2.4 1 260px !important; }

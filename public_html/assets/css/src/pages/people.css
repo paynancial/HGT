@@ -1,0 +1,15 @@
+/* Leadership / team cards (photos blank until supplied) */
+.hg-people { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; }
+.hg-people--lead { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.hg-person { overflow: hidden; border: 1px solid var(--hg-border); border-radius: var(--hg-r-lg); background: #fff; }
+.hg-person__photo { aspect-ratio: 5 / 6; }
+.hg-person__body { padding: 16px 18px 20px; }
+.hg-body .hg-person__name { margin: 0 0 2px; font-size: 18px; }
+.hg-person__role { margin: 0 !important; font-size: 14px; font-weight: 600; color: var(--hg-orange-text); }
+.hg-person__bio { margin: 10px 0 0 !important; font-size: 14.5px; color: var(--hg-muted-2); }
+@media (max-width: 1023px) {
+    .hg-people, .hg-people--lead { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 479px) {
+    .hg-people, .hg-people--lead { grid-template-columns: 1fr; }
+}

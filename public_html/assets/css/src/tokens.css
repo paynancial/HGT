@@ -1,0 +1,39 @@
+:root {
+    --hg-navy: #0A163D;
+    --hg-navy-dark: #060E28;
+    --hg-orange: #FE7F16;
+    --hg-orange-hover: #E36A08;
+    --hg-blue: #1689D8;      /* secondary brand blue: decorative use only (3.6:1 on white) */
+    --hg-yellow: #FFC20A;    /* highlight: decorative / on navy only */
+    --hg-surface: #F5F8FC;
+    --hg-border: #E3E8F0;
+    --hg-text: #1A1F36;
+    --hg-muted: #5B6478;
+    --hg-consent-h: 0px; /* set by hg-site.js while the cookie banner is visible */
+}
+:root {
+    --hg-font-head: "Plus Jakarta Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
+    --hg-font-body: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+    --hg-navy-700: #1A2A66;
+    --hg-blue-50: #E8F3FC;
+    --hg-orange-50: #FFF1E5;
+    --hg-orange-text: #A84B00; /* orange for text on light backgrounds (>= 4.5:1) */
+    --hg-yellow-50: #FFF6DB;
+    --hg-muted-2: #4A5163;
+    --hg-r-sm: 8px; --hg-r-md: 12px; --hg-r-lg: 16px; --hg-r-xl: 24px;
+    --hg-sh-sm: 0 1px 2px rgba(10, 22, 61, .06);
+    --hg-sh-md: 0 8px 24px rgba(10, 22, 61, .08);
+    --hg-sh-lg: 0 18px 44px rgba(10, 22, 61, .14);
+    --hg-container: 1240px;
+    --hg-gutter: 24px;
+    --hg-header-h: 76px;
+    --hg-sticky: 128px; /* full sticky header height (header row + nav) */
+}
+@media (max-width: 1023px) {
+    /* Mobile search editor: the same form as a full-screen sheet */
+    /* Drawer: the same nav element, restyled (no duplicated markup) */
+    :root { --hg-header-h: 64px; --hg-sticky: 64px; }
+}
+@media (max-width: 767px) {
+    :root { --hg-gutter: 16px; }
+}
