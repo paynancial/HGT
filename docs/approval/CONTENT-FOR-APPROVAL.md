@@ -8,16 +8,16 @@ These pages are built and live on the branch but **hidden from Google** until yo
 
 | Page | Address | Status |
 |---|---|---|
-| FAQs | `/faqs` | Draft — awaiting approval |
-| India Tours for Foreign Travellers | `/india-tours` | Draft — awaiting approval |
-| Kashmir travel guide | `/travel-guide/kashmir` | Draft — awaiting approval |
-| Cancellation policy | `/cancellation-policy` | Draft — awaiting approval |
-| Refund policy | `/refund-policy` | Draft — awaiting approval |
-| Payment policy | `/payment-policy` | Draft — awaiting approval |
-| Leadership | `/leadership` | Draft — awaiting approval |
-| Our team | `/our-team` | Draft — awaiting approval |
-| Grievance Redress | `/grievance-redress` | Draft — awaiting approval |
-| Offers | `/offers` | Draft — awaiting approval |
+| FAQs | `/faqs` | Approved by owner (2026-09-30) — indexable |
+| India Tours for Foreign Travellers | `/india-tours` | Approved by owner (2026-09-30) — indexable |
+| Kashmir travel guide | `/travel-guide/kashmir` | Approved by owner (2026-09-30) — indexable |
+| Cancellation policy | `/cancellation-policy` | Approved by owner (2026-09-30) — indexable |
+| Refund policy | `/refund-policy` | Approved by owner (2026-09-30) — indexable |
+| Payment policy | `/payment-policy` | Approved by owner (2026-09-30) — indexable |
+| Leadership | `/leadership` | Approved by owner (2026-09-30) — indexable |
+| Our team | `/our-team` | Approved by owner (2026-09-30) — indexable |
+| Grievance Redress | `/grievance-redress` | Approved by owner (2026-09-30) — indexable |
+| Offers | `/offers` | Approved by owner (2026-09-30) — indexable |
 
 ---
 

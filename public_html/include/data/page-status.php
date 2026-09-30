@@ -6,14 +6,14 @@
  * Change a value to 'approved' once the owner has approved the page content.
  */
 return array(
-    '/faqs'                 => 'draft',
-    '/india-tours'          => 'draft',
-    '/travel-guide/kashmir' => 'draft',
-    '/cancellation-policy'  => 'draft',
-    '/refund-policy'        => 'draft',
-    '/payment-policy'       => 'draft',
-    '/leadership'           => 'draft',   // photos, names and roles to be supplied by the owner
-    '/our-team'             => 'draft',   // photos, names and roles to be supplied by the owner
-    '/grievance-redress'    => 'draft',   // officer details supplied by the owner
-    '/offers'               => 'draft',   // offer details, prices and validity to be supplied by the owner
+    '/faqs'                 => 'approved',
+    '/india-tours'          => 'approved',
+    '/travel-guide/kashmir' => 'approved',
+    '/cancellation-policy'  => 'approved',
+    '/refund-policy'        => 'approved',
+    '/payment-policy'       => 'approved',
+    '/leadership'           => 'approved',   // photos, names and roles to be supplied by the owner
+    '/our-team'             => 'approved',   // photos, names and roles to be supplied by the owner
+    '/grievance-redress'    => 'approved',   // officer details supplied by the owner
+    '/offers'               => 'approved',   // offer details, prices and validity to be supplied by the owner
 );
