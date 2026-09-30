@@ -71,8 +71,8 @@ return array(
         'items' => array(
             array('label' => 'About Us', 'url' => '/about'),
             array('label' => 'Why Us?', 'url' => '/about#why-us', 'description' => 'The "Why choose us" section of the About page.'),
-            array('label' => 'Leadership', 'url' => '', 'description' => 'Needs names, roles and photos from the owner.'),
-            array('label' => 'Our Team', 'url' => '', 'description' => 'Needs team details from the owner.'),
+            array('label' => 'Leadership', 'url' => '/leadership', 'description' => 'Shows as Coming soon until approved in page-status.php.'),
+            array('label' => 'Our Team', 'url' => '/our-team', 'description' => 'Shows as Coming soon until approved in page-status.php.'),
             array('label' => 'Blog', 'url' => '', 'description' => 'No articles yet (blog.html was a template demo and now returns 404).'),
             array('label' => 'Career', 'url' => '', 'description' => 'Needs current openings from the owner.'),
         ),

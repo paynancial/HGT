@@ -4,7 +4,14 @@
 require __DIR__ . '/../include/ui/core.php';
 
 $c = include __DIR__ . '/../include/content/kashmir.php';
-$status = 'draft';
+$status = hg_page_status('/travel-guide/kashmir');
+$gfaqs = array(
+    array('Is Kashmir good for a first visit?', '<p>Yes. Srinagar, Gulmarg and Pahalgam are easy to cover in five days by private cab, with short walks, ponies or the Gulmarg Gondola for the higher points.</p>'),
+    array('How far is Gulmarg from Srinagar?', '<p>About 56 km. Pahalgam is roughly a 186 km round trip and Sonmarg roughly 196 km round trip from Srinagar.</p>'),
+    array('Do mobile phones work in Kashmir?', '<p>Prepaid SIMs issued outside Jammu &amp; Kashmir generally do not work there; postpaid connections usually do.</p>'),
+    array('Is the Gulmarg Gondola included in packages?', '<p>No — Gondola tickets are paid locally, like pony rides and shikara extensions.</p>'),
+    array('What should I buy in Kashmir?', '<p>Pashmina shawls, papier-mâché, walnut-wood carvings, carpets, dry fruits and Kashmiri saffron — buy from government emporiums or trusted shops.</p>'),
+);
 $sample = hg_package('srinagar-gulmarg-pahalgam-tour-package-5-days');
 $pack = array(
     array('March – May', 'Light woollens and a jacket; rain layer; comfortable walking shoes.'),
@@ -12,7 +19,7 @@ $pack = array(
     array('September – November', 'Layers — warm sweater and jacket for cool mornings and evenings.'),
     array('December – February', 'Heavy winter wear: thermal layers, down jacket, gloves, cap and waterproof boots for snow.'),
 );
-$toc = array(array('when', 'When to go'), array('reach', 'How to reach'), array('around', 'Getting around'), array('pack', 'What to pack'), array('plan', 'A 5-day plan'), array('tips', 'Practical tips'));
+$toc = array(array('when', 'When to go'), array('reach', 'How to reach'), array('around', 'Getting around'), array('pack', 'What to pack'), array('plan', 'A 5-day plan'), array('stay', 'Where to stay'), array('food', 'Food & shopping'), array('tips', 'Practical tips'), array('gfaq', 'FAQs'));
 
 hg_layout_start(array(
     'title' => 'Kashmir Travel Guide: When to Go, How to Reach, What to Pack | Holiday Guru Travel',
@@ -20,7 +27,7 @@ hg_layout_start(array(
     'path' => '/travel-guide/kashmir', 'index' => $status === 'approved', 'type' => 'article',
     'image' => $c['image'],
     'breadcrumbs' => array(array('Home', '/'), array('Kashmir', '/tours/kashmir'), array('Kashmir travel guide', null)),
-    'schema' => array(array(
+    'schema' => array(hg_faq_schema($gfaqs), array(
         '@type' => 'Article', 'headline' => 'Kashmir travel guide', 'description' => 'When to go, how to reach, getting around and what to pack for Kashmir.',
         'author' => array('@id' => HG_SITE_URL . '/#organization'), 'publisher' => array('@id' => HG_SITE_URL . '/#organization'),
         'dateModified' => $c['reviewed'], 'mainEntityOfPage' => hg_abs('/travel-guide/kashmir'), 'image' => hg_abs($c['image']),
@@ -79,9 +86,40 @@ hg_layout_start(array(
     </section>
     <?php } ?>
 
+    <section class="hg-answer" id="lengths" aria-labelledby="g-len">
+        <h2 class="hg-h2" id="g-len">How long to stay</h2>
+        <p class="hg-answer__direct"><?= hg_e($c['days_answer']) ?></p>
+        <div class="hg-tablewrap" tabindex="0" role="region" aria-label="Trip lengths"><table class="hg-table"><thead><tr><th scope="col">Trip length</th><th scope="col">What it covers</th><th scope="col">Our itinerary</th></tr></thead><tbody>
+        <?php foreach ($c['days_rows'] as $r) { $pp = hg_package($r[2]); ?><tr><td><?= hg_e($r[0]) ?></td><td><?= hg_e($r[1]) ?></td><td><?php if ($pp) { ?><a href="<?= hg_e($pp['url']) ?>"><?= hg_e($pp['title']) ?></a><?php } ?></td></tr><?php } ?>
+        </tbody></table></div>
+    </section>
+
+    <section class="hg-answer" id="stay" aria-labelledby="g-stay">
+        <h2 class="hg-h2" id="g-stay">Where to stay</h2>
+        <p class="hg-answer__direct">Stay in Srinagar for most of the trip, with a night on a Dal Lake houseboat, and add a night in Gulmarg or Pahalgam if you want more time in the mountains.</p>
+        <div class="hg-prose"><p><?= hg_e($c['stay']) ?></p><ul>
+            <li><strong>Srinagar</strong> — the best base: hotels near Dal Lake and Boulevard Road, and houseboats on Dal and Nigeen lakes.</li>
+            <li><strong>Gulmarg</strong> — stay a night for early Gondola rides and snow in winter.</li>
+            <li><strong>Pahalgam</strong> — riverside hotels in the Lidder valley, quieter than Srinagar.</li>
+        </ul></div>
+    </section>
+
+    <section class="hg-answer" id="food" aria-labelledby="g-food">
+        <h2 class="hg-h2" id="g-food">Food and shopping</h2>
+        <p class="hg-answer__direct">Try a Kashmiri wazwan meal and kahwa tea, and shop for pashmina, papier-mâché and saffron.</p>
+        <div class="hg-grid hg-grid--2">
+            <div class="hg-card"><h3 class="hg-h3" style="font-size:18px">What to eat</h3><ul class="hg-checks"><li>Wazwan dishes such as rogan josh, yakhni and gushtaba</li><li>Kahwa — green tea with saffron, cardamom and almonds</li><li>Noon chai (salted pink tea) and local breads from the bakeries</li><li>Vegetarian dishes such as dum aloo and nadru (lotus stem)</li></ul></div>
+            <div class="hg-card"><h3 class="hg-h3" style="font-size:18px">What to buy</h3><ul class="hg-checks"><li>Pashmina and Kani shawls</li><li>Papier-mâché and walnut-wood crafts</li><li>Hand-knotted carpets</li><li>Saffron — our 5-day itinerary stops at saffron fields on the drive to Pahalgam</li></ul></div>
+        </div>
+    </section>
+
     <section class="hg-answer" id="tips" aria-labelledby="g-tips">
         <h2 class="hg-h2" id="g-tips">Practical tips</h2>
         <ul class="hg-checks hg-checks--info"><?php foreach ($c['tips'] as $t) { ?><li><?= hg_e($t) ?></li><?php } ?></ul>
+    </section>
+    <section class="hg-answer" id="gfaq" aria-labelledby="g-faq">
+        <h2 class="hg-h2" id="g-faq">Kashmir travel questions</h2>
+        <?= hg_faq($gfaqs, 'g') ?>
     </section>
 </div>
 </article>

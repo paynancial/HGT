@@ -9,7 +9,7 @@ require_once __DIR__ . '/../ui/core.php';
 if (!function_exists('hg_render_policy')) {
     function hg_render_policy(array $meta, $bodyHtml)
     {
-        $status = 'draft';
+        $status = hg_page_status($meta['path']);
         hg_layout_start(array(
             'title' => $meta['title'], 'description' => $meta['description'], 'path' => $meta['path'],
             'index' => $status === 'approved',

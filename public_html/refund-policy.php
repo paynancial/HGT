@@ -8,6 +8,12 @@ ob_start(); ?>
     <li>Holiday Guru Travel deducts processing charges from the refund paid to the guest.</li>
     <li>Refunds for transport tickets follow the rules of the concerned airline, railway or operator.</li>
 </ul>
+<h2 class="hg-h3">What is not refunded</h2>
+<ul class="hg-checks hg-checks--no">
+    <li>Cancellation charges under the cancellation policy.</li>
+    <li>Processing charges deducted from the refund.</li>
+    <li>Ticket charges retained by airlines, railways or operators under their own rules.</li>
+</ul>
 <h2 class="hg-h3">How to request a refund</h2>
 <p>Contact us with your booking voucher details by phone, WhatsApp or email. We confirm the refundable amount after applying the cancellation charges.</p>
 <?php

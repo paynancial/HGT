@@ -9,7 +9,7 @@ $main = array(
     array('Search all packages', '/tours'), array('Car rental', '/service'), array('About us', '/about'), array('Contact us', '/contact'),
 );
 $help = array(array('FAQs', '/faqs'), array('Kashmir travel guide', '/travel-guide/kashmir'), array('Cancellation policy', '/cancellation-policy'), array('Refund policy', '/refund-policy'), array('Payment policy', '/payment-policy'));
-$link = function ($l) { return hg_page_exists($l[1]) ? '<li><a href="' . hg_e($l[1]) . '">' . hg_e($l[0]) . '</a></li>' : ''; };
+$link = function ($l) { return hg_page_exists($l[1]) && hg_page_status($l[1]) === 'approved' ? '<li><a href="' . hg_e($l[1]) . '">' . hg_e($l[0]) . '</a></li>' : ''; };
 
 hg_layout_start(array(
     'title' => 'Sitemap | Holiday Guru Travel',

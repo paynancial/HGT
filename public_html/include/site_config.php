@@ -114,7 +114,9 @@ if (!defined('HG_SITE_CONFIG')) {
                     continue;
                 }
                 $url = isset($item['url']) ? trim($item['url']) : '';
-                $item['state'] = ($status !== 'coming_soon' && $url !== '' && hg_page_exists($url))
+                // Pages still awaiting owner approval (include/data/page-status.php) show as Coming soon.
+                $approved = !function_exists('hg_page_status') || hg_page_status((string) parse_url($url, PHP_URL_PATH)) === 'approved';
+                $item['state'] = ($status !== 'coming_soon' && $url !== '' && $approved && hg_page_exists($url))
                     ? 'active' : 'coming_soon';
                 $items[] = $item;
             }

@@ -17,6 +17,15 @@ ob_start(); ?>
     </tbody>
 </table></div>
 <p class="hg-muted">This schedule appears on 22 of our packages — all Leh Ladakh and Singapore packages, most Dubai and Goa packages, and several Himachal packages. Other packages state that charges depend on the dates of departure and cancellation; we confirm the exact charge before you book.</p>
+<p><strong>Example:</strong> on a package with this schedule, cancelling 15 days before departure falls in the 8–20 day band, so the charge is 50% of the booking value.</p>
+<h2 class="hg-h3">How to cancel</h2>
+<p>Send your cancellation request by email to <a href="mailto:info@holidaygurutravel.in">Info@holidaygurutravel.in</a> or on WhatsApp to +91 99717 54265, with your name and booking voucher details. We confirm the charges that apply and any refund due.</p>
+<h2 class="hg-h3">Changes during the trip</h2>
+<ul class="hg-checks hg-checks--info">
+    <li>Transport is provided as per the itinerary and sightseeing depends on the time available.</li>
+    <li>Weather, road blocks, flight cancellations or ill health can change the plan on the day. Costs caused by such changes are listed as excluded on most packages.</li>
+    <li>If a listed hotel is unavailable, our package terms provide for a hotel of similar standard.</li>
+</ul>
 <h2 class="hg-h3">Refunds</h2>
 <p>Any refund due after cancellation follows our <a href="/refund-policy">refund policy</a>.</p>
 <?php

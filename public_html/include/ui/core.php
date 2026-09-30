@@ -533,6 +533,17 @@ if (!defined('HG_UI_CORE')) {
         return ob_get_clean();
     }
 
+    /** Owner-approval status of a page (include/data/page-status.php); pages not listed are 'approved'. */
+    function hg_page_status($path)
+    {
+        static $st = null;
+        if ($st === null) {
+            $f = dirname(__DIR__) . '/data/page-status.php';
+            $st = is_file($f) ? (array) include $f : array();
+        }
+        return isset($st[$path]) ? $st[$path] : 'approved';
+    }
+
     /** Booking FAQs built from the company's real package booking terms. */
     function hg_booking_faqs()
     {
@@ -542,7 +553,7 @@ if (!defined('HG_UI_CORE')) {
             array('Which payment methods do you accept?',
                 '<p>Net banking, IMPS, NEFT, cheque and UPI (including Google Pay, PhonePe, Paytm and scan-to-pay QR). We do not accept cash. Air and train tickets need full payment at the time of booking.</p>'),
             array('Can I change the itinerary or hotels in a package?',
-                '<p>Yes. Every package can be used as a starting point: tell us your dates, travellers, hotel preference and anything you want to add or remove, and we send a revised itinerary and quote. Use <a href="/customized-holidays">Customized Holidays</a> for a trip planned from scratch.</p>'),
+                '<p>Yes. Every package can be used as a starting point: tell us your dates, travellers, hotel preference and anything you want to add or remove, and we send a revised itinerary and quote. Use <a href="/customized-holidays">Customised Tours</a> for a trip planned from scratch.</p>'),
             array('Are flights or train tickets included?',
                 '<p>Most packages start and end at the destination (for example, pick-up and drop at Srinagar airport) and list air and train fares under exclusions. Each package page shows exactly what is included and excluded. We can add flights or trains to your quote on request.</p>'),
             array('Where is your office?',
