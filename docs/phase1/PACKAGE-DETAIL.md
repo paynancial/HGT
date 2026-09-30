@@ -1,8 +1,19 @@
 # Package detail page: implementation notes
 
 - **Template:** `public_html/include/templates/package-detail.php`.
-- **Applied to:** `/srinagar-gulmarg-pahalgam-tour-package-5-days`. The URL, title and description are unchanged.
-- **Other packages:** they stay on their legacy pages until approved. Converting one takes a three-line wrapper page, after copying its original source into `tools/package-sources/`.
+- **Applied to:** 93 of 105 package pages. URLs, titles and descriptions are unchanged, except that double spaces in 13 old titles were normalised. Each converted page is a small wrapper; its original is kept byte-for-byte in `tools/package-sources/`, which is not web-served, so the data build still reads it. The rebuilt data was confirmed byte-identical.
+- **Held on their legacy pages (12)**, because their content has problems to fix first:
+
+| Package | Problem |
+|---|---|
+| `best-of-shimla-vacation`, `munnar-alleppey-kovalam-06-days`, `srinagar-gulmarg-pahalgam-tour-package-7-days` | No itinerary on the page |
+| `munnar-alleppey-kovalam-05-days`, `nainital-with-almora-and-jim-corbett-05-days`, `ooty-mysore-04-days`, `yamunotri-gangotri-do-dham-from-delhi-6n-7d` | Stated duration doesn't match the itinerary days |
+| `char-dham-yatra-from-delhi-11n-12d` | URL says Delhi, but day 1 starts elsewhere |
+| `amritsar-with-dalhousie-dharamshala-05-days`, `manali-with-manikaran`, `munnar-thekkady-alleppey--kovalam-kanyakumari-07-days` | Exclusion or terms text listed under Inclusions |
+| `uttarakhand-mussoorie-with-rishikesh-flight-inclusive` | Named "flight-inclusive" but no flight listed |
+
+  To convert one after fixing it: copy the page to `tools/package-sources/`, replace it with the wrapper, and rebuild the data.
+- **Canonical fix:** the legacy `chardham-yatra-from-haridwar-8n-9d` page declared its canonical as a *different* package (`char-dham-yatra-from-haridwar-9n-10d`). The template gives every page a self-canonical. This is INFERRED to be a copy-paste error; the owner should confirm.
 
 ## Sections
 
@@ -21,7 +32,7 @@ All sections are built from the package's own data.
    - Headings come from the source.
    - "Overnight" comes from the day's place.
    - A day with no text says so; nothing is invented.
-   - A route link opens Google Maps directions, with no embedded map and no API key.
+   - A route link opens Google Maps directions (no embedded map, no API key), but only when the itinerary names the overnight places in order. Otherwise the page lists the places covered with no directions link. A single-destination package gets a map search link instead. International places are not suffixed with ", India".
 6. **Inclusions and exclusions**
    - Both lists are shown verbatim.
    - The travel-ticket note appears here: see "Travel-ticket rule" below.

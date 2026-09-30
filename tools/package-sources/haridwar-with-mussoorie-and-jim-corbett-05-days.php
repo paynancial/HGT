@@ -1,0 +1,159 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Haridwar with Mussoorie and Jim Corbett 4 Nights / 5 Days | Holiday Guru Travel</title>
+    <meta name="author" content="Holiday Guru Travel">
+    <meta name="description" content=" Explore the spiritual city of Haridwar, the scenic beauty of Mussoorie, and the wildlife of Jim Corbett with our 5-day tour package. Experience the best of Uttarakhand's pilgrimage, hill stations, and wildlife.">
+    <meta name="keywords" content=" Haridwar with Mussoorie and Jim Corbett tour package, 5-day Uttarakhand pilgrimage tour, Haridwar sightseeing, Mussoorie hill station tour. ">
+    <meta name="robots" content="INDEX,FOLLOW">
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+    <link rel="canonical" href="https://holidaygurutravel.in/haridwar-with-mussoorie-and-jim-corbett-05-days">
+    <meta property="og:site_name" content="Holiday Guru Travel" />
+    <meta property="og:description" content=" Explore the spiritual city of Haridwar, the scenic beauty of Mussoorie, and the wildlife of Jim Corbett with our 5-day tour package. Experience the best of Uttarakhand's pilgrimage, hill stations, and wildlife." />
+    <?php
+    include "include/header.php";
+    ?>
+    
+    
+    <div class="breadcumb-wrapper" data-bg-src="assets/img/destination/HaridwarwithMussoorieandJimCorbett7.jpg">
+        <div class="container">
+            <div class="breadcumb-content">
+                <h1 class="breadcumb-title">Haridwar with Mussoorie and Jim Corbett</h1>
+                <ul class="breadcumb-menu">
+                    <li><a href="/">Home</a></li>
+                    <li>Haridwar with Mussoorie and Jim Corbett</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <section class="space">
+        <div class="container">
+            <div class="row">
+                <div class="col-xxl-8 col-lg-7">
+                    <div class="page-single">
+                        
+                         <div class="page-content">
+                            <h2 class="box-title">Haridwar with Mussoorie and Jim Corbett</h2>
+                            <p class="blog-text mb-30"><i class="fa-light fa-clock"></i>4 Nights / 5 Days</p>
+                            <p class="blog-text mb-35">Cities Covered ->  Haridwar- 1Day -> Mussoorie- 2Day -> Corbett- 2Day</p>
+                            <h2 class="box-title">Overview</h2>
+                            <p class="faq-text">Visit the oldest and largest tiger reserve in India JimCorbettNational Park, while gazing at the majestic animals like the Royal Bengal Tiger, Asiatic Elephant, Reptiles, Birds and many other wild animals.</p><br>
+                            <h2 class="box-title">Itinerary</h2>
+                            
+        
+            
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="accordion-area accordion mb-30" id="faqAccordion">
+                        <div class="accordion-card style2 active">
+                            <div class="accordion-header" id="collapse-item-1"><button class="accordion-button"
+                                    type="button" data-bs-toggle="collapse" data-bs-target="#collapse-1"
+                                    aria-expanded="true" aria-controls="collapse-1">Day 1 : (Haridwar)Delhi to Haridwar ( 230 Kms - 7 Hours)</button></div>
+                            <div id="collapse-1" class="accordion-collapse collapse show"
+                                aria-labelledby="collapse-item-1" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body style2">
+                                    <p class="faq-text">Pickup from railway station, check in to your hotel. Evening you will visit Sivanand Ashram, Geeta Ashram, temples- Chandi Devi temple(chamunda devi), Mansa Devi Temple by cable car. Also witness Aarti of the Holy River Ganges at Har Ki Pauri. Night stay in Haridwar.</p>
+                                   
+                                   <p class="faq-text"><b>Distance between Delhi to Haridwar is 230 Kms (7 hours) by road</b></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-card style2">
+                            <div class="accordion-header" id="collapse-item-2"><button
+                                    class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapse-2" aria-expanded="false" aria-controls="collapse-2">Day 2 : (Mussoorie)Haridwar to Mussoorie ( 90 Kms - 3 Hours)</button></div>
+                            <div id="collapse-2" class="accordion-collapse collapse" aria-labelledby="collapse-item-2"
+                                data-bs-parent="#faqAccordion">
+                                <div class="accordion-body style2">
+                                    <p class="faq-text"><b>Haridwar to Rishikesh ( 30 Kms - 1 Hour)</b></p>
+                                    <p class="faq-text">After breakfast Check out to hotel and depart to Rishikesh visiting Ram Jhoola, Laxman Jhoola, Trambakeshwar Temple and Geeta Bhawan.</p>
+                                    <p class="faq-text"><b>Rishikesh to Dehradun ( 20 Kms - 1 Hour)</b></p>
+                                    <p class="faq-text">Next proceed to Dehradun visiting Sheshtradhara.</p>
+                                    <p class="faq-text"><b>Dehradun to Mussoorie ( 40 Kms - 2 Hour)</b></p>
+                                    <p class="faq-text">Proceed to Mussoorie visiting Sheshtradhara. Evening arrive in Mussoorie & check in at your hotel. Evening at leisure. Overnight at the hotel</p>
+                                    <p class="faq-text"><b>Distance between Haridwar to Mussoorie is 100 Kms (3.5 hours) by road</b></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-card style2">
+                            <div class="accordion-header" id="collapse-item-3"><button
+                                    class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapse-3" aria-expanded="false" aria-controls="collapse-3">Day 3 : (Mussoorie)Mussoorie Local Sightseeing Tour</button></div>
+                            <div id="collapse-3" class="accordion-collapse collapse" aria-labelledby="collapse-item-3"
+                                data-bs-parent="#faqAccordion">
+                                <div class="accordion-body style2">
+                                    <p class="faq-text">After breakfast proceed to visit famous Kemtey fall is 15Kms approx. from Mussoorie. It is popular tourists point in Mussoorie. Cloud Ends is 7Kms approx. from Mussoorie. It is hightest point of Mussorie offering awesome view to tourists. Camels Back Road is around 3Kms from Mussoorie. As name suggests rocks are shaped like a hump of camel at the end of road. Gun Hill Point is second highest point in Mussoorie. It is also accessible by a cable car. It offers complete view of Mussoorie. Lal Tibba (Red Hills) is located 6Kms from Mussoorie. If is famous among tourists to view sunset and sunrise.Also visit mall road. Back to the hotel. Overnight at Mussoorie.</p>
+                                    
+                                   
+                                    
+                                
+                            
+                            
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-card style2">
+                            <div class="accordion-header" id="collapse-item-4"><button
+                                    class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapse-4" aria-expanded="false" aria-controls="collapse-4">Day 4 : (Corbett)Mussoorie to Corbett</button></div>
+                            <div id="collapse-4" class="accordion-collapse collapse" aria-labelledby="collapse-item-4"
+                                data-bs-parent="#faqAccordion">
+                                <div class="accordion-body style2">
+                                    <p class="faq-text">After breakfast check out from hotel then drive to Corbett National Park. The park was named after Jim Corbett, the legendary hunter-naturalist turned author and photographer who spent most years of his life in this area and helped set up this park. Check-in to your hotel/resort. Evening free for sightseeing covering Garjia temple and Corbett fall. Dinner and overnight stay in Corbett.</p>
+                                    
+                                    <p class="faq-text"><b>Distance between Mussoorie to Corbett is 270 Kms & 8 Hours drive approx.</b></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-card style2">
+                            <div class="accordion-header" id="collapse-item-5"><button
+                                    class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapse-5" aria-expanded="false" aria-controls="collapse-5">Day 5 : (Corbett)Corbett to Delhi( 290 Kms - 8 Hours)</button></div>
+                            <div id="collapse-5" class="accordion-collapse collapse" aria-labelledby="collapse-item-5"
+                                data-bs-parent="#faqAccordion">
+                                <div class="accordion-body style2">
+                                    <p class="faq-text">After breakfast check out from hotel, drive to Delhi for onward destination.</p>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+            </div>
+        
+    
+                            
+                                <h4>Other Info</h4>
+                                <div class="destination-checklist">
+                               <div class="d-flex align-items-start">
+                                      <div class="nav flex-column nav-pills me-3 " id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                                        <a class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-Inclusion" type="button" role="tab" aria-controls="v-pills-Inclusion" aria-selected="true">Inclusion</a>
+                                        <a class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-Exclusion" type="button" role="tab" aria-controls="v-pills-Exclusion" aria-selected="false">Exclusion</a>
+                                        <a class="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-Cancellation" type="button" role="tab" aria-controls="v-pills-Cancellation" aria-selected="false">Cancellation Policy</a>
+                                        <a class="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-Important" type="button" role="tab" aria-controls="v-pills-Important" aria-selected="false">Important Note</a>
+                                        <a class="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-Extra" type="button" role="tab" aria-controls="v-pills-Extra" aria-selected="false">Extra Activity</a>
+                                      </div>
+                                      
+                            </div>
+                                
+                                </div>
+                            </div>
+                            
+                        </div>
+                        
+                    </div>
+            
+                <?php
+                include "include/enquiry.php";
+                ?>
+            </div>
+        </div>
+        
+    </section>
+      <?php
+    include "include/footer.php";
+    ?>

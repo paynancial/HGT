@@ -35,7 +35,7 @@ Status labels used in this document:
 | `/` | Homepage; search posts destination, date, adults, children and departure to `/tours` | index |
 | `/tours`, `/tours/{destination}` | Search results with facets, sort, paging, chips, empty and error states | noindex |
 | `/tours/kashmir` | Kashmir destination and results page; `/kashmir-tour` 301-redirects here | noindex (content is draft) |
-| `/srinagar-gulmarg-pahalgam-tour-package-5-days` | Package detail template (see PACKAGE-DETAIL.md) | index; noindex when opened with search parameters |
+| 93 package pages, e.g. `/srinagar-gulmarg-pahalgam-tour-package-5-days` | Package detail template; 12 packages are held on legacy pages until their data is fixed (see PACKAGE-DETAIL.md) | index; noindex when opened with search parameters |
 | `/domestic-holidays`, `/international-holidays` | Region listings built from real packages | index |
 | `/religious-tour` | Pilgrimage speciality page | index |
 | `/customized-holidays` | Trip request form, enquiry type "Customized Holiday" | index; noindex with parameters |
@@ -74,6 +74,7 @@ Draft pages become indexable when their `status` is changed to `approved` after 
 | `footer2.js`: footer, including axe | 28 / 28 |
 | `flow.js`: home → results → filters, sort, back/forward/refresh → package → enquiry; mobile sheets | 30 / 30 |
 | `a11y.js`: axe WCAG 2.2 A/AA, overflow and JS errors, 16 pages × 4 widths (1440, 1280, 820, 375) | 64 / 64 |
+| `pkgs-a11y.js`: the same checks on all 93 template package pages at 1440 and 375 | 186 / 186 |
 | Routing: 127 sitemap URLs return 200; 126 `.php` URLs 301 to the clean URL; 404s; PHPMailer and `/include/` return 403; security headers present; `GET /mail.php` returns 405 | pass |
 | Registry schema (`docs/package-registry/tests`) on local MariaDB | 28 / 28 |
 
