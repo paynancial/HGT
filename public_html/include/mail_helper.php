@@ -20,13 +20,13 @@ if (!defined('HGT_MAIL_HELPER')) {
         }
 
         $config = array(
-            'smtp_host'     => getenv('HGT_SMTP_HOST') ?: 'smtpout.secureserver.net',
-            'smtp_port'     => (int) (getenv('HGT_SMTP_PORT') ?: 465),
-            'smtp_secure'   => getenv('HGT_SMTP_SECURE') ?: 'ssl',
-            'smtp_username' => getenv('HGT_SMTP_USERNAME') ?: 'sales@holidaygurutravel.in',
+            'smtp_host'     => getenv('HGT_SMTP_HOST') ?: 'smtp.hostinger.com',
+            'smtp_port'     => (int) (getenv('HGT_SMTP_PORT') ?: 587),
+            'smtp_secure'   => getenv('HGT_SMTP_SECURE') ?: 'tls'   // STARTTLS on 587,
+            'smtp_username' => getenv('HGT_SMTP_USERNAME') ?: 'info@holidaygurutravel.in',
             'smtp_password' => getenv('HGT_SMTP_PASSWORD') ?: '',
-            'mail_from'     => getenv('HGT_MAIL_FROM') ?: 'sales@holidaygurutravel.in',
-            'mail_to'       => getenv('HGT_MAIL_TO') ?: 'sales@holidaygurutravel.in',
+            'mail_from'     => getenv('HGT_MAIL_FROM') ?: 'info@holidaygurutravel.in',
+            'mail_to'       => getenv('HGT_MAIL_TO') ?: 'info@holidaygurutravel.in',
         );
 
         $file = dirname(dirname(__DIR__)) . '/hgt-config.php';
