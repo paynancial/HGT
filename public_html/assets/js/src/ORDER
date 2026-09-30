@@ -1,0 +1,20 @@
+# Bundle build order for tools/build_assets.py. Each bundle is the exact concatenation of its chunks.
+# _start.js opens the shared closure (helpers); _end.js closes it. Component chunks sit in between.
+hg-ui.js:
+ui/_start.js
+ui/mega-menu.js
+ui/navigation.js
+ui/analytics.js
+ui/holiday-search.js
+ui/holiday-search-autocomplete.js
+ui/login-dialog.js
+ui/forms.js
+ui/section-nav.js
+ui/search-results.js
+ui/_end.js
+hg-site.js:
+site/_start.js
+site/cookie-consent.js
+site/footer.js
+site/support-widget.js
+site/_end.js
