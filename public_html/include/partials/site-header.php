@@ -24,9 +24,6 @@ foreach ($hgArea('india') as $area => $items) {
 }
 $hgIndia = array_filter($hgIndia);
 $hgIntl = $hgArea('international');
-$hgSoon = function ($label) {
-    return '<span class="hg-soon">' . hg_e($label) . ' <span class="hg-soon__tag">Soon</span></span>';
-};
 $hgMegaCol = function ($area, array $items) {
     $out = '<div class="hg-mega__col"><p class="hg-mega__head">' . hg_e($area) . '</p><ul>';
     foreach ($items as $g) {
@@ -130,8 +127,8 @@ $hgMegaFeature = function ($title, $text, array $links) {
                         <div class="hg-mega__cols">
                             <?php foreach ($hgIntl as $area => $items) echo $hgMegaCol($area, $items); ?>
                             <div class="hg-mega__col">
-                                <p class="hg-mega__head">Coming soon</p>
-                                <ul><li><?= $hgSoon('Thailand') ?></li><li><?= $hgSoon('Europe') ?></li><li><?= $hgSoon('Bali') ?></li></ul>
+                                <p class="hg-mega__head">Plan on request</p>
+                                <ul><?php foreach (array('Thailand', 'Europe', 'Bali') as $hgReq) { ?><li><a href="/customized-holidays?destination=<?= rawurlencode($hgReq) ?>"><span><?= hg_e($hgReq) ?></span></a></li><?php } ?></ul>
                             </div>
                         </div>
                         <?= $hgMegaFeature('Travelling abroad?', 'Hotels, transfers and sightseeing planned together — tell us your dates and we build the trip.', array(array('All international tours', '/international-holidays', true), array('Plan a custom trip', '/customized-holidays', false))) ?>
@@ -145,15 +142,15 @@ $hgMegaFeature = function ($title, $text, array $links) {
                     <div class="hg-mega__grid">
                         <div class="hg-mega__cols">
                             <div class="hg-mega__col">
-                                <p class="hg-mega__head">Available now</p>
+                                <p class="hg-mega__head">Speciality tours</p>
                                 <ul>
                                     <li><a href="/religious-tour"><span>Pilgrimage Tours<small>Char Dham, Amarnath, Vaishno Devi</small></span></a></li>
                                 </ul>
                             </div>
                             <div class="hg-mega__col">
-                                <p class="hg-mega__head">Coming soon</p>
+                                <p class="hg-mega__head">Plan on request</p>
                                 <ul class="hg-mega__soonlist">
-                                    <?php foreach (array('Family Holidays', 'Honeymoon Holidays', 'Adventure Tours', 'Luxury Holidays', 'Senior Citizen Tours', 'Group Tours') as $sp) { ?><li><?= $hgSoon($sp) ?></li><?php } ?>
+                                    <?php foreach (array('Family Holidays', 'Honeymoon Holidays', 'Adventure Tours', 'Luxury Holidays', 'Senior Citizen Tours', 'Group Tours') as $sp) { ?><li><a href="/customized-holidays"><span><?= hg_e($sp) ?></span></a></li><?php } ?>
                                 </ul>
                             </div>
                         </div>
