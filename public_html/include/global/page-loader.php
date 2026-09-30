@@ -8,10 +8,11 @@
  *
  * Rules (owner, 2026-09-30):
  * - Shown only on a visitor's FIRST page in a visit (sessionStorage, per browser tab session).
- * - JavaScript only: without JS the overlay is never displayed. Pure CSS also removes it after 3.5 s,
- *   so an error can never leave it on screen.
+ * - JavaScript only: without JS the overlay is never displayed. Pure CSS also removes it after 3 s,
+ *   so an error can never leave it on screen (CSS stop at 3 s).
  * - Progress is real: DOM ready + web fonts + above-the-fold images. It closes as soon as they are ready
- *   (short 0.6 s minimum so the brand moment does not flicker), and after 2.8 s at the most.
+ *   (short 0.6 s minimum so the brand moment does not flicker); on a slow connection it stops waiting at
+ *   2 s and is gone by about 2.6 s on screen (hard stop 2.3 s + a quick 0.2 s fade).
  * - prefers-reduced-motion: no spinning or flying plane; it closes without animation.
  * - The head script also sets html.hg-js (used by the image reveal in components/media-reveal.css) and
  *   window.hgImgFail (branded fallback for images that fail to load).
@@ -25,7 +26,7 @@ if ($hgLoaderPart === 'head') { ?>
         .hg-loader{display:none}
         html.hg-loading .hg-loader{display:flex;position:fixed;inset:0;z-index:2147483000;align-items:center;justify-content:center;flex-direction:column;gap:14px;
             background:radial-gradient(120% 90% at 50% 38%,#1A2A66 0%,#0A163D 58%,#060E28 100%);color:#fff;text-align:center;padding:24px;
-            font-family:"Plus Jakarta Sans","Segoe UI",system-ui,-apple-system,sans-serif;animation:hg-loader-kill 0s linear 3.5s forwards}
+            font-family:"Plus Jakarta Sans","Segoe UI",system-ui,-apple-system,sans-serif;animation:hg-loader-kill 0s linear 3s forwards}
         @keyframes hg-loader-kill{to{opacity:0;visibility:hidden;pointer-events:none}}
         .hg-loader__stage{position:relative;width:168px;height:168px;display:grid;place-items:center;transition:transform .28s ease,opacity .28s ease}
         .hg-loader__ring{position:absolute;inset:0;border-radius:50%;border:3px solid rgba(255,255,255,.12);border-top-color:#FE7F16;border-right-color:#FFC20A;animation:hg-spin 1.1s linear infinite}
@@ -40,6 +41,7 @@ if ($hgLoaderPart === 'head') { ?>
         .hg-loader__bar{width:180px;height:3px;border-radius:3px;background:rgba(255,255,255,.14);overflow:hidden}
         .hg-loader__bar span{display:block;height:100%;background:linear-gradient(90deg,#FE7F16,#FFC20A);transform-origin:0 50%;transform:scaleX(0)}
         html.hg-loading .hg-loader.is-done{opacity:0;transition:opacity .32s ease .12s}
+        html.hg-loading .hg-loader.is-done.is-fast{transition:opacity .18s ease}
         .hg-loader.is-done .hg-loader__pct,.hg-loader.is-done .hg-loader__bar{opacity:0}
         .hg-loader.is-done .hg-loader__stage,.hg-loader.is-done .hg-loader__title,.hg-loader.is-done .hg-loader__tag{transform:scale(.96);opacity:.0;transition:transform .28s ease,opacity .28s ease}
         @media (max-width:767px){.hg-loader__stage{width:128px;height:128px}.hg-loader__badge{width:108px;height:108px}.hg-loader__title{font-size:19px}.hg-loader__tag{font-size:12.5px}.hg-loader__bar{width:150px}}
@@ -91,7 +93,7 @@ if ($hgLoaderPart === 'head') { ?>
     var imgs = L.querySelectorAll('img[data-src]');
     for (var i = 0; i < imgs.length; i++) { if (imgs[i].getAttribute('data-srcset')) imgs[i].srcset = imgs[i].getAttribute('data-srcset'); imgs[i].src = imgs[i].getAttribute('data-src'); }
     var reduced = w.matchMedia && w.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    var t0 = Date.now(), MIN = reduced ? 0 : 600, MAX = 2800;
+    var t0 = Date.now(), MIN = reduced ? 0 : 600, MAX = 2000, capped = false;
     var dom = false, fonts = false, crit = null, shown = 0, finishing = false, closed = false;
     function critImages() {
         // Above-the-fold content images (priority images and any image in the first viewport).
@@ -112,17 +114,17 @@ if ($hgLoaderPart === 'head') { ?>
     function target() { return finishing ? 100 : 8 + (dom ? 35 : 0) + (fonts ? 20 : 0) + 35 * imgShare(); }
     function close() {
         if (closed) return; closed = true;
-        L.className += ' is-done';
+        L.className += capped ? ' is-done is-fast' : ' is-done';
         setTimeout(function () {
             h.className = h.className.replace(/\s*\bhg-loading\b/, '');
             if (L.parentNode) L.parentNode.removeChild(L);
-        }, reduced ? 0 : 450);
+        }, reduced ? 0 : (capped ? 200 : 450));
     }
     function tick() {
         if (!finishing && dom && fonts && imgShare() === 1) finishing = true;
-        if (Date.now() - t0 > MAX) finishing = true;
+        if (Date.now() - t0 > MAX) finishing = capped = true;
         var t = target();
-        shown = reduced ? t : shown + Math.max(0.6, (t - shown) * 0.2);
+        shown = reduced ? t : shown + Math.max(capped ? 4 : 0.6, (t - shown) * (capped ? 0.45 : 0.2));
         if (shown > t) shown = t;
         pct.textContent = Math.round(shown);
         bar.style.transform = 'scaleX(' + (shown / 100) + ')';
@@ -132,8 +134,8 @@ if ($hgLoaderPart === 'head') { ?>
     d.addEventListener('DOMContentLoaded', function () { dom = true; crit = critImages(); });
     if (d.fonts && d.fonts.ready) d.fonts.ready.then(function () { fonts = true; }); else fonts = true;
     w.addEventListener('load', function () { dom = true; fonts = true; crit = crit || []; finishing = true; });
-    setTimeout(function () { finishing = true; }, MAX);
-    setTimeout(close, MAX + 700); // hard stop even if animation frames are throttled (background tab)
+    setTimeout(function () { finishing = capped = true; }, MAX);
+    setTimeout(function () { capped = true; close(); }, MAX + 300); // hard stop even if animation frames are throttled (background tab)
     w.requestAnimationFrame(tick);
 })(document, window);
 </script>

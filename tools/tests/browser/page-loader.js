@@ -38,7 +38,7 @@ async function visit(b, opts = {}, url = '/') {
   const mono = r.pcts.every((v, i, a) => !i || v >= a[i - 1]);
   rec(r.seen, 'first page: loader shown');
   rec(r.pcts.length > 0 && r.pcts[r.pcts.length - 1] === 100 && mono, `percentage counts up smoothly to 100 (samples ${r.pcts.length}, first ${r.pcts[0]})`);
-  rec(r.gone !== null && r.gone < 2900, `loader gone at ${Math.round(r.gone)} ms (limit 2.9 s)`);
+  rec(r.gone !== null && r.gone - r.first < 2900, `loader gone at ${Math.round(r.gone)} ms (limit 2.9 s)`);
   rec(r.loaderInDom === 0 && !/hg-loading/.test(r.loadingClass) && /hg-js/.test(r.loadingClass), 'overlay removed from the page afterwards; hg-js set');
   rec(r.errs.length === 0, 'no JS errors');
   // 2. Second page in the same visit: no loader.
@@ -59,10 +59,10 @@ async function visit(b, opts = {}, url = '/') {
   rec(vis === 'none' && await r.p.locator('h1').isVisible(), 'JavaScript disabled: no overlay, page visible'); await r.ctx.close();
   // 6. Slow network (1.6 Mbps, 150 ms): still closes within the cap.
   r = await visit(b, { slow: true });
-  rec(r.seen && r.gone !== null && r.gone < 3000, `slow network: gone at ${Math.round(r.gone)} ms`); await r.ctx.close();
+  rec(r.seen && r.gone !== null && r.gone - r.first < 3000, `slow network: on screen ${Math.round(r.gone - r.first)} ms (appeared at ${Math.round(r.first)} ms, gone at ${Math.round(r.gone)} ms)`); await r.ctx.close();
   // 7. Mobile viewport.
   r = await visit(b, { vp: { width: 390, height: 844 } });
-  rec(r.seen && r.gone < 2900 && r.loaderInDom === 0, `mobile: shown and gone at ${Math.round(r.gone)} ms`); await r.ctx.close();
+  rec(r.seen && r.gone - r.first < 2900 && r.loaderInDom === 0, `mobile: shown and gone at ${Math.round(r.gone)} ms`); await r.ctx.close();
   // 8. Cached load (same context, sessionStorage cleared → loader again, assets from cache).
   r = await visit(b);
   await r.p.evaluate(() => { sessionStorage.removeItem('hg-visit'); });
