@@ -16,6 +16,7 @@ These pages are built and live on the branch but **hidden from Google** until yo
 | Payment policy | `/payment-policy` | Draft — awaiting approval |
 | Leadership | `/leadership` | Draft — awaiting approval |
 | Our team | `/our-team` | Draft — awaiting approval |
+| Grievance Redress | `/grievance-redress` | Draft — awaiting approval |
 
 ---
 
@@ -755,3 +756,51 @@ How we work for you
 - Your bookingA 35% advance confirms the trip; we issue your booking voucher once payment is received.
 
 - On the tripReach us on WhatsApp 24×7 at +91 99717 54265.
+
+---
+
+## Grievance Redress — `/grievance-redress`
+
+Legal & support
+
+### Grievance redress
+
+If something about your booking or trip has not gone as expected, tell us. Here is how to raise a complaint and what happens next.
+
+#### How to raise a grievance
+
+- Contact usEmail our Grievance Officer at Laxmi@holidaygurutravel.in, call or WhatsApp +91 99717 54265, or write to our office.
+
+- Share the detailsYour name, phone number, booking voucher or enquiry details, travel dates, and a short description of the issue, with any photos or documents.
+
+- We acknowledge and reviewOur team acknowledges your complaint, reviews it with the hotel, transport or other supplier involved, and contacts you with an update and resolution.
+
+#### Grievance Officer
+
+Name
+
+Mrs. Laxmi Saxena
+
+Designation
+
+Grievance Officer
+
+Email
+
+Laxmi@holidaygurutravel.in
+
+Phone / WhatsApp
+
++91 99717 54265
+
+Address
+
+Holiday Guru Travel 2nd floor, B6 Dharampali Palace, Bhoja Market, Sector 27 Noida
+
+Company
+
+M/S Swaasthik Vocation Pvt. Ltd. (CIN U74999UP2021PTC154544)
+
+#### Cancellations and refunds
+
+Requests to cancel or for a refund follow our cancellation policy and refund policy.

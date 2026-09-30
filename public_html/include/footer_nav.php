@@ -79,13 +79,13 @@ return array(
     ),
     'legal' => array(
         'title' => 'Legal & Support',
-        // Owner-specified order (2026-09-30). Policy pages restate the terms printed on the packages.
+        // Owner-specified order (2026-09-30). Pages awaiting approval show as Coming soon.
         'items' => array(
-            array('label' => 'Privacy Policy', 'url' => '', 'description' => 'Needs the privacy policy text (legal).'),
             array('label' => 'Cancellation Policy', 'url' => '/cancellation-policy'),
             array('label' => 'Refund Policy', 'url' => '/refund-policy'),
             array('label' => 'Payment Policy', 'url' => '/payment-policy'),
-            array('label' => 'Sitemap', 'url' => '/sitemap'),
+            array('label' => 'Payment Link', 'url' => '', 'description' => 'Set to the payment page or gateway link once online payment is configured.'),
+            array('label' => 'Grievance Redress', 'url' => '/grievance-redress'),
             array('label' => 'Disclaimer', 'url' => '', 'description' => 'Needs disclaimer text (legal).'),
             array('label' => 'Contact Us', 'url' => '/contact'),
         ),

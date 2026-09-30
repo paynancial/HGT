@@ -14,4 +14,5 @@ return array(
     '/payment-policy'       => 'draft',
     '/leadership'           => 'draft',   // photos, names and roles to be supplied by the owner
     '/our-team'             => 'draft',   // photos, names and roles to be supplied by the owner
+    '/grievance-redress'    => 'draft',   // officer details supplied by the owner
 );
