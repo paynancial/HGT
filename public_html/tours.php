@@ -23,6 +23,15 @@ if ($destKey === '' && $S['destination'] !== '') {
     }
 }
 
+/* ---------- Search by Tour No. ("0001", "Tour No. 0001") → the tour itself ---------- */
+if ($destKey === '' && preg_match('/^\s*(?:tour\s*(?:no\.?|number)?\s*)?(\d{1,4})\s*$/i', $S['destination'], $tm)) {
+    $tslug = hg_tour_slug_by_number($tm[1]);
+    if ($tslug && ($tp = hg_package($tslug))) {
+        header('Location: ' . $tp['url'] . hg_context_query(), true, 302);
+        exit;
+    }
+}
+
 $group = $destKey !== '' ? hg_group($destKey) : null;
 if ($destKey !== '' && !$group) {
     http_response_code(404);
@@ -70,11 +79,28 @@ $sel = array(
     'place' => $arr('place'),
     'dur' => array_values(array_intersect($arr('dur'), array_keys($durBuckets))),
     'feat' => $arr('feat'),
+    'hotel' => $arr('hotel'),
+    'meal' => $arr('meal'),
+    'budget' => $arr('budget'),
     'departure' => $S['departure'] ? array($S['departure']) : array(),
 );
 $slug = function ($s) { return trim(preg_replace('/[^a-z0-9]+/', '-', strtolower($s)), '-'); };
+// Budget buckets (per person, INR) apply only to tours with a current approved rate.
+$budgetBuckets = array('under-20000' => array(0, 19999, 'Under ₹20,000'), '20000-40000' => array(20000, 40000, '₹20,000 – ₹40,000'), 'over-40000' => array(40001, PHP_INT_MAX, 'Over ₹40,000'));
+$rateOf = function ($p) { static $c = array(); if (!array_key_exists($p['slug'], $c)) $c[$p['slug']] = hg_current_rate($p['slug']); return $c[$p['slug']]; };
 
-$matches = function ($p, $except = null) use ($sel, $durBuckets, $slug) {
+$matches = function ($p, $except = null) use ($sel, $durBuckets, $slug, $budgetBuckets, $rateOf) {
+    if ($except !== 'hotel' && $sel['hotel'] && !in_array($slug($p['hotel']), $sel['hotel'], true)) return false;
+    if ($except !== 'meal' && $sel['meal'] && !in_array($slug($p['meals']), $sel['meal'], true)) return false;
+    if ($except !== 'budget' && $sel['budget']) {
+        $r = $rateOf($p);
+        if (!$r) return false;
+        $ok = false;
+        foreach ($sel['budget'] as $b) {
+            if (isset($budgetBuckets[$b]) && $r['base_price'] >= $budgetBuckets[$b][0] && $r['base_price'] <= $budgetBuckets[$b][1]) $ok = true;
+        }
+        if (!$ok) return false;
+    }
     if ($except !== 'place' && $sel['place']) {
         $pp = array_map($slug, $p['places']);
         if (!array_intersect($sel['place'], $pp)) return false;
@@ -98,12 +124,16 @@ $matches = function ($p, $except = null) use ($sel, $durBuckets, $slug) {
     return true;
 };
 
-// Facet counts (each facet counted with the other filters applied)
-$facet = array('place' => array(), 'dur' => array(), 'feat' => array(), 'departure' => array(), 'fixed_departure' => false);
+// Facet availability (each facet evaluated with the other filters applied). Used only to
+// enable/disable options — counts are never shown publicly.
+$facet = array('place' => array(), 'dur' => array(), 'feat' => array(), 'departure' => array(), 'fixed_departure' => false, 'hotel' => array(), 'meal' => array(), 'budget' => array());
 foreach ($scope as $p) {
     if ($matches($p, 'place')) foreach ($p['places'] as $pl) { $facet['place'][$pl] = (isset($facet['place'][$pl]) ? $facet['place'][$pl] : 0) + 1; }
     if ($matches($p, 'dur')) foreach ($durBuckets as $b => $d) { if ($p['days'] >= $d[0] && $p['days'] <= $d[1]) $facet['dur'][$b] = (isset($facet['dur'][$b]) ? $facet['dur'][$b] : 0) + 1; }
     if ($matches($p, 'feat')) foreach ($p['features'] as $f) { $facet['feat'][$f] = (isset($facet['feat'][$f]) ? $facet['feat'][$f] : 0) + 1; }
+    if ($p['hotel'] && $matches($p, 'hotel')) $facet['hotel'][$p['hotel']] = (isset($facet['hotel'][$p['hotel']]) ? $facet['hotel'][$p['hotel']] : 0) + 1;
+    if ($p['meals'] && $matches($p, 'meal')) $facet['meal'][$p['meals']] = (isset($facet['meal'][$p['meals']]) ? $facet['meal'][$p['meals']] : 0) + 1;
+    if (($r = $rateOf($p)) && $matches($p, 'budget')) foreach ($budgetBuckets as $b => $d) { if ($r['base_price'] >= $d[0] && $r['base_price'] <= $d[1]) $facet['budget'][$b] = (isset($facet['budget'][$b]) ? $facet['budget'][$b] : 0) + 1; }
     if ($matches($p, 'departure')) {
         foreach (array('Delhi', 'Haridwar') as $dc) {
             if (!$p['departure'] || $p['departure'] === $dc) $facet['departure'][$dc] = (isset($facet['departure'][$dc]) ? $facet['departure'][$dc] : 0) + 1;
@@ -116,17 +146,31 @@ arsort($facet['place']);
 $results = array_values(array_filter($scope, $matches));
 
 /* ---------- Sorting ---------- */
-$sorts = array('recommended' => 'Recommended', 'duration-asc' => 'Duration: shortest first', 'duration-desc' => 'Duration: longest first', 'name' => 'Name A–Z');
+// "Recommended" is our merchandising order (internal priority ranking, then complete itineraries);
+// it is not a claim that a tour is objectively best. Price sorts appear only when rates are published.
+$sorts = array('recommended' => 'Recommended');
+$priced = count(array_filter($scope, function ($p) use ($rateOf) { return (bool) $rateOf($p); }));
+if ($priced >= 2) { $sorts['price-asc'] = 'Price: low to high'; $sorts['price-desc'] = 'Price: high to low'; }
+$sorts += array('duration-asc' => 'Duration: shortest first', 'duration-desc' => 'Duration: longest first', 'name' => 'Name A–Z');
 $sort = isset($_GET['sort']) && isset($sorts[$_GET['sort']]) ? $_GET['sort'] : 'recommended';
-usort($results, function ($a, $b) use ($sort) {
+usort($results, function ($a, $b) use ($sort, $rateOf) {
     switch ($sort) {
+        case 'price-asc':
+        case 'price-desc':
+            // Tours without a current rate go last in both directions.
+            $pa = $rateOf($a) ? (float) $rateOf($a)['base_price'] : null; $pb = $rateOf($b) ? (float) $rateOf($b)['base_price'] : null;
+            if ($pa === null || $pb === null) return ($pa === null) <=> ($pb === null);
+            return $sort === 'price-asc' ? $pa <=> $pb : $pb <=> $pa;
         case 'duration-asc': return array($a['days'], $a['title']) <=> array($b['days'], $b['title']);
         case 'duration-desc': return array($b['days'], $a['title']) <=> array($a['days'], $b['title']);
         case 'name': return strcasecmp($a['title'], $b['title']);
         default:
-            // Recommended: complete data first (itinerary, inclusions, no data warnings), then shorter trips.
+            // Recommended: internal priority rank (1–500) first, search-featured next,
+            // then complete data (itinerary, inclusions, no data warnings), then shorter trips.
+            $ca = hg_curation($a['slug']); $cb = hg_curation($b['slug']);
+            $rk = function ($c) { return $c['priority_rank'] ?: 1000; };
             $q = function ($p) { return (empty($p['warnings']) ? 0 : 2) + ($p['itinerary'] ? 0 : 1) + ($p['inclusions'] ? 0 : 1); };
-            return array($q($a), $a['days']) <=> array($q($b), $b['days']);
+            return array($rk($ca), $ca['search_featured'] ? 0 : 1, $q($a), $a['days']) <=> array($rk($cb), $cb['search_featured'] ? 0 : 1, $q($b), $b['days']);
     }
 });
 
@@ -143,7 +187,7 @@ $current = array();
 foreach (array('destination', 'date', 'adults', 'children', 'departure', 'sort') as $k) {
     if (isset($_GET[$k]) && is_string($_GET[$k]) && $_GET[$k] !== '') $current[$k] = $_GET[$k];
 }
-foreach (array('place', 'dur', 'feat') as $k) {
+foreach (array('place', 'dur', 'feat', 'hotel', 'meal', 'budget') as $k) {
     if ($sel[$k]) $current[$k] = $sel[$k];
 }
 if ($destKey !== '') unset($current['destination']);
@@ -170,15 +214,15 @@ $name = $group ? $group['name'] : '';
 if ($group) {
     $h1 = $name . ' Tour Packages';
     $title = $name . ' Tour Packages | Holiday Guru Travel';
-    $desc = $content ? mb_substr($content['intro'], 0, 155) : 'Compare ' . count($scope) . ' ' . $name . ' holiday packages with day-by-day itineraries, inclusions and exclusions. Enquire for the latest price.';
+    $desc = $content ? mb_substr($content['intro'], 0, 155) : 'Compare ' . $name . ' holiday packages with day-by-day itineraries, inclusions and exclusions. Enquire for the latest price.';
 } elseif ($destKey !== '') {
     $h1 = 'Destination not found';
     $title = 'Destination not found | Holiday Guru Travel';
     $desc = 'The destination you searched for is not available.';
 } else {
-    $h1 = $textQuery !== '' ? 'Holiday packages matching “' . $textQuery . '”' : 'All holiday packages';
+    $h1 = $textQuery !== '' ? 'Holiday packages matching “' . $textQuery . '”' : 'Explore holiday packages';
     $title = 'Search holiday packages | Holiday Guru Travel';
-    $desc = 'Search ' . count($all) . ' holiday packages across India and abroad by destination, duration and departure city.';
+    $desc = 'Search holiday packages across India and abroad by destination, duration and departure city.';
 }
 $indexable = $group && $content && in_array($content['status'], array('review', 'approved'), true) && !$hasParams && !$loadError;
 $crumbs = array(array('Home', '/'));
@@ -193,7 +237,7 @@ if ($group && $shown) {
     foreach ($shown as $i => $p) {
         $items[] = array('@type' => 'ListItem', 'position' => $i + 1, 'url' => hg_abs($p['url']), 'name' => $p['title']);
     }
-    $schema[] = array('@type' => 'ItemList', 'name' => $h1, 'numberOfItems' => $total, 'itemListElement' => $items);
+    $schema[] = array('@type' => 'ItemList', 'name' => $h1, 'itemListElement' => $items);
 }
 if ($content) {
     $schema[] = array('@type' => 'TouristDestination', 'name' => $name, 'description' => $content['intro'], 'url' => hg_abs($base));
@@ -226,6 +270,7 @@ $resultCard = function ($p) use ($context) {
         <button type="button" class="hg-save" data-hg-save="<?= hg_e($p['slug']) ?>" aria-pressed="false" aria-label="Save <?= hg_e($p['title']) ?>"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.3C1 8.3 3.2 4.5 7 4.5c2 0 3.4 1.1 5 3 1.6-1.9 3-3 5-3 3.8 0 6 3.8 4.6 7.2C19.5 16.4 12 21 12 21z"/></svg></button>
     </div>
     <div class="hg-rcard__body">
+        <?= hg_tourno_html($p['slug'], 'hg-tourno hg-tourno--card') ?>
         <h3 class="hg-rcard__title"><a href="<?= hg_e($href) ?>"><?= hg_e($p['title']) ?></a></h3>
         <p class="hg-rcard__meta"><strong><?= hg_e($p['duration']) ?></strong><?php if ($places) { ?><span aria-hidden="true"> · </span><?= hg_e($places) ?><?php } ?></p>
         <ul class="hg-rcard__facts">
@@ -233,7 +278,11 @@ $resultCard = function ($p) use ($context) {
         </ul>
     </div>
     <div class="hg-rcard__aside">
+        <?php $rate = hg_current_rate($p['slug']); if ($rate) { ?>
+        <p class="hg-rcard__price"><span>Starting from</span><strong><?= hg_e(hg_rate_label($rate)) ?></strong><small>Rate valid until <?= hg_e(date('j M Y', strtotime($rate['rate_valid_until']))) ?></small></p>
+        <?php } else { ?>
         <p class="hg-rcard__price"><span>Price</span><strong>On request</strong><small>Quoted for your dates &amp; group</small></p>
+        <?php } ?>
         <a class="hg-btn hg-btn--primary hg-btn--sm" href="<?= hg_e($p['url'] . hg_context_query() . '#enquire') ?>" data-hg-track="enquiry_start">Enquire now</a>
         <a class="hg-btn hg-btn--outline hg-btn--sm" href="<?= hg_e($href) ?>">View details</a>
     </div>
@@ -244,7 +293,7 @@ $resultCard = function ($p) use ($context) {
 $check = function ($name, $value, $label, $count, $checked) {
     $id = 'f-' . $name . '-' . preg_replace('/[^a-z0-9]+/', '-', strtolower($value));
     return '<li><input type="checkbox" id="' . hg_e($id) . '" name="' . hg_e($name) . '[]" value="' . hg_e($value) . '"' . ($checked ? ' checked' : '') . ($count ? '' : ' disabled') . '>'
-        . '<label for="' . hg_e($id) . '">' . hg_e($label) . ' <span class="hg-count">(' . (int) $count . ')</span></label></li>';
+        . '<label for="' . hg_e($id) . '">' . hg_e($label) . '</label></li>';
 };
 ?>
 
@@ -256,9 +305,9 @@ $check = function ($name, $value, $label, $count, $checked) {
             <?php if ($content) { ?>
             <p class="hg-dhero__intro"><?= hg_e($content['intro']) ?></p>
             <?php } elseif ($group) { ?>
-            <p class="hg-dhero__intro"><?= count($scope) ?> <?= hg_e($name) ?> itineraries with day-by-day plans. For destination advice, see <a href="<?= hg_e($group['hub_url']) ?>"><?= hg_e($name) ?> holidays</a> or talk to our team.</p>
+            <p class="hg-dhero__intro">Handpicked <?= hg_e($name) ?> itineraries with day-by-day plans. For destination advice, see <a href="<?= hg_e($group['hub_url']) ?>"><?= hg_e($name) ?> holidays</a> or talk to our team.</p>
             <?php } elseif ($destKey === '') { ?>
-            <p class="hg-dhero__intro">Search and filter <?= count($all) ?> itineraries across India and abroad. Every package shows its full day-by-day plan.</p>
+            <p class="hg-dhero__intro">Explore handpicked holidays across India and abroad. Every tour shows its full day-by-day plan.</p>
             <?php } ?>
         </div>
         <?php if ($group) { ?>
@@ -322,19 +371,37 @@ $check = function ($name, $value, $label, $count, $checked) {
                 </ul></fieldset>
                 <?php } ?>
 
+                <?php if (count($facet['hotel']) + count($sel['hotel']) > 1) { ?>
+                <fieldset class="hg-facet"><legend>Hotel category</legend><ul>
+                    <?php foreach ($facet['hotel'] as $h => $c) echo $check('hotel', $slug($h), $h, $c, in_array($slug($h), $sel['hotel'], true)); ?>
+                </ul></fieldset>
+                <?php } ?>
+
+                <?php if (count($facet['meal']) + count($sel['meal']) > 1) { ?>
+                <fieldset class="hg-facet"><legend>Meal plan</legend><ul>
+                    <?php foreach ($facet['meal'] as $m => $c) echo $check('meal', $slug($m), $m, $c, in_array($slug($m), $sel['meal'], true)); ?>
+                </ul></fieldset>
+                <?php } ?>
+
+                <?php if ($facet['budget'] || $sel['budget']) { ?>
+                <fieldset class="hg-facet"><legend>Budget per person</legend><ul>
+                    <?php foreach ($budgetBuckets as $b => $d) echo $check('budget', $b, $d[2], isset($facet['budget'][$b]) ? $facet['budget'][$b] : 0, in_array($b, $sel['budget'], true)); ?>
+                </ul></fieldset>
+                <?php } ?>
+
                 <fieldset class="hg-facet"><legend>Departure city</legend>
                 <?php if (!$facet['fixed_departure']) { ?><p class="hg-facet__note" style="margin:0 0 8px !important">These packages start at the destination; we quote travel from your city separately.</p><?php } ?>
                 <ul class="hg-facet__radios">
                     <li><input type="radio" id="f-dep-any" name="departure" value=""<?= $S['departure'] === '' ? ' checked' : '' ?>><label for="f-dep-any">Any / starts at destination</label></li>
                     <?php foreach (array('delhi' => 'Delhi', 'haridwar' => 'Haridwar') as $v => $l) { $c = isset($facet['departure'][$l]) ? $facet['departure'][$l] : 0; ?>
-                    <li><input type="radio" id="f-dep-<?= $v ?>" name="departure" value="<?= $v ?>"<?= $S['departure'] === $v ? ' checked' : '' ?><?= $c || $S['departure'] === $v ? '' : ' disabled' ?>><label for="f-dep-<?= $v ?>"><?= $l ?> <span class="hg-count">(<?= (int) $c ?>)</span></label></li>
+                    <li><input type="radio" id="f-dep-<?= $v ?>" name="departure" value="<?= $v ?>"<?= $S['departure'] === $v ? ' checked' : '' ?><?= $c || $S['departure'] === $v ? '' : ' disabled' ?>><label for="f-dep-<?= $v ?>"><?= $l ?></label></li>
                     <?php } ?>
                 </ul></fieldset>
 
-                <p class="hg-facet__note">Budget filters and price sorting will appear once package prices are published. Prices today are quoted per enquiry.</p>
+                <?php if (!$facet['budget']) { ?><p class="hg-facet__note">Budget filters and price sorting appear once package rates are published. Prices today are quoted per enquiry.</p><?php } ?>
                 <div class="hg-filterform__actions">
                     <button class="hg-btn hg-btn--primary" type="submit">Apply filters</button>
-                    <a class="hg-btn hg-btn--ghost" href="<?= hg_e($url(array(), array('place', 'dur', 'feat', 'departure', 'sort'))) ?>">Clear all</a>
+                    <a class="hg-btn hg-btn--ghost" href="<?= hg_e($url(array(), array('place', 'dur', 'feat', 'hotel', 'meal', 'budget', 'departure', 'sort'))) ?>">Clear all</a>
                 </div>
             </form>
             <div class="hg-helpcard">
@@ -345,7 +412,7 @@ $check = function ($name, $value, $label, $count, $checked) {
 
         <div class="hg-results__main">
             <div class="hg-results__bar">
-                <p class="hg-results__count" role="status" aria-live="polite"><strong><?= $total ?></strong> <?= hg_e($group ? $name . ' tour ' : 'holiday ') ?>package<?= $total === 1 ? '' : 's' ?> found</p>
+                <p class="hg-results__count" role="status" aria-live="polite"><strong><?= hg_e($group ? 'Recommended ' . $name . ' tours' : ($textQuery !== '' ? 'Search results' : 'Explore tours')) ?></strong><?php $note = array_filter(array($sort !== 'recommended' ? 'Sorted by ' . lcfirst($sorts[$sort]) : '', $page > 1 ? 'page ' . (int) $page : '')); if ($shown && $note) { ?> <span class="hg-results__sortnote">· <?= hg_e(implode(' · ', $note)) ?></span><?php } ?></p>
                 <div class="hg-results__tools">
                     <button type="button" class="hg-btn hg-btn--outline hg-btn--sm hg-results__filterbtn" data-hg-sheet-open aria-controls="hg-filters"><?= hg_icon('menu') ?> Filter &amp; sort</button>
                     <form class="hg-sortform" action="<?= hg_e($base) ?>" method="get" data-hg-sortform>
@@ -362,12 +429,15 @@ $check = function ($name, $value, $label, $count, $checked) {
             foreach ($sel['place'] as $v) $chips[] = array(ucwords(str_replace('-', ' ', $v)), $url(array(), array(array('place', $v))));
             foreach ($sel['dur'] as $v) $chips[] = array($durBuckets[$v][2], $url(array(), array(array('dur', $v))));
             foreach ($sel['feat'] as $v) $chips[] = array(ucwords(str_replace('-', ' ', $v)), $url(array(), array(array('feat', $v))));
+            foreach ($sel['hotel'] as $v) $chips[] = array(ucwords(str_replace('-', ' ', $v)) . ' hotels', $url(array(), array(array('hotel', $v))));
+            foreach ($sel['meal'] as $v) $chips[] = array(ucfirst(str_replace('-', ' ', $v)), $url(array(), array(array('meal', $v))));
+            foreach ($sel['budget'] as $v) if (isset($budgetBuckets[$v])) $chips[] = array($budgetBuckets[$v][2], $url(array(), array(array('budget', $v))));
             if ($S['departure']) $chips[] = array('From ' . ucfirst($S['departure']), $url(array(), array('departure')));
             if ($S['date']) $chips[] = array('Date: ' . hg_date_label($S['date']), $url(array(), array('date')));
             if ($chips) { ?>
             <ul class="hg-activechips" aria-label="Active filters">
                 <?php foreach ($chips as $c) { ?><li><a href="<?= hg_e($c[1]) ?>" aria-label="Remove filter: <?= hg_e($c[0]) ?>"><?= hg_e($c[0]) ?> <span aria-hidden="true">×</span></a></li><?php } ?>
-                <li><a class="hg-activechips__clear" href="<?= hg_e($url(array(), array('place', 'dur', 'feat', 'departure', 'date', 'sort'))) ?>">Clear all</a></li>
+                <li><a class="hg-activechips__clear" href="<?= hg_e($url(array(), array('place', 'dur', 'feat', 'hotel', 'meal', 'budget', 'departure', 'date', 'sort'))) ?>">Clear all</a></li>
             </ul>
             <?php } ?>
 
@@ -381,7 +451,7 @@ $check = function ($name, $value, $label, $count, $checked) {
             <div class="hg-empty">
                 <h2 class="hg-h3">No holiday packages match your current filters</h2>
                 <p>Remove a filter, or let us plan a trip around your dates.</p>
-                <p><a class="hg-btn hg-btn--outline" href="<?= hg_e($url(array(), array('place', 'dur', 'feat', 'departure', 'sort'))) ?>">Clear filters</a> <a class="hg-btn hg-btn--primary" href="/customized-holidays<?= hg_e(hg_context_query($name ? array('destination' => $name) : array())) ?>">Plan a customized holiday</a></p>
+                <p><a class="hg-btn hg-btn--outline" href="<?= hg_e($url(array(), array('place', 'dur', 'feat', 'hotel', 'meal', 'budget', 'departure', 'sort'))) ?>">Clear filters</a> <a class="hg-btn hg-btn--primary" href="/customized-holidays<?= hg_e(hg_context_query($name ? array('destination' => $name) : array())) ?>">Plan a customized holiday</a></p>
             </div>
             <?php if ($scope) { ?>
             <h2 class="hg-h3" style="margin-top:32px">Recommended <?= hg_e($name) ?> packages</h2>
@@ -394,8 +464,8 @@ $check = function ($name, $value, $label, $count, $checked) {
             <?php if ($pages > 1) { ?>
             <nav class="hg-pager" aria-label="Results pages">
                 <?php if ($page > 1) { ?><a href="<?= hg_e($pageUrl($page - 1)) ?>" rel="prev">&larr; Previous</a><?php } ?>
-                <?php for ($i = 1; $i <= $pages; $i++) { ?><a href="<?= hg_e($pageUrl($i)) ?>"<?= $i === $page ? ' aria-current="page"' : '' ?>><?= $i ?></a><?php } ?>
-                <?php if ($page < $pages) { ?><a href="<?= hg_e($pageUrl($page + 1)) ?>" rel="next">Next &rarr;</a><?php } ?>
+                <span class="hg-pager__current" aria-current="page">Page <?= (int) $page ?></span>
+                <?php if ($page < $pages) { ?><a href="<?= hg_e($pageUrl($page + 1)) ?>" rel="next">More tours &rarr;</a><?php } ?>
             </nav>
             <?php } ?>
             <?php } ?>

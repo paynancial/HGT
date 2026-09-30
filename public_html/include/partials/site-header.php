@@ -24,15 +24,13 @@ foreach ($hgArea('india') as $area => $items) {
 }
 $hgIndia = array_filter($hgIndia);
 $hgIntl = $hgArea('international');
-$hgPilgrimCount = count(hg_packages_where(function ($p) { return $p['pilgrimage']; }));
 $hgSoon = function ($label) {
     return '<span class="hg-soon">' . hg_e($label) . ' <span class="hg-soon__tag">Soon</span></span>';
 };
 $hgMegaCol = function ($area, array $items) {
     $out = '<div class="hg-mega__col"><p class="hg-mega__head">' . hg_e($area) . '</p><ul>';
     foreach ($items as $g) {
-        $out .= '<li><a href="' . hg_e($g['hub_url']) . '"><span>' . hg_e($g['name']) . '</span> <span class="hg-mega__count">'
-            . (int) $g['count'] . ' tour' . ($g['count'] === 1 ? '' : 's') . '</span></a></li>';
+        $out .= '<li><a href="' . hg_e($g['hub_url']) . '"><span>' . hg_e($g['name']) . '</span></a></li>';
     }
     return $out . '</ul></div>';
 };
@@ -149,7 +147,7 @@ $hgMegaFeature = function ($title, $text, array $links) {
                             <div class="hg-mega__col">
                                 <p class="hg-mega__head">Available now</p>
                                 <ul>
-                                    <li><a href="/religious-tour"><span>Pilgrimage Tours<small>Char Dham, Amarnath, Vaishno Devi</small></span> <span class="hg-mega__count"><?= (int) $hgPilgrimCount ?> tours</span></a></li>
+                                    <li><a href="/religious-tour"><span>Pilgrimage Tours<small>Char Dham, Amarnath, Vaishno Devi</small></span></a></li>
                                 </ul>
                             </div>
                             <div class="hg-mega__col">

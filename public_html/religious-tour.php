@@ -29,7 +29,7 @@ hg_layout_start(array(
 <section class="hg-pagehead" aria-labelledby="page-title">
     <div class="hg-container hg-pagehead__grid">
         <div>
-            <p class="hg-eyebrow">Speciality tours · <?= count($pilgrim) ?> packages</p>
+            <p class="hg-eyebrow">Speciality tours</p>
             <h1 class="hg-h1" id="page-title">Pilgrimage tour packages</h1>
             <p class="hg-lead">Char Dham, Do Dham and Amarnath Yatra by road or with helicopter options — every package lists road distances, trek lengths and what is included, so your family knows what to expect.</p>
             <div class="hg-pagehead__actions">
@@ -45,14 +45,14 @@ hg_layout_start(array(
 
 <section class="hg-section hg-section--tint" id="char-dham" aria-labelledby="cd-title" style="scroll-margin-top:calc(var(--hg-sticky) + 56px)">
     <div class="hg-container">
-        <?= hg_section_head('Uttarakhand', 'Char Dham &amp; Do Dham Yatra', count($charDham) . ' packages · ' . hg_e(hg_duration_range($charDham)) . ' · from Haridwar or Delhi', array('Compare with filters', '/tours/char-dham'), 'cd-title') ?>
+        <?= hg_section_head('Uttarakhand', 'Char Dham &amp; Do Dham Yatra', hg_e(hg_duration_range($charDham)) . ' trips' . ' · from Haridwar or Delhi', array('Compare with filters', '/tours/char-dham'), 'cd-title') ?>
         <?= hg_package_grid($charDham) ?>
     </div>
 </section>
 
 <section class="hg-section" id="amarnath" aria-labelledby="am-title" style="scroll-margin-top:calc(var(--hg-sticky) + 56px)">
     <div class="hg-container">
-        <?= hg_section_head('Jammu &amp; Kashmir', 'Amarnath Yatra', count($amarnath) . ' packages · ' . hg_e(hg_duration_range($amarnath)) . ' · via Pahalgam or by helicopter from Baltal', array('Compare with filters', '/tours/amarnath'), 'am-title') ?>
+        <?= hg_section_head('Jammu &amp; Kashmir', 'Amarnath Yatra', hg_e(hg_duration_range($amarnath)) . ' trips' . ' · via Pahalgam or by helicopter from Baltal', array('Compare with filters', '/tours/amarnath'), 'am-title') ?>
         <?= hg_package_grid($amarnath) ?>
     </div>
 </section>

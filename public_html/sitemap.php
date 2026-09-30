@@ -32,7 +32,7 @@ hg_layout_start(array(
         <div class="hg-grid hg-grid--3">
             <?php foreach ($groups as $g) { $pk = hg_packages_in($g['key']); usort($pk, function ($a, $b) { return $a['days'] <=> $b['days']; }); ?>
             <div>
-                <h3 class="hg-h3" style="font-size:17px"><a href="<?= hg_e($g['hub_url']) ?>"><?= hg_e($g['name']) ?></a> <span class="hg-muted" style="font-weight:500">(<?= count($pk) ?>)</span></h3>
+                <h3 class="hg-h3" style="font-size:17px"><a href="<?= hg_e($g['hub_url']) ?>"><?= hg_e($g['name']) ?></a></h3>
                 <ul class="hg-sitemap__list"><?php foreach ($pk as $p) { ?><li><a href="<?= hg_e($p['url']) ?>"><?= hg_e($p['title']) ?></a> <span class="hg-muted">· <?= hg_e($p['duration']) ?></span></li><?php } ?></ul>
             </div>
             <?php } ?>

@@ -211,17 +211,20 @@ def main():
     with open(OUT, 'w', encoding='utf-8') as fh:
         json.dump(pkgs, fh, ensure_ascii=False, indent=1)
     # Lightweight index for the site search / autocomplete (public data only)
-    counts = {}
-    for p in pkgs:
-        counts[p['group']] = counts.get(p['group'], 0) + 1
+    # No inventory totals in the public index (owner rule: never expose package counts).
+    has = {p['group'] for p in pkgs}
+    # Only approved (or retired) Tour Numbers are public and searchable.
+    reg_path = os.path.join(os.path.dirname(OUT), 'tour-registry.json')
+    reg = json.load(open(reg_path, encoding='utf-8')) if os.path.exists(reg_path) else {'entries': []}
+    tour_no = {e['slug']: e['tour_number'] for e in reg.get('entries', []) if e.get('status') in ('approved', 'retired')}
     index = {
         'groups': [{'key': g['key'], 'name': g['name'], 'region': g['region'], 'area': g['area'],
-                    'url': g['hub_url'], 'keywords': g['keywords'], 'count': counts.get(g['key'], 0)}
-                   for g in DEST_GROUPS if counts.get(g['key'])],
+                    'url': g['hub_url'], 'keywords': g['keywords']}
+                   for g in DEST_GROUPS if g['key'] in has],
         'themes': [{'name': 'Pilgrimage Tours', 'url': '/religious-tour',
-                    'keywords': 'pilgrimage yatra religious char dham amarnath kedarnath badrinath vaishno devi',
-                    'count': sum(1 for p in pkgs if p['pilgrimage'])}],
-        'packages': [{'t': p['title'] or p['name'], 'u': p['url'], 'd': p['duration'], 'g': p['group']} for p in pkgs],
+                    'keywords': 'pilgrimage yatra religious char dham amarnath kedarnath badrinath vaishno devi'}],
+        'packages': [dict({'t': p['title'] or p['name'], 'u': p['url'], 'd': p['duration'], 'g': p['group']},
+                          **({'n': tour_no[p['slug']]} if p['slug'] in tour_no else {})) for p in pkgs],
         'places': sorted({pl for p in pkgs for pl in p['places']}),
     }
     os.makedirs(os.path.dirname(SEARCH_OUT), exist_ok=True)

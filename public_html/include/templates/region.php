@@ -9,7 +9,6 @@ if (!function_exists('hg_render_region')) {
     function hg_render_region($region, array $meta)
     {
         $groups = array_values(array_filter(hg_groups(), function ($g) use ($region) { return $g['region'] === $region && $g['count'] > 0; }));
-        $total = array_sum(array_map(function ($g) { return $g['count']; }, $groups));
         $isIndia = $region === 'india';
         $faqs = hg_booking_faqs();
         $items = array();
@@ -21,7 +20,7 @@ if (!function_exists('hg_render_region')) {
             'breadcrumbs' => array(array('Home', '/'), array($meta['h1'], null)),
             'schema' => array(
                 array('@type' => 'CollectionPage', 'name' => $meta['h1'], 'url' => hg_abs($meta['path']), 'about' => $meta['description']),
-                array('@type' => 'ItemList', 'name' => $meta['h1'], 'numberOfItems' => count($items), 'itemListElement' => $items),
+                array('@type' => 'ItemList', 'name' => $meta['h1'], 'itemListElement' => $items),
                 hg_faq_schema($faqs),
             ),
         ));
@@ -33,7 +32,7 @@ if (!function_exists('hg_render_region')) {
     <div class="hg-container">
         <p class="hg-eyebrow"><?= $isIndia ? 'India' : 'International' ?></p>
         <h1 class="hg-h1" id="page-title"><?= hg_e($meta['h1']) ?></h1>
-        <p class="hg-lead"><?= hg_e($meta['lead']) ?> <?= (int) $total ?> itineraries across <?= count($groups) ?> destinations, each with a day-by-day plan, inclusions and exclusions.</p>
+        <p class="hg-lead"><?= hg_e($meta['lead']) ?> Every tour comes with a day-by-day plan, inclusions and exclusions.</p>
         <div class="hg-pagehead__actions">
             <a class="hg-btn hg-btn--primary" href="/tours">Search all packages</a>
             <a class="hg-btn hg-btn--outline" href="/customized-holidays">Plan a customized holiday</a>
@@ -56,9 +55,9 @@ if (!function_exists('hg_render_region')) {
 <?php foreach ($groups as $i => $g) { $pk = hg_packages_in($g['key']); usort($pk, function ($a, $b) { return $a['days'] <=> $b['days']; }); ?>
 <section class="hg-section hg-section--tight<?= $i % 2 ? '' : ' hg-section--tint' ?>" id="d-<?= hg_e($g['key']) ?>" aria-labelledby="t-<?= hg_e($g['key']) ?>" style="scroll-margin-top:calc(var(--hg-sticky) + 56px)">
     <div class="hg-container">
-        <?= hg_section_head($g['area'], $g['name'] . ' tour packages', count($pk) . ' itineraries · ' . hg_e(hg_duration_range($pk)), array('See all ' . $g['name'] . ' packages', $g['hub_url']), 't-' . $g['key']) ?>
+        <?= hg_section_head($g['area'], $g['name'] . ' tour packages', hg_e(hg_duration_range($pk)) . ' trips', array('Explore ' . $g['name'] . ' tours', $g['hub_url']), 't-' . $g['key']) ?>
         <?= hg_package_grid(array_slice($pk, 0, 4)) ?>
-        <?php if (count($pk) > 4) { ?><p style="margin-top:20px"><a class="hg-link-arrow" href="/tours/<?= hg_e($g['key']) ?>">Compare all <?= count($pk) ?> <?= hg_e($g['name']) ?> packages with filters <span aria-hidden="true">&rarr;</span></a></p><?php } ?>
+        <?php if (count($pk) > 4) { ?><p style="margin-top:20px"><a class="hg-link-arrow" href="/tours/<?= hg_e($g['key']) ?>">Compare all <?= hg_e($g['name']) ?> tours with filters <span aria-hidden="true">&rarr;</span></a></p><?php } ?>
     </div>
 </section>
 <?php } ?>

@@ -8,10 +8,10 @@
  *
  * Everything shown comes from the package's own page data (include/data/packages.json)
  * and, for destination context, include/content/{destination}.php.
- * Interim state (owner decision pending, see docs/package-registry/PROPOSAL.md):
- *   - no package number is shown (none assigned yet)
- *   - price is "Price on request" (no approved rates exist)
- *   - Pay Now is shown disabled (no payment gateway)
+ * Tour No., rate and Pay Now come from include/tour_registry.php:
+ *   - Tour No. shows once its mapping is approved (docs/package-registry/TOUR-NUMBER-MAPPING.md)
+ *   - the rate shows only while an approved rate version is valid; otherwise "Price on request"
+ *   - Pay Now is active only with a current rate AND a connected payment gateway
  */
 require_once __DIR__ . '/../ui/core.php';
 
@@ -123,14 +123,20 @@ if (!function_exists('hg_render_package')) {
             if (preg_match('/gst|extra adult|advance|mode of payment|air\/ ?train tickets/i', $t)) $priceFacts[] = $t;
         }
 
+        $tourNo = hg_tour_number($p['slug']);
+        $rate = hg_current_rate($p['slug']);
+        $payNow = hg_paynow_enabled($p['slug']);
+        $rateLabel = $rate ? hg_rate_label($rate) : 'Price on request';
+        $rateValid = $rate ? hg_rate_validity($rate) : '';
+
         // Context line + contextual WhatsApp message
         $ctx = array();
         if ($S['date']) $ctx['Travel date'] = hg_date_label($S['date']);
         if ($S['has_travellers']) $ctx['Travellers'] = $S['adults'] . ' adult' . ($S['adults'] > 1 ? 's' : '') . ($S['children'] ? ', ' . $S['children'] . ' child' . ($S['children'] > 1 ? 'ren' : '') : '');
         if ($S['departure']) $ctx['Departure city'] = ucfirst($S['departure']);
-        $wa = "Hi Holiday Guru Travel,\nI am interested in the " . $name . ' (' . $p['duration'] . ").\n";
-        foreach ($ctx as $k => $v) $wa .= $k . ': ' . $v . "\n";
-        $wa .= 'Please share the current price, inclusions, exclusions and availability.';
+        $wa = "Hi Holiday Guru Travel,\n\nI am interested in " . ($tourNo ? 'Tour No. ' . $tourNo . ' – ' . $name : 'the ' . $name) . ' (' . $p['duration'] . ").\n";
+        foreach ($ctx as $k => $v) $wa .= "\n" . $k . ":\n" . $v . "\n";
+        $wa .= "\nPlease share the current rate, inclusions, exclusions and availability.";
 
         $faqs = array(
             array('What is included in the ' . $name . '?', '<ul>' . implode('', array_map(function ($i) { return '<li>' . hg_e($i) . '</li>'; }, $p['inclusions'])) . '</ul>'),
@@ -154,12 +160,25 @@ if (!function_exists('hg_render_package')) {
             $crumbs[] = $g['region'] === 'india' ? array('Domestic', '/domestic-holidays') : array('International', '/international-holidays');
             $crumbs[] = array($g['name'] . ' Tour Packages', $g['hub_url']);
         }
-        $crumbs[] = array($name, null);
+        if ($tourNo) {
+            $crumbs[] = array($name, $url);
+            $crumbs[] = array('Tour No. ' . $tourNo, null);
+        } else {
+            $crumbs[] = array($name, null);
+        }
 
         $trip = array(
             '@type' => 'TouristTrip', 'name' => $name, 'description' => $p['description'], 'url' => hg_abs($url),
             'image' => hg_abs($p['image']), 'touristType' => array('Leisure'),
             'provider' => array('@id' => HG_SITE_URL . '/#organization'),
+        );
+        // Only visible, true facts: the Tour No. once approved, and an Offer only for a current approved rate.
+        if ($tourNo && !hg_tour_number_is_proposed($p['slug'])) $trip['identifier'] = array('@type' => 'PropertyValue', 'name' => 'Tour No.', 'value' => $tourNo);
+        if ($rate) {
+            $trip['offers'] = array('@type' => 'Offer', 'price' => (string) $rate['base_price'], 'priceCurrency' => $rate['currency'],
+                'validFrom' => $rate['rate_valid_from'], 'priceValidUntil' => $rate['rate_valid_until'], 'url' => hg_abs($url));
+        }
+        $trip += array(
             'itinerary' => array('@type' => 'ItemList', 'numberOfItems' => count($days), 'itemListElement' => array_map(function ($d) {
                 return array('@type' => 'ListItem', 'position' => $d['n'], 'name' => 'Day ' . $d['n'] . ': ' . $d['heading']);
             }, $days)),
@@ -182,7 +201,7 @@ if (!function_exists('hg_render_package')) {
             <?= hg_img($p['image'], $name, 760, 480, 'hg-pkghead__img', true) ?>
         </div>
         <div class="hg-pkghead__summary">
-            <?= hg_dev_note('Package No. appears here once the owner approves the package-number registry (docs/package-registry/PROPOSAL.md). No number is assigned yet.') ?>
+            <?= $tourNo ? hg_tourno_html($p['slug'], 'hg-tourno hg-tourno--head') : hg_dev_note('Tour No. appears here once the owner approves the Tour No. mapping (docs/package-registry/TOUR-NUMBER-MAPPING.md).') ?>
             <?php if ($p['features']) { ?><p class="hg-pkghead__badges"><?php foreach (array_slice($p['features'], 0, 2) as $f) { ?><span><?= hg_e($f) ?></span><?php } ?></p><?php } ?>
             <h1 class="hg-pkghead__title" id="pkg-title"><?= hg_e($name) ?></h1>
             <p class="hg-pkghead__meta"><strong><?= hg_e($p['duration']) ?></strong><?php if ($route) { ?> <span aria-hidden="true">·</span> <?= hg_e(implode($routeKnown ? ' – ' : ', ', $route)) ?><?php } ?></p>
@@ -193,6 +212,14 @@ if (!function_exists('hg_render_package')) {
                 <li><?= hg_icon('route') ?>Customizable itinerary</li>
             </ul>
             <p class="hg-pkghead__desc"><?= hg_e($p['description']) ?></p>
+            <div class="hg-pkghead__buy">
+                <p class="hg-pkghead__rate"><span><?= $rate ? 'Current rate' : 'Package price' ?></span><strong><?= hg_e($rateLabel) ?></strong><?php if ($rate) { ?><small>Rate valid: <?= hg_e($rateValid) ?></small><?php } else { ?><small>Quoted for your dates &amp; group</small><?php } ?></p>
+                <div class="hg-pkghead__cta">
+                    <?php if ($payNow) { ?><a class="hg-btn hg-btn--primary" href="/pay?tour=<?= hg_e($p['slug']) ?>" data-hg-track="paynow_start"><?= hg_icon('lock') ?>Pay Now</a><?php } else { ?><button type="button" class="hg-btn hg-btn--primary" disabled aria-describedby="paynow-note-top"><?= hg_icon('lock') ?>Pay Now</button><?php } ?>
+                    <a class="hg-btn hg-btn--navy" href="#enquiry-form" data-hg-track="enquiry_start">Enquire Now</a>
+                </div>
+                <?php if (!$payNow) { ?><p class="hg-pkghead__paynote" id="paynow-note-top"><?= $rate ? 'Online payment is not available yet — enquire to book at this rate.' : 'Pay Now opens once a current rate is published and online payment is connected. Enquire for today’s price.' ?></p><?php } ?>
+            </div>
             <?php if ($ctx) { ?>
             <p class="hg-pkghead__ctx"><span>Your trip:</span> <?= hg_e(implode(' · ', $ctx)) ?> <a href="#hg-header-search" data-hg-search-open>Change</a></p>
             <?php } ?>
@@ -234,6 +261,14 @@ if (!function_exists('hg_render_package')) {
 
         <section class="hg-pkgsec" id="itinerary" aria-labelledby="it-title">
             <h2 class="hg-h2" id="it-title">Day-wise itinerary</h2>
+            <dl class="hg-ithead" aria-label="Tour reference">
+                <?php if ($tourNo) { ?><div><dt>Tour No.</dt><dd><?= hg_e($tourNo) ?></dd></div><?php } ?>
+                <div class="hg-ithead__tour"><dt>Tour</dt><dd><?= hg_e($name) ?></dd></div>
+                <div><dt>Duration</dt><dd><?= hg_e($p['duration']) ?></dd></div>
+                <div><dt>Destination</dt><dd><?= hg_e($g ? $g['name'] : implode(', ', $p['places'])) ?></dd></div>
+                <div><dt><?= $rate ? 'Current rate' : 'Price' ?></dt><dd><?= hg_e($rateLabel) ?></dd></div>
+                <?php if ($rate) { ?><div><dt>Rate valid</dt><dd><?= hg_e($rateValid) ?></dd></div><?php } ?>
+            </dl>
             <?php if ($days) { ?>
             <ol class="hg-timeline hg-timeline--pkg">
                 <?php foreach ($days as $d) { ?>
@@ -302,12 +337,18 @@ if (!function_exists('hg_render_package')) {
             <h2 class="hg-h2" id="pr-title">Price</h2>
             <div class="hg-pricebox">
                 <div>
-                    <p class="hg-pricebox__label">Package price</p>
-                    <p class="hg-pricebox__value">Price on request</p>
-                    <p class="hg-muted">We quote this package for your dates, travellers and hotel choice. Rates are not published online yet.</p>
+                    <p class="hg-pricebox__label"><?= $rate ? 'Current rate' : 'Package price' ?></p>
+                    <p class="hg-pricebox__value"><?= hg_e($rateLabel) ?></p>
+                    <?php if ($rate) { ?>
+                    <p class="hg-muted">Rate valid: <strong><?= hg_e($rateValid) ?></strong><?= $tourNo ? ' · Tour No. ' . hg_e($tourNo) : '' ?> · Price version <?= (int) $rate['version'] ?></p>
+                    <?php if (!empty($rate['price_notes'])) { ?><p class="hg-muted"><?= hg_e($rate['price_notes']) ?></p><?php } ?>
+                    <?php } else { ?>
+                    <p class="hg-muted">We quote this package for your dates, travellers and hotel choice. No current rate is published for this tour.</p>
+                    <?php } ?>
                 </div>
-                <a class="hg-btn hg-btn--primary" href="#enquire" data-hg-track="enquiry_start">Get current price</a>
+                <a class="hg-btn hg-btn--primary" href="#enquire" data-hg-track="enquiry_start"><?= $rate ? 'Enquire to book' : 'Get current price' ?></a>
             </div>
+            <p class="hg-travelnote hg-travelnote--inline" role="note"><?= hg_icon('ticket') ?><span><strong>Standard package cost excludes airfare, train fare and bus fare</strong> unless specifically mentioned in the package inclusions.</span></p>
             <?php if ($priceFacts) { ?>
             <h3 class="hg-h3">How this package is priced</h3>
             <ul class="hg-checks hg-checks--info"><?php foreach ($priceFacts as $f) { ?><li><?= hg_e($f) ?></li><?php } ?></ul>
@@ -345,22 +386,26 @@ if (!function_exists('hg_render_package')) {
 
     <aside class="hg-pkg__side" id="enquire" aria-label="Book or enquire">
         <div class="hg-bookcard">
-            <?= hg_dev_note('Package No.: not assigned (registry pending owner approval).') ?>
-            <p class="hg-bookcard__label">Package price</p>
-            <p class="hg-bookcard__price">Price on request</p>
-            <p class="hg-bookcard__sub">Quoted for your dates &amp; group. <a href="#price">How it’s priced</a></p>
+            <?= $tourNo ? hg_tourno_html($p['slug'], 'hg-tourno hg-tourno--card') : '' ?>
+            <p class="hg-bookcard__label"><?= $rate ? 'Current rate' : 'Package price' ?></p>
+            <p class="hg-bookcard__price"><?= hg_e($rateLabel) ?></p>
+            <p class="hg-bookcard__sub"><?= $rate ? 'Rate valid: ' . hg_e($rateValid) . '.' : 'Quoted for your dates &amp; group.' ?> <a href="#price">How it’s priced</a></p>
             <p class="hg-bookcard__excl"><?= hg_icon('ticket') ?><?= $external ? 'Includes ' . hg_e(strtolower(implode(', ', array_keys($external)))) . ' as listed' : (preg_match('/flight[\s-]*inclusive|with[\s-]*flights?/i', $p['slug'] . ' ' . $p['title']) ? 'Flights: confirmed with your quote' : 'Air / train / bus fare not included') ?></p>
             <div class="hg-bookcard__actions">
-                <button type="button" class="hg-btn hg-btn--primary hg-btn--block" disabled aria-describedby="paynow-note" data-hg-paynow><?= hg_icon('lock') ?>Pay Now</button>
+                <?php if ($payNow) { ?><a class="hg-btn hg-btn--primary hg-btn--block" href="/pay?tour=<?= hg_e($p['slug']) ?>" data-hg-track="paynow_start"><?= hg_icon('lock') ?>Pay Now</a><?php } else { ?><button type="button" class="hg-btn hg-btn--primary hg-btn--block" disabled aria-describedby="paynow-note" data-hg-paynow><?= hg_icon('lock') ?>Pay Now</button><?php } ?>
                 <a class="hg-btn hg-btn--navy hg-btn--block" href="#enquiry-form" data-hg-track="enquiry_start">Enquire Now</a>
             </div>
-            <p class="hg-bookcard__note" id="paynow-note">Online payment isn’t available yet. Enquire and a travel expert will confirm the price, availability and payment options.</p>
+            <?php if (!$payNow) { ?><p class="hg-bookcard__note" id="paynow-note">Online payment isn’t available yet. Enquire and a travel expert will confirm the price, availability and payment options.</p><?php } ?>
             <?= hg_enquiry_form('enquiry-form', 'Plan your trip', array(
-                'enquiry_type' => 'Tour Package Enquiry',
+                'enquiry_type' => 'TOUR PACKAGE ENQUIRY',
+                'tour_number' => $tourNo,
+                'package_id' => hg_package_id($p['slug']),
                 'package' => $name,
                 'package_url' => hg_abs($url),
                 'destination' => $g ? $g['name'] : '',
-                'displayed_rate' => 'Price on request',
+                'displayed_rate' => $rateLabel,
+                'rate_version' => $rate ? (string) $rate['version'] : '',
+                'rate_validity' => $rateValid,
             ), true) ?>
             <a class="hg-btn hg-btn--wa hg-btn--block" href="<?= hg_e(hg_whatsapp_href($wa)) ?>" target="_blank" rel="noopener" data-hg-track="whatsapp_click"><?= hg_icon('whatsapp') ?>Chat on WhatsApp</a>
         </div>

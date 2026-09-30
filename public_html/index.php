@@ -5,9 +5,6 @@ $groups = hg_groups();
 $india = array_filter($groups, function ($g) { return $g['region'] === 'india' && $g['count'] > 0; });
 $world = array_filter($groups, function ($g) { return $g['region'] === 'international' && $g['count'] > 0; });
 $allPackages = hg_packages();
-$pilgrim = hg_packages_where(function ($p) { return $p['pilgrimage']; });
-$indiaCount = count(hg_packages_where(function ($p) use ($groups) { return isset($groups[$p['group']]) && $groups[$p['group']]['region'] === 'india'; }));
-$worldCount = count($allPackages) - $indiaCount;
 
 // Editor-selected packages (real itineraries with complete data). Rename the
 // section "Most Loved" only once enquiry/booking data supports that claim.
@@ -16,6 +13,13 @@ foreach (array('srinagar-gulmarg-pahalgam-tour-package-5-days', 'char-dham-yatra
     'haridwar-with-mussoorie-and-jim-corbett-05-days', 'munnar-thekkady-alleppey-05-days', 'darjeeling-and-gangtok-06-days',
     'serene-leh-ladakh-tour-7n-8d', 'deluxe-tour-to-dubai-4n5d') as $slug) {
     if ($p = hg_package($slug)) $featured[] = $p;
+}
+// Internal curation (include/data/curation.json): tours marked homepage_featured replace the
+// editor selection, ordered by priority_rank. Ranks and totals are never shown publicly.
+$curated = array_values(array_filter($allPackages, function ($p) { return hg_curation($p['slug'])['homepage_featured']; }));
+if ($curated) {
+    usort($curated, function ($a, $b) { return (hg_curation($a['slug'])['priority_rank'] ?: 1000) <=> (hg_curation($b['slug'])['priority_rank'] ?: 1000); });
+    $featured = array_slice($curated, 0, 8);
 }
 
 $faqs = hg_booking_faqs();
@@ -45,7 +49,7 @@ hg_layout_start(array(
             <a class="hg-btn hg-btn--light" href="/customized-holidays">Plan my trip</a>
         </div>
         <ul class="hg-hero__benefits">
-            <li><?= hg_icon('route') ?><?= count($allPackages) ?> published itineraries</li>
+            <li><?= hg_icon('route') ?>Day-by-day itineraries</li>
             <li><?= hg_icon('check') ?>Customize any package</li>
             <li><?= hg_icon('whatsapp') ?>24×7 support on WhatsApp</li>
             <li><?= hg_icon('shield') ?>Registered company</li>
@@ -88,7 +92,7 @@ hg_layout_start(array(
 
 <section class="hg-section" aria-labelledby="india-title">
     <div class="hg-container">
-        <?= hg_section_head('Explore India', 'Holidays across India', 'From the Kashmir valley and the Char Dham to Kerala’s backwaters — ' . $indiaCount . ' itineraries across ' . count($india) . ' destinations.', array('View all India tours', '/domestic-holidays'), 'india-title') ?>
+        <?= hg_section_head('Explore India', 'Holidays across India', 'From the Kashmir valley and the Char Dham to Kerala’s backwaters — explore handpicked holidays across India.', array('View all India tours', '/domestic-holidays'), 'india-title') ?>
         <div class="hg-grid hg-grid--dest">
             <?php foreach ($india as $g) echo hg_destination_card($g); ?>
         </div>
@@ -97,7 +101,7 @@ hg_layout_start(array(
 
 <section class="hg-section hg-section--tint" aria-labelledby="world-title">
     <div class="hg-container">
-        <?= hg_section_head('Explore the world', 'International holidays', $worldCount . ' itineraries for Dubai, Singapore &amp; Malaysia and the Maldives, with hotels, transfers and sightseeing planned together.', array('View all international tours', '/international-holidays'), 'world-title') ?>
+        <?= hg_section_head('Explore the world', 'International holidays', 'Dubai, Singapore &amp; Malaysia and the Maldives, with hotels, transfers and sightseeing planned together.', array('View all international tours', '/international-holidays'), 'world-title') ?>
         <div class="hg-grid hg-grid--dest">
             <?php foreach ($world as $g) echo hg_destination_card($g); ?>
         </div>
@@ -110,7 +114,7 @@ hg_layout_start(array(
         <div class="hg-speciality">
             <article class="hg-feature">
                 <div class="hg-feature__body">
-                    <p class="hg-eyebrow">Available now · <?= count($pilgrim) ?> packages</p>
+                    <p class="hg-eyebrow">Available now</p>
                     <h3>Pilgrimage tours</h3>
                     <p>Char Dham, Do Dham (Kedarnath &amp; Badrinath), Yamunotri–Gangotri and Amarnath Yatra — by road or with helicopter options, from Haridwar, Delhi or Dehradun.</p>
                     <ul><li>Road distances and trek lengths in every itinerary</li><li>Pony, palki and doli options explained</li><li>Helicopter packages for Char Dham and Amarnath</li></ul>
@@ -134,7 +138,7 @@ hg_layout_start(array(
 
 <section class="hg-section hg-section--tint" aria-labelledby="featured-title">
     <div class="hg-container">
-        <?= hg_section_head('Featured holiday packages', 'Itineraries to start from', 'Each package shows the full day-by-day plan, inclusions and exclusions. Prices are quoted for your dates and group size.', array('Search all packages', '/tours'), 'featured-title') ?>
+        <?= hg_section_head('Featured tours', 'Handpicked holidays to start from', 'Each tour shows the full day-by-day plan, inclusions and exclusions. Prices are quoted for your dates and group size.', array('Explore tours', '/tours'), 'featured-title') ?>
         <?= hg_package_grid($featured) ?>
     </div>
 </section>
@@ -168,11 +172,11 @@ hg_layout_start(array(
 
 <section class="hg-section hg-section--tight hg-section--tint" aria-labelledby="proof-title">
     <div class="hg-container">
-        <h2 class="hg-sr" id="proof-title">Holiday Guru Travel in numbers</h2>
+        <h2 class="hg-sr" id="proof-title">Holiday Guru Travel at a glance</h2>
         <div class="hg-stats">
-            <div class="hg-stat"><span class="hg-stat__value"><?= count($allPackages) ?></span><span class="hg-stat__label">Published itineraries</span><span class="hg-stat__src">Counted from this website</span></div>
-            <div class="hg-stat"><span class="hg-stat__value"><?= count($india) ?></span><span class="hg-stat__label">Indian destinations</span><span class="hg-stat__src">With at least one package</span></div>
-            <div class="hg-stat"><span class="hg-stat__value"><?= count($world) ?></span><span class="hg-stat__label">International destinations</span><span class="hg-stat__src">With at least one package</span></div>
+            <div class="hg-stat"><span class="hg-stat__value">Day by day</span><span class="hg-stat__label">Every itinerary</span><span class="hg-stat__src">Inclusions &amp; exclusions listed</span></div>
+            <div class="hg-stat"><span class="hg-stat__value">Your way</span><span class="hg-stat__label">Customize any tour</span><span class="hg-stat__src">Hotels, nights, sightseeing</span></div>
+            <div class="hg-stat"><span class="hg-stat__value">24×7</span><span class="hg-stat__label">WhatsApp support</span><span class="hg-stat__src"><?= hg_e(HG_PHONE_DISPLAY) ?></span></div>
             <div class="hg-stat"><span class="hg-stat__value">Noida</span><span class="hg-stat__label">Office in Sector 27</span><span class="hg-stat__src"><a href="/contact">Address &amp; map</a></span></div>
         </div>
     </div>

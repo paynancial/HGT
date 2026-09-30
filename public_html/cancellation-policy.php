@@ -16,7 +16,7 @@ ob_start(); ?>
         <tr><td>7 days or less before departure</td><td>100% of booking value</td></tr>
     </tbody>
 </table></div>
-<p class="hg-muted">This schedule appears on 22 of our packages — all Leh Ladakh and Singapore packages, most Dubai and Goa packages, and several Himachal packages. Other packages state that charges depend on the dates of departure and cancellation; we confirm the exact charge before you book.</p>
+<p class="hg-muted">This schedule appears on many of our packages — all Leh Ladakh and Singapore packages, most Dubai and Goa packages, and several Himachal packages. Other packages state that charges depend on the dates of departure and cancellation; we confirm the exact charge before you book.</p>
 <p><strong>Example:</strong> on a package with this schedule, cancelling 15 days before departure falls in the 8–20 day band, so the charge is 50% of the booking value.</p>
 <h2 class="hg-h3">How to cancel</h2>
 <p>Send your cancellation request by email to <a href="mailto:info@holidaygurutravel.in">Info@holidaygurutravel.in</a> or on WhatsApp to +91 99717 54265, with your name and booking voucher details. We confirm the charges that apply and any refund due.</p>

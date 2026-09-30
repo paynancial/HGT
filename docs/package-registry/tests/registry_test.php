@@ -54,10 +54,10 @@ function check($name, $ok, $detail = '')
 $db = db();
 foreach (array('payments', 'quotations', 'enquiries', 'package_audit', 'package_slug_history') as $t) $db->exec("DELETE FROM $t");
 $db->exec('DROP TRIGGER IF EXISTS trg_packages_no_delete'); $db->exec('DROP TRIGGER IF EXISTS trg_registry_no_delete');
-$db->exec('DELETE FROM package_number_registry'); $db->exec('DELETE FROM packages');
+$db->exec('DELETE FROM tour_number_registry'); $db->exec('DELETE FROM packages');
 $db->exec("CREATE TRIGGER trg_packages_no_delete BEFORE DELETE ON packages FOR EACH ROW SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'packages are archived, not deleted'");
-$db->exec("CREATE TRIGGER trg_registry_no_delete BEFORE DELETE ON package_number_registry FOR EACH ROW SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'package numbers are never released'");
-$db->exec('UPDATE package_number_sequence SET next_value = 1, max_value = 9999');
+$db->exec("CREATE TRIGGER trg_registry_no_delete BEFORE DELETE ON tour_number_registry FOR EACH ROW SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'package numbers are never released'");
+$db->exec('UPDATE tour_number_sequence SET next_value = 1, max_value = 9999');
 
 // 1–2. Sequential numbers
 $a = create($db, 'new-delhi-tour', 'New Delhi Tour');
@@ -67,19 +67,19 @@ check('second package → 0002', $b['num'] === '0002', $b['num']);
 
 // 3–4. Edit / rename keep the number
 $db->prepare('UPDATE packages SET name = ?, slug = ?, duration_days = 5 WHERE package_id = ?')->execute(array('Kashmir Special Deluxe', 'kashmir-special-deluxe', $b['id']));
-$num = $db->query('SELECT package_number FROM packages WHERE package_id = ' . (int) $b['id'])->fetchColumn();
+$num = $db->query('SELECT tour_number FROM packages WHERE package_id = ' . (int) $b['id'])->fetchColumn();
 check('edit + rename → number unchanged', $num === '0002', $num);
-check('direct change of package_number is blocked', fails(function () use ($db, $b) { $db->exec("UPDATE packages SET package_number = '0009' WHERE package_id = " . (int) $b['id']); }, 'permanent'));
+check('direct change of tour_number is blocked', fails(function () use ($db, $b) { $db->exec("UPDATE packages SET tour_number = '0009' WHERE package_id = " . (int) $b['id']); }, 'permanent'));
 
 // 5–6. Archive / delete never free the number
 $db->exec("UPDATE packages SET status = 'retired' WHERE package_id = " . (int) $a['id']);
-check('archived/retired package keeps its number', $db->query('SELECT package_number FROM packages WHERE package_id = ' . (int) $a['id'])->fetchColumn() === '0001');
+check('archived/retired package keeps its number', $db->query('SELECT tour_number FROM packages WHERE package_id = ' . (int) $a['id'])->fetchColumn() === '0001');
 check('deleting a package is blocked', fails(function () use ($db, $a) { $db->exec('DELETE FROM packages WHERE package_id = ' . (int) $a['id']); }, 'archived, not deleted'));
-check('releasing a registry number is blocked', fails(function () use ($db) { $db->exec("DELETE FROM package_number_registry WHERE package_number = '0001'"); }, 'never released'));
+check('releasing a registry number is blocked', fails(function () use ($db) { $db->exec("DELETE FROM tour_number_registry WHERE tour_number = '0001'"); }, 'never released'));
 $c = create($db, 'dubai-explorer', 'Dubai Explorer');
 check('next package after retirement → 0003 (0001 not reused)', $c['num'] === '0003', $c['num']);
-check('manual duplicate number rejected by UNIQUE', fails(function () use ($db) { $db->exec("INSERT INTO packages (package_number, slug, name, destination_key, created_by) VALUES ('0002', 'dup', 'Dup', 'x', 't')"); }, 'Duplicate'));
-check('non 4-digit number rejected by CHECK', fails(function () use ($db) { $db->exec("INSERT INTO packages (package_number, slug, name, destination_key, created_by) VALUES ('12', 'bad', 'Bad', 'x', 't')"); }, 'chk_packages_number'));
+check('manual duplicate number rejected by UNIQUE', fails(function () use ($db) { $db->exec("INSERT INTO packages (tour_number, slug, name, destination_key, created_by) VALUES ('0002', 'dup', 'Dup', 'x', 't')"); }, 'Duplicate'));
+check('non 4-digit number rejected by CHECK', fails(function () use ($db) { $db->exec("INSERT INTO packages (tour_number, slug, name, destination_key, created_by) VALUES ('12', 'bad', 'Bad', 'x', 't')"); }, 'chk_packages_number'));
 
 // 7. Concurrency: 8 processes × 12 packages at the same time
 $procs = array(); $out = array();
@@ -89,11 +89,11 @@ for ($w = 0; $w < 8; $w++) {
 for ($w = 0; $w < 8; $w++) { $out = array_merge($out, array_filter(explode("\n", stream_get_contents($pipes[$w][1])))); $err = stream_get_contents($pipes[$w][2]); proc_close($procs[$w]); if ($err) echo "worker $w: $err\n"; }
 $uniq = array_unique($out);
 check('concurrent creation: 96 packages, 96 unique numbers', count($out) === 96 && count($uniq) === 96, count($out) . ' created, ' . count($uniq) . ' unique');
-$seqOk = $db->query("SELECT COUNT(*) = 99 AND MIN(package_number) = '0001' AND MAX(package_number) = '0099' FROM package_number_registry")->fetchColumn();
+$seqOk = $db->query("SELECT COUNT(*) = 99 AND MIN(tour_number) = '0001' AND MAX(tour_number) = '0099' FROM tour_number_registry")->fetchColumn();
 check('no gaps or duplicates in registry (0001–0099)', (bool) $seqOk);
 
 // 8. Exhaustion: no silent roll-over
-$db->exec('UPDATE package_number_sequence SET next_value = 9999');
+$db->exec('UPDATE tour_number_sequence SET next_value = 9999');
 $last = create($db, 'last-one', 'Last One');
 check('9999 is issued', $last['num'] === '9999');
 check('after 9999 creation stops (owner decision required)', fails(function () use ($db) { create($db, 'overflow', 'Overflow'); }, 'exhausted'));
@@ -129,14 +129,25 @@ $rows = $db->query("SELECT i.kind, i.text FROM package_active_rate r JOIN packag
 check('current inclusions/exclusions come from the active rate version', count($rows) === 2, json_encode($rows));
 
 // 11. Enquiry and payment keep package_id + number + name + rate version
-$db->prepare("INSERT INTO enquiries (enquiry_ref, enquiry_type, package_id, package_number, package_name, rate_id, rate_version, displayed_price, displayed_currency, travel_date, adults, children, customer_name, customer_phone, customer_email)
+$db->prepare("INSERT INTO enquiries (enquiry_ref, enquiry_type, package_id, tour_number, package_name, rate_id, rate_version, displayed_price, displayed_currency, travel_date, adults, children, customer_name, customer_phone, customer_email)
               VALUES ('ENQ-TEST0001', 'tour_package', ?, '0002', 'Kashmir Special Deluxe', ?, 2, 26999, 'INR', '2026-10-15', 2, 0, 'Test', '9999999999', 't@example.com')")->execute(array($pid, $v2));
-$e = $db->query("SELECT enquiry_type, package_number, rate_version, displayed_price FROM enquiries WHERE enquiry_ref = 'ENQ-TEST0001'")->fetch(PDO::FETCH_ASSOC);
-check('enquiry stores type, package number and displayed rate version', $e['enquiry_type'] === 'tour_package' && $e['package_number'] === '0002' && $e['rate_version'] == 2, json_encode($e));
-$db->prepare("INSERT INTO payments (payment_ref, package_id, package_number, package_name, rate_id, rate_version, amount, currency, payment_kind, travel_date, adults, children, customer_name, customer_phone, customer_email)
+$e = $db->query("SELECT enquiry_type, tour_number, rate_version, displayed_price FROM enquiries WHERE enquiry_ref = 'ENQ-TEST0001'")->fetch(PDO::FETCH_ASSOC);
+check('enquiry stores type, package number and displayed rate version', $e['enquiry_type'] === 'tour_package' && $e['tour_number'] === '0002' && $e['rate_version'] == 2, json_encode($e));
+$db->prepare("INSERT INTO payments (payment_ref, package_id, tour_number, package_name, rate_id, rate_version, amount, currency, payment_kind, travel_date, adults, children, customer_name, customer_phone, customer_email)
               VALUES ('PAY-TEST000001', ?, '0002', 'Kashmir Special Deluxe', ?, 2, 53998, 'INR', 'full', '2026-10-15', 2, 0, 'Test', '9999999999', 't@example.com')")->execute(array($pid, $v2));
 $db->exec("UPDATE packages SET name = 'Renamed Again' WHERE package_id = $pid");
 check('payment keeps the name/rate it was made against after a rename', $db->query("SELECT package_name FROM payments WHERE payment_ref = 'PAY-TEST000001'")->fetchColumn() === 'Kashmir Special Deluxe');
+
+// 12. Internal curation ("Top 500")
+$cur = $db->prepare('INSERT INTO package_curation (package_id, priority_rank, homepage_featured, updated_by) VALUES (?, ?, 1, ?)');
+$cur->execute(array($pid, 1, 'tester'));
+check('curation: rank 1 stored for a package', (int) $db->query("SELECT priority_rank FROM package_curation WHERE package_id = $pid")->fetchColumn() === 1);
+$other = array('id' => $db->query("SELECT package_id FROM packages WHERE package_id <> $pid ORDER BY package_id LIMIT 1")->fetchColumn());
+check('curation: duplicate rank rejected', fails(function () use ($cur, $other) { $cur->execute(array($other['id'], 1, 'tester')); }, 'uq_curation_rank'));
+check('curation: rank 501 rejected', fails(function () use ($cur, $other) { $cur->execute(array($other['id'], 501, 'tester')); }, 'chk_curation_rank'));
+
+// 13. Booking keeps package_id + Tour No.
+check('booking requires a Tour No.', fails(function () use ($db, $pid) { $db->exec("INSERT INTO bookings (booking_ref, package_id, tour_number, package_name, travel_date, adults, children) VALUES ('BKG-TEST0001', $pid, NULL, 'X', '2026-10-15', 2, 0)"); }, 'tour_number'));
 
 echo "\n$pass/" . ($pass + $fail) . " passed\n";
 exit($fail ? 1 : 0);

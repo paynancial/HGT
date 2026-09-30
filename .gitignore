@@ -16,5 +16,7 @@ config.local.php
 # Logs / uploads / dumps
 *.log
 *.sql
+!docs/package-registry/schema-draft.sql
 *.sql.gz
 hgt-config.php
+public_html/include/data/.preview-tour-numbers

@@ -1010,3 +1010,36 @@ a:hover .hg-ph .hg-ph__icon, .hg-pcard:hover .hg-ph__icon, .hg-rcard:hover .hg-p
     .hg-body .hg-footer__bottom .container { flex-direction: column; align-items: flex-start; }
     .hg-footer__cin { display: block; margin: 2px 0 0; padding: 0; border: 0; }
 }
+
+/* ---------- Tour No., rate and buy box (Top Tour Packages) ---------- */
+.hg-tourno { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; margin: 0 0 6px !important; font-family: var(--hg-font-head); font-size: 12.5px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--hg-orange-text); }
+.hg-tourno strong { font-weight: 800; letter-spacing: .06em; color: var(--hg-navy); }
+.hg-tourno--head { font-size: 13.5px; }
+.hg-tourno__flag { padding: 2px 8px; border: 1px dashed #B45309; border-radius: 999px; font-family: var(--hg-font-body); font-size: 11px; font-weight: 600; letter-spacing: 0; text-transform: none; color: #7C2D12; background: #FFF7ED; }
+.hg-pcard__price strong { display: block; font-family: var(--hg-font-head); font-size: 16px; color: var(--hg-navy); }
+.hg-pcard__price small { display: block; font-weight: 500; }
+.hg-pkghead__buy { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 12px 20px; margin: 18px 0 14px; padding: 16px 18px; border: 1px solid var(--hg-border); border-radius: var(--hg-r-md); background: #fff; box-shadow: var(--hg-sh-sm); }
+.hg-pkghead__rate { margin: 0 !important; }
+.hg-pkghead__rate span { display: block; font-size: 12.5px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--hg-muted-2); }
+.hg-pkghead__rate strong { display: block; font-family: var(--hg-font-head); font-size: 22px; color: var(--hg-navy); }
+.hg-pkghead__rate small { display: block; font-size: 13.5px; color: var(--hg-muted-2); }
+.hg-pkghead__cta { display: flex; flex-wrap: wrap; gap: 10px; }
+.hg-pkghead__cta .hg-btn { min-height: 48px; }
+.hg-pkghead__paynote { grid-column: 1 / -1; margin: 0 !important; font-size: 13.5px; color: var(--hg-muted-2); }
+@media (max-width: 599px) {
+    .hg-pkghead__buy { grid-template-columns: 1fr; }
+    .hg-pkghead__cta .hg-btn { flex: 1 1 140px; }
+}
+.hg-ithead { display: flex; flex-wrap: wrap; gap: 0; margin: 0 0 24px; overflow: hidden; border: 1px solid var(--hg-border); border-radius: var(--hg-r-md); background: #F7F8FC; }
+.hg-ithead > div { flex: 1 1 150px; padding: 12px 16px; border-right: 1px solid var(--hg-border); }
+.hg-ithead > div:last-child { border-right: 0; }
+.hg-ithead dt { font-size: 12px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--hg-muted-2); }
+.hg-ithead dd { margin: 2px 0 0; font-weight: 600; color: var(--hg-navy); }
+.hg-travelnote--inline { align-items: center; }
+.hg-travelnote--inline span { font-size: 15px; }
+.hg-pager__current { display: inline-flex; align-items: center; min-height: 44px; padding: 0 14px; border-radius: var(--hg-r-sm); background: var(--hg-navy); color: #fff; font-weight: 600; }
+.hg-results__sortnote { font-size: 14px; }
+.hg-ithead__tour { flex: 2.4 1 260px !important; }
+@media (max-width: 767px) {
+    .hg-sortform select { padding: 0 30px 0 10px; font-size: 15px; text-overflow: ellipsis; }
+}

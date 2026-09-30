@@ -128,6 +128,10 @@ if (!defined('HGT_MAIL_HELPER')) {
     {
         $config = hgt_config();
         if ($config['smtp_password'] === '') {
+            // Test servers only: HGT_MAIL_DUMP (a file path set in the server environment) records
+            // what would have been mailed, so enquiry content can be verified without SMTP.
+            $dump = getenv('HGT_MAIL_DUMP');
+            if ($dump) @file_put_contents($dump, json_encode(array('subject' => $subject, 'rows' => $rows)) . "\n", FILE_APPEND);
             error_log('hgt mail: SMTP password not configured (hgt-config.php missing?)');
             return false;
         }

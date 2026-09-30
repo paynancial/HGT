@@ -1,0 +1,4 @@
+{
+ "_about": "INTERNAL merchandising only (the 'Top 500' collection). Never rendered on public pages. Per package slug: priority_rank (1-500, unique), is_featured, is_top_priority, homepage_featured, search_featured, seasonal_featured, speciality_featured. Recommended sort puts ranked tours first by priority_rank.",
+ "tours": {}
+}

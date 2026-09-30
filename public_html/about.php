@@ -3,8 +3,6 @@
 // from the previous About page; facts are from site configuration and data.
 require __DIR__ . '/include/ui/core.php';
 
-$groups = array_filter(hg_groups(), function ($g) { return $g['count'] > 0; });
-$count = count(hg_packages());
 
 hg_layout_start(array(
     'title' => 'About us | Holiday Guru Travel',
@@ -42,7 +40,7 @@ hg_layout_start(array(
             <div><dt>Legal name</dt><dd><?= hg_e(HG_LEGAL_NAME) ?></dd></div>
             <div><dt>CIN</dt><dd><?= hg_e(HG_CIN) ?></dd></div>
             <div><dt>Office</dt><dd><?= hg_e(HG_ADDRESS_LINE1) ?>, <?= hg_e(HG_ADDRESS_LINE2) ?></dd></div>
-            <div><dt>Published itineraries</dt><dd><?= (int) $count ?> packages across <?= count($groups) ?> destinations</dd></div>
+            <div><dt>Holidays</dt><dd>India, Dubai, Singapore &amp; Malaysia and the Maldives — each tour with a day-by-day plan</dd></div>
             <div><dt>Support</dt><dd>Phone and WhatsApp <?= hg_e(HG_PHONE_DISPLAY) ?> (WhatsApp 24×7)</dd></div>
             <div><dt>Email</dt><dd><a href="<?= hg_e(hg_mailto_href()) ?>"><?= hg_e(HG_EMAIL_DISPLAY) ?></a></dd></div>
         </dl>

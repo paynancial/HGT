@@ -72,7 +72,7 @@ return array(
         'Spend a day at the theme parks',
     ),
     'stay' => 'Hotel stays with daily breakfast on twin or double sharing, as listed on each package.',
-    'transport' => 'Airport–hotel–airport transfers and sightseeing are included, on a private or shared (seat-in-coach) basis as listed on each package. Two packages include economy airfare from Delhi.',
+    'transport' => 'Airport–hotel–airport transfers and sightseeing are included, on a private or shared (seat-in-coach) basis as listed on each package. Selected packages include economy airfare from Delhi, as listed in their inclusions.',
     'who_title' => 'Who Dubai suits',
     'who' => array(
         array(
@@ -94,7 +94,7 @@ return array(
     'faqs' => array(
         array(
             'What is included in Dubai tour packages?',
-            '<p>Hotel stays with breakfast, airport transfers, and the sightseeing listed — typically a city tour with Burj Khalifa, a dhow cruise with dinner and a desert safari with dinner. Two packages also include economy airfare from Delhi.</p>',
+            '<p>Hotel stays with breakfast, airport transfers, and the sightseeing listed — typically a city tour with Burj Khalifa, a dhow cruise with dinner and a desert safari with dinner. Selected packages also include economy airfare from Delhi, as listed in their inclusions.</p>',
         ),
         array(
             'Are flights included?',
