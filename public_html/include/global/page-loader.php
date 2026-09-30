@@ -52,7 +52,7 @@ if ($hgLoaderPart === 'head') { ?>
         h.className += ' hg-js';
         // Branded fallback for any image that fails (no broken-image icons).
         w.hgImgFail = function (img) {
-            if (img.getAttribute('data-hg-fb')) return;
+            if (img.getAttribute('data-hg-fb')) { img.style.visibility = 'hidden'; img.className += ' is-loaded'; return; }
             img.setAttribute('data-hg-fb', '1');
             var p = img.parentNode;
             if (p && p.tagName === 'PICTURE') { var s = p.querySelectorAll('source'); for (var i = 0; i < s.length; i++) p.removeChild(s[i]); }

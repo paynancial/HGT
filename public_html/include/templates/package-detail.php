@@ -192,8 +192,8 @@ if (!function_exists('hg_render_package')) {
 
 <section class="hg-pkghead" id="overview" aria-labelledby="pkg-title">
     <div class="hg-container hg-pkghead__grid">
-        <div class="hg-pkghead__media">
-            <?= hg_img($p['image'], $name, 760, 480, 'hg-pkghead__img', true) ?>
+        <div class="hg-pkghead__media hg-frame hg-frame--hero">
+            <?= hg_img($p['image'], $name, 760, 480, 'hg-pkghead__img', true, '(max-width: 1023px) 100vw, 640px') ?>
         </div>
         <div class="hg-pkghead__summary">
             <?php if ($p['features']) { ?><p class="hg-pkghead__badges"><?php foreach (array_slice($p['features'], 0, 2) as $f) { ?><span><?= hg_e($f) ?></span><?php } ?></p><?php } ?>

@@ -17,7 +17,7 @@ CSS = {
     # GLOBAL SHELL (loaded first): tokens, icons, support widget, cookie consent, footer
     'hg-site.css': ['tokens', 'components/icons', 'components/support-widget', 'components/cookie-consent', 'components/footer'],
     # Design-system base, shared content components, shell (header/nav), then page modules
-    'hg-ui.css': ['global', 'components/content', 'components/utility-bar', 'components/header', 'components/holiday-search',
+    'hg-ui.css': ['global', 'components/content', 'components/media-reveal', 'components/utility-bar', 'components/header', 'components/holiday-search',
                   'components/navigation', 'components/mega-menu', 'components/login-dialog',
                   'pages/homepage', 'pages/search-results', 'pages/tour-detail', 'pages/itinerary', 'pages/contact',
                   'pages/travel-guide', 'pages/people', 'pages/policy', 'pages/customized-holidays'],

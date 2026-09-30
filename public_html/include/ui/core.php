@@ -224,15 +224,36 @@ if (!defined('HG_UI_CORE')) {
      * <img> for a site image. If the file is missing (the image library is not
      * in this repository), render a neutral block instead of a broken image;
      * in dev mode it is labelled so reviewers know an image belongs there.
+     *
+     * Loading (components/media-reveal.css + include/global/page-loader.php):
+     * - below the fold: loading="lazy"; $eager = true for the primary/hero image (fetchpriority="high").
+     * - responsive: when tools/build_images.php has made {name}-{480|960|1600}.{avif|webp} next to the
+     *   original, a <picture> offers them with srcset/sizes (the original stays the fallback).
+     * - reveal: inside an .hg-frame the image fades in from a slight blur once loaded (onload marks it);
+     *   onerror swaps in the branded fallback, so no broken-image icon is ever shown.
      */
-    function hg_img($path, $alt, $width, $height, $class = '', $eager = false)
+    function hg_img($path, $alt, $width, $height, $class = '', $eager = false, $sizes = '')
     {
         $path = ltrim((string) $path, '/');
         $file = dirname(__DIR__, 2) . '/' . $path;
         $cls = trim('hg-media ' . $class);
         if ($path !== '' && is_file($file)) {
-            return '<img class="' . hg_e($cls) . '" src="/' . hg_e($path) . '" alt="' . hg_e($alt) . '" width="' . (int) $width
-                . '" height="' . (int) $height . '"' . ($eager ? ' fetchpriority="high"' : ' loading="lazy"') . ' decoding="async">';
+            $img = '<img class="' . hg_e($cls . ' hg-reveal') . '" src="/' . hg_e($path) . '" alt="' . hg_e($alt) . '" width="' . (int) $width
+                . '" height="' . (int) $height . '"' . ($eager ? ' fetchpriority="high"' : ' loading="lazy"') . ' decoding="async"'
+                . ' onload="this.classList.add(\'is-loaded\')" onerror="window.hgImgFail&amp;&amp;hgImgFail(this)">';
+            $base = preg_replace('/\.[a-z0-9]+$/i', '', $path);
+            $sources = '';
+            foreach (array('avif', 'webp') as $fmt) {
+                $set = array();
+                foreach (array(480, 960, 1600) as $w) {
+                    if (is_file(dirname(__DIR__, 2) . '/' . $base . '-' . $w . '.' . $fmt)) $set[] = '/' . $base . '-' . $w . '.' . $fmt . ' ' . $w . 'w';
+                }
+                if ($set) {
+                    $sources .= '<source type="image/' . $fmt . '" srcset="' . hg_e(implode(', ', $set)) . '" sizes="'
+                        . hg_e($sizes !== '' ? $sizes : '(max-width: 640px) 100vw, ' . (int) $width . 'px') . '">';
+                }
+            }
+            return $sources ? '<picture class="hg-pic">' . $sources . $img . '</picture>' : $img;
         }
         // Blank until the owner adds the photo (the expected file is kept in data-image for the team).
         $label = '';
@@ -416,7 +437,7 @@ if (!defined('HG_UI_CORE')) {
     {
         $h = 'h' . (int) $headingLevel;
         return '<a class="hg-dcard" href="' . hg_e($g['hub_url']) . '">'
-            . hg_img($g['image'], $g['name'] . ' holiday destination', 480, 360, 'hg-dcard__img')
+            . '<span class="hg-dcard__media hg-frame">' . hg_img($g['image'], $g['name'] . ' holiday destination', 480, 360, 'hg-dcard__img') . '</span>'
             . '<span class="hg-dcard__body"><' . $h . ' class="hg-dcard__title">' . hg_e($g['name']) . '</' . $h . '>'
             . '<span class="hg-dcard__meta">' . hg_e(hg_group_meta($g)) . '</span>'
             . '<span class="hg-dcard__cta">View tours <span aria-hidden="true">&rarr;</span></span></span></a>';
@@ -429,7 +450,7 @@ if (!defined('HG_UI_CORE')) {
         $flags = hg_inclusion_flags($p);
         $cities = hg_cities($p);
         $out = '<article class="hg-pcard">';
-        $out .= '<a class="hg-pcard__media" href="' . hg_e($p['url']) . '" tabindex="-1" aria-hidden="true">'
+        $out .= '<a class="hg-pcard__media hg-frame" href="' . hg_e($p['url']) . '" tabindex="-1" aria-hidden="true">'
             . hg_img($p['image'], '', 480, 320, 'hg-pcard__img') . '</a>';
         $out .= '<div class="hg-pcard__body">';
         $out .= '<p class="hg-pcard__kicker">' . hg_e($g ? $g['name'] : '') . ($p['departure'] ? ' · From ' . hg_e($p['departure']) : '') . '</p>';
