@@ -301,6 +301,16 @@ if (!defined('HG_UI_CORE')) {
      * $meta keys: title, description, path (canonical path), image, type,
      * index (bool), breadcrumbs [[label, path|null], ...], schema [ ... ]
      */
+    /**
+     * Versioned URL for a site asset: /assets/css/hg-ui.css?v=<file time>. After an upload the URL changes,
+     * so browsers fetch the new stylesheet/script instead of a cached old copy.
+     */
+    function hg_asset($path)
+    {
+        $f = dirname(__DIR__, 2) . $path;
+        return is_file($f) ? $path . '?v=' . filemtime($f) : $path;
+    }
+
     function hg_head(array $meta)
     {
         $title = $meta['title'];
@@ -356,8 +366,8 @@ if (!defined('HG_UI_CORE')) {
     <link rel="preload" href="/assets/fonts/hg/plus-jakarta-sans-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/assets/fonts/hg/plus-jakarta-sans-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/assets/fonts/hg/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="stylesheet" href="/assets/css/hg-site.css">
-    <link rel="stylesheet" href="/assets/css/hg-ui.css">
+    <link rel="stylesheet" href="<?= hg_e(hg_asset('/assets/css/hg-site.css')) ?>">
+    <link rel="stylesheet" href="<?= hg_e(hg_asset('/assets/css/hg-ui.css')) ?>">
     <script type="application/ld+json"><?= $json ?></script>
 <?php
         return ob_get_clean();
@@ -383,8 +393,8 @@ if (!defined('HG_UI_CORE')) {
         include __DIR__ . '/../global/support-widget.php';
         include __DIR__ . '/../global/cookie-consent.php';
         include __DIR__ . '/../global/login-dialog.php';
-        echo '<script src="/assets/js/hg-site.js" defer></script>' . "\n";
-        echo '<script src="/assets/js/hg-ui.js" defer></script>' . "\n";
+        echo '<script src="' . hg_e(hg_asset('/assets/js/hg-site.js')) . '" defer></script>' . "\n";
+        echo '<script src="' . hg_e(hg_asset('/assets/js/hg-ui.js')) . '" defer></script>' . "\n";
         echo "</body>\n</html>\n";
     }
 
