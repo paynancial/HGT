@@ -47,7 +47,7 @@ if (!function_exists('hg_render_region')) {
         <h2 class="hg-h2" id="dest-title">Choose a destination</h2>
         <div class="hg-grid hg-grid--dest"><?php foreach ($groups as $g) echo hg_destination_card($g); ?></div>
         <?php if (!empty($meta['soon'])) { ?>
-        <p class="hg-muted" style="margin-top:20px">Coming soon: <?= hg_e(implode(', ', $meta['soon'])) ?>. <a href="/customized-holidays">Ask us</a> — we can plan these on request.</p>
+        <p class="hg-muted" style="margin-top:20px">Also planned on request: <?= hg_e(implode(', ', $meta['soon'])) ?>. <a href="/customized-holidays">Ask us</a> and we will plan the trip for you.</p>
         <?php } ?>
     </div>
 </section>

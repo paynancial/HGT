@@ -123,14 +123,14 @@ hg_layout_start(array(
                 <?= hg_img('assets/img/destination/chardham1.jpg', 'Char Dham pilgrimage in the Garhwal Himalaya', 600, 600) ?>
             </article>
             <div class="hg-card">
-                <h3>Also planned</h3>
-                <p class="hg-muted">These themes will open as dedicated pages with their own advice and packages:</p>
+                <h3>Plan on request</h3>
+                <p class="hg-muted">We plan these holidays around your dates, group and budget:</p>
                 <ul class="hg-tags">
                     <?php foreach (array('Family', 'Honeymoon', 'Adventure', 'Luxury', 'Beach', 'Senior citizen', 'Women special', 'Group tours', 'Weekend getaways') as $t) { ?>
-                    <li><?= hg_e($t) ?><span class="hg-soon__tag">Soon</span></li>
+                    <li><?= hg_e($t) ?></li>
                     <?php } ?>
                 </ul>
-                <p class="hg-muted" style="margin-top:16px">Planning one of these now? <a href="/customized-holidays">Tell us what you need</a> and we will build it.</p>
+                <p class="hg-muted" style="margin-top:16px"><a href="/customized-holidays">Tell us what you need</a> and a travel expert builds the itinerary with you.</p>
             </div>
         </div>
     </div>
