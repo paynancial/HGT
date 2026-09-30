@@ -1,69 +1,90 @@
-# Global component isolation: architecture audit (30 Sep 2026)
+# Global component isolation: architecture (updated 30 Sep 2026)
 
 **Owner rule (permanent):** "Changing header or footer must not impact other page content."
 
-This audit checks whether the current code can honour that rule, and lists the gaps that need a refactor. **No refactor has been done.** It needs your approval first.
+This is the structure after the approved split, and the tests that enforce the rule.
 
-**Labels:** VERIFIED (tested), INFERRED (read from the code, not tested), GAP (needs work).
+**Labels:** VERIFIED (tested) or INFERRED (read from code).
 
-## 1. Current structure
+## 1. Before → after
 
-```
-hg_layout_start()  include/ui/core.php
-├── <head>                     hg_head($meta): page-specific title, meta, canonical, schema (from the page)
-├── include/partials/site-header.php
-│     ├── Utility bar          .hg-utility
-│     ├── Header + search      .hg-header, #hg-header-search
-│     ├── Navigation + mega    .hg-nav, #mega-india / #mega-intl / #mega-spec
-│     └── Login dialog         include/partials/login-dialog.php
-├── <main id="main" class="hg-main">   PAGE CONTENT ONLY (breadcrumbs + page module)
-hg_layout_end()
-├── include/support-widget.php .hg-support
-├── include/cookie-consent.php #hg-consent
-└── include/partials/site-footer.php   .hg-footer (links from include/footer_nav.php)
-```
-
-## 2. Compliance by rule area
-
-| Area | Status | Evidence |
+| | Before | After |
 |---|---|---|
-| Page content in its own container | **VERIFIED** | Every page renders inside `<main id="main">`; header and footer partials are outside it. |
-| Header / footer independently changeable | **VERIFIED** | Footer (`42b468e`) and header (`6db047f`) were changed today. Page bodies stayed identical on 8 page types × 2 widths: DOM, geometry, SEO head, forms, links and pixels. |
-| SEO isolation | **VERIFIED** | Title, description, canonical, robots, OG and JSON-LD come only from the page's `$meta`. They were identical before and after both global changes. Organization schema is the only global schema. |
-| Duplicate IDs | **VERIFIED** | None found across all 141 pages. Global IDs are namespaced (`hg-header-search`, `mega-*`, `hg-consent`, `footer-*`). |
-| JavaScript isolation | **INFERRED (good)** | Behaviour is bound through `data-hg-*` attributes or IDs (e.g. `[data-hg-fnav]` for the footer, `[data-hg-mega]` for the menu). The few element selectors in `hg-ui.js` are scoped inside a given form. No page-wide `.button` or `form` selectors exist. |
-| Data isolation | **VERIFIED** | Contact details, social links and footer links live in `site_config.php` and `footer_nav.php`. Package data, rates and the Package ID registry are in `include/data/`. They don't reference each other. |
-| CSS namespacing | **VERIFIED** | Components use `hg-` prefixed class names (`.hg-header`, `.hg-footer`, `.hg-rcard`, `.hg-pkghead`, `.hg-ithead`, …). All footer rules are scoped to `.hg-footer`. |
-| Base (design-system) CSS | **INFERRED (intended)** | `hg-ui.css` sets baseline rules for `.hg-body` `a`, `h1–h4`, `p`, `ul/ol`, `img` and form controls. These are the global typography baseline, which the rule allows. Components override them with their own scoped selectors. The footer needed `.hg-footer …` specificity for this. |
-| **Separate include per shell component** | **GAP** | Utility bar, header, search, navigation and mega menu are all in one file, `site-header.php`. They work independently but are edited in one file. |
-| **Page-specific CSS ownership** | **GAP** | `hg-ui.css` (~1,000 lines) holds the design tokens, base, header, and the page modules (results, tour detail, itinerary, contact, …) in one file. The class names are namespaced, so there are no collisions today. But a change to one page's styles is committed in the same file as global styles, which makes rollback per component coarser. |
-| Legacy `.container` class | **INFERRED (low risk)** | `.hg-body .container` is used only by the footer. It's a generic name, but no page module uses it (checked by search). |
-| Automated isolation test | **VERIFIED** | `tools/tests/browser/isolation.js`: before/after capture of page bodies. Run it for every header or footer change. |
+| Shell markup | One file, `include/partials/site-header.php` (utility bar + header + search + navigation + mega menus). Footer, support, consent and login lived in three different folders. | `include/global/` has one file per component (section 2). |
+| CSS | Two hand-edited stylesheets: `hg-ui.css` (~1,000 lines, mixing base, header, cards and every page) and `hg-site.css`. | Source files per token set, base, component and page in `assets/css/src/`. `tools/build_assets.py` builds the same two stylesheets. |
+| JS | Two files, `hg-ui.js` and `hg-site.js`, with all behaviours mixed. | Source chunks per component in `assets/js/src/`, concatenated into the same two files (byte-identical). |
+| Tests | Before/after page-body capture (`isolation.js`). | Plus `component-change.js`: changes each shell component in staging and proves page bodies don't move. |
 
-## 3. Proposed refactor (not started, needs approval)
+The pages still load exactly the same four assets. The rendered HTML of 150 checked URLs is byte-identical to before the split (VERIFIED).
 
-Each step is its own commit and can be reverted on its own. Each is verified with `isolation.js` (no page body change).
+## 2. Structure
 
-1. **Split `site-header.php`** into:
-   - `include/partials/utility-bar.php`
-   - `header.php` (logo, search, contact)
-   - `navigation.php` (tabs and mega menus)
-   - `site-header.php` becomes a three-line wrapper that includes them. The HTML output is unchanged.
-2. **Split `hg-ui.css`** into:
-   - `assets/css/global/` (tokens and base)
-   - `components/` (header, footer, cards, forms)
-   - `pages/` (home, results, tour-detail, itinerary, contact, guide)
-   - They are concatenated into the same single stylesheet at build time, so page weight and HTTP requests stay the same, and the output is identical.
-3. **Move `hg-site.css`'s** support-widget, consent and footer rules into `components/`.
-4. **Add a CSS lint** that fails on new unscoped selectors outside `global/`.
+```
+include/ui/core.php            hg_layout_start() / hg_layout_end(): the layout. Page-specific <head> (SEO) comes from the page's $meta.
+include/global/                GLOBAL SHELL, one component per file
+  header.php                   skip link + <header> frame (logo, contact actions, login icon); includes the three below
+  utility-bar.php              .hg-utility (tagline, Login)
+  holiday-search.php           #hg-header-search: sends its state to /tours as query parameters
+  navigation.php               #hg-nav: primary tabs, mobile drawer; includes mega-menu.php
+  mega-menu.php                #mega-india / #mega-intl / #mega-spec (data from destinations.json)
+  footer.php                   .hg-footer (links from include/footer_nav.php)
+  support-widget.php           #hg-support
+  cookie-consent.php           #hg-consent
+  login-dialog.php             login dialog
+<main id="main">               PAGE CONTENT ONLY: page modules (index.php, tours.php, templates/*.php …)
+```
 
-**Risk:** low, provided the rendered HTML and CSS stay byte-identical. The isolation test proves it.
+## 3. Ownership
 
-**Effort:** one working session.
+| Layer | Owns | Files | Must never contain |
+|---|---|---|---|
+| **Global shell** | Utility bar, header, search, navigation and mega menus, footer, support widget, cookie consent, login | `include/global/*` · `css/src/components/{utility-bar,header,holiday-search,navigation,mega-menu,footer,support-widget,cookie-consent,login-dialog,icons}.css` · `js/src/ui/{mega-menu,navigation,holiday-search*,login-dialog,analytics}.js`, `js/src/site/*` | Package data, itinerary, prices, page SEO |
+| **Design system** | Tokens (colours, type, spacing, radii, shadows, breakpoints), base typography, buttons | `css/src/tokens.css`, `css/src/global.css` | Page layout values |
+| **Shared content components** | Cards, grids, sections, FAQ, forms, notices (used inside pages) | `css/src/components/content.css`, `js/src/ui/forms.js`, `section-nav.js` | Header/footer rules |
+| **Page modules** | Their own layout and content | `css/src/pages/{homepage,search-results,tour-detail,itinerary,contact,travel-guide,people,policy,customized-holidays}.css`, `js/src/ui/search-results.js`, page PHP files and templates | Shell rules |
+| **Business data** | Packages, itineraries, rates, offers, curation, Package IDs | `include/data/*.json`, `include/package_registry.php` | Presentation |
+| **Global config** | Brand, phone, WhatsApp, email, address, social links, footer navigation | `include/site_config.php`, `include/footer_nav.php` | Tour-specific itinerary, pricing, inclusions, add-ons, reviews |
+| **SEO** | Title, description, canonical, robots, OG, page schema: from each page's `$meta` | `hg_head()` in `core.php` | Nothing in the shell writes them. Organization schema is the only global schema. |
+| **CRM / enquiry** | Package ID, offer code, rate version, enquiry payload: built on the server from business data | `mail.php`, `package_registry.php` | Nothing in the shell touches them |
 
-## 4. Checklist for every future header/footer change
+## 4. CSS rules
 
-- State the change type (GLOBAL HEADER / GLOBAL FOOTER / PAGE-SPECIFIC), the expected impact, the files, the affected page types, the tests and the rollback path. Do this before editing.
-- Capture the baseline (`isolation.js before`), make the change, compare (`isolation.js after`).
-- Run the footer, regression, accessibility and link suites.
-- Make one commit per component: "Update Holiday Guru header" or "Update Holiday Guru footer". Never mix page changes into it.
+- **Bundle order** is set in `tools/build_assets.py`. The cascade was preserved exactly: computed styles of every element are identical on 14 page types × 3 widths, including open menus, sheets, accordions and dialogs (VERIFIED).
+- **Scoping.** Component rules are scoped to the component's root class: `.hg-footer …`, `.hg-utility …`, `#hg-nav …`.
+- **Selector lists** that spanned components were split per component during the migration. Each component's responsive overrides live in its own file, after its base rules.
+- **Global base rules** (`.hg-body a`, `h1–h4`, `p`, `ul`, form controls) are the design-system baseline in `global.css`. Components override them with their own scoped selectors.
+- **To change CSS:** edit `assets/css/src/…`, run `python3 tools/build_assets.py`, commit the sources and the rebuilt bundles. `--check` fails if a bundle is out of date.
+
+## 5. JS rules
+
+- Behaviour is bound through `data-hg-*` attributes and component IDs. There are no page-wide generic selectors like `.button`, `form` or `.card` (INFERRED from review; the chunks are small enough to read).
+- Chunks share one closure (`_start.js` / `_end.js`) for the small helpers (`$`, `$$`, analytics `track`).
+- Edit the chunk, then rebuild.
+
+## 6. Tests (run for every global change)
+
+| Test | What it proves |
+|---|---|
+| `tools/tests/browser/component-change.js` | For each of utility bar, header, navigation, holiday search and footer, a markup marker and a style rule are added in the staging copy. The change appears in that component on 8 page types. Page bodies are unchanged: DOM, text, geometry and computed styles. Files are restored. **17/17 VERIFIED.** |
+| `tools/tests/browser/isolation.js` | Before/after capture of page bodies (DOM, geometry, SEO head, forms, links, pixels with a tolerance for anti-aliasing) on 8 page types × desktop and mobile. |
+| `tools/build_assets.py --check` | The served bundles match their sources. |
+| Regression, accessibility and link suites | Functional behaviour, WCAG A/AA (axe), no broken links. |
+
+## 7. Rollback
+
+Each step is its own commit and can be reverted on its own:
+
+| Commit | What | Revert effect |
+|---|---|---|
+| `531dea2` | Layout component split | Restores the single `site-header.php`. Output identical either way. |
+| `62b7a26` | CSS source split | Restores the hand-edited stylesheets. Output identical either way. |
+| `fc68f41` | JS source split | Restores the hand-edited scripts. Output identical either way. |
+| `42b468e`, `6db047f` | Footer / header design changes | Independent of package pages. |
+
+## 8. Checklist for every header/footer change
+
+1. **State the scope first:** change type, expected impact, files, affected page types, tests, rollback.
+2. **Edit only the component's files:** `include/global/<component>.php`, `css/src/components/<component>.css`, `js/src/…/<component>.js`.
+3. **Rebuild:** run `build_assets.py`.
+4. **Test:** `component-change.js`, `isolation.js` before/after, and the suites.
+5. **Commit:** one commit per component ("Update Holiday Guru header" / "Update Holiday Guru footer"). Never mix page changes in.
