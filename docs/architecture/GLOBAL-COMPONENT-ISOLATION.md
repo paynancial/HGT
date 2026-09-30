@@ -22,6 +22,7 @@ The pages still load exactly the same four assets. The rendered HTML of 150 chec
 ```
 include/ui/core.php            hg_layout_start() / hg_layout_end(): the layout. Page-specific <head> (SEO) comes from the page's $meta.
 include/global/                GLOBAL SHELL, one component per file
+  page-loader.php              first-visit loader (inline critical CSS/JS in <head>, overlay first in <body>); sets html.hg-js
   header.php                   skip link + <header> frame (logo, contact actions, login icon); includes the three below
   utility-bar.php              .hg-utility (tagline, Login)
   holiday-search.php           #hg-header-search: sends its state to /tours as query parameters
@@ -38,7 +39,7 @@ include/global/                GLOBAL SHELL, one component per file
 
 | Layer | Owns | Files | Must never contain |
 |---|---|---|---|
-| **Global shell** | Utility bar, header, search, navigation and mega menus, footer, support widget, cookie consent, login | `include/global/*` · `css/src/components/{utility-bar,header,holiday-search,navigation,mega-menu,footer,support-widget,cookie-consent,login-dialog,icons}.css` · `js/src/ui/{mega-menu,navigation,holiday-search*,login-dialog,analytics}.js`, `js/src/site/*` | Package data, itinerary, prices, page SEO |
+| **Global shell** | Page loader, utility bar, header, search, navigation and mega menus, footer, support widget, cookie consent, login | `include/global/*` · `css/src/components/{utility-bar,header,holiday-search,navigation,mega-menu,footer,support-widget,cookie-consent,login-dialog,icons}.css` · `js/src/ui/{mega-menu,navigation,holiday-search*,login-dialog,analytics}.js`, `js/src/site/*` | Package data, itinerary, prices, page SEO |
 | **Design system** | Tokens (colours, type, spacing, radii, shadows, breakpoints), base typography, buttons | `css/src/tokens.css`, `css/src/global.css` | Page layout values |
 | **Shared content components** | Cards, grids, sections, FAQ, forms, notices (used inside pages) | `css/src/components/content.css`, `js/src/ui/forms.js`, `section-nav.js` | Header/footer rules |
 | **Page modules** | Their own layout and content | `css/src/pages/{homepage,search-results,tour-detail,itinerary,contact,travel-guide,people,policy,customized-holidays}.css`, `js/src/ui/search-results.js`, page PHP files and templates | Shell rules |
@@ -67,6 +68,7 @@ include/global/                GLOBAL SHELL, one component per file
 |---|---|
 | `tools/tests/browser/component-change.js` | For each of utility bar, header, navigation, holiday search and footer, a markup marker and a style rule are added in the staging copy. The change appears in that component on 8 page types. Page bodies are unchanged: DOM, text, geometry and computed styles. Files are restored. **17/17 VERIFIED.** |
 | `tools/tests/browser/isolation.js` | Before/after capture of page bodies (DOM, geometry, SEO head, forms, links, pixels with a tolerance for anti-aliasing) on 8 page types × desktop and mobile. |
+| `tools/tests/browser/page-loader.js` | Loader: first page of a visit only, real progress 0→100 %, closes within 2.9 s (slow network), reduced motion, JavaScript off, mobile, cached, CLS. |
 | `tools/build_assets.py --check` | The served bundles match their sources. |
 | Regression, accessibility and link suites | Functional behaviour, WCAG A/AA (axe), no broken links. |
 

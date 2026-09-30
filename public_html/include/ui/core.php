@@ -313,6 +313,7 @@ if (!defined('HG_UI_CORE')) {
         ob_start(); ?>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+<?php $hgLoaderPart = 'head'; include __DIR__ . '/../global/page-loader.php'; ?>
     <title><?= hg_e($title) ?></title>
     <meta name="description" content="<?= hg_e($desc) ?>">
     <meta name="robots" content="<?= $index ? 'index,follow,max-image-preview:large' : 'noindex,follow' ?>">
@@ -344,6 +345,8 @@ if (!defined('HG_UI_CORE')) {
     {
         $GLOBALS['hgMeta'] = $meta;
         echo "<!doctype html>\n<html lang=\"en-IN\">\n<head>\n" . hg_head($meta) . "</head>\n<body class=\"hg-body\">\n";
+        $hgLoaderPart = 'body';
+        include __DIR__ . '/../global/page-loader.php';
         include __DIR__ . '/../global/header.php';
         echo '<main id="main" class="hg-main" tabindex="-1">' . "\n";
         if (!empty($meta['breadcrumbs']) && empty($meta['hide_breadcrumbs'])) {
