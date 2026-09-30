@@ -265,8 +265,8 @@ if (!defined('HG_UI_CORE')) {
             'email' => HG_EMAIL,
             'address' => array(
                 '@type' => 'PostalAddress',
-                'streetAddress' => '2nd floor, B6 Dharampali Palace, Bhoja Market',
-                'addressLocality' => 'Sector 27, Noida',
+                'streetAddress' => '2nd floor, B6 Dharampali Palace, Bhoja Market, Sector 27',
+                'addressLocality' => 'Noida',
                 'addressRegion' => 'Uttar Pradesh',
                 'postalCode' => '201301',
                 'addressCountry' => 'IN',
