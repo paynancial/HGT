@@ -99,7 +99,26 @@
     if (desktop.addEventListener) desktop.addEventListener('change', function () { if (desktop.matches && hSearch && hSearch.classList.contains('is-open')) setSearch(false); });
     if (hSearch) hSearch.addEventListener('submit', function () {
         var d = hSearch.elements.destination;
+        // Don't send values nobody chose: empty fields, and default travellers
+        // on pages without a traveller context (keeps URLs and context honest).
+        $$('input, select', hSearch).forEach(function (el) {
+            if (!el.name) return;
+            var untouchedDefault = el.hasAttribute('data-hg-optional') && el.tagName === 'SELECT' && el.options[el.selectedIndex] && el.options[el.selectedIndex].defaultSelected;
+            if (el.value === '' || untouchedDefault) el.disabled = true;
+        });
+        setTimeout(function () { $$('[disabled]', hSearch).forEach(function (el) { if (el.name) el.disabled = false; }); }, 0);
         track('search_submit', { search_term: d ? d.value : '' });
+    });
+
+    // Rotating search hint: Search "Gulmarg" → Search "Kashmir" … (static if reduced motion)
+    $$('[data-hg-placeholder-cycle]').forEach(function (input) {
+        var words = input.getAttribute('data-hg-placeholder-cycle').split('|'), i = 0;
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || words.length < 2) return;
+        setInterval(function () {
+            if (document.activeElement === input || input.value) return;
+            i = (i + 1) % words.length;
+            input.setAttribute('placeholder', 'Search "' + words[i] + '"');
+        }, 2600);
     });
 
     /* Search context (date, travellers, departure) carried to the next page */

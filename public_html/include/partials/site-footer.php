@@ -60,7 +60,6 @@
                 </div>
                 <div class="hg-footer__meta">
                     <button type="button" class="hg-footer-link" data-hg-consent-open>Cookie settings</button>
-                    <span class="hg-footer__credit">Designed by <a href="https://sbbjitsolutions.com/" target="_blank" rel="noopener">SBBJ IT SOLUTIONS</a></span>
                 </div>
             </div>
         </div>
