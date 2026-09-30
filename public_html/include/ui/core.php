@@ -257,7 +257,7 @@ if (!defined('HG_UI_CORE')) {
             '@type' => array('Organization', 'TravelAgency'),
             '@id' => HG_SITE_URL . '/#organization',
             'name' => 'Holiday Guru Travel',
-            'legalName' => 'Swaasthik Vocation Pvt. Ltd.',
+            'legalName' => HG_LEGAL_NAME,
             'url' => HG_SITE_URL . '/',
             'logo' => HG_SITE_URL . '/assets/brand/holiday-guru-travel-logo-240.png',
             'slogan' => 'Your journey. Your way.',
@@ -564,7 +564,7 @@ if (!defined('HG_UI_CORE')) {
     {
         return array(
             array('How do I book a holiday package with Holiday Guru Travel?',
-                '<p>Send an enquiry (or call or WhatsApp +91 99717 54265). A travel expert confirms the itinerary, hotels and price with you. Our package booking terms ask for a <strong>35% advance</strong> to confirm, with the balance paid before departure. We issue a booking voucher once the payment is received.</p>'),
+                '<p>Send an enquiry (or call or WhatsApp ' . hg_e(HG_PHONE_DISPLAY) . '). A travel expert confirms the itinerary, hotels and price with you. Our package booking terms ask for a <strong>35% advance</strong> to confirm, with the balance paid before departure. We issue a booking voucher once the payment is received.</p>'),
             array('Which payment methods do you accept?',
                 '<p>Net banking, IMPS, NEFT, cheque and UPI (including Google Pay, PhonePe, Paytm and scan-to-pay QR). We do not accept cash. Air and train tickets need full payment at the time of booking.</p>'),
             array('Can I change the itinerary or hotels in a package?',
@@ -572,7 +572,7 @@ if (!defined('HG_UI_CORE')) {
             array('Are flights or train tickets included?',
                 '<p>Most packages start and end at the destination (for example, pick-up and drop at Srinagar airport) and list air and train fares under exclusions. Each package page shows exactly what is included and excluded. We can add flights or trains to your quote on request.</p>'),
             array('Where is your office?',
-                '<p>' . hg_e(HG_ADDRESS_LINE1) . ', ' . hg_e(HG_ADDRESS_LINE2) . '. Holiday Guru Travel is a brand of ' . hg_e(HG_LEGAL_NAME) . ' (CIN ' . hg_e(HG_CIN) . ').</p>'),
+                '<p>' . hg_e(HG_ADDRESS_LINE1) . ', ' . hg_e(HG_ADDRESS_LINE2) . '. Holiday Guru Travel is operated by ' . hg_e(HG_LEGAL_NAME) . '.</p>'),
         );
     }
 

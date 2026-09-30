@@ -48,7 +48,7 @@
     </div>
     <div class="hg-footer__bottom">
         <div class="container">
-            <p class="hg-footer__copyline">&copy; 2021&ndash;<?= date('Y') ?> <?= hg_e(HG_LEGAL_NAME) ?> All Rights Reserved.<span class="hg-footer__cin">CIN <?= hg_e(HG_CIN) ?></span></p>
+            <p class="hg-footer__copyline">&copy; <?= (int) HG_COPYRIGHT_SINCE ?>&ndash;<?= date('Y') ?> <?= hg_e(HG_LEGAL_NAME) ?>. All Rights Reserved.</p>
             <ul class="hg-footer__bottomlinks">
                 <li><button type="button" class="hg-footer-link" data-hg-consent-open>Cookie settings</button></li>
             </ul>

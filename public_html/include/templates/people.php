@@ -20,7 +20,7 @@ if (!function_exists('hg_render_people')) {
         $h1 = $leader ? 'Leadership' : 'Our team';
         hg_layout_start(array(
             'title' => $h1 . ' | Holiday Guru Travel',
-            'description' => $leader ? 'The leadership of Holiday Guru Travel, a brand of ' . HG_LEGAL_NAME . ', Noida.' : 'Meet the Holiday Guru Travel team who plan and support your holidays from our office in Noida.',
+            'description' => $leader ? 'The leadership of Holiday Guru Travel (' . HG_LEGAL_NAME . '), Noida.' : 'Meet the Holiday Guru Travel team who plan and support your holidays from our office in Noida.',
             'path' => $path, 'index' => hg_page_status($path) === 'approved',
             'breadcrumbs' => array(array('Home', '/'), array('About Us', '/about'), array($h1, null)),
         ));
@@ -30,7 +30,7 @@ if (!function_exists('hg_render_people')) {
         <p class="hg-eyebrow">Company</p>
         <h1 class="hg-h1" id="page-title"><?= hg_e($h1) ?></h1>
         <p class="hg-lead"><?= $leader
-            ? 'Holiday Guru Travel is a brand of ' . hg_e(HG_LEGAL_NAME) . ' (CIN ' . hg_e(HG_CIN) . '), a private company incorporated in Uttar Pradesh in 2021, with its office in Sector 27, Noida.'
+            ? 'Holiday Guru Travel is operated by ' . hg_e(HG_LEGAL_NAME) . ', with its office in Sector 27, Noida.'
             : 'The travel experts who plan your itinerary, confirm your hotels and stay in touch on WhatsApp through your trip — from our office in Sector 27, Noida.' ?></p>
     </div>
 </section>

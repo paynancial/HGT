@@ -27,7 +27,7 @@ if (!function_exists('hg_render_policy')) {
     <div class="hg-container hg-narrow hg-prose hg-policy">
         <?= $bodyHtml ?>
         <div class="hg-notice" role="note"><p>The terms shown on your package page and in your booking confirmation apply to your booking. Questions? <a href="/contact">Contact us</a> or call <a href="<?= hg_e(hg_tel_href()) ?>"><?= hg_e(HG_PHONE_DISPLAY) ?></a>.</p></div>
-        <p class="hg-muted" style="font-size:14px"><?= hg_e(HG_LEGAL_NAME) ?> (CIN <?= hg_e(HG_CIN) ?>), trading as Holiday Guru Travel.</p>
+        <p class="hg-muted" style="font-size:14px">Holiday Guru Travel is operated by <?= hg_e(HG_LEGAL_NAME) ?>.</p>
     </div>
 </section>
 <?php

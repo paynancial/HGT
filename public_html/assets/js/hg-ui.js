@@ -320,7 +320,7 @@
                     var pk = form.querySelector('[name="package_url"]');
                     track('enquiry_submit', { form_id: form.id, package_url: pk ? pk.value : '' });
                 } else {
-                    status(form, 'Sorry, we could not send this. Please call or WhatsApp +91 99717 54265.', false);
+                    status(form, 'Sorry, we could not send this. Please call or WhatsApp +91 80066 92040.', false);
                 }
             });
         });

@@ -12,10 +12,10 @@ if (!defined('HG_SITE_CONFIG')) {
 
     define('HG_SITE_URL', 'https://holidaygurutravel.in');
 
-    // Official contact details (confirmed by the owner, 2026-09-29).
-    define('HG_PHONE_DISPLAY', '+91 99717 54265');
-    define('HG_PHONE_TEL', '+919971754265');
-    define('HG_WHATSAPP_NUMBER', '919971754265');
+    // Official contact details (mobile and WhatsApp updated by the owner, 2026-09-30).
+    define('HG_PHONE_DISPLAY', '+91 80066 92040');
+    define('HG_PHONE_TEL', '+918006692040');
+    define('HG_WHATSAPP_NUMBER', '918006692040');
     define('HG_EMAIL_DISPLAY', 'Info@holidaygurutravel.in');
     define('HG_EMAIL', 'info@holidaygurutravel.in');
 
@@ -27,9 +27,10 @@ if (!defined('HG_SITE_CONFIG')) {
     define('HG_INSTAGRAM_URL', 'https://www.instagram.com/holidaygurutravel/');
     define('HG_FACEBOOK_URL', 'https://www.facebook.com/holidaygurutravel5/');
 
-    // Legal entity (confirmed by the owner, 2026-09-29).
-    define('HG_LEGAL_NAME', 'M/S Swaasthik Vocation Pvt. Ltd.');
-    define('HG_CIN', 'U74999UP2021PTC154544');
+    // Legal entity and copyright start year (owner, 2026-09-30: "© 2014 M/S Holiday Guru Travel").
+    // The previous entity name and its CIN were removed site-wide at the owner's request.
+    define('HG_LEGAL_NAME', 'M/S Holiday Guru Travel');
+    define('HG_COPYRIGHT_SINCE', 2014);
 
     // GA4 measurement ID. Loaded only after the visitor accepts analytics
     // cookies (see assets/js/hg-site.js). Empty string disables GA.

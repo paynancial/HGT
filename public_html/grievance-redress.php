@@ -36,7 +36,7 @@ hg_layout_start(array(
             <div><dt>Email</dt><dd><a href="mailto:<?= hg_e($officer['email']) ?>"><?= hg_e($officer['email']) ?></a></dd></div>
             <div><dt>Phone / WhatsApp</dt><dd><a href="<?= hg_e(hg_tel_href()) ?>"><?= hg_e(HG_PHONE_DISPLAY) ?></a></dd></div>
             <div><dt>Address</dt><dd><?= hg_e(HG_ADDRESS_LINE1) ?>, <?= hg_e(HG_ADDRESS_LINE2) ?></dd></div>
-            <div><dt>Company</dt><dd><?= hg_e(HG_LEGAL_NAME) ?> (CIN <?= hg_e(HG_CIN) ?>)</dd></div>
+            <div><dt>Company</dt><dd><?= hg_e(HG_LEGAL_NAME) ?></dd></div>
         </dl>
 
         <h2 class="hg-h3">Cancellations and refunds</h2>

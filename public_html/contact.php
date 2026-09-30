@@ -6,7 +6,7 @@ $mapsDir = 'https://www.google.com/maps/dir/?api=1&destination=' . rawurlencode(
 
 hg_layout_start(array(
     'title' => 'Contact Holiday Guru Travel | Travel Agency in Noida, Delhi NCR',
-    'description' => 'Contact Holiday Guru Travel for holiday packages and customized tours. Call or WhatsApp +91 99717 54265, email Info@holidaygurutravel.in, or visit our office at Bhoja Market, Sector 27, Noida.',
+    'description' => 'Contact Holiday Guru Travel for holiday packages and customized tours. Call or WhatsApp +91 80066 92040, email Info@holidaygurutravel.in, or visit our office at Bhoja Market, Sector 27, Noida.',
     'path' => '/contact',
     'breadcrumbs' => array(array('Home', '/'), array('Contact Us', null)),
     'schema' => array(array('@type' => 'ContactPage', 'name' => 'Contact Holiday Guru Travel', 'url' => hg_abs('/contact'), 'about' => array('@id' => HG_SITE_URL . '/#organization'))),
@@ -49,7 +49,6 @@ hg_layout_start(array(
         <h2 class="hg-h3" id="co-title">Company details</h2>
         <dl class="hg-qf">
             <div><dt>Legal name</dt><dd><?= hg_e(HG_LEGAL_NAME) ?></dd></div>
-            <div><dt>CIN</dt><dd><?= hg_e(HG_CIN) ?></dd></div>
             <div><dt>Brand</dt><dd>Holiday Guru Travel</dd></div>
             <div><dt>Follow us</dt><dd><a href="<?= hg_e(HG_FACEBOOK_URL) ?>" target="_blank" rel="noopener">Facebook</a> · <a href="<?= hg_e(HG_INSTAGRAM_URL) ?>" target="_blank" rel="noopener">Instagram</a></dd></div>
         </dl>

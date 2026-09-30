@@ -406,7 +406,7 @@ if (!function_exists('hg_render_package')) {
             <li><?= hg_icon('check') ?><span><strong>Inclusions listed</strong> Every inclusion and exclusion on this page</span></li>
             <li><?= hg_icon('route') ?><span><strong>Customizable</strong> Hotels, nights and sightseeing</span></li>
             <li><?= hg_icon('whatsapp') ?><span><strong>24×7 support</strong> Phone and WhatsApp</span></li>
-            <li><?= hg_icon('shield') ?><span><strong>Registered company</strong> <?= hg_e(HG_LEGAL_NAME) ?></span></li>
+            <li><?= hg_icon('shield') ?><span><strong>Operated by</strong> <?= hg_e(HG_LEGAL_NAME) ?></span></li>
         </ul>
     </aside>
 </div>

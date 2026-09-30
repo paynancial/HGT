@@ -165,7 +165,7 @@ hg_layout_start(array(
             <div class="hg-card"><span class="hg-card__icon"><?= hg_icon('bed') ?></span><h3>One plan, end to end</h3><p>Hotels, private cab transfers and sightseeing in one itinerary, with inclusions listed line by line.</p></div>
             <div class="hg-card"><span class="hg-card__icon"><?= hg_icon('phone') ?></span><h3>Talk to a person</h3><p>Call or WhatsApp <?= hg_e(HG_PHONE_DISPLAY) ?> to speak with the team that plans your trip.</p></div>
             <div class="hg-card"><span class="hg-card__icon"><?= hg_icon('check') ?></span><h3>Clear booking terms</h3><p>35% advance to confirm, balance before departure, voucher on payment. No cash payments.</p></div>
-            <div class="hg-card"><span class="hg-card__icon"><?= hg_icon('shield') ?></span><h3>Registered company</h3><p>Holiday Guru Travel is a brand of <?= hg_e(HG_LEGAL_NAME) ?>, CIN <?= hg_e(HG_CIN) ?>.</p></div>
+            <div class="hg-card"><span class="hg-card__icon"><?= hg_icon('shield') ?></span><h3>Who we are</h3><p>Holiday Guru Travel is operated by <?= hg_e(HG_LEGAL_NAME) ?> from our office in Sector 27, Noida.</p></div>
         </div>
     </div>
 </section>

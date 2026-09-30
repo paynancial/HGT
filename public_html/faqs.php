@@ -52,7 +52,7 @@ $sections = array(
     )),
     'support' => array('Support', array(
         array('How do I reach you?', '<p>Call or WhatsApp <a href="' . hg_e(hg_tel_href()) . '">' . hg_e(HG_PHONE_DISPLAY) . '</a> (WhatsApp 24×7), email <a href="' . hg_e(hg_mailto_href()) . '">' . hg_e(HG_EMAIL_DISPLAY) . '</a>, or visit our office at ' . hg_e(HG_ADDRESS_LINE1) . ', ' . hg_e(HG_ADDRESS_LINE2) . '.</p>'),
-        array('Who operates Holiday Guru Travel?', '<p>Holiday Guru Travel is a brand of ' . hg_e(HG_LEGAL_NAME) . ' (CIN ' . hg_e(HG_CIN) . ').</p>'),
+        array('Who operates Holiday Guru Travel?', '<p>Holiday Guru Travel is operated by ' . hg_e(HG_LEGAL_NAME) . ', from our office in Sector 27, Noida.</p>'),
     )),
 );
 $all = array();
@@ -84,5 +84,5 @@ foreach ($sections as $k => $s) $nav[] = array($k, $s[0]);
     </div>
 </section>
 <?php } ?>
-<?= hg_cta_band('Still have a question?', 'Call or WhatsApp +91 99717 54265 — a travel expert will help.') ?>
+<?= hg_cta_band('Still have a question?', 'Call or WhatsApp ' . HG_PHONE_DISPLAY . ' — a travel expert will help.') ?>
 <?php hg_layout_end(); ?>

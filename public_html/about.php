@@ -38,7 +38,7 @@ hg_layout_start(array(
         <?= hg_section_head('At a glance', 'The company behind the brand', '', null, 'facts-title') ?>
         <dl class="hg-qf hg-qf--3">
             <div><dt>Legal name</dt><dd><?= hg_e(HG_LEGAL_NAME) ?></dd></div>
-            <div><dt>CIN</dt><dd><?= hg_e(HG_CIN) ?></dd></div>
+            <div><dt>Brand</dt><dd>Holiday Guru Travel</dd></div>
             <div><dt>Office</dt><dd><?= hg_e(HG_ADDRESS_LINE1) ?>, <?= hg_e(HG_ADDRESS_LINE2) ?></dd></div>
             <div><dt>Holidays</dt><dd>India, Dubai, Singapore &amp; Malaysia and the Maldives — each tour with a day-by-day plan</dd></div>
             <div><dt>Support</dt><dd>Phone and WhatsApp <?= hg_e(HG_PHONE_DISPLAY) ?> (WhatsApp 24×7)</dd></div>
