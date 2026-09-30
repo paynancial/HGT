@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """Propose permanent Package IDs for the existing packages (owner review before approval).
 
-One sequence (0001…) covers every package type: domestic, international, special and offer packages.
+One Package ID sequence (0001…) is shared by domestic, international and speciality packages.
+Offers are NOT numbered here: Offer Codes (OF-0001…) have their own sequence.
 
 Reads   public_html/include/data/packages.json, destinations.json, rates.json
 Writes  public_html/include/data/package-registry.json (entries with status "proposed")
@@ -62,7 +63,7 @@ def main():
 
     entries.sort(key=lambda e: e['package_id'])
     out = {
-        '_about': 'Package ID registry (one sequence for every package type: domestic, international, special, offers). '
+        '_about': 'Package ID registry. The Package ID (0001…) is the only package identifier (itinerary key; CRM, quotations, payments). Domestic, international and speciality packages share this sequence; Offer Codes (OF-0001…) have their own sequence in offers.json. '
                   'Append-only once approved: never renumber, reuse or delete. Shown publicly only in the itinerary, and only for approved IDs. '
                   'See docs/package-registry/PACKAGE-ID-MAPPING.md.',
         'numbering_order': 'destination display order, then trip length, then name',

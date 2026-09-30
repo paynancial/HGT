@@ -8,11 +8,11 @@ description). Conflicts are flagged with a severity; nothing is changed, assigne
 Reads   public_html/include/data/packages.json, package-registry.json, destinations.json
         tools/package-sources/*.php (the original page files, for exact-duplicate detection)
 Writes  docs/top-tours/FINAL-PREASSIGNMENT-RECONCILIATION.md
-        docs/top-tours/OWNER-TOUR-NUMBER-DECISIONS.csv   (Owner Decision and Final No. left blank)
+        docs/top-tours/OWNER-PACKAGE-ID-DECISIONS.csv   (Owner Decision and Final Package ID left blank)
 
-Terminology: the owner renamed "Tour No." to "Package ID" (30 Sep 2026). In these files the
-proposed 4-digit number is the "Proposed Package ID (Tour No.)"; the slug-based key is the
-"Temporary internal ref" and is NOT a permanent CRM ID.
+Identifiers (owner rule): the Package ID (0001…) is the ONLY package identifier (itinerary key; CRM,
+quotations, payments). The slug-based key is only a TEMPORARY internal reference, NOT a CRM ID.
+Offer Codes (OF-0001…) have their own sequence and are not part of this review.
 """
 import csv, difflib, hashlib, itertools, json, os, re
 
@@ -20,7 +20,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(ROOT, 'public_html', 'include', 'data')
 SRC = os.path.join(ROOT, 'tools', 'package-sources')
 OUT_MD = os.path.join(ROOT, 'docs', 'top-tours', 'FINAL-PREASSIGNMENT-RECONCILIATION.md')
-OUT_CSV = os.path.join(ROOT, 'docs', 'top-tours', 'OWNER-TOUR-NUMBER-DECISIONS.csv')
+OUT_CSV = os.path.join(ROOT, 'docs', 'top-tours', 'OWNER-PACKAGE-ID-DECISIONS.csv')
 
 pk = {p['slug']: p for p in json.load(open(os.path.join(DATA, 'packages.json'), encoding='utf-8'))}
 reg = json.load(open(os.path.join(DATA, 'package-registry.json'), encoding='utf-8'))['entries']
@@ -225,8 +225,8 @@ def suggested(s):
 # ---------- CSV (owner decision matrix) ----------
 with open(OUT_CSV, 'w', newline='', encoding='utf-8') as fh:
     w = csv.writer(fh)
-    w.writerow(['Proposed Tour No. (Package ID)', 'Temporary internal ref (NOT a CRM ID)', 'Package Name', 'Destination', 'Duration',
-                'Issue', 'Suggested Action', 'Owner Decision', 'Final Tour No. (Package ID)', 'Notes'])
+    w.writerow(['Proposed Package ID', 'Temporary internal ref (NOT a CRM ID)', 'Package Name', 'Destination', 'Duration',
+                'Issue', 'Suggested Action', 'Owner Decision', 'Final Package ID', 'Notes'])
     for s in order:
         p, r = pk[s], rec[s]
         issue = '; '.join(f'[{sv}] {t}' for sv, t in r['issues']) or 'none'
@@ -247,14 +247,15 @@ A('- **No** permanent numbers assigned. The whole registry is still `proposed`.'
 A('- **No** page, content or URL change.')
 A('- **No** database migration, CRM update, deployment or publication.')
 A('')
-A('**Terminology.** You renamed "Tour No." to **Package ID** (30 Sep 2026). In this review:')
-A('- **Proposed Tour No. (Package ID)** is the proposed 4-digit number (0001–0107). It is not assigned.')
-A('- **Temporary internal ref** (`slug:<URL>`) is a **TEMPORARY** identifier built from the page address, because the old database has not been supplied.')
+A('**Identifiers.** The **Package ID** is the only package identifier. In this review:')
+A('- **Proposed Package ID** is the proposed 4-digit number (0001–0107). It is not assigned.')
+A('- **Temporary internal ref** (`slug:<URL>`) is a **TEMPORARY** reference built from the page address, because the old database has not been supplied.')
 A('  - It is **not** a permanent CRM ID and must not be used as one.')
 A('  - The CRM will use the approved Package ID. The database creates its own internal key.')
+A('- **Offer Codes** (`OF-0001`…) have their own sequence and are not part of this review.')
 A('')
 A('**Files**')
-A('- `OWNER-TOUR-NUMBER-DECISIONS.csv`: the decision matrix. **Owner Decision** and **Final Tour No.** are blank.')
+A('- `OWNER-PACKAGE-ID-DECISIONS.csv`: the decision matrix. **Owner Decision** and **Final Package ID** are blank.')
 A('- `tools/preassignment_reconciliation.py`: re-creates this file from the package data and the original page files.')
 A('')
 

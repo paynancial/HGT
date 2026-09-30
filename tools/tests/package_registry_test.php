@@ -47,6 +47,25 @@ $_SERVER['HTTP_HOST'] = 'localhost:8098';
 t('proposed Package ID hidden on a local server without the preview switch', hg_package_id('b') === '' || is_file($root . '/public_html/include/data/.preview-package-ids'));
 $_SERVER['HTTP_HOST'] = 'holidaygurutravel.in';
 
+/* ---------- Offer Codes: separate format and sequence ---------- */
+t('offer code format OF-0001', hg_is_offer_code('OF-0001') && !hg_is_offer_code('0001') && !hg_is_offer_code('OF-0000') && !hg_is_offer_code('OF-12'));
+t('a Package ID can never be read as an offer code (and vice versa)', !hg_is_offer_code(hg_package_id('a')) && !preg_match('/^(?!0000)\d{4}$/', 'OF-0001'));
+hg_tr_json('offers.json', array('offers' => array(
+    array('offer_code' => 'OF-0001', 'packages' => array('a'), 'status' => 'published'),
+    array('offer_code' => 'OF-0002', 'packages' => array('a', 'c'), 'status' => 'published'),
+    array('offer_code' => 'OF-0003', 'packages' => array('a'), 'status' => 'draft'),
+)));
+t('a package may have several published offers', count(hg_offers_for('a')) === 2);
+t('draft offers are not live', hg_offer('OF-0003') === null && hg_offer('OF-0001') !== null);
+t('offers do not change the Package ID', hg_package_id('a') === '0001');
+$ctx = hg_package_enquiry_context('a', 'OF-0002');
+t('enquiry carries a valid offer code for this package', $ctx['Offer code'] === 'OF-0002');
+$ctx = hg_package_enquiry_context('b', 'OF-0001');
+t('offer code for another package is rejected', $ctx['Offer code'] === '');
+hg_tr_json('offers.json', array('offers' => array()));
+$committed = json_decode(file_get_contents($root . '/public_html/include/data/offers.json'), true);
+t('committed offers: codes valid and unique (none published yet)', count(array_filter(array_column($committed['offers'], 'offer_code'), 'hg_is_offer_code')) === count($committed['offers']) && count(array_unique(array_column($committed['offers'], 'offer_code'))) === count($committed['offers']));
+
 /* ---------- Rates: versioning and validity ---------- */
 $rates = array(
     array('slug' => 'a', 'version' => 1, 'base_price' => 21999, 'currency' => 'INR', 'price_unit' => 'person', 'rate_status' => 'approved', 'rate_valid_from' => '2026-09-01', 'rate_valid_until' => '2026-09-30'),

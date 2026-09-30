@@ -1,0 +1,4 @@
+{
+ "_about": "Offer Codes: OF-0001 onwards, their OWN sequence, never a Package ID. One package may have several offers; one offer may apply to several packages. Fields: offer_code, title, packages (slugs), status (draft|published|expired), valid_from, valid_until, terms. Empty until the owner publishes offers.",
+ "offers": []
+}

@@ -5,14 +5,15 @@
 - **No** page, content or URL change.
 - **No** database migration, CRM update, deployment or publication.
 
-**Terminology.** You renamed "Tour No." to **Package ID** (30 Sep 2026). In this review:
-- **Proposed Tour No. (Package ID)** is the proposed 4-digit number (0001–0107). It is not assigned.
-- **Temporary internal ref** (`slug:<URL>`) is a **TEMPORARY** identifier built from the page address, because the old database has not been supplied.
+**Identifiers.** The **Package ID** is the only package identifier. In this review:
+- **Proposed Package ID** is the proposed 4-digit number (0001–0107). It is not assigned.
+- **Temporary internal ref** (`slug:<URL>`) is a **TEMPORARY** reference built from the page address, because the old database has not been supplied.
   - It is **not** a permanent CRM ID and must not be used as one.
   - The CRM will use the approved Package ID. The database creates its own internal key.
+- **Offer Codes** (`OF-0001`…) have their own sequence and are not part of this review.
 
 **Files**
-- `OWNER-TOUR-NUMBER-DECISIONS.csv`: the decision matrix. **Owner Decision** and **Final Tour No.** are blank.
+- `OWNER-PACKAGE-ID-DECISIONS.csv`: the decision matrix. **Owner Decision** and **Final Package ID** are blank.
 - `tools/preassignment_reconciliation.py`: re-creates this file from the package data and the original page files.
 
 ## A. Summary

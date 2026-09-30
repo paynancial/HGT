@@ -385,7 +385,7 @@ The itinerary and detailed content follow below.
 
 - **Terminology decided (owner, 30 Sep 2026):** the business identifier is the **Package ID** (e.g. "Package ID 0001"). It replaces "Tour No." / "package number".
   - The schema column is `package_id` CHAR(4) (tables `package_id_sequence` and `package_id_registry`). The internal relational key is renamed `package_pk`.
-  - One sequence covers every package type: domestic, international, special and offer packages.
+  - Domestic, international and speciality packages share one Package ID sequence. **Offers are separate:** Offer Codes `OF-0001`… have their own sequence (see [IDENTIFIERS.md](IDENTIFIERS.md)).
   - On the website the Package ID is shown **only in the itinerary header**. It is carried in enquiries, WhatsApp messages, CRM search, quotations, payments and bookings.
 - **Numbering starts at 0001.** The proposed mapping for the 107 current packages is in [PACKAGE-ID-MAPPING.md](PACKAGE-ID-MAPPING.md). It awaits approval.
 - **Built on staging:**

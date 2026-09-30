@@ -747,13 +747,11 @@ Every merge or retirement is recorded with these fields:
 
 ## 7. Gate items still open (need your go-ahead; not built at this stage)
 
-**Offer packages and offer codes (gate items 11 and 16)**
-- **Offer packages** (a package sold as an offer) get a Package ID from the **same single sequence** as domestic, international and special packages, so no two packages ever share an ID.
-- **Offer codes** (a discount or promotion applied to a package) are a different thing. If you use them, they need their own format so they are never confused with a Package ID. Proposed:
-  - an `offers` table with codes `OF-0001` onwards;
-  - an `offer_packages` link table, so one package can have several offers;
-  - `offer_code` stored on enquiry, quotation, payment and booking records, so history keeps the offer that applied.
-- There are no offers yet, so enquiries do not carry an offer code. Not built until you confirm you want promo codes.
+**Offer Codes (gate items 11 and 16)**
+- **Offer Codes are a separate identifier system**: `OF-0001` onwards, from their own sequence. They never share the Package ID sequence, so an offer can never collide with a package.
+- Built in the database design (`offers`, `offer_packages`, `create_offer()`; `offer_code` on enquiry, quotation, payment and booking records) and in `include/package_registry.php` (`offers.json`).
+- A package can have several offers; changing an offer never changes a Package ID (tested).
+- There are no offers yet, so no offer code is shown or sent until offers are published.
 
 **Selected add-ons (gate item 11)**
 - No add-ons are defined yet.

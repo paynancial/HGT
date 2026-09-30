@@ -1,5 +1,5 @@
 {
- "_about": "Package ID registry (one sequence for every package type: domestic, international, special, offers). Append-only once approved: never renumber, reuse or delete. Shown publicly only in the itinerary, and only for approved IDs. See docs/package-registry/PACKAGE-ID-MAPPING.md.",
+ "_about": "Package ID registry. The Package ID (0001…) is the only package identifier (itinerary key; CRM, quotations, payments). Domestic, international and speciality packages share this sequence; Offer Codes (OF-0001…) have their own sequence in offers.json. Append-only once approved: never renumber, reuse or delete. Shown publicly only in the itinerary, and only for approved IDs. See docs/package-registry/PACKAGE-ID-MAPPING.md.",
  "numbering_order": "destination display order, then trip length, then name",
  "entries": [
   {

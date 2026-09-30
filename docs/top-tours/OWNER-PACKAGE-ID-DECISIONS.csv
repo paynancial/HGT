@@ -1,4 +1,4 @@
-Proposed Tour No. (Package ID),Temporary internal ref (NOT a CRM ID),Package Name,Destination,Duration,Issue,Suggested Action,Owner Decision,Final Tour No. (Package ID),Notes
+Proposed Package ID,Temporary internal ref (NOT a CRM ID),Package Name,Destination,Duration,Issue,Suggested Action,Owner Decision,Final Package ID,Notes
 0001,slug:srinagar-gulmarg-tour-03nt04dy,Srinagar Gulmarg Tour Package,Kashmir,3 Nights / 4 Days,none,APPROVE,,,severity NONE
 0002,slug:srinagar-gulmarg-pahalgam-tour-package-5-days,Srinagar Gulmarg Pahalgam Tour Package,Kashmir,4 Nights / 5 Days,none,APPROVE,,,severity NONE
 0003,slug:srinagar-gulmarg-sonmarg-day-trip-tour-package-5-days,Srinagar Gulmarg Sonmarg Day Trip Tour,Kashmir,4 Nights / 5 Days,[MEDIUM] no inclusions listed; [MEDIUM] no exclusions listed; [LOW] no package image (photos to be supplied by the owner),APPROVE,,,severity MEDIUM

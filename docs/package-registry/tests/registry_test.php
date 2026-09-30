@@ -149,5 +149,18 @@ check('curation: rank 501 rejected', fails(function () use ($cur, $other) { $cur
 // 13. Booking keeps package_pk + Package ID
 check('booking requires a Package ID', fails(function () use ($db, $pid) { $db->exec("INSERT INTO bookings (booking_ref, package_pk, package_id, package_name, travel_date, adults, children) VALUES ('BKG-TEST0001', $pid, NULL, 'X', '2026-10-15', 2, 0)"); }, 'package_id'));
 
+// 14. Offer Codes: own sequence, never the Package ID sequence
+$id0 = $db->query("SELECT package_id FROM packages WHERE package_pk = $pid")->fetchColumn();
+$seq0 = (int) $db->query("SELECT next_value FROM package_id_sequence WHERE id = 1")->fetchColumn();
+$oc = function ($title) use ($db) { $st = $db->prepare('CALL create_offer(?, ?, @oid, @ocode)'); $st->execute(array($title, 'tester')); $st->closeCursor(); return $db->query('SELECT @oid AS id, @ocode AS code')->fetch(PDO::FETCH_ASSOC); };
+$o1 = $oc('Diwali offer'); $o2 = $oc('Winter offer');
+check('offer codes come from their own sequence (OF-0001, OF-0002)', $o1['code'] === 'OF-0001' && $o2['code'] === 'OF-0002', json_encode(array($o1, $o2)));
+check('an offer code in Package ID format is rejected', fails(function () use ($db) { $db->exec("INSERT INTO offers (offer_code, title, created_by) VALUES ('0001', 'x', 't')"); }, 'chk_offer_code'));
+$db->exec("INSERT INTO offer_packages (offer_id, package_pk) VALUES ({$o1['id']}, $pid), ({$o2['id']}, $pid)");
+check('a package can have several offers', (int) $db->query("SELECT COUNT(*) FROM offer_packages WHERE package_pk = $pid")->fetchColumn() === 2);
+$db->exec("UPDATE offers SET title = 'Diwali offer (extended)', valid_until = '2026-11-30' WHERE offer_id = {$o1['id']}");
+check('changing an offer does not change the Package ID', $db->query("SELECT package_id FROM packages WHERE package_pk = $pid")->fetchColumn() === $id0);
+check('creating offers does not consume Package IDs', (int) $db->query("SELECT next_value FROM package_id_sequence WHERE id = 1")->fetchColumn() === $seq0);
+
 echo "\n$pass/" . ($pass + $fail) . " passed\n";
 exit($fail ? 1 : 0);

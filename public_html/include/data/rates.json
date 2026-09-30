@@ -1,4 +1,4 @@
 {
- "_about": "Manually maintained rate versions (one row per price version; never edit an approved row, add a new version). Shown publicly only when rate_status is 'approved' and today is within rate_valid_from..rate_valid_until; otherwise the site shows 'Price on request'. Fields: slug, tour_number, version, base_price, currency, price_unit, rate_status (draft|approved|withdrawn), rate_valid_from, rate_valid_until, rate_updated_at, approved_by, price_notes, optional adult_price, child_price, single_supplement, extra_bed, tax, discount, optional_addons.",
+ "_about": "Manually maintained rate versions (one row per price version; never edit an approved row, add a new version). Shown publicly only when rate_status is 'approved' and today is within rate_valid_from..rate_valid_until; otherwise the site shows 'Price on request'. Fields: slug, package_id, version, base_price, currency, price_unit, rate_status (draft|approved|withdrawn), rate_valid_from, rate_valid_until, rate_updated_at, approved_by, price_notes, optional adult_price, child_price, single_supplement, extra_bed, tax, discount, optional_addons.",
  "versions": []
 }

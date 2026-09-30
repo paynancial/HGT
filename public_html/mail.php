@@ -30,6 +30,7 @@ $optional = array(
     'package_id'     => 'Package ID',
     'package'        => 'Package name',
     'internal_ref'   => 'Internal ref',
+    'offer_code'     => 'Offer code',
     'destination'    => 'Destination',
     'travel_date'    => 'Travel date',
     'travel_month'   => 'Travel month',
@@ -58,7 +59,8 @@ foreach ($optional as $key => $label) {
 // Package enquiries: take the package name, Package ID, internal ref and the rate shown from our
 // own data (by URL path), never from the submitted text, so they cannot be spoofed or mistyped.
 // Identifier and rate fields are only ever set by the server (below); drop anything submitted.
-foreach (array('Package ID', 'Internal ref', 'Displayed rate', 'Rate version', 'Rate validity') as $k) unset($rows[$k]);
+$hgOfferCode = isset($rows['Offer code']) ? $rows['Offer code'] : '';
+foreach (array('Package ID', 'Internal ref', 'Offer code', 'Displayed rate', 'Rate version', 'Rate validity') as $k) unset($rows[$k]);
 if (isset($rows['Package URL'])) {
     $path = parse_url($rows['Package URL'], PHP_URL_PATH);
     $slug = is_string($path) ? trim($path, '/') : '';
@@ -74,7 +76,7 @@ if (isset($rows['Package URL'])) {
     }
     unset($rows['Package name']);
     if ($known) {
-        $ctx = hg_package_enquiry_context($known['slug']);
+        $ctx = hg_package_enquiry_context($known['slug'], $hgOfferCode);
         $rows['Package ID'] = $ctx['Package ID'] !== '' ? $ctx['Package ID'] : 'Not assigned yet';
         $rows['Package name'] = $known['title'];
         unset($ctx['Package ID']);

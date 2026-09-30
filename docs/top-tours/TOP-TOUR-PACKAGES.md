@@ -10,7 +10,7 @@
 - Header tabs stay as set on 30 Sep: Domestic · International · Inbound Tours · Special Tours · Customised Tours · Offers · About Us · Contact Us.
 - The utility bar stays as set on 30 Sep: "Premium Holiday Planner" on the left, Login on the right.
 - Screenshots are delivered separately from the code ZIP.
-- **Package ID replaces "Tour No."** (owner, 30 Sep). It is shown only in the itinerary header, uses one sequence for every package type (domestic, international, special, offers), and is carried in enquiries, WhatsApp, CRM search, quotations, payments and bookings.
+- **Package ID replaces "Tour No."** (owner, 30 Sep). It is shown only in the itinerary header, is the only package identifier (domestic, international and speciality packages share one sequence; offers use separate `OF-0001` Offer Codes), and is carried in enquiries, WhatsApp, CRM search, quotations, payments and bookings.
 - The brief's nav list (Flights, Visa, Corporate, Forex) and the utility-bar list were **not** applied, per the owner's answer.
 
 ---
@@ -21,7 +21,7 @@
 - `package_pk` is the internal relational key: a BIGINT auto-increment in `schema-draft.sql`.
 - `package_id` is the business identifier: `CHAR(4)`, NOT NULL, UNIQUE, CHECK `^[0-9]{4}$` and not `0000`.
 - Until the database exists, the internal key is the permanent slug key (`slug:<slug>`), sent in enquiries as "Internal ref".
-- One sequence for every package type (domestic, international, special, offer packages), so IDs never repeat.
+- Domestic, international and speciality packages share one Package ID sequence, so IDs never repeat. Offers use their own Offer Codes (`OF-0001`…), never a Package ID.
 
 **Label:** **Package ID 0001**.
 

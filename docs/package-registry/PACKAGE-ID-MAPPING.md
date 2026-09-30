@@ -10,7 +10,8 @@
 ## What the Package ID is (owner decision, 30 Sep 2026)
 
 - **Package ID** (e.g. `0001`) is the permanent business identifier of a package. It replaces "Tour No.".
-- **One sequence covers every package type**: domestic, international, special (pilgrimage, honeymoon, …) and offer packages. No two packages can ever share an ID.
+- **One Package ID sequence** is shared by domestic, international and speciality (pilgrimage, honeymoon, …) packages. No two packages can ever share an ID.
+- **Offers are separate:** Offer Codes (`OF-0001`…) have their own sequence and never use a Package ID number. See [`IDENTIFIERS.md`](IDENTIFIERS.md).
 - **On the website** it appears **only in the itinerary header** of the package page. It is not shown on cards, the title area, breadcrumbs or search suggestions.
 - **Behind the scenes** it is carried in:
   - enquiry emails (field and subject) and WhatsApp messages;

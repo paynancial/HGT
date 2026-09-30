@@ -6,8 +6,11 @@
  * Same fields and rules, so the data moves into the database later unchanged.
  *
  *   include/data/package-registry.json  Package ID ↔ package (append-only; status proposed|approved|retired).
- *                                       One sequence (0001…) for every package type: domestic,
- *                                       international, special and offer packages — no duplicates.
+ *                                       The Package ID (0001…) is the ONLY package identifier: the itinerary
+ *                                       is keyed by it and CRM/quotations use it. Domestic, international and
+ *                                       speciality packages share this one sequence — no duplicates.
+ *   include/data/offers.json            Offer Codes (OF-0001…): a SEPARATE sequence, never a Package ID.
+ *                                       A package may have several offers.
  *   include/data/rates.json             one row per price version (manually maintained)
  *   include/data/curation.json          internal merchandising (priority_rank 1–500 etc.) — never shown publicly
  *
@@ -96,6 +99,33 @@ if (!defined('HG_PACKAGE_REGISTRY')) {
         return $e && !empty($e['internal_key']) ? (string) $e['internal_key'] : 'slug:' . $slug;
     }
 
+    /** Offer codes are OF-0001…: a separate format and sequence, so they can never collide with a Package ID. */
+    function hg_is_offer_code($code)
+    {
+        return (bool) preg_match('/^OF-(?!0000)[0-9]{4}$/', (string) $code);
+    }
+
+    /** Published offer by code, or null. */
+    function hg_offer($code)
+    {
+        if (!hg_is_offer_code($code)) return null;
+        $o = hg_tr_json('offers.json');
+        foreach (isset($o['offers']) ? $o['offers'] : array() as $row) {
+            if (isset($row['offer_code']) && $row['offer_code'] === $code && (!isset($row['status']) || $row['status'] === 'published')) return $row;
+        }
+        return null;
+    }
+
+    /** Published offers that apply to a package (a package may have several). */
+    function hg_offers_for($slug)
+    {
+        $o = hg_tr_json('offers.json');
+        return array_values(array_filter(isset($o['offers']) ? $o['offers'] : array(), function ($row) use ($slug) {
+            return isset($row['offer_code'], $row['packages']) && hg_is_offer_code($row['offer_code'])
+                && (!isset($row['status']) || $row['status'] === 'published') && in_array($slug, (array) $row['packages'], true);
+        }));
+    }
+
     /**
      * The rate version to show publicly, or null ("Price on request").
      * A version counts only if approved, priced, and valid today; expired rates are never shown.
@@ -156,14 +186,18 @@ if (!defined('HG_PACKAGE_REGISTRY')) {
 
     /**
      * Server-side package context for an enquiry, built only from our own data
-     * (never from submitted text): Package ID, internal key, rate shown and its version/validity.
+     * (never from submitted text): Package ID, internal key, offer code (only a published offer valid
+     * for this package), rate shown and its version/validity.
      */
-    function hg_package_enquiry_context($slug)
+    function hg_package_enquiry_context($slug, $offerCode = '')
     {
         $rate = hg_current_rate($slug);
+        $offer = '';
+        foreach (hg_offers_for($slug) as $o) { if ($o['offer_code'] === $offerCode) $offer = $offerCode; }
         return array(
             'Package ID' => hg_package_id($slug),
             'Internal ref' => hg_package_key($slug),
+            'Offer code' => $offer,
             'Displayed rate' => $rate ? hg_rate_label($rate) : 'Price on request',
             'Rate version' => $rate ? (string) $rate['version'] : '',
             'Rate validity' => $rate ? hg_rate_validity($rate) : '',

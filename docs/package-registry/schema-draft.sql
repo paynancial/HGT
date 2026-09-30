@@ -4,10 +4,12 @@
 -- The production database version and existing tables are not yet known
 -- (admin/db.php and a schema dump were not provided).
 --
--- Naming (owner decision, 30 Sep 2026):
---   package_id  CHAR(4)  the business "Package ID" (0001…): permanent, one sequence for every
---                        package type (domestic, international, special, offer packages).
---                        Used in CRM search, quotations, payments and bookings.
+-- Identifiers (owner decision, 30 Sep 2026):
+--   package_id  CHAR(4)  the "Package ID" (0001…): the ONLY package identifier. Permanent. The
+--                        itinerary is keyed by it; CRM search, quotations, payments and bookings use it.
+--                        Domestic, international and speciality packages share this one sequence.
+--   offer_code  CHAR(7)  Offer Code (OF-0001…): a SEPARATE sequence (section 7), never a Package ID.
+--                        A package may have several offers.
 --   package_pk  BIGINT   internal relational key only; never shown to customers or staff.
 
 -- ------------------------------------------------------------------
@@ -370,3 +372,60 @@ CREATE TABLE package_curation (
     CONSTRAINT chk_curation_rank CHECK (priority_rank IS NULL OR priority_rank BETWEEN 1 AND 500),
     FOREIGN KEY (package_pk) REFERENCES packages (package_pk) ON DELETE RESTRICT
 ) ENGINE=InnoDB;
+
+-- ------------------------------------------------------------------
+-- 7. Offers: OF-0001... from their OWN sequence (never the Package ID sequence).
+-- ------------------------------------------------------------------
+CREATE TABLE offer_code_sequence (
+    id          TINYINT UNSIGNED NOT NULL PRIMARY KEY,
+    next_value  SMALLINT UNSIGNED NOT NULL,
+    CONSTRAINT chk_offer_seq_single CHECK (id = 1)
+) ENGINE=InnoDB;
+INSERT INTO offer_code_sequence (id, next_value) VALUES (1, 1);
+
+CREATE TABLE offers (
+    offer_id      BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    offer_code    CHAR(7) NOT NULL,
+    title         VARCHAR(200) NOT NULL,
+    status        ENUM('draft','published','expired','withdrawn') NOT NULL DEFAULT 'draft',
+    valid_from    DATE NULL,
+    valid_until   DATE NULL,
+    terms         TEXT NULL,
+    created_by    VARCHAR(80) NOT NULL,
+    created_at    DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT uq_offer_code UNIQUE (offer_code),
+    CONSTRAINT chk_offer_code CHECK (offer_code REGEXP '^OF-[0-9]{4}$' AND offer_code <> 'OF-0000')
+) ENGINE=InnoDB;
+
+-- One offer can apply to several packages; one package can have several offers.
+CREATE TABLE offer_packages (
+    offer_id    BIGINT UNSIGNED NOT NULL,
+    package_pk  BIGINT UNSIGNED NOT NULL,
+    PRIMARY KEY (offer_id, package_pk),
+    FOREIGN KEY (offer_id) REFERENCES offers (offer_id) ON DELETE RESTRICT,
+    FOREIGN KEY (package_pk) REFERENCES packages (package_pk) ON DELETE RESTRICT
+) ENGINE=InnoDB;
+
+DELIMITER //
+CREATE PROCEDURE create_offer(IN p_title VARCHAR(200), IN p_user VARCHAR(80), OUT o_offer_id BIGINT UNSIGNED, OUT o_offer_code CHAR(7))
+BEGIN
+    DECLARE v_next SMALLINT UNSIGNED;
+    START TRANSACTION;
+    SELECT next_value INTO v_next FROM offer_code_sequence WHERE id = 1 FOR UPDATE;
+    IF v_next > 9999 THEN
+        ROLLBACK;
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'offer codes exhausted (OF-9999): owner decision required';
+    END IF;
+    SET o_offer_code = CONCAT('OF-', LPAD(v_next, 4, '0'));
+    INSERT INTO offers (offer_code, title, created_by) VALUES (o_offer_code, p_title, p_user);
+    SET o_offer_id = LAST_INSERT_ID();
+    UPDATE offer_code_sequence SET next_value = v_next + 1 WHERE id = 1;
+    COMMIT;
+END//
+DELIMITER ;
+
+-- Historical records keep the offer that applied.
+ALTER TABLE enquiries  ADD COLUMN offer_code CHAR(7) NULL AFTER rate_version;
+ALTER TABLE quotations ADD COLUMN offer_code CHAR(7) NULL AFTER rate_version;
+ALTER TABLE payments   ADD COLUMN offer_code CHAR(7) NULL AFTER rate_version;
+ALTER TABLE bookings   ADD COLUMN offer_code CHAR(7) NULL AFTER rate_version;
