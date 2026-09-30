@@ -24,70 +24,54 @@
  */
 
 return array(
-    'domestic' => array(
-        'title' => 'Domestic',
-        // Owner rule (2026-09-30): at most 6-7 state/destination names in this column.
+    // Footer redesign (owner reference, 2026-09-30): Tours · Destinations · Company · Support (+ brand and Contact
+    // columns in the template). Only real pages are linked; items without a page show as plain text.
+    'tours' => array(
+        'title' => 'Tours',
+        'items' => array(
+            array('label' => 'Domestic Tours', 'url' => '/domestic-holidays'),
+            array('label' => 'International Tours', 'url' => '/international-holidays'),
+            array('label' => 'Inbound Tours', 'url' => '/india-tours', 'description' => 'India tours for travellers visiting from abroad.'),
+            array('label' => 'Pilgrimage Tours', 'url' => '/religious-tour'),
+            array('label' => 'Customised Tours', 'url' => '/customized-holidays'),
+            array('label' => 'Offers', 'url' => '/offers'),
+            array('label' => 'Search Packages', 'url' => '/tours'),
+        ),
+    ),
+    'destinations' => array(
+        'title' => 'Destinations',
         'items' => array(
             array('label' => 'Kashmir', 'url' => '/tours/kashmir'),
             array('label' => 'Himachal Pradesh', 'url' => '/tours/himachal'),
             array('label' => 'Uttarakhand', 'url' => '/tours/uttarakhand'),
             array('label' => 'Kerala', 'url' => '/tours/kerala'),
             array('label' => 'Goa', 'url' => '/tours/goa'),
-            array('label' => 'Leh Ladakh', 'url' => '/tours/ladakh'),
-            array('label' => 'Sikkim & Darjeeling', 'url' => '/tours/sikkim-darjeeling'),
-            array('label' => 'All domestic tours', 'url' => '/domestic-holidays'),
-        ),
-    ),
-    'international' => array(
-        'title' => 'International',
-        // Owner rule (2026-09-30): at most 6-7 country names in this column.
-        'items' => array(
-            array('label' => 'Dubai (UAE)', 'url' => '/tours/dubai'),
-            array('label' => 'Singapore', 'url' => '/tours/singapore-malaysia'),
-            array('label' => 'Malaysia', 'url' => '/tours/singapore-malaysia', 'description' => 'Singapore & Malaysia destination page (Kuala Lumpur itineraries).'),
-            array('label' => 'Thailand', 'url' => '/tours/singapore-malaysia', 'description' => 'Thailand is covered by the 9-day Singapore–Malaysia–Thailand itineraries on this page.'),
+            array('label' => 'Dubai', 'url' => '/tours/dubai'),
+            array('label' => 'Singapore & Malaysia', 'url' => '/tours/singapore-malaysia'),
             array('label' => 'Maldives', 'url' => '/tours/maldives'),
-            array('label' => 'Europe', 'url' => '', 'description' => 'No Europe packages yet.'),
-            array('label' => 'All international tours', 'url' => '/international-holidays'),
-        ),
-    ),
-    'inbound' => array(
-        'title' => 'Inbound',
-        'items' => array(
-            // Inbound pages are written for travellers visiting India from abroad.
-            // Do not point these at the domestic pages.
-            array('label' => 'India Tours for Foreign Travellers', 'url' => '/india-tours'),
-            array('label' => 'Rajasthan', 'url' => ''),
-            array('label' => 'Kerala', 'url' => ''),
-            array('label' => 'Kashmir', 'url' => ''),
-            array('label' => 'Golden Triangle', 'url' => ''),
-            array('label' => 'Cultural Tours', 'url' => ''),
-            array('label' => 'Customized India Tours', 'url' => ''),
         ),
     ),
     'company' => array(
         'title' => 'Company',
-        // Owner-specified order (2026-09-30). Pages without content show as plain text (no link).
         'items' => array(
             array('label' => 'About Us', 'url' => '/about'),
-            array('label' => 'Why Us?', 'url' => '/about#why-us', 'description' => 'The "Why choose us" section of the About page.'),
-            array('label' => 'Leadership', 'url' => '/leadership', 'description' => 'Shows as plain text (no link) until approved in page-status.php.'),
-            array('label' => 'Our Team', 'url' => '/our-team', 'description' => 'Shows as plain text (no link) until approved in page-status.php.'),
-            array('label' => 'Blog', 'url' => '', 'description' => 'No articles yet (blog.html was a template demo and now returns 404).'),
+            array('label' => 'Why Choose Us', 'url' => '/about#why-us', 'description' => 'The "Why choose us" section of the About page.'),
+            array('label' => 'Leadership', 'url' => '/leadership'),
+            array('label' => 'Our Team', 'url' => '/our-team'),
+            array('label' => 'Blog', 'url' => '', 'description' => 'No articles yet. Set a URL and remove status to show it.'),
             array('label' => 'Career', 'url' => '', 'description' => 'Needs current openings from the owner.'),
         ),
     ),
-    'legal' => array(
-        'title' => 'Legal & Support',
-        // Owner-specified order (2026-09-30). Pages awaiting approval show as plain text (no link).
+    'support' => array(
+        'title' => 'Support',
         'items' => array(
+            array('label' => 'FAQs', 'url' => '/faqs'),
             array('label' => 'Cancellation Policy', 'url' => '/cancellation-policy'),
             array('label' => 'Refund Policy', 'url' => '/refund-policy'),
             array('label' => 'Payment Policy', 'url' => '/payment-policy'),
-            array('label' => 'Payment Link', 'url' => '', 'description' => 'Set to the payment page or gateway link once online payment is configured.'),
             array('label' => 'Grievance Redress', 'url' => '/grievance-redress'),
+            array('label' => 'Payment Link', 'url' => '', 'description' => 'Set to the payment page or gateway link once online payment is configured.'),
             array('label' => 'Disclaimer', 'url' => '', 'description' => 'Needs disclaimer text (legal).'),
-            array('label' => 'Contact Us', 'url' => '/contact'),
         ),
     ),
 );
