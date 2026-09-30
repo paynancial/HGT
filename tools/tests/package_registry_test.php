@@ -1,10 +1,10 @@
 <?php
 /**
- * Unit tests for include/tour_registry.php and the committed registry data.
- * Run: php tools/tests/tour_registry_test.php   (exit code 0 = all passed)
+ * Unit tests for include/package_registry.php and the committed registry data.
+ * Run: php tools/tests/package_registry_test.php   (exit code 0 = all passed)
  */
 $_SERVER['HTTP_HOST'] = 'holidaygurutravel.in';   // behave like the live site (no preview)
-require __DIR__ . '/../../public_html/include/tour_registry.php';
+require __DIR__ . '/../../public_html/include/package_registry.php';
 
 $pass = 0; $fail = 0;
 function t($name, $ok, $detail = '')
@@ -15,9 +15,9 @@ function t($name, $ok, $detail = '')
 
 /* ---------- Committed registry integrity ---------- */
 $root = dirname(__DIR__, 2);
-$reg = json_decode(file_get_contents($root . '/public_html/include/data/tour-registry.json'), true);
+$reg = json_decode(file_get_contents($root . '/public_html/include/data/package-registry.json'), true);
 $pk = json_decode(file_get_contents($root . '/public_html/include/data/packages.json'), true);
-$nums = array_column($reg['entries'], 'tour_number');
+$nums = array_column($reg['entries'], 'package_id');
 $slugs = array_column($reg['entries'], 'slug');
 t('registry: every number is 4 digits, not 0000', count(array_filter($nums, function ($n) { return preg_match('/^(?!0000)\d{4}$/', $n); })) === count($nums));
 t('registry: numbers unique', count($nums) === count(array_unique($nums)));
@@ -28,23 +28,23 @@ $approved = array_filter($reg['entries'], function ($e) { return $e['status'] !=
 t('registry: nothing approved without owner sign-off (all proposed today)', count($approved) === 0, count($approved) . ' approved');
 
 /* ---------- Public display rules ---------- */
-hg_tr_json('tour-registry.json', array('entries' => array(
-    array('tour_number' => '0001', 'slug' => 'a', 'package_id' => '847', 'status' => 'approved'),
-    array('tour_number' => '0002', 'slug' => 'b', 'package_id' => '', 'status' => 'proposed'),
-    array('tour_number' => '0003', 'slug' => 'c', 'package_id' => '', 'status' => 'retired'),
-    array('tour_number' => '12', 'slug' => 'd', 'package_id' => '', 'status' => 'approved'),
+hg_tr_json('package-registry.json', array('entries' => array(
+    array('package_id' => '0001', 'slug' => 'a', 'internal_key' => '847', 'status' => 'approved'),
+    array('package_id' => '0002', 'slug' => 'b', 'internal_key' => '', 'status' => 'proposed'),
+    array('package_id' => '0003', 'slug' => 'c', 'internal_key' => '', 'status' => 'retired'),
+    array('package_id' => '12', 'slug' => 'd', 'internal_key' => '', 'status' => 'approved'),
 )));
-t('approved number shown', hg_tour_number('a') === '0001');
-t('proposed number hidden on the live site', hg_tour_number('b') === '');
-t('retired number still resolves (history)', hg_tour_number('c') === '0003');
-t('malformed number never shown', hg_tour_number('d') === '');
-t('unknown package: no number', hg_tour_number('zzz') === '');
-t('search by number (padded)', hg_tour_slug_by_number('1') === 'a' && hg_tour_slug_by_number('0001') === 'a');
-t('search by proposed number finds nothing publicly', hg_tour_slug_by_number('0002') === '');
-t('package_id from registry', hg_package_id('a') === '847');
-t('package_id fallback is the permanent slug key', hg_package_id('b') === 'slug:b');
+t('approved Package ID shown', hg_package_id('a') === '0001');
+t('proposed Package ID hidden on the live site', hg_package_id('b') === '');
+t('retired Package ID still resolves (history)', hg_package_id('c') === '0003');
+t('malformed Package ID never shown', hg_package_id('d') === '');
+t('unknown package: no Package ID', hg_package_id('zzz') === '');
+t('lookup by Package ID (padded)', hg_slug_by_package_id('1') === 'a' && hg_slug_by_package_id('0001') === 'a');
+t('lookup by proposed Package ID finds nothing publicly', hg_slug_by_package_id('0002') === '');
+t('internal key from registry', hg_package_key('a') === '847');
+t('internal key fallback is the permanent slug key', hg_package_key('b') === 'slug:b');
 $_SERVER['HTTP_HOST'] = 'localhost:8098';
-t('proposed number hidden on a local server without the preview switch', hg_tour_number('b') === '' || is_file($root . '/public_html/include/data/.preview-tour-numbers'));
+t('proposed Package ID hidden on a local server without the preview switch', hg_package_id('b') === '' || is_file($root . '/public_html/include/data/.preview-package-ids'));
 $_SERVER['HTTP_HOST'] = 'holidaygurutravel.in';
 
 /* ---------- Rates: versioning and validity ---------- */
@@ -73,10 +73,10 @@ t('Pay Now disabled while no gateway is connected', HG_PAYMENT_ENABLED === false
 
 /* ---------- Enquiry context ---------- */
 hg_tr_json('rates.json', array('versions' => array_map(function ($x) { $x['rate_valid_from'] = date('Y-m-d', strtotime('-1 day')); $x['rate_valid_until'] = date('Y-m-d', strtotime('+30 days')); return $x; }, array_slice($rates, 1, 1))));
-$ctx = hg_tour_enquiry_context('a');
-t('enquiry context: Tour No. + package ID + rate + version + validity', $ctx['Tour No.'] === '0001' && $ctx['Package ID'] === '847' && $ctx['Displayed rate'] === '₹23,999 / person' && $ctx['Rate version'] === '2' && $ctx['Rate validity'] !== '');
-$ctx = hg_tour_enquiry_context('b');
-t('enquiry context without rate: Price on request, no version', $ctx['Displayed rate'] === 'Price on request' && $ctx['Rate version'] === '' && $ctx['Tour No.'] === '');
+$ctx = hg_package_enquiry_context('a');
+t('enquiry context: Package ID + internal ref + rate + version + validity', $ctx['Package ID'] === '0001' && $ctx['Internal ref'] === '847' && $ctx['Displayed rate'] === '₹23,999 / person' && $ctx['Rate version'] === '2' && $ctx['Rate validity'] !== '');
+$ctx = hg_package_enquiry_context('b');
+t('enquiry context without rate: Price on request, no version', $ctx['Displayed rate'] === 'Price on request' && $ctx['Rate version'] === '' && $ctx['Package ID'] === '');
 
 /* ---------- Curation (internal) ---------- */
 hg_tr_json('curation.json', array('tours' => array('a' => array('priority_rank' => 1, 'homepage_featured' => true), 'b' => array('priority_rank' => 501), 'c' => array('priority_rank' => 0))));

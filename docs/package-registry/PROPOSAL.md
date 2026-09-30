@@ -90,8 +90,8 @@ We do not have `admin/db.php`, the admin code or a database dump. So we cannot t
 
 **Keys (rules 3 and 7)**
 
-- `packages.package_id` is a BIGINT auto-increment and serves as the internal relational key. All foreign keys use it.
-- `packages.tour_number` is `CHAR(4)`, NOT NULL and UNIQUE, with a CHECK of `^[0-9]{4}$` that excludes `0000`.
+- `packages.package_pk` is a BIGINT auto-increment and serves as the internal relational key. All foreign keys use it.
+- `packages.package_id` is `CHAR(4)`, NOT NULL and UNIQUE, with a CHECK of `^[0-9]{4}$` that excludes `0000`.
   - It is stored as a string so the leading zeros are kept. "0001" is never the integer 1.
 
 **Issuing numbers**
@@ -106,7 +106,7 @@ We do not have `admin/db.php`, the admin code or a database dump. So we cannot t
 
 **Permanence**
 
-`tour_number_registry` is an append-only ledger. Triggers enforce these rules:
+`package_id_registry` is an append-only ledger. Triggers enforce these rules:
 
 | Action | Result |
 |---|---|
@@ -129,7 +129,7 @@ A number is therefore never reused, even after retirement. This is tested: after
 
 **Search (rule 33)**
 
-- The CMS and CRM can search by `tour_number` (unique index), name, destination and type.
+- The CMS and CRM can search by `package_id` (unique index), name, destination and type.
 
 **Before the database exists (interim)**
 
@@ -239,7 +239,7 @@ It is live only when all of these hold:
 
 **Flow once a gateway is chosen**
 
-1. The browser sends `package_id`, `rate_id`, `rate_version`, date and travellers.
+1. The browser sends `package_pk`, `rate_id`, `rate_version`, date and travellers.
 2. The server reloads the active rate. If the version differs from what the customer saw, it shows "The price has changed from ₹X to ₹Y — please confirm" (rule 37).
 3. The server computes the amount itself and never trusts an amount from the browser.
 4. It collects the customer's name, phone and email, and shows a summary of what is being paid for.
@@ -264,7 +264,7 @@ Enquire Now uses the existing `mail.php` workflow. There is no separate system.
 | Field sent | Value |
 |---|---|
 | `enquiry_type` | `Tour Package Enquiry` (automatic) |
-| `tour_number` | e.g. `0025`, only once approved and in the registry |
+| `package_id` | e.g. `0025`, only once approved and in the registry |
 | `package` | Package name (automatic) |
 | `package_url` | Canonical package URL |
 | `destination`, `travel_date`, `adults`, `children`, `departure_city` | From the search context (already carried today) |
@@ -286,25 +286,25 @@ Until numbers are approved, the message names the package without a number.
 
 **Analytics**
 
-- Events: `package_view`, `enquiry_start`, `enquiry_submit` and `pay_now_start`, with `tour_number` and `package_slug` only.
+- Events: `package_view`, `enquiry_start`, `enquiry_submit` and `pay_now_start`, with `package_id` and `package_slug` only.
 - No names, phone numbers or emails are sent.
 - Events are sent only after cookie consent. This already exists in `hgTrack`.
 
 ## H. CRM data mapping (rules 4, 7–9, 28, 39)
 
-Each stage keeps `package_id` (the key), `tour_number` and a `package_name` snapshot. Later renames and price changes therefore never alter history (tested).
+Each stage keeps `package_pk` (the key), `package_id` and a `package_name` snapshot. Later renames and price changes therefore never alter history (tested).
 
 1. **Enquiry.** `enquiries` stores the reference, type, package, the rate version and price displayed, trip context, customer and UTM.
 2. **Quotation.** `quotations` stores the reference, enquiry, package, rate id/version and `rate_updated_at`, date, travellers, amount, breakdown (JSON), validity and status.
 3. **Payment.** `payments` stores the fields listed in F.
 4. **Booking.** `bookings` is a later phase and links to quotation and payment the same way.
 
-Reporting by package number is a GROUP BY `tour_number` across these tables, giving enquiries, quotes, bookings, revenue and source.
+Reporting by package number is a GROUP BY `package_id` across these tables, giving enquiries, quotes, bookings, revenue and source.
 
 Example enquiry payload:
 
 ```json
-{"enquiry_type":"tour_package","package_id":847,"tour_number":"0025",
+{"enquiry_type":"tour_package","package_pk":847,"package_id":"0025",
  "package_name":"Srinagar Gulmarg Pahalgam Tour Package","package_url":"https://www.holidaygurutravel.in/srinagar-gulmarg-pahalgam-tour-package-5-days",
  "rate_version":null,"displayed_price":null,"displayed_price_label":"Price on request",
  "destination":"Kashmir","travel_date":"2026-10-15","adults":2,"children":0,"departure_city":"Delhi",
@@ -383,11 +383,14 @@ The itinerary and detailed content follow below.
 
 ## Update (30 Sep 2026): Top Tour Packages brief
 
-- **Terminology decided:** public label "Tour No. 0001". The schema column is now `tour_number` (tables `tour_number_sequence` and `tour_number_registry`).
-- **Numbering starts at 0001.** The proposed mapping for the 107 current packages is in [TOUR-NUMBER-MAPPING.md](TOUR-NUMBER-MAPPING.md). It awaits approval.
+- **Terminology decided (owner, 30 Sep 2026):** the business identifier is the **Package ID** (e.g. "Package ID 0001"). It replaces "Tour No." / "package number".
+  - The schema column is `package_id` CHAR(4) (tables `package_id_sequence` and `package_id_registry`). The internal relational key is renamed `package_pk`.
+  - One sequence covers every package type: domestic, international, special and offer packages.
+  - On the website the Package ID is shown **only in the itinerary header**. It is carried in enquiries, WhatsApp messages, CRM search, quotations, payments and bookings.
+- **Numbering starts at 0001.** The proposed mapping for the 107 current packages is in [PACKAGE-ID-MAPPING.md](PACKAGE-ID-MAPPING.md). It awaits approval.
 - **Built on staging:**
-  - an interim file-based registry, rates and curation (`public_html/include/tour_registry.php`);
-  - approved-only Tour No. display;
+  - an interim file-based registry, rates and curation (`public_html/include/package_registry.php`);
+  - approved-only Package ID display;
   - rate validity and versions;
   - the Pay Now gate;
   - enquiry context derived on the server;

@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Owner review pack for the proposed Tour Numbers (no assignment is made).
+"""Owner review pack for the proposed Package IDs (no assignment is made).
 
-Reads   public_html/include/data/packages.json, tour-registry.json, destinations.json
-Writes  docs/top-tours/FINAL-TOUR-NUMBER-MAPPING.md
-        docs/top-tours/TOUR-NUMBER-MAPPING-FINAL.csv   (Approval Status = PENDING for every row)
+Reads   public_html/include/data/packages.json, package-registry.json, destinations.json
+Writes  docs/top-tours/FINAL-PACKAGE-ID-MAPPING.md
+        docs/top-tours/PACKAGE-ID-MAPPING-FINAL.csv   (Approval Status = PENDING for every row)
 
 Evidence per pair: itinerary text similarity, inclusion similarity, trip length, start city,
 hotel category, meal plan. "Suggested action" is a suggestion only; the owner decides.
@@ -12,13 +12,13 @@ import csv, difflib, itertools, json, os, re
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(ROOT, 'public_html', 'include', 'data')
-OUT_MD = os.path.join(ROOT, 'docs', 'top-tours', 'FINAL-TOUR-NUMBER-MAPPING.md')
-OUT_CSV = os.path.join(ROOT, 'docs', 'top-tours', 'TOUR-NUMBER-MAPPING-FINAL.csv')
+OUT_MD = os.path.join(ROOT, 'docs', 'top-tours', 'FINAL-PACKAGE-ID-MAPPING.md')
+OUT_CSV = os.path.join(ROOT, 'docs', 'top-tours', 'PACKAGE-ID-MAPPING-FINAL.csv')
 
 pk = {p['slug']: p for p in json.load(open(os.path.join(DATA, 'packages.json'), encoding='utf-8'))}
-reg = json.load(open(os.path.join(DATA, 'tour-registry.json'), encoding='utf-8'))['entries']
+reg = json.load(open(os.path.join(DATA, 'package-registry.json'), encoding='utf-8'))['entries']
 gname = {g['key']: g['name'] for g in json.load(open(os.path.join(DATA, 'destinations.json'), encoding='utf-8'))['groups']}
-num = {e['slug']: e['tour_number'] for e in reg}
+num = {e['slug']: e['package_id'] for e in reg}
 assert all(e['status'] == 'proposed' for e in reg), 'registry already has approved numbers; this pack is for the first approval only'
 
 
@@ -107,7 +107,7 @@ def assess(a, b):
     elif da == db and it >= 0.7 and inc >= 0.95:
         action, why = 'REVIEW', 'Same length and inclusions, with very similar day plans; any difference (e.g. hotel class) is not stated on the pages.'
     elif da != db:
-        action, why = 'KEEP', 'Different trip length; each can carry its own Tour No.'
+        action, why = 'KEEP', 'Different trip length; each can carry its own Package ID'
     elif diffs:
         action, why = 'KEEP', 'Same length but ' + ', '.join(diffs) + '.'
     else:
@@ -160,7 +160,7 @@ order = sorted(pk, key=lambda s: num[s])
 # ---------- CSV ----------
 with open(OUT_CSV, 'w', newline='', encoding='utf-8') as fh:
     w = csv.writer(fh)
-    w.writerow(['Tour No.', 'Package ID', 'Package Name', 'Destination', 'Duration', 'URL', 'Status', 'Approval Status', 'Notes'])
+    w.writerow(['Package ID', 'Internal ref', 'Package Name', 'Destination', 'Duration', 'URL', 'Status', 'Approval Status', 'Notes'])
     for s in order:
         p = pk[s]
         notes = []
@@ -176,11 +176,11 @@ with open(OUT_CSV, 'w', newline='', encoding='utf-8') as fh:
 # ---------- Markdown ----------
 pct = lambda v: '—' if v is None else f'{round(v * 100)}%'
 L = []
-L.append('# Tour No.: final mapping for owner approval')
+L.append('# Package ID: final mapping for owner approval')
 L.append('')
 L.append('**Status: PROPOSED. No number is assigned.**')
 L.append('- Nothing is migrated, deployed or published.')
-L.append('- The live website shows no Tour No. until you approve.')
+L.append('- The live website shows no Package ID until you approve.')
 L.append('- Built at commit `ce5339f` or later.')
 L.append('')
 L.append(f'**Numbers proposed:** {len(order)} ({num[order[0]]} to {num[order[-1]]}), one per current package.')
@@ -191,8 +191,8 @@ L.append(f'- {sum(1 for s in pk if issues[s])} rows with page-data problems.')
 L.append(f'- {len(same_title)} rows whose title is the same as, or nearly the same as, another tour.')
 L.append('')
 L.append('**Files:**')
-L.append('- Machine-readable sheet: [`TOUR-NUMBER-MAPPING-FINAL.csv`](TOUR-NUMBER-MAPPING-FINAL.csv). Every row has Approval Status **PENDING**.')
-L.append('- Generator: `tools/tour_number_review.py`. It re-runs from the package data, so every figure below comes from the pages themselves.')
+L.append('- Machine-readable sheet: [`PACKAGE-ID-MAPPING-FINAL.csv`](PACKAGE-ID-MAPPING-FINAL.csv). Every row has Approval Status **PENDING**.')
+L.append('- Generator: `tools/package_id_review.py`. It re-runs from the package data, so every figure below comes from the pages themselves.')
 L.append('')
 L.append('## How to decide')
 L.append('')
@@ -200,7 +200,7 @@ L.append('Write one of these in the **Owner Decision** column of the decision ta
 L.append('')
 L.append('| Decision | Meaning |')
 L.append('|---|---|')
-L.append('| **APPROVED** | The tour gets its proposed Tour No. permanently. |')
+L.append('| **APPROVED** | The tour gets its proposed Package ID permanently. |')
 L.append('| **MERGED** | The tour is combined into another tour. It gets no active number. Its URL redirects (301) to the kept tour, and the merge is recorded. |')
 L.append('| **RETIRED** | The tour is withdrawn. Its URL redirects to its destination page. Its proposed number is reserved and never given to another tour without your approval. |')
 L.append('| **PENDING** | Not decided yet. It gets no number. |')
@@ -221,10 +221,10 @@ L.append('')
 # Section 1: full table
 L.append('## 1. Complete mapping')
 L.append('')
-L.append('- **Existing Package ID:** the website has no database ID for these pages; the old database was not provided. The permanent interim key is `slug:<page URL>`. It becomes a numeric `package_id` when the CMS database is created, with the same Tour No.')
+L.append('- **Internal ref:** the website has no database key for these pages; the old database was not provided. The interim internal key is `slug:<page URL>`. It becomes the database internal key (`package_pk`) when the CMS database is created. The Package ID stays the same.')
 L.append('- **Current Status:** every tour is a published static page with no approved rate (Price on request).')
 L.append('')
-L.append('| Proposed Tour No. | Existing Package ID | Package Name | Destination | Duration | Current URL | Current Status | Overlap Flag | Recommended Review Action |')
+L.append('| Proposed Package ID | Internal ref | Package Name | Destination | Duration | Current URL | Current Status | Overlap Flag | Recommended Review Action |')
 L.append('|---|---|---|---|---|---|---|---|---|')
 for s in order:
     p = pk[s]
@@ -264,7 +264,7 @@ for i, x in enumerate(assessed, 1):
 L.append('## 2b. Other records to check (not flagged as overlaps)')
 L.append('')
 L.append('**Page-data problems.**')
-L.append('- The Tour No. does not depend on these fields, so numbering can go ahead.')
+L.append('- The Package ID does not depend on these fields, so numbering can go ahead.')
 L.append('- Correcting them later does not change the number.')
 L.append('- Where a problem changes *which trip the page is*, it is marked REVIEW.')
 L.append('')
@@ -274,7 +274,7 @@ for s in order:
     if issues[s]:
         L.append(f'| {num[s]} | {name(pk[s])} (`{pk[s]["url"]}`) | {"; ".join(issues[s])} | {suggested(s)} |')
 L.append('')
-L.append('**Same or near-same titles.** These are different trips (different lengths or places) with names that are hard to tell apart. Consider adding the length or route to the name. Renaming never changes the Tour No.')
+L.append('**Same or near-same titles.** These are different trips (different lengths or places) with names that are hard to tell apart. Consider adding the length or route to the name. Renaming never changes the Package ID')
 L.append('')
 L.append('| Titles | Tours |')
 L.append('|---|---|')
@@ -307,7 +307,7 @@ L.append('## 4. Rules for merged and retired tours')
 L.append('')
 L.append('Every merge or retirement is recorded with these fields:')
 L.append('')
-L.append('| Old package | Old Tour No. (if assigned) | Retained package | Final Tour No. | Redirect / archive |')
+L.append('| Old package | Old Package ID (if assigned) | Retained package | Final Package ID | Redirect / archive |')
 L.append('|---|---|---|---|---|')
 L.append('| `slug:…` | — (none assigned yet) | `slug:…` | the retained tour\'s number | 301 from the old URL to the retained tour; old record kept as archived |')
 L.append('')
@@ -324,7 +324,7 @@ L.append('')
 L.append('## 5. After approval: migration plan (not run)')
 L.append('')
 L.append('1. **Freeze.** Your decisions are copied into the CSV (APPROVED / MERGED / RETIRED / PENDING) and committed. That commit is the approval record.')
-L.append('2. **Interim registry.** In `tour-registry.json`:')
+L.append('2. **Interim registry.** In `package-registry.json`:')
 L.append('   - APPROVED rows change from `proposed` to `approved`;')
 L.append('   - MERGED and RETIRED rows are recorded with their disposition;')
 L.append('   - PENDING rows stay `proposed`, so they get no public number.')
@@ -334,22 +334,22 @@ L.append('4. **Database** (when the CMS is built). A single transaction calls `c
 L.append('   - The counter is locked with `SELECT … FOR UPDATE`; it never uses `MAX()+1`.')
 L.append('   - Safeguards:')
 L.append('     - unique and four-digit constraints;')
-L.append('     - an append-only `tour_number_registry` as the audit trail;')
+L.append('     - an append-only `package_id_registry` as the audit trail;')
 L.append('     - `package_audit` rows for each change.')
 L.append('   - **Rollback:** run on a copy first. If any check fails, the transaction is rolled back and nothing is kept. After a successful run, the pre-migration database backup is kept until you sign off.')
-L.append('5. **Retest** (section 6). Then Tour No. goes live with the next approved deployment.')
+L.append('5. **Retest** (section 6). Then Package ID goes live with the next approved deployment.')
 L.append('')
 L.append('## 6. Tests to run after assignment')
 L.append('')
 L.append('| Check | How it is tested |')
 L.append('|---|---|')
 for c, t in [
-    ('All active tours have a unique Tour No.; no duplicates', 'tools/tests/tour_registry_test.php (registry integrity); DB unique constraint'),
+    ('All active tours have a unique Package ID; no duplicates', 'tools/tests/package_registry_test.php (registry integrity); DB unique constraint'),
     ('Retired numbers stay reserved', 'registry_test.php: retire 0001, next package gets 0003'),
-    ('Name, URL, price and itinerary changes do not change the Tour No.', 'registry_test.php (rename, slug change, new rate version); an extra check will compare the approved snapshot'),
-    ('Search by Tour No. works', 'tour.js: "0002" and "Tour No. 0002" open the tour'),
-    ('Enquiry, WhatsApp and itinerary show the Tour No.', 'tour.js (live mode once approved)'),
-    ('CRM and payment payloads carry the Tour No.', 'registry_test.php: enquiry, payment and booking rows'),
+    ('Name, URL, price and itinerary changes do not change the Package ID', 'registry_test.php (rename, slug change, new rate version); an extra check will compare the approved snapshot'),
+    ('Search by Package ID works', 'tour.js: "0002" and "Package ID 0002" open the tour'),
+    ('Enquiry, WhatsApp and itinerary show the Package ID', 'tour.js (live mode once approved)'),
+    ('CRM and payment payloads carry the Package ID', 'registry_test.php: enquiry, payment and booking rows'),
     ('Historical records stay traceable', 'registry_test.php: payment keeps name, rate and number after a rename'),
     ('No public inventory counts', 'counts.py page scan'),
 ]:
@@ -359,20 +359,21 @@ L.append('')
 # Section 7: gate items not yet built
 L.append('## 7. Gate items still open (need your go-ahead; not built at this stage)')
 L.append('')
-L.append('**Offer codes (gate items 11 and 16)**')
-L.append('- There are no offers yet, so enquiries do not carry an Offer Code.')
-L.append('- Proposed design:')
-L.append('  - a separate `offers` table with its own sequence, `OF-0001` onwards, never shared with Tour No.;')
-L.append('  - an `offer_tours` link table, so one tour can have many offers;')
+L.append('**Offer packages and offer codes (gate items 11 and 16)**')
+L.append('- **Offer packages** (a package sold as an offer) get a Package ID from the **same single sequence** as domestic, international and special packages, so no two packages ever share an ID.')
+L.append('- **Offer codes** (a discount or promotion applied to a package) are a different thing. If you use them, they need their own format so they are never confused with a Package ID. Proposed:')
+L.append('  - an `offers` table with codes `OF-0001` onwards;')
+L.append('  - an `offer_packages` link table, so one package can have several offers;')
 L.append('  - `offer_code` stored on enquiry, quotation, payment and booking records, so history keeps the offer that applied.')
+L.append('- There are no offers yet, so enquiries do not carry an offer code. Not built until you confirm you want promo codes.')
 L.append('')
 L.append('**Selected add-ons (gate item 11)**')
 L.append('- No add-ons are defined yet.')
 L.append('- Proposed: optional add-ons attached to a rate version (`package_rate_items`, kind `addon`), with the selected ones sent in the enquiry.')
 L.append('')
-L.append('**Tour No. prominence (gate item 9):** verified. The label is a small uppercase line (13 px); the tour name is the 40 px heading.')
+L.append('**Where the Package ID shows (owner decision, 30 Sep):** only in the itinerary header on the package page. It is not shown on cards, the title area, breadcrumbs or search suggestions. It is carried in enquiry emails, WhatsApp messages and CRM, quotation and payment records.')
 L.append('')
-L.append('**Search by Tour No. (gate item 10):** verified. The search redirects (302) to the tour\'s own canonical URL, and `/tours?…` search URLs are noindex. No duplicate indexable URLs are created.')
+L.append('**Search by Package ID (gate item 10):** verified. The search redirects (302) to the tour\'s own canonical URL, and `/tours?…` search URLs are noindex. No duplicate indexable URLs are created.')
 L.append('')
 
 os.makedirs(os.path.dirname(OUT_MD), exist_ok=True)

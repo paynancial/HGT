@@ -1,25 +1,27 @@
 <?php
 /**
- * Tour registry: permanent Tour No., versioned rates and internal curation.
+ * Package registry: permanent Package ID, versioned rates and internal curation.
  *
  * Interim, file-based stand-in for the CMS tables in docs/package-registry/schema-draft.sql.
  * Same fields and rules, so the data moves into the database later unchanged.
  *
- *   include/data/tour-registry.json   Tour No. ↔ package (append-only; status proposed|approved|retired)
- *   include/data/rates.json           one row per price version (manually maintained)
- *   include/data/curation.json        internal merchandising (priority_rank 1–500 etc.) — never shown publicly
+ *   include/data/package-registry.json  Package ID ↔ package (append-only; status proposed|approved|retired).
+ *                                       One sequence (0001…) for every package type: domestic,
+ *                                       international, special and offer packages — no duplicates.
+ *   include/data/rates.json             one row per price version (manually maintained)
+ *   include/data/curation.json          internal merchandising (priority_rank 1–500 etc.) — never shown publicly
  *
- * Public pages show a Tour No. only once its mapping is 'approved' (or 'retired', for history).
- * 'proposed' numbers are visible only on local test servers when preview is switched on
- * (HG_TOUR_NO_PREVIEW), so screenshots can show the layout before approval.
+ * Owner rule: the Package ID is shown on the website only in the itinerary header, and is carried
+ * in enquiries, WhatsApp messages and CRM/quotation records. Only 'approved' (or 'retired', for
+ * history) IDs are shown; 'proposed' IDs appear only on local test servers with the preview switch on.
  */
 require_once __DIR__ . '/site_config.php';
 
-if (!defined('HG_TOUR_REGISTRY')) {
-    define('HG_TOUR_REGISTRY', true);
+if (!defined('HG_PACKAGE_REGISTRY')) {
+    define('HG_PACKAGE_REGISTRY', true);
 
     if (!defined('HG_PAYMENT_ENABLED')) {
-        // Pay Now is live only when a payment gateway is connected AND the tour has a current rate.
+        // Pay Now is live only when a payment gateway is connected AND the package has a current rate.
         define('HG_PAYMENT_ENABLED', false);
     }
 
@@ -37,61 +39,61 @@ if (!defined('HG_TOUR_REGISTRY')) {
     }
 
     /** True on local test servers with the preview switch on; never on the live site. */
-    function hg_tour_no_preview()
+    function hg_package_id_preview()
     {
         $host = isset($_SERVER['HTTP_HOST']) ? strtolower($_SERVER['HTTP_HOST']) : '';
         $local = (bool) preg_match('/^(localhost|127\.0\.0\.1)(:\d+)?$/', $host);
-        return $local && is_file(__DIR__ . '/data/.preview-tour-numbers');
+        return $local && is_file(__DIR__ . '/data/.preview-package-ids');
     }
 
     /** Registry entry for a package slug, or null. */
-    function hg_tour_entry($slug)
+    function hg_package_entry($slug)
     {
         static $map = null, $src = null;
-        $reg = hg_tr_json('tour-registry.json');
+        $reg = hg_tr_json('package-registry.json');
         if ($src !== $reg) {
             $src = $reg;
             $map = array();
             foreach (isset($reg['entries']) ? $reg['entries'] : array() as $e) {
-                if (isset($e['slug'], $e['tour_number'], $e['status'])) $map[$e['slug']] = $e;
+                if (isset($e['slug'], $e['package_id'], $e['status'])) $map[$e['slug']] = $e;
             }
         }
         return isset($map[$slug]) ? $map[$slug] : null;
     }
 
-    /** Public Tour No. ("0001") for a package slug, or '' when none is approved. */
-    function hg_tour_number($slug)
+    /** Public Package ID ("0001") for a package slug, or '' when none is approved. */
+    function hg_package_id($slug)
     {
-        $e = hg_tour_entry($slug);
-        if (!$e || !preg_match('/^(?!0000)[0-9]{4}$/', (string) $e['tour_number'])) return '';
-        if (in_array($e['status'], array('approved', 'retired'), true)) return $e['tour_number'];
-        if ($e['status'] === 'proposed' && hg_tour_no_preview()) return $e['tour_number'];
+        $e = hg_package_entry($slug);
+        if (!$e || !preg_match('/^(?!0000)[0-9]{4}$/', (string) $e['package_id'])) return '';
+        if (in_array($e['status'], array('approved', 'retired'), true)) return $e['package_id'];
+        if ($e['status'] === 'proposed' && hg_package_id_preview()) return $e['package_id'];
         return '';
     }
 
-    /** Whether the shown number is only a proposal (preview on a test server). */
-    function hg_tour_number_is_proposed($slug)
+    /** Whether the shown Package ID is only a proposal (preview on a test server). */
+    function hg_package_id_is_proposed($slug)
     {
-        $e = hg_tour_entry($slug);
-        return $e && $e['status'] === 'proposed' && hg_tour_number($slug) !== '';
+        $e = hg_package_entry($slug);
+        return $e && $e['status'] === 'proposed' && hg_package_id($slug) !== '';
     }
 
-    /** Slug for a public Tour No. (search by number), or ''. */
-    function hg_tour_slug_by_number($number)
+    /** Slug for a Package ID (search / CRM lookup by ID), or ''. */
+    function hg_slug_by_package_id($id)
     {
-        $number = str_pad(preg_replace('/\D/', '', (string) $number), 4, '0', STR_PAD_LEFT);
-        $reg = hg_tr_json('tour-registry.json');
+        $id = str_pad(preg_replace('/\D/', '', (string) $id), 4, '0', STR_PAD_LEFT);
+        $reg = hg_tr_json('package-registry.json');
         foreach (isset($reg['entries']) ? $reg['entries'] : array() as $e) {
-            if ($e['tour_number'] === $number && hg_tour_number($e['slug']) === $number) return $e['slug'];
+            if ($e['package_id'] === $id && hg_package_id($e['slug']) === $id) return $e['slug'];
         }
         return '';
     }
 
-    /** Internal package_id. Until the database exists this is the package's permanent slug key. */
-    function hg_package_id($slug)
+    /** Internal database key (never shown publicly). Until the database exists it is the permanent slug key. */
+    function hg_package_key($slug)
     {
-        $e = hg_tour_entry($slug);
-        return $e && !empty($e['package_id']) ? (string) $e['package_id'] : 'slug:' . $slug;
+        $e = hg_package_entry($slug);
+        return $e && !empty($e['internal_key']) ? (string) $e['internal_key'] : 'slug:' . $slug;
     }
 
     /**
@@ -153,15 +155,15 @@ if (!defined('HG_TOUR_REGISTRY')) {
     }
 
     /**
-     * Server-side tour context for an enquiry, built only from our own data
-     * (never from submitted text): Tour No., package ID, rate shown and its version/validity.
+     * Server-side package context for an enquiry, built only from our own data
+     * (never from submitted text): Package ID, internal key, rate shown and its version/validity.
      */
-    function hg_tour_enquiry_context($slug)
+    function hg_package_enquiry_context($slug)
     {
         $rate = hg_current_rate($slug);
         return array(
-            'Tour No.' => hg_tour_number($slug),
             'Package ID' => hg_package_id($slug),
+            'Internal ref' => hg_package_key($slug),
             'Displayed rate' => $rate ? hg_rate_label($rate) : 'Price on request',
             'Rate version' => $rate ? (string) $rate['version'] : '',
             'Rate validity' => $rate ? hg_rate_validity($rate) : '',

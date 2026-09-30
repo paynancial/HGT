@@ -213,10 +213,10 @@ def main():
     # Lightweight index for the site search / autocomplete (public data only)
     # No inventory totals in the public index (owner rule: never expose package counts).
     has = {p['group'] for p in pkgs}
-    # Only approved (or retired) Tour Numbers are public and searchable.
-    reg_path = os.path.join(os.path.dirname(OUT), 'tour-registry.json')
+    # Only approved (or retired) Package IDs are searchable (matched in search, not displayed).
+    reg_path = os.path.join(os.path.dirname(OUT), 'package-registry.json')
     reg = json.load(open(reg_path, encoding='utf-8')) if os.path.exists(reg_path) else {'entries': []}
-    tour_no = {e['slug']: e['tour_number'] for e in reg.get('entries', []) if e.get('status') in ('approved', 'retired')}
+    tour_no = {e['slug']: e['package_id'] for e in reg.get('entries', []) if e.get('status') in ('approved', 'retired')}
     index = {
         'groups': [{'key': g['key'], 'name': g['name'], 'region': g['region'], 'area': g['area'],
                     'url': g['hub_url'], 'keywords': g['keywords']}

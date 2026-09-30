@@ -8,8 +8,8 @@
  *
  * Everything shown comes from the package's own page data (include/data/packages.json)
  * and, for destination context, include/content/{destination}.php.
- * Tour No., rate and Pay Now come from include/tour_registry.php:
- *   - Tour No. shows once its mapping is approved (docs/package-registry/TOUR-NUMBER-MAPPING.md)
+ * Package ID, rate and Pay Now come from include/package_registry.php:
+ *   - Package ID shows only in the itinerary header, once approved (docs/package-registry/PACKAGE-ID-MAPPING.md)
  *   - the rate shows only while an approved rate version is valid; otherwise "Price on request"
  *   - Pay Now is active only with a current rate AND a connected payment gateway
  */
@@ -123,7 +123,7 @@ if (!function_exists('hg_render_package')) {
             if (preg_match('/gst|extra adult|advance|mode of payment|air\/ ?train tickets/i', $t)) $priceFacts[] = $t;
         }
 
-        $tourNo = hg_tour_number($p['slug']);
+        $pkgId = hg_package_id($p['slug']);
         $rate = hg_current_rate($p['slug']);
         $payNow = hg_paynow_enabled($p['slug']);
         $rateLabel = $rate ? hg_rate_label($rate) : 'Price on request';
@@ -134,7 +134,7 @@ if (!function_exists('hg_render_package')) {
         if ($S['date']) $ctx['Travel date'] = hg_date_label($S['date']);
         if ($S['has_travellers']) $ctx['Travellers'] = $S['adults'] . ' adult' . ($S['adults'] > 1 ? 's' : '') . ($S['children'] ? ', ' . $S['children'] . ' child' . ($S['children'] > 1 ? 'ren' : '') : '');
         if ($S['departure']) $ctx['Departure city'] = ucfirst($S['departure']);
-        $wa = "Hi Holiday Guru Travel,\n\nI am interested in " . ($tourNo ? 'Tour No. ' . $tourNo . ' – ' . $name : 'the ' . $name) . ' (' . $p['duration'] . ").\n";
+        $wa = "Hi Holiday Guru Travel,\n\nI am interested in " . ($pkgId ? 'Package ID ' . $pkgId . ' – ' . $name : 'the ' . $name) . ' (' . $p['duration'] . ").\n";
         foreach ($ctx as $k => $v) $wa .= "\n" . $k . ":\n" . $v . "\n";
         $wa .= "\nPlease share the current rate, inclusions, exclusions and availability.";
 
@@ -160,20 +160,15 @@ if (!function_exists('hg_render_package')) {
             $crumbs[] = $g['region'] === 'india' ? array('Domestic', '/domestic-holidays') : array('International', '/international-holidays');
             $crumbs[] = array($g['name'] . ' Tour Packages', $g['hub_url']);
         }
-        if ($tourNo) {
-            $crumbs[] = array($name, $url);
-            $crumbs[] = array('Tour No. ' . $tourNo, null);
-        } else {
-            $crumbs[] = array($name, null);
-        }
+        $crumbs[] = array($name, null);
 
         $trip = array(
             '@type' => 'TouristTrip', 'name' => $name, 'description' => $p['description'], 'url' => hg_abs($url),
             'image' => hg_abs($p['image']), 'touristType' => array('Leisure'),
             'provider' => array('@id' => HG_SITE_URL . '/#organization'),
         );
-        // Only visible, true facts: the Tour No. once approved, and an Offer only for a current approved rate.
-        if ($tourNo && !hg_tour_number_is_proposed($p['slug'])) $trip['identifier'] = array('@type' => 'PropertyValue', 'name' => 'Tour No.', 'value' => $tourNo);
+        // Only visible, true facts: the Package ID (shown in the itinerary) once approved, and an Offer only for a current approved rate.
+        if ($pkgId && !hg_package_id_is_proposed($p['slug'])) $trip['identifier'] = array('@type' => 'PropertyValue', 'name' => 'Package ID', 'value' => $pkgId);
         if ($rate) {
             $trip['offers'] = array('@type' => 'Offer', 'price' => (string) $rate['base_price'], 'priceCurrency' => $rate['currency'],
                 'validFrom' => $rate['rate_valid_from'], 'priceValidUntil' => $rate['rate_valid_until'], 'url' => hg_abs($url));
@@ -201,7 +196,6 @@ if (!function_exists('hg_render_package')) {
             <?= hg_img($p['image'], $name, 760, 480, 'hg-pkghead__img', true) ?>
         </div>
         <div class="hg-pkghead__summary">
-            <?= $tourNo ? hg_tourno_html($p['slug'], 'hg-tourno hg-tourno--head') : hg_dev_note('Tour No. appears here once the owner approves the Tour No. mapping (docs/package-registry/TOUR-NUMBER-MAPPING.md).') ?>
             <?php if ($p['features']) { ?><p class="hg-pkghead__badges"><?php foreach (array_slice($p['features'], 0, 2) as $f) { ?><span><?= hg_e($f) ?></span><?php } ?></p><?php } ?>
             <h1 class="hg-pkghead__title" id="pkg-title"><?= hg_e($name) ?></h1>
             <p class="hg-pkghead__meta"><strong><?= hg_e($p['duration']) ?></strong><?php if ($route) { ?> <span aria-hidden="true">·</span> <?= hg_e(implode($routeKnown ? ' – ' : ', ', $route)) ?><?php } ?></p>
@@ -262,7 +256,7 @@ if (!function_exists('hg_render_package')) {
         <section class="hg-pkgsec" id="itinerary" aria-labelledby="it-title">
             <h2 class="hg-h2" id="it-title">Day-wise itinerary</h2>
             <dl class="hg-ithead" aria-label="Tour reference">
-                <?php if ($tourNo) { ?><div><dt>Tour No.</dt><dd><?= hg_e($tourNo) ?></dd></div><?php } ?>
+                <?php if ($pkgId) { ?><div class="hg-ithead__id"><dt>Package ID</dt><dd><?= hg_e($pkgId) ?><?= hg_package_id_is_proposed($p['slug']) ? ' <span class="hg-pkgid__flag">Proposed · preview only</span>' : '' ?></dd></div><?php } ?>
                 <div class="hg-ithead__tour"><dt>Tour</dt><dd><?= hg_e($name) ?></dd></div>
                 <div><dt>Duration</dt><dd><?= hg_e($p['duration']) ?></dd></div>
                 <div><dt>Destination</dt><dd><?= hg_e($g ? $g['name'] : implode(', ', $p['places'])) ?></dd></div>
@@ -340,7 +334,7 @@ if (!function_exists('hg_render_package')) {
                     <p class="hg-pricebox__label"><?= $rate ? 'Current rate' : 'Package price' ?></p>
                     <p class="hg-pricebox__value"><?= hg_e($rateLabel) ?></p>
                     <?php if ($rate) { ?>
-                    <p class="hg-muted">Rate valid: <strong><?= hg_e($rateValid) ?></strong><?= $tourNo ? ' · Tour No. ' . hg_e($tourNo) : '' ?> · Price version <?= (int) $rate['version'] ?></p>
+                    <p class="hg-muted">Rate valid: <strong><?= hg_e($rateValid) ?></strong> · Price version <?= (int) $rate['version'] ?></p>
                     <?php if (!empty($rate['price_notes'])) { ?><p class="hg-muted"><?= hg_e($rate['price_notes']) ?></p><?php } ?>
                     <?php } else { ?>
                     <p class="hg-muted">We quote this package for your dates, travellers and hotel choice. No current rate is published for this tour.</p>
@@ -386,7 +380,6 @@ if (!function_exists('hg_render_package')) {
 
     <aside class="hg-pkg__side" id="enquire" aria-label="Book or enquire">
         <div class="hg-bookcard">
-            <?= $tourNo ? hg_tourno_html($p['slug'], 'hg-tourno hg-tourno--card') : '' ?>
             <p class="hg-bookcard__label"><?= $rate ? 'Current rate' : 'Package price' ?></p>
             <p class="hg-bookcard__price"><?= hg_e($rateLabel) ?></p>
             <p class="hg-bookcard__sub"><?= $rate ? 'Rate valid: ' . hg_e($rateValid) . '.' : 'Quoted for your dates &amp; group.' ?> <a href="#price">How it’s priced</a></p>
@@ -398,8 +391,8 @@ if (!function_exists('hg_render_package')) {
             <?php if (!$payNow) { ?><p class="hg-bookcard__note" id="paynow-note">Online payment isn’t available yet. Enquire and a travel expert will confirm the price, availability and payment options.</p><?php } ?>
             <?= hg_enquiry_form('enquiry-form', 'Plan your trip', array(
                 'enquiry_type' => 'TOUR PACKAGE ENQUIRY',
-                'tour_number' => $tourNo,
-                'package_id' => hg_package_id($p['slug']),
+                'package_id' => $pkgId,
+                'internal_ref' => hg_package_key($p['slug']),
                 'package' => $name,
                 'package_url' => hg_abs($url),
                 'destination' => $g ? $g['name'] : '',

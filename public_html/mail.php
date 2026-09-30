@@ -2,7 +2,7 @@
 // Enquiry form endpoint (contactForm1/2/3). Responds "1" on success, "0" on failure.
 require __DIR__ . '/include/mail_helper.php';
 require_once __DIR__ . '/include/site_config.php';
-require_once __DIR__ . '/include/tour_registry.php';
+require_once __DIR__ . '/include/package_registry.php';
 
 hgt_guard_request();
 
@@ -27,9 +27,9 @@ $rows = array(
 // Optional trip details sent by the Phase 1 enquiry forms (all plain text, escaped when mailed).
 $optional = array(
     'enquiry_type'   => 'Enquiry type',
-    'tour_number'    => 'Tour No.',
-    'package'        => 'Tour name',
     'package_id'     => 'Package ID',
+    'package'        => 'Package name',
+    'internal_ref'   => 'Internal ref',
     'destination'    => 'Destination',
     'travel_date'    => 'Travel date',
     'travel_month'   => 'Travel month',
@@ -55,8 +55,10 @@ foreach ($optional as $key => $label) {
         $rows[$label] = $value;
     }
 }
-// Package enquiries: take the tour name, Tour No., package ID and the rate shown from our
+// Package enquiries: take the package name, Package ID, internal ref and the rate shown from our
 // own data (by URL path), never from the submitted text, so they cannot be spoofed or mistyped.
+// Identifier and rate fields are only ever set by the server (below); drop anything submitted.
+foreach (array('Package ID', 'Internal ref', 'Displayed rate', 'Rate version', 'Rate validity') as $k) unset($rows[$k]);
 if (isset($rows['Package URL'])) {
     $path = parse_url($rows['Package URL'], PHP_URL_PATH);
     $slug = is_string($path) ? trim($path, '/') : '';
@@ -70,13 +72,13 @@ if (isset($rows['Package URL'])) {
             }
         }
     }
-    foreach (array('Tour No.', 'Tour name', 'Package ID', 'Displayed rate', 'Rate version', 'Rate validity') as $k) unset($rows[$k]);
+    unset($rows['Package name']);
     if ($known) {
-        $tour = hg_tour_enquiry_context($known['slug']);
-        $rows['Tour No.'] = $tour['Tour No.'] !== '' ? $tour['Tour No.'] : 'Not assigned yet';
-        $rows['Tour name'] = $known['title'];
-        unset($tour['Tour No.']);
-        $rows = array_merge($rows, array_filter($tour, 'strlen'));
+        $ctx = hg_package_enquiry_context($known['slug']);
+        $rows['Package ID'] = $ctx['Package ID'] !== '' ? $ctx['Package ID'] : 'Not assigned yet';
+        $rows['Package name'] = $known['title'];
+        unset($ctx['Package ID']);
+        $rows = array_merge($rows, array_filter($ctx, 'strlen'));
         $rows['Package URL'] = rtrim(HG_SITE_URL, '/') . '/' . $known['slug'];
     } else {
         unset($rows['Package URL']);
@@ -86,8 +88,8 @@ $rows['Message'] = $message;
 $rows['Page'] = $page;
 
 $subject = 'Website enquiry: ' . $name;
-if (isset($rows['Tour name'])) {
-    $subject .= ' - ' . (isset($rows['Tour No.']) && preg_match('/^\d{4}$/', $rows['Tour No.']) ? 'Tour No. ' . $rows['Tour No.'] . ' ' : '') . $rows['Tour name'];
+if (isset($rows['Package name'])) {
+    $subject .= ' - ' . (isset($rows['Package ID']) && preg_match('/^\d{4}$/', $rows['Package ID']) ? 'Package ID ' . $rows['Package ID'] . ' ' : '') . $rows['Package name'];
 } elseif (isset($rows['Destination'])) {
     $subject .= ' - ' . $rows['Destination'];
 }

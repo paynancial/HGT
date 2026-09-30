@@ -1,647 +1,647 @@
 {
- "_about": "Tour No. registry. Append-only once approved: never renumber, reuse or delete. Public pages show only approved/retired numbers. See docs/package-registry/TOUR-NUMBER-MAPPING.md.",
+ "_about": "Package ID registry (one sequence for every package type: domestic, international, special, offers). Append-only once approved: never renumber, reuse or delete. Shown publicly only in the itinerary, and only for approved IDs. See docs/package-registry/PACKAGE-ID-MAPPING.md.",
  "numbering_order": "destination display order, then trip length, then name",
  "entries": [
   {
-   "tour_number": "0001",
+   "package_id": "0001",
    "slug": "srinagar-gulmarg-tour-03nt04dy",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0002",
+   "package_id": "0002",
    "slug": "srinagar-gulmarg-pahalgam-tour-package-5-days",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0003",
+   "package_id": "0003",
    "slug": "srinagar-gulmarg-sonmarg-day-trip-tour-package-5-days",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0004",
+   "package_id": "0004",
    "slug": "srinagar-pahalgam-gulmarg-sonmarg-package-6-days",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0005",
+   "package_id": "0005",
    "slug": "srinagar-gulmarg-pahalgam-tour-package-7-days",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0006",
+   "package_id": "0006",
    "slug": "srinagar-gulmarg-sonmarg-pahalgam-katra-tour-package-8-days",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0007",
+   "package_id": "0007",
    "slug": "breathtaking-leh-ladakh-tour-3n-4d",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0008",
+   "package_id": "0008",
    "slug": "special-leh-ladakh-tour-4n-5d",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0009",
+   "package_id": "0009",
    "slug": "jewels-of-leh-ladakh-package-5n6d",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0010",
+   "package_id": "0010",
    "slug": "panorama-ladakh-tour-6n7d",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0011",
+   "package_id": "0011",
    "slug": "serene-leh-ladakh-tour-7n-8d",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0012",
+   "package_id": "0012",
    "slug": "discover-leh-ladakh-tour-8n-9d",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0013",
+   "package_id": "0013",
    "slug": "best-of-shimla-vacation",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0014",
+   "package_id": "0014",
    "slug": "best-of-shimla",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0015",
+   "package_id": "0015",
    "slug": "amritsar-with-dalhousie-dharamshala-05-days",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0016",
+   "package_id": "0016",
    "slug": "blissful-tour-to-himachal-pradesh-4n-5d",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0017",
+   "package_id": "0017",
    "slug": "manali-volvo-vrip-weekend",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0018",
+   "package_id": "0018",
    "slug": "manali-with-manikaran",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0019",
+   "package_id": "0019",
    "slug": "amrirsar-with-dalhousie-and-dharamshala-06-days",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0020",
+   "package_id": "0020",
    "slug": "best-of-manali-with-delhi-by-volvo",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0021",
+   "package_id": "0021",
    "slug": "manali-with-dharamshala-and-amritsar-06-days",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0022",
+   "package_id": "0022",
    "slug": "shimla-manali-tour-06-days",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0023",
+   "package_id": "0023",
    "slug": "shimla-manali-with-chandigarh-06-days",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0024",
+   "package_id": "0024",
    "slug": "amritsar-with-dalhousie-dharamshala-and-chandigarh-07-days",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0025",
+   "package_id": "0025",
    "slug": "best-of-shimla-and-manali",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0026",
+   "package_id": "0026",
    "slug": "shimla-manali-with-dalhousie-amritsar-08-days",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0027",
+   "package_id": "0027",
    "slug": "shimla-manali-with-dharmshala-dalhousie-and-amritsar-09-days",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0028",
+   "package_id": "0028",
    "slug": "grand-himachal-with-mata-vaishno-devi--tour-13-days",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0029",
+   "package_id": "0029",
    "slug": "haridwar-rishikesh-tour-03-days",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0030",
+   "package_id": "0030",
    "slug": "mussoorie-tour-03-days",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0031",
+   "package_id": "0031",
    "slug": "nainital-tour-03-days",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0032",
+   "package_id": "0032",
    "slug": "uttarakhand-mussoorie-with-rishikesh-flight-inclusive",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0033",
+   "package_id": "0033",
    "slug": "corbett-with-nainital-04-days",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0034",
+   "package_id": "0034",
    "slug": "haridwar-rishikesh-mussoorie-04-days",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0035",
+   "package_id": "0035",
    "slug": "mussoorie-with-jim-corbett-04-days",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0036",
+   "package_id": "0036",
    "slug": "haridwar-with-mussoorie-and-jim-corbett-05-days",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0037",
+   "package_id": "0037",
    "slug": "nainital-with-almora-and-jim-corbett-05-days",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0038",
+   "package_id": "0038",
    "slug": "nainital-with-kausani-and-jim-corbett-05-days",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0039",
+   "package_id": "0039",
    "slug": "nainital-with-ranikhet--jim-corbett",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0040",
+   "package_id": "0040",
    "slug": "haridwar--with-mussoorie-and-corbett-06-days",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0041",
+   "package_id": "0041",
    "slug": "mussoorie-with-nainital-and-jim-corbett-06-days",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0042",
+   "package_id": "0042",
    "slug": "nainital-with-kausani-and-jim-corbett-06-days",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0043",
+   "package_id": "0043",
    "slug": "nainital-with-ranikhet-and-jim-corbett-06-days",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0044",
+   "package_id": "0044",
    "slug": "corbett-with-nainital-and-mussoorie-07-days",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0045",
+   "package_id": "0045",
    "slug": "haridwar-with-rishikesh-mussoorie-nainital-and-jim-corbett-07-days",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0046",
+   "package_id": "0046",
    "slug": "mussoorie-with-nainital-almora-and-jim-corbett--07-days",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0047",
+   "package_id": "0047",
    "slug": "nainital-with-ranikhet-kausani-and-jim-corbett-07-days",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0048",
+   "package_id": "0048",
    "slug": "haridwar-with-mussoorie-corbett-kausani-and-nainital-08-days",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0049",
+   "package_id": "0049",
    "slug": "mussoorie-with-corbett-ranikhet-kausani-and-nainital-08-days",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0050",
+   "package_id": "0050",
    "slug": "nainital-with-ranikhet-kausani-jim-corbett-and-haridwar-08-days",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0051",
+   "package_id": "0051",
    "slug": "do-dham-kedar–badri-from-haridwar-4n-5d",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0052",
+   "package_id": "0052",
    "slug": "do-dham-kedar–badri-from-haridwar-5n-6d",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0053",
+   "package_id": "0053",
    "slug": "chardham-yatra-by-helicopter",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0054",
+   "package_id": "0054",
    "slug": "char-dham-yatra-from-delhi-11n-12d",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0055",
+   "package_id": "0055",
    "slug": "chardham-yatra-from-haridwar-8n-9d",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0056",
+   "package_id": "0056",
    "slug": "char-dham-yatra-from-haridwar-9n-10d",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0057",
+   "package_id": "0057",
    "slug": "yamunotri-gangotri-do-dham-from-delhi-6n-7d",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0058",
+   "package_id": "0058",
    "slug": "char-dham-yatra-from-delhi-10n-11d",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0059",
+   "package_id": "0059",
    "slug": "chardham-package",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0060",
+   "package_id": "0060",
    "slug": "amarnath-ji-yatra-by-helicopter-2n-3d",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0061",
+   "package_id": "0061",
    "slug": "amarnath-ji-yatra-by-helicopter-3n-4d",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0062",
+   "package_id": "0062",
    "slug": "amarnath-ji-yatra-with-srinagar-4n-5d",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0063",
+   "package_id": "0063",
    "slug": "amarnath-ji-yatra-via-pahalgam-5n-6d",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0064",
+   "package_id": "0064",
    "slug": "darjeeling-gangtok-04-days",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0065",
+   "package_id": "0065",
    "slug": "darjeeling-kalimpong-04-days",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0066",
+   "package_id": "0066",
    "slug": "darjeeling-and-gangtok-06-days",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0067",
+   "package_id": "0067",
    "slug": "darjeeling-gangtok-05-days",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0068",
+   "package_id": "0068",
    "slug": "gangtok-pelling-tour-05-days",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0069",
+   "package_id": "0069",
    "slug": "darjeeling-with-kalimpong-and-gangtok-06-days",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0070",
+   "package_id": "0070",
    "slug": "darjeeling-with-pelling-and-gangtok-06-days",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0071",
+   "package_id": "0071",
    "slug": "gangtok-with-lachen-and-lachung-07-days",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0072",
+   "package_id": "0072",
    "slug": "gangtok-with-pelling-and-kalimpong-tour-07-days",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0073",
+   "package_id": "0073",
    "slug": "darjeeling-with-lachung-and-gangtok-08-days",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0074",
+   "package_id": "0074",
    "slug": "gangtok-with-lachung-pelling-and-darjeeling-08-days",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0075",
+   "package_id": "0075",
    "slug": "kalimpong-with-gangtok-pelling-and-darjeeling-08-days",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0076",
+   "package_id": "0076",
    "slug": "darjeeling-with-kalimpong-pelling-lachung-and-gangtok-10-days",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0077",
+   "package_id": "0077",
    "slug": "kovalam-kanyakumari-tour-4-days",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0078",
+   "package_id": "0078",
    "slug": "munnar-alleppey-tour-package-04-days",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0079",
+   "package_id": "0079",
    "slug": "munnar-thekkady-tour-package-4-days",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0080",
+   "package_id": "0080",
    "slug": "munnar-alleppey-kovalam-05-days",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0081",
+   "package_id": "0081",
    "slug": "munnar-thekkady-alleppey-05-days",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0082",
+   "package_id": "0082",
    "slug": "cochin-munnar-thekkedy-alleppey-06-days",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0083",
+   "package_id": "0083",
    "slug": "munnar-alleppey-kovalam-06-days",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0084",
+   "package_id": "0084",
    "slug": "munnar-thekkady-alleppey-kovalam-trivandurum-07-days",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0085",
+   "package_id": "0085",
    "slug": "munnar-thekkady-alleppey--kovalam-kanyakumari-07-days",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0086",
+   "package_id": "0086",
    "slug": "mysore-coorg-04-days",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0087",
+   "package_id": "0087",
    "slug": "mysore-wayand-04-days",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0088",
+   "package_id": "0088",
    "slug": "bangalore-mysore-ooty-tour-05-days",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0089",
+   "package_id": "0089",
    "slug": "banglore-mysore-coorg--tour-05-days",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0090",
+   "package_id": "0090",
    "slug": "mysore-ooty-kodaikanal-06-days",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0091",
+   "package_id": "0091",
    "slug": "ooty-mysore-04-days",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0092",
+   "package_id": "0092",
    "slug": "delightful-goa-tour-3n-4d",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0093",
+   "package_id": "0093",
    "slug": "enticing-tour-to-goa-3n-4d",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0094",
+   "package_id": "0094",
    "slug": "exclusive-goa-tour-3n-4d",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0095",
+   "package_id": "0095",
    "slug": "fascinating-tour-to-goa-3n-4d",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0096",
+   "package_id": "0096",
    "slug": "sun-kissed-goa-escape",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0097",
+   "package_id": "0097",
    "slug": "best-of-dubai-tour",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0098",
+   "package_id": "0098",
    "slug": "dubai-family-trip-with-free-burj-khalifa-tickets",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0099",
+   "package_id": "0099",
    "slug": "best-dubai-tour",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0100",
+   "package_id": "0100",
    "slug": "dubai-travel-packages",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0101",
+   "package_id": "0101",
    "slug": "deluxe-tour-to-dubai-4n5d",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0102",
+   "package_id": "0102",
    "slug": "standard-tour-to-dubai-4n5d",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0103",
+   "package_id": "0103",
    "slug": "singapore-and-kuala-lumpur-tour-4n-5d",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0104",
+   "package_id": "0104",
    "slug": "the-magical-tour-to-singapore",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0105",
+   "package_id": "0105",
    "slug": "serene-tour-to-singapore-with-thailand--8n-9d",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0106",
+   "package_id": "0106",
    "slug": "the-best-of-singapore-and-kuala-lumpur-with-pattaya-tour-8n-9d",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   },
   {
-   "tour_number": "0107",
+   "package_id": "0107",
    "slug": "maldives-05-days",
-   "package_id": "",
+   "internal_key": "",
    "status": "proposed"
   }
  ]

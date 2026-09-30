@@ -8,7 +8,7 @@
  */
 
 require_once __DIR__ . '/../site_config.php';
-require_once __DIR__ . '/../tour_registry.php';
+require_once __DIR__ . '/../package_registry.php';
 
 if (!defined('HG_UI_CORE')) {
     define('HG_UI_CORE', true);
@@ -401,15 +401,6 @@ if (!defined('HG_UI_CORE')) {
         return ($range ? str_replace(' days', '', $range) . ' day trips · ' : '') . $g['area'];
     }
 
-    /** "Tour No. 0001" label (only for approved numbers; proposed ones only in local preview). */
-    function hg_tourno_html($slug, $class = 'hg-tourno')
-    {
-        $n = hg_tour_number($slug);
-        if ($n === '') return '';
-        return '<p class="' . hg_e($class) . '">Tour No. <strong>' . hg_e($n) . '</strong>'
-            . (hg_tour_number_is_proposed($slug) ? ' <span class="hg-tourno__flag">Proposed · preview only</span>' : '') . '</p>';
-    }
-
     /** Price block for cards: current approved rate with validity, or "Price on request". */
     function hg_card_price_html($slug)
     {
@@ -439,7 +430,6 @@ if (!defined('HG_UI_CORE')) {
             . hg_img($p['image'], '', 480, 320, 'hg-pcard__img') . '</a>';
         $out .= '<div class="hg-pcard__body">';
         $out .= '<p class="hg-pcard__kicker">' . hg_e($g ? $g['name'] : '') . ($p['departure'] ? ' · From ' . hg_e($p['departure']) : '') . '</p>';
-        $out .= hg_tourno_html($p['slug'], 'hg-tourno hg-tourno--card');
         $out .= '<' . $h . ' class="hg-pcard__title"><a href="' . hg_e($p['url']) . '">' . hg_e($p['title'] ?: $p['name']) . '</a></' . $h . '>';
         $out .= '<p class="hg-pcard__duration"><svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>' . hg_e($p['duration']) . '</p>';
         if ($cities) {

@@ -23,9 +23,9 @@ if ($destKey === '' && $S['destination'] !== '') {
     }
 }
 
-/* ---------- Search by Tour No. ("0001", "Tour No. 0001") → the tour itself ---------- */
-if ($destKey === '' && preg_match('/^\s*(?:tour\s*(?:no\.?|number)?\s*)?(\d{1,4})\s*$/i', $S['destination'], $tm)) {
-    $tslug = hg_tour_slug_by_number($tm[1]);
+/* ---------- Search by Package ID ("0001", "Package ID 0001") → that package (redirect, never a new URL) ---------- */
+if ($destKey === '' && preg_match('/^\s*(?:(?:package|pkg|tour)\s*(?:id|no\.?|number)?\s*[:#]?\s*)?(\d{1,4})\s*$/i', $S['destination'], $tm)) {
+    $tslug = hg_slug_by_package_id($tm[1]);
     if ($tslug && ($tp = hg_package($tslug))) {
         header('Location: ' . $tp['url'] . hg_context_query(), true, 302);
         exit;
@@ -270,7 +270,6 @@ $resultCard = function ($p) use ($context) {
         <button type="button" class="hg-save" data-hg-save="<?= hg_e($p['slug']) ?>" aria-pressed="false" aria-label="Save <?= hg_e($p['title']) ?>"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.3C1 8.3 3.2 4.5 7 4.5c2 0 3.4 1.1 5 3 1.6-1.9 3-3 5-3 3.8 0 6 3.8 4.6 7.2C19.5 16.4 12 21 12 21z"/></svg></button>
     </div>
     <div class="hg-rcard__body">
-        <?= hg_tourno_html($p['slug'], 'hg-tourno hg-tourno--card') ?>
         <h3 class="hg-rcard__title"><a href="<?= hg_e($href) ?>"><?= hg_e($p['title']) ?></a></h3>
         <p class="hg-rcard__meta"><strong><?= hg_e($p['duration']) ?></strong><?php if ($places) { ?><span aria-hidden="true"> · </span><?= hg_e($places) ?><?php } ?></p>
         <ul class="hg-rcard__facts">

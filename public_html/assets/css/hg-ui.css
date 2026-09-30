@@ -1011,11 +1011,9 @@ a:hover .hg-ph .hg-ph__icon, .hg-pcard:hover .hg-ph__icon, .hg-rcard:hover .hg-p
     .hg-footer__cin { display: block; margin: 2px 0 0; padding: 0; border: 0; }
 }
 
-/* ---------- Tour No., rate and buy box (Top Tour Packages) ---------- */
-.hg-tourno { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; margin: 0 0 6px !important; font-family: var(--hg-font-head); font-size: 12.5px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--hg-orange-text); }
-.hg-tourno strong { font-weight: 800; letter-spacing: .06em; color: var(--hg-navy); }
-.hg-tourno--head { font-size: 13.5px; }
-.hg-tourno__flag { padding: 2px 8px; border: 1px dashed #B45309; border-radius: 999px; font-family: var(--hg-font-body); font-size: 11px; font-weight: 600; letter-spacing: 0; text-transform: none; color: #7C2D12; background: #FFF7ED; }
+/* ---------- Package ID (itinerary only), rate and buy box ---------- */
+.hg-pkgid__flag { padding: 2px 8px; border: 1px dashed #B45309; border-radius: 999px; font-family: var(--hg-font-body); font-size: 11px; font-weight: 600; letter-spacing: 0; text-transform: none; color: #7C2D12; background: #FFF7ED; }
+.hg-ithead__id dd { font-family: var(--hg-font-head); letter-spacing: .04em; }
 .hg-pcard__price strong { display: block; font-family: var(--hg-font-head); font-size: 16px; color: var(--hg-navy); }
 .hg-pcard__price small { display: block; font-weight: 500; }
 .hg-pkghead__buy { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 12px 20px; margin: 18px 0 14px; padding: 16px 18px; border: 1px solid var(--hg-border); border-radius: var(--hg-r-md); background: #fff; box-shadow: var(--hg-sh-sm); }

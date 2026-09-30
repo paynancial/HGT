@@ -193,8 +193,8 @@
                 var dests = rank(idx.groups, ['name', 'keywords', 'area']).slice(0, 5);
                 var themes = rank(idx.themes, ['name', 'keywords']).slice(0, 2);
                 var pkgs = rank(idx.packages, ['t']).slice(0, 6);
-                // Search by Tour No. ("0001", "tour no 12"): exact match on approved numbers only.
-                var num = q.replace(/^tour\s*(no\.?|number)?\s*/, '').trim();
+                // Search by Package ID ("0001", "package id 12"): exact match on approved IDs only.
+                var num = q.replace(/^(package|pkg|tour)\s*(id|no\.?|number)?\s*[:#]?\s*/, '').trim();
                 if (/^\d{1,4}$/.test(num)) {
                     var padded = ('0000' + num).slice(-4);
                     pkgs = idx.packages.filter(function (x) { return x.n === padded; }).map(function (x) { return { x: x, s: 1 }; }).concat(pkgs).slice(0, 6);
@@ -207,7 +207,7 @@
                 };
                 if (dests.length) { html += '<li class="hg-ac__group" role="presentation">Destinations</li>'; dests.forEach(function (r) { add(r.x.name, r.x.area, r.x.url, 'dest'); }); }
                 if (themes.length) { html += '<li class="hg-ac__group" role="presentation">Holiday types</li>'; themes.forEach(function (r) { add(r.x.name, 'Speciality tours', r.x.url, 'theme'); }); }
-                if (pkgs.length) { html += '<li class="hg-ac__group" role="presentation">Packages</li>'; pkgs.forEach(function (r) { add(r.x.t, (r.x.n ? 'Tour No. ' + r.x.n + ' · ' : '') + r.x.d, r.x.u, 'pkg'); }); }
+                if (pkgs.length) { html += '<li class="hg-ac__group" role="presentation">Packages</li>'; pkgs.forEach(function (r) { add(r.x.t, r.x.d, r.x.u, 'pkg'); }); }
                 if (!n) html = '<li class="hg-ac__empty" role="presentation">No match. Press Enter to search tours, or <a href="/customized-holidays">plan a custom trip</a>.</li>';
                 list.innerHTML = html;
                 options = $$('.hg-ac__opt', list);

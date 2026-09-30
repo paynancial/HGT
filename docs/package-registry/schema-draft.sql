@@ -3,24 +3,30 @@
 -- production. Target: MySQL 8.0.16+ / MariaDB 10.4+ (InnoDB, utf8mb4).
 -- The production database version and existing tables are not yet known
 -- (admin/db.php and a schema dump were not provided).
+--
+-- Naming (owner decision, 30 Sep 2026):
+--   package_id  CHAR(4)  the business "Package ID" (0001…): permanent, one sequence for every
+--                        package type (domestic, international, special, offer packages).
+--                        Used in CRM search, quotations, payments and bookings.
+--   package_pk  BIGINT   internal relational key only; never shown to customers or staff.
 
 -- ------------------------------------------------------------------
--- 1. Package number counter (single row). Numbers come ONLY from here.
+-- 1. Package ID counter (single row). Package IDs come ONLY from here.
 -- ------------------------------------------------------------------
-CREATE TABLE tour_number_sequence (
+CREATE TABLE package_id_sequence (
     id          TINYINT UNSIGNED NOT NULL PRIMARY KEY,
     next_value  SMALLINT UNSIGNED NOT NULL,          -- next number to issue
     max_value   SMALLINT UNSIGNED NOT NULL DEFAULT 9999,
     CONSTRAINT chk_seq_single CHECK (id = 1)
 ) ENGINE=InnoDB;
-INSERT INTO tour_number_sequence (id, next_value) VALUES (1, 1);
+INSERT INTO package_id_sequence (id, next_value) VALUES (1, 1);
 
 -- ------------------------------------------------------------------
--- 2. Packages. package_id = internal key; tour_number = business key.
+-- 2. Packages. package_pk = internal key; package_id = business key.
 -- ------------------------------------------------------------------
 CREATE TABLE packages (
-    package_id        BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    tour_number       CHAR(4) NOT NULL,
+    package_pk        BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    package_id        CHAR(4) NOT NULL,
     slug              VARCHAR(160) NOT NULL,
     name              VARCHAR(200) NOT NULL,
     destination_key   VARCHAR(40)  NOT NULL,
@@ -33,16 +39,16 @@ CREATE TABLE packages (
     created_at        DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     created_by        VARCHAR(80) NOT NULL,
     updated_at        DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    CONSTRAINT uq_packages_number UNIQUE (tour_number),
+    CONSTRAINT uq_packages_number UNIQUE (package_id),
     CONSTRAINT uq_packages_slug   UNIQUE (slug),
-    CONSTRAINT chk_packages_number CHECK (tour_number REGEXP '^[0-9]{4}$' AND tour_number <> '0000')
+    CONSTRAINT chk_packages_number CHECK (package_id REGEXP '^[0-9]{4}$' AND package_id <> '0000')
 ) ENGINE=InnoDB;
 
 -- Permanent ledger: a number stays here forever, even if the package row is
 -- ever removed, so it can never be issued again.
-CREATE TABLE tour_number_registry (
-    tour_number     CHAR(4) NOT NULL PRIMARY KEY,
-    package_id      BIGINT UNSIGNED NOT NULL,
+CREATE TABLE package_id_registry (
+    package_id      CHAR(4) NOT NULL PRIMARY KEY,
+    package_pk      BIGINT UNSIGNED NOT NULL,
     first_name      VARCHAR(200) NOT NULL,       -- name when the number was issued
     assigned_at     DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     assigned_by     VARCHAR(80) NOT NULL,
@@ -52,17 +58,17 @@ CREATE TABLE tour_number_registry (
 -- Old slugs keep working (301) after a rename; the number never changes.
 CREATE TABLE package_slug_history (
     old_slug    VARCHAR(160) NOT NULL PRIMARY KEY,
-    package_id  BIGINT UNSIGNED NOT NULL,
+    package_pk  BIGINT UNSIGNED NOT NULL,
     changed_at  DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (package_id) REFERENCES packages (package_id) ON DELETE RESTRICT
+    FOREIGN KEY (package_pk) REFERENCES packages (package_pk) ON DELETE RESTRICT
 ) ENGINE=InnoDB;
 
 DELIMITER //
 -- Number can never change after creation.
 CREATE TRIGGER trg_packages_number_immutable BEFORE UPDATE ON packages FOR EACH ROW
 BEGIN
-    IF NEW.tour_number <> OLD.tour_number THEN
-        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'tour_number is permanent';
+    IF NEW.package_id <> OLD.package_id THEN
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'package_id is permanent';
     END IF;
 END//
 -- Packages are archived/retired, never deleted.
@@ -70,11 +76,11 @@ CREATE TRIGGER trg_packages_no_delete BEFORE DELETE ON packages FOR EACH ROW
 BEGIN
     SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'packages are archived, not deleted';
 END//
-CREATE TRIGGER trg_registry_no_delete BEFORE DELETE ON tour_number_registry FOR EACH ROW
+CREATE TRIGGER trg_registry_no_delete BEFORE DELETE ON package_id_registry FOR EACH ROW
 BEGIN
     SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'package numbers are never released';
 END//
-CREATE TRIGGER trg_registry_no_update BEFORE UPDATE ON tour_number_registry FOR EACH ROW
+CREATE TRIGGER trg_registry_no_update BEFORE UPDATE ON package_id_registry FOR EACH ROW
 BEGIN
     SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'package number registry is append-only';
 END//
@@ -85,25 +91,25 @@ END//
 CREATE PROCEDURE create_package(
     IN p_slug VARCHAR(160), IN p_name VARCHAR(200), IN p_destination VARCHAR(40),
     IN p_user VARCHAR(80), IN p_source VARCHAR(10),
-    OUT o_package_id BIGINT UNSIGNED, OUT o_tour_number CHAR(4))
+    OUT o_package_pk BIGINT UNSIGNED, OUT o_package_id CHAR(4))
 BEGIN
     DECLARE v_next SMALLINT UNSIGNED;
     DECLARE v_max SMALLINT UNSIGNED;
     DECLARE EXIT HANDLER FOR SQLEXCEPTION BEGIN ROLLBACK; RESIGNAL; END;
     START TRANSACTION;
     SELECT next_value, max_value INTO v_next, v_max
-      FROM tour_number_sequence WHERE id = 1 FOR UPDATE;
+      FROM package_id_sequence WHERE id = 1 FOR UPDATE;
     IF v_next > v_max THEN
         -- No silent roll-over to 0001: an owner-approved identifier strategy is required.
-        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'tour numbers exhausted (9999): owner decision required';
+        SIGNAL SQLSTATE '45000' SET MESSAGE_TEXT = 'Package IDs exhausted (9999): owner decision required';
     END IF;
-    SET o_tour_number = LPAD(v_next, 4, '0');
-    INSERT INTO packages (tour_number, slug, name, destination_key, created_by)
-         VALUES (o_tour_number, p_slug, p_name, p_destination, p_user);
-    SET o_package_id = LAST_INSERT_ID();
-    INSERT INTO tour_number_registry (tour_number, package_id, first_name, assigned_by, source)
-         VALUES (o_tour_number, o_package_id, p_name, p_user, p_source);
-    UPDATE tour_number_sequence SET next_value = v_next + 1 WHERE id = 1;
+    SET o_package_id = LPAD(v_next, 4, '0');
+    INSERT INTO packages (package_id, slug, name, destination_key, created_by)
+         VALUES (o_package_id, p_slug, p_name, p_destination, p_user);
+    SET o_package_pk = LAST_INSERT_ID();
+    INSERT INTO package_id_registry (package_id, package_pk, first_name, assigned_by, source)
+         VALUES (o_package_id, o_package_pk, p_name, p_user, p_source);
+    UPDATE package_id_sequence SET next_value = v_next + 1 WHERE id = 1;
     COMMIT;
 END//
 DELIMITER ;
@@ -113,7 +119,7 @@ DELIMITER ;
 -- ------------------------------------------------------------------
 CREATE TABLE package_rates (
     rate_id            BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    package_id         BIGINT UNSIGNED NOT NULL,
+    package_pk         BIGINT UNSIGNED NOT NULL,
     version            SMALLINT UNSIGNED NOT NULL,              -- 1, 2, 3… per package
     status             ENUM('draft','approved','superseded','withdrawn') NOT NULL DEFAULT 'draft',
     currency           CHAR(3) NOT NULL DEFAULT 'INR',
@@ -140,10 +146,10 @@ CREATE TABLE package_rates (
     approved_by        VARCHAR(80) NULL,
     approved_at        DATETIME NULL,
     change_reason      VARCHAR(500) NULL,
-    CONSTRAINT uq_rate_version UNIQUE (package_id, version),
+    CONSTRAINT uq_rate_version UNIQUE (package_pk, version),
     CONSTRAINT chk_rate_validity CHECK (rate_valid_until IS NULL OR rate_valid_until >= rate_valid_from),
     CONSTRAINT chk_offer CHECK (offer_price IS NULL OR (offer_price < base_price AND offer_reason IS NOT NULL)),
-    FOREIGN KEY (package_id) REFERENCES packages (package_id) ON DELETE RESTRICT
+    FOREIGN KEY (package_pk) REFERENCES packages (package_pk) ON DELETE RESTRICT
 ) ENGINE=InnoDB;
 
 -- Inclusions / exclusions belong to the SAME rate version, so a new price can
@@ -201,7 +207,7 @@ WHERE r.status = 'approved'
   AND r.rate_valid_from <= CURRENT_DATE
   AND (r.rate_valid_until IS NULL OR r.rate_valid_until >= CURRENT_DATE)
   AND r.version = (SELECT MAX(r2.version) FROM package_rates r2
-                   WHERE r2.package_id = r.package_id AND r2.status = 'approved'
+                   WHERE r2.package_pk = r.package_pk AND r2.status = 'approved'
                      AND r2.rate_valid_from <= CURRENT_DATE
                      AND (r2.rate_valid_until IS NULL OR r2.rate_valid_until >= CURRENT_DATE));
 
@@ -210,8 +216,8 @@ WHERE r.status = 'approved'
 -- ------------------------------------------------------------------
 CREATE TABLE package_audit (
     audit_id        BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-    package_id      BIGINT UNSIGNED NOT NULL,
-    tour_number  CHAR(4) NOT NULL,
+    package_pk      BIGINT UNSIGNED NOT NULL,
+    package_id  CHAR(4) NOT NULL,
     entity          ENUM('package','rate','rate_item','content') NOT NULL,
     entity_id       BIGINT UNSIGNED NULL,
     action          ENUM('create','update','approve','supersede','withdraw','archive','retire') NOT NULL,
@@ -224,15 +230,15 @@ CREATE TABLE package_audit (
 
 -- ------------------------------------------------------------------
 -- 5. CRM-ready records (enquiry → quotation → payment → booking).
---    Each keeps package_id (relational key) + tour_number + name
+--    Each keeps package_pk (relational key) + package_id + name
 --    snapshot + rate version seen, so later edits never blur history.
 -- ------------------------------------------------------------------
 CREATE TABLE enquiries (
     enquiry_id        BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
     enquiry_ref       CHAR(12) NOT NULL UNIQUE,              -- shown to customer, e.g. ENQ-7K3P9Q
     enquiry_type      ENUM('tour_package','customized_holiday','general','newsletter') NOT NULL,
-    package_id        BIGINT UNSIGNED NULL,
-    tour_number       CHAR(4) NULL,
+    package_pk        BIGINT UNSIGNED NULL,
+    package_id        CHAR(4) NULL,
     package_name      VARCHAR(200) NULL,                     -- snapshot
     package_url       VARCHAR(300) NULL,
     rate_id           BIGINT UNSIGNED NULL,
@@ -251,7 +257,7 @@ CREATE TABLE enquiries (
     message           TEXT NULL,
     utm_source        VARCHAR(100) NULL, utm_medium VARCHAR(100) NULL, utm_campaign VARCHAR(100) NULL,
     created_at        DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (package_id) REFERENCES packages (package_id) ON DELETE RESTRICT,
+    FOREIGN KEY (package_pk) REFERENCES packages (package_pk) ON DELETE RESTRICT,
     FOREIGN KEY (rate_id) REFERENCES package_rates (rate_id) ON DELETE RESTRICT
 ) ENGINE=InnoDB;
 
@@ -259,8 +265,8 @@ CREATE TABLE quotations (
     quotation_id      BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
     quotation_ref     CHAR(12) NOT NULL UNIQUE,
     enquiry_id        BIGINT UNSIGNED NULL,
-    package_id        BIGINT UNSIGNED NULL,
-    tour_number       CHAR(4) NULL,
+    package_pk        BIGINT UNSIGNED NULL,
+    package_id        CHAR(4) NULL,
     package_name      VARCHAR(200) NULL,
     rate_id           BIGINT UNSIGNED NULL,
     rate_version      SMALLINT UNSIGNED NULL,
@@ -276,15 +282,15 @@ CREATE TABLE quotations (
     created_by        VARCHAR(80) NOT NULL,
     created_at        DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (enquiry_id) REFERENCES enquiries (enquiry_id),
-    FOREIGN KEY (package_id) REFERENCES packages (package_id) ON DELETE RESTRICT,
+    FOREIGN KEY (package_pk) REFERENCES packages (package_pk) ON DELETE RESTRICT,
     FOREIGN KEY (rate_id) REFERENCES package_rates (rate_id) ON DELETE RESTRICT
 ) ENGINE=InnoDB;
 
 CREATE TABLE payments (
     payment_id        BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
     payment_ref       CHAR(14) NOT NULL UNIQUE,
-    package_id        BIGINT UNSIGNED NOT NULL,
-    tour_number       CHAR(4) NOT NULL,
+    package_pk        BIGINT UNSIGNED NOT NULL,
+    package_id        CHAR(4) NOT NULL,
     package_name      VARCHAR(200) NOT NULL,
     rate_id           BIGINT UNSIGNED NOT NULL,
     rate_version      SMALLINT UNSIGNED NOT NULL,
@@ -305,31 +311,31 @@ CREATE TABLE payments (
     status            ENUM('created','pending','paid','failed','refunded','cancelled') NOT NULL DEFAULT 'created',
     paid_at           DATETIME NULL,                          -- set only from a verified gateway webhook
     created_at        DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (package_id) REFERENCES packages (package_id) ON DELETE RESTRICT,
+    FOREIGN KEY (package_pk) REFERENCES packages (package_pk) ON DELETE RESTRICT,
     FOREIGN KEY (rate_id) REFERENCES package_rates (rate_id) ON DELETE RESTRICT,
     FOREIGN KEY (enquiry_id) REFERENCES enquiries (enquiry_id),
     FOREIGN KEY (quotation_id) REFERENCES quotations (quotation_id)
 ) ENGINE=InnoDB;
 
--- Leads and bookings complete the CRM chain: Tour No. → enquiry → lead → quotation → payment → booking.
--- Every step keeps package_id + tour_number; history is never identified by package name alone.
+-- Leads and bookings complete the CRM chain: Package ID → enquiry → lead → quotation → payment → booking.
+-- Every step keeps package_pk + package_id; history is never identified by package name alone.
 CREATE TABLE leads (
     lead_id           BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
     enquiry_id        BIGINT UNSIGNED NOT NULL,
-    package_id        BIGINT UNSIGNED NULL,
-    tour_number       CHAR(4) NULL,
+    package_pk        BIGINT UNSIGNED NULL,
+    package_id        CHAR(4) NULL,
     owner             VARCHAR(80) NULL,                       -- travel expert handling the lead
     stage             ENUM('new','contacted','quoted','won','lost') NOT NULL DEFAULT 'new',
     created_at        DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (enquiry_id) REFERENCES enquiries (enquiry_id),
-    FOREIGN KEY (package_id) REFERENCES packages (package_id) ON DELETE RESTRICT
+    FOREIGN KEY (package_pk) REFERENCES packages (package_pk) ON DELETE RESTRICT
 ) ENGINE=InnoDB;
 
 CREATE TABLE bookings (
     booking_id        BIGINT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
     booking_ref       CHAR(12) NOT NULL UNIQUE,
-    package_id        BIGINT UNSIGNED NOT NULL,
-    tour_number       CHAR(4) NOT NULL,
+    package_pk        BIGINT UNSIGNED NOT NULL,
+    package_id        CHAR(4) NOT NULL,
     package_name      VARCHAR(200) NOT NULL,                  -- snapshot
     rate_id           BIGINT UNSIGNED NULL,
     rate_version      SMALLINT UNSIGNED NULL,
@@ -340,7 +346,7 @@ CREATE TABLE bookings (
     children          TINYINT UNSIGNED NOT NULL,
     status            ENUM('confirmed','completed','cancelled') NOT NULL DEFAULT 'confirmed',
     created_at        DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (package_id) REFERENCES packages (package_id) ON DELETE RESTRICT,
+    FOREIGN KEY (package_pk) REFERENCES packages (package_pk) ON DELETE RESTRICT,
     FOREIGN KEY (rate_id) REFERENCES package_rates (rate_id) ON DELETE RESTRICT,
     FOREIGN KEY (quotation_id) REFERENCES quotations (quotation_id),
     FOREIGN KEY (payment_id) REFERENCES payments (payment_id)
@@ -350,7 +356,7 @@ CREATE TABLE bookings (
 -- 6. Internal curation ("Top 500"). Merchandising data only — never shown publicly.
 -- ------------------------------------------------------------------
 CREATE TABLE package_curation (
-    package_id          BIGINT UNSIGNED NOT NULL PRIMARY KEY,
+    package_pk          BIGINT UNSIGNED NOT NULL PRIMARY KEY,
     priority_rank       SMALLINT UNSIGNED NULL,               -- 1–500, unique; NULL = not in the priority collection
     is_featured         BOOLEAN NOT NULL DEFAULT FALSE,
     is_top_priority     BOOLEAN NOT NULL DEFAULT FALSE,
@@ -362,5 +368,5 @@ CREATE TABLE package_curation (
     updated_by          VARCHAR(80) NOT NULL,
     CONSTRAINT uq_curation_rank UNIQUE (priority_rank),
     CONSTRAINT chk_curation_rank CHECK (priority_rank IS NULL OR priority_rank BETWEEN 1 AND 500),
-    FOREIGN KEY (package_id) REFERENCES packages (package_id) ON DELETE RESTRICT
+    FOREIGN KEY (package_pk) REFERENCES packages (package_pk) ON DELETE RESTRICT
 ) ENGINE=InnoDB;

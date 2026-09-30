@@ -1,8 +1,8 @@
-# Tour No.: final mapping for owner approval
+# Package ID: final mapping for owner approval
 
 **Status: PROPOSED. No number is assigned.**
 - Nothing is migrated, deployed or published.
-- The live website shows no Tour No. until you approve.
+- The live website shows no Package ID until you approve.
 - Built at commit `ce5339f` or later.
 
 **Numbers proposed:** 107 (0001 to 0107), one per current package.
@@ -13,8 +13,8 @@
 - 14 rows whose title is the same as, or nearly the same as, another tour.
 
 **Files:**
-- Machine-readable sheet: [`TOUR-NUMBER-MAPPING-FINAL.csv`](TOUR-NUMBER-MAPPING-FINAL.csv). Every row has Approval Status **PENDING**.
-- Generator: `tools/tour_number_review.py`. It re-runs from the package data, so every figure below comes from the pages themselves.
+- Machine-readable sheet: [`PACKAGE-ID-MAPPING-FINAL.csv`](PACKAGE-ID-MAPPING-FINAL.csv). Every row has Approval Status **PENDING**.
+- Generator: `tools/package_id_review.py`. It re-runs from the package data, so every figure below comes from the pages themselves.
 
 ## How to decide
 
@@ -22,7 +22,7 @@ Write one of these in the **Owner Decision** column of the decision table (secti
 
 | Decision | Meaning |
 |---|---|
-| **APPROVED** | The tour gets its proposed Tour No. permanently. |
+| **APPROVED** | The tour gets its proposed Package ID permanently. |
 | **MERGED** | The tour is combined into another tour. It gets no active number. Its URL redirects (301) to the kept tour, and the merge is recorded. |
 | **RETIRED** | The tour is withdrawn. Its URL redirects to its destination page. Its proposed number is reserved and never given to another tour without your approval. |
 | **PENDING** | Not decided yet. It gets no number. |
@@ -41,10 +41,10 @@ Write one of these in the **Owner Decision** column of the decision table (secti
 
 ## 1. Complete mapping
 
-- **Existing Package ID:** the website has no database ID for these pages; the old database was not provided. The permanent interim key is `slug:<page URL>`. It becomes a numeric `package_id` when the CMS database is created, with the same Tour No.
+- **Internal ref:** the website has no database key for these pages; the old database was not provided. The interim internal key is `slug:<page URL>`. It becomes the database internal key (`package_pk`) when the CMS database is created. The Package ID stays the same.
 - **Current Status:** every tour is a published static page with no approved rate (Price on request).
 
-| Proposed Tour No. | Existing Package ID | Package Name | Destination | Duration | Current URL | Current Status | Overlap Flag | Recommended Review Action |
+| Proposed Package ID | Internal ref | Package Name | Destination | Duration | Current URL | Current Status | Overlap Flag | Recommended Review Action |
 |---|---|---|---|---|---|---|---|---|
 | 0001 | `slug:srinagar-gulmarg-tour-03nt04dy` | Srinagar Gulmarg Tour Package | Kashmir | 3 Nights / 4 Days | /srinagar-gulmarg-tour-03nt04dy | Published | — | KEEP |
 | 0002 | `slug:srinagar-gulmarg-pahalgam-tour-package-5-days` | Srinagar Gulmarg Pahalgam Tour Package | Kashmir | 4 Nights / 5 Days | /srinagar-gulmarg-pahalgam-tour-package-5-days | Published | — | KEEP |
@@ -186,7 +186,7 @@ Write one of these in the **Owner Decision** column of the decision table (secti
 - **C. Appear identical?** No.
 - **D. Material differences:** trip length 7 Nights / 8 Days vs 8 Nights / 9 Days; different day-by-day plans.
   - Data note, 0012: itinerary lists 8 days but the page says 9 days.
-- **E. Suggested:** **KEEP (correct page data)**. Different trip length; each can carry its own Tour No.
+- **E. Suggested:** **KEEP (correct page data)**. Different trip length; each can carry its own Package ID
 
 ### 2.3 0013 Best of Shimla Vacation ↔ 0014 Best of Shimla
 
@@ -207,7 +207,7 @@ Write one of these in the **Owner Decision** column of the decision table (secti
 - **B. Overlaps with:** 0015 `/amritsar-with-dalhousie-dharamshala-05-days` ↔ 0019 `/amrirsar-with-dalhousie-and-dharamshala-06-days`
 - **C. Appear identical?** No.
 - **D. Material differences:** trip length 4 Nights / 5 Days vs 5 Nights / 6 Days; different inclusions.
-- **E. Suggested:** **KEEP**. Different trip length; each can carry its own Tour No.
+- **E. Suggested:** **KEEP**. Different trip length; each can carry its own Package ID
 
 ### 2.5 0017 Manali Volvo Trip weekend ↔ 0020 Best of Manali with Delhi By Volvo
 
@@ -217,7 +217,7 @@ Write one of these in the **Owner Decision** column of the decision table (secti
 - **B. Overlaps with:** 0017 `/manali-volvo-vrip-weekend` ↔ 0020 `/best-of-manali-with-delhi-by-volvo`
 - **C. Appear identical?** No.
 - **D. Material differences:** trip length 4 Nights / 5 Days vs 5 Nights / 6 Days; different day-by-day plans.
-- **E. Suggested:** **KEEP**. Different trip length; each can carry its own Tour No.
+- **E. Suggested:** **KEEP**. Different trip length; each can carry its own Package ID
 
 ### 2.6 0022 Shimla Manali Tour ↔ 0023 Shimla Manali with Chandigarh
 
@@ -237,7 +237,7 @@ Write one of these in the **Owner Decision** column of the decision table (secti
 - **B. Overlaps with:** 0036 `/haridwar-with-mussoorie-and-jim-corbett-05-days` ↔ 0040 `/haridwar--with-mussoorie-and-corbett-06-days`
 - **C. Appear identical?** No.
 - **D. Material differences:** trip length 4 Nights / 5 Days vs 5 Nights / 6 Days; different inclusions.
-- **E. Suggested:** **KEEP**. Different trip length; each can carry its own Tour No.
+- **E. Suggested:** **KEEP**. Different trip length; each can carry its own Package ID
 
 ### 2.8 0038 Nainital with Kausani and Jim Corbett ↔ 0042 Nainital with Kausani and Jim Corbett
 
@@ -247,7 +247,7 @@ Write one of these in the **Owner Decision** column of the decision table (secti
 - **B. Overlaps with:** 0038 `/nainital-with-kausani-and-jim-corbett-05-days` ↔ 0042 `/nainital-with-kausani-and-jim-corbett-06-days`
 - **C. Appear identical?** No.
 - **D. Material differences:** trip length 4 Nights / 5 Days vs 5 Nights / 6 Days; different inclusions.
-- **E. Suggested:** **KEEP**. Different trip length; each can carry its own Tour No.
+- **E. Suggested:** **KEEP**. Different trip length; each can carry its own Package ID
 
 ### 2.9 0039 Nainital with Ranikhet Jim Corbett ↔ 0043 Nainital with Ranikhet and jim corbett
 
@@ -257,7 +257,7 @@ Write one of these in the **Owner Decision** column of the decision table (secti
 - **B. Overlaps with:** 0039 `/nainital-with-ranikhet--jim-corbett` ↔ 0043 `/nainital-with-ranikhet-and-jim-corbett-06-days`
 - **C. Appear identical?** No.
 - **D. Material differences:** trip length 4 Nights / 5 Days vs 5 Nights / 6 Days; different inclusions.
-- **E. Suggested:** **KEEP**. Different trip length; each can carry its own Tour No.
+- **E. Suggested:** **KEEP**. Different trip length; each can carry its own Package ID
 
 ### 2.10 0041 Mussoorie with Nainital and Jim Corbett ↔ 0044 Corbett With Nainital and mussoorie
 
@@ -267,7 +267,7 @@ Write one of these in the **Owner Decision** column of the decision table (secti
 - **B. Overlaps with:** 0041 `/mussoorie-with-nainital-and-jim-corbett-06-days` ↔ 0044 `/corbett-with-nainital-and-mussoorie-07-days`
 - **C. Appear identical?** No.
 - **D. Material differences:** trip length 5 Nights / 6 Days vs 6 Nights / 7 Days; different day-by-day plans; different inclusions.
-- **E. Suggested:** **KEEP**. Different trip length; each can carry its own Tour No.
+- **E. Suggested:** **KEEP**. Different trip length; each can carry its own Package ID
 
 ### 2.11 0051 Do Dham Yatra (Kedarnath - Badrinath) Tour from Haridwar 5 Days Package ↔ 0052 6-Day Do Dham Yatra (Kedarnath & Badrinath) Tour from Haridwar
 
@@ -277,7 +277,7 @@ Write one of these in the **Owner Decision** column of the decision table (secti
 - **B. Overlaps with:** 0051 `/do-dham-kedar–badri-from-haridwar-4n-5d` ↔ 0052 `/do-dham-kedar–badri-from-haridwar-5n-6d`
 - **C. Appear identical?** No.
 - **D. Material differences:** trip length 04 Nights / 05 Days vs 5 Nights / 6 Days.
-- **E. Suggested:** **KEEP**. Different trip length; each can carry its own Tour No.
+- **E. Suggested:** **KEEP**. Different trip length; each can carry its own Package ID
 
 ### 2.12 0054 Char Dham yatra Package from Haridwar for 9 Days ↔ 0055 Char Dham yatra Package from Haridwar for 9 Days
 
@@ -304,7 +304,7 @@ Write one of these in the **Owner Decision** column of the decision table (secti
   - Data note, 0054: URL says 12 days but the page says 08 Nights / 09 Days.
   - Data note, 0054: itinerary lists 10 days but the page says 9 days.
   - Data note, 0054: URL says "from Delhi" but the page content is "Char Dham yatra Package from Haridwar for 9 Days".
-- **E. Suggested:** **KEEP (correct page data)**. Different trip length; each can carry its own Tour No.
+- **E. Suggested:** **KEEP (correct page data)**. Different trip length; each can carry its own Package ID
 
 ### 2.14 0055 Char Dham yatra Package from Haridwar for 9 Days ↔ 0056 Char Dham yatra Package from Haridwar
 
@@ -315,7 +315,7 @@ Write one of these in the **Owner Decision** column of the decision table (secti
 - **C. Appear identical?** No.
 - **D. Material differences:** trip length 08 Nights / 09 Days vs 9 Nights / 10 Days.
   - Data note, 0055: itinerary lists 10 days but the page says 9 days.
-- **E. Suggested:** **KEEP (correct page data)**. Different trip length; each can carry its own Tour No.
+- **E. Suggested:** **KEEP (correct page data)**. Different trip length; each can carry its own Package ID
 
 ### 2.15 0060 Amarnath Ji Tour Package by Helicopter for 2 Nights 3 Days ↔ 0061 Amarnath Ji Yatra by Helicopter – 3 Nights 4 Days with Srinagar Tour
 
@@ -325,7 +325,7 @@ Write one of these in the **Owner Decision** column of the decision table (secti
 - **B. Overlaps with:** 0060 `/amarnath-ji-yatra-by-helicopter-2n-3d` ↔ 0061 `/amarnath-ji-yatra-by-helicopter-3n-4d`
 - **C. Appear identical?** No.
 - **D. Material differences:** trip length 2 Nights / 3 Days vs 3 Nights / 4 Days.
-- **E. Suggested:** **KEEP**. Different trip length; each can carry its own Tour No.
+- **E. Suggested:** **KEEP**. Different trip length; each can carry its own Package ID
 
 ### 2.16 0064 Darjeeling Gangtok Tour ↔ 0066 Darjeeling and Gangtok Tour
 
@@ -337,7 +337,7 @@ Write one of these in the **Owner Decision** column of the decision table (secti
 - **D. Material differences:** trip length 3 Nights / 4 Days vs 4 Nights / 5 Days; different day-by-day plans; different inclusions.
   - Data note, 0066: URL says 6 days but the page says 4 Nights / 5 Days.
   - Data note, 0066: itinerary lists 6 days but the page says 5 days.
-- **E. Suggested:** **KEEP (correct page data)**. Different trip length; each can carry its own Tour No.
+- **E. Suggested:** **KEEP (correct page data)**. Different trip length; each can carry its own Package ID
 
 ### 2.17 0064 Darjeeling Gangtok Tour ↔ 0067 Darjeeling Gangtok Tour
 
@@ -347,7 +347,7 @@ Write one of these in the **Owner Decision** column of the decision table (secti
 - **B. Overlaps with:** 0064 `/darjeeling-gangtok-04-days` ↔ 0067 `/darjeeling-gangtok-05-days`
 - **C. Appear identical?** No.
 - **D. Material differences:** trip length 3 Nights / 4 Days vs 4 Nights / 5 Days; different day-by-day plans; different inclusions.
-- **E. Suggested:** **KEEP**. Different trip length; each can carry its own Tour No.
+- **E. Suggested:** **KEEP**. Different trip length; each can carry its own Package ID
 
 ### 2.18 0066 Darjeeling and Gangtok Tour ↔ 0067 Darjeeling Gangtok Tour
 
@@ -369,7 +369,7 @@ Write one of these in the **Owner Decision** column of the decision table (secti
 - **B. Overlaps with:** 0086 `/mysore-coorg-04-days` ↔ 0089 `/banglore-mysore-coorg--tour-05-days`
 - **C. Appear identical?** No.
 - **D. Material differences:** trip length 3 Nights / 4 Days vs 4 Nights / 5 Days; different inclusions.
-- **E. Suggested:** **KEEP**. Different trip length; each can carry its own Tour No.
+- **E. Suggested:** **KEEP**. Different trip length; each can carry its own Package ID
 
 ### 2.20 0088 Bangalore Mysore Ooty tour ↔ 0091 Ooty Mysore tour
 
@@ -381,7 +381,7 @@ Write one of these in the **Owner Decision** column of the decision table (secti
 - **D. Material differences:** trip length 4 Nights / 5 Days vs 5 Nights / 6 Days.
   - Data note, 0091: URL says 4 days but the page says 5 Nights / 6 Days.
   - Data note, 0091: itinerary lists 4 days but the page says 6 days.
-- **E. Suggested:** **KEEP (correct page data)**. Different trip length; each can carry its own Tour No.
+- **E. Suggested:** **KEEP (correct page data)**. Different trip length; each can carry its own Package ID
 
 ### 2.21 0092 Delightful Goa Tour ↔ 0093 Enticing Tour to Goa
 
@@ -501,7 +501,7 @@ Write one of these in the **Owner Decision** column of the decision table (secti
 - **B. Overlaps with:** 0097 `/best-of-dubai-tour` ↔ 0099 `/best-dubai-tour`
 - **C. Appear identical?** No.
 - **D. Material differences:** trip length 2 Nights / 3 Days vs 3 Nights / 4 Days.
-- **E. Suggested:** **KEEP**. Different trip length; each can carry its own Tour No.
+- **E. Suggested:** **KEEP**. Different trip length; each can carry its own Package ID
 
 ### 2.33 0097 Best of Dubai tour ↔ 0100 Dubai Travel Packages
 
@@ -511,7 +511,7 @@ Write one of these in the **Owner Decision** column of the decision table (secti
 - **B. Overlaps with:** 0097 `/best-of-dubai-tour` ↔ 0100 `/dubai-travel-packages`
 - **C. Appear identical?** No.
 - **D. Material differences:** trip length 2 Nights / 3 Days vs 3 Nights / 4 Days; different day-by-day plans; different inclusions.
-- **E. Suggested:** **KEEP**. Different trip length; each can carry its own Tour No.
+- **E. Suggested:** **KEEP**. Different trip length; each can carry its own Package ID
 
 ### 2.34 0098 Dubai Family Trip with FREE Burj Khalifa Tickets ↔ 0099 Best Dubai Tour
 
@@ -521,7 +521,7 @@ Write one of these in the **Owner Decision** column of the decision table (secti
 - **B. Overlaps with:** 0098 `/dubai-family-trip-with-free-burj-khalifa-tickets` ↔ 0099 `/best-dubai-tour`
 - **C. Appear identical?** No.
 - **D. Material differences:** trip length 2 Nights / 3 Days vs 3 Nights / 4 Days; different day-by-day plans; different inclusions.
-- **E. Suggested:** **KEEP**. Different trip length; each can carry its own Tour No.
+- **E. Suggested:** **KEEP**. Different trip length; each can carry its own Package ID
 
 ### 2.35 0098 Dubai Family Trip with FREE Burj Khalifa Tickets ↔ 0100 Dubai Travel Packages
 
@@ -531,7 +531,7 @@ Write one of these in the **Owner Decision** column of the decision table (secti
 - **B. Overlaps with:** 0098 `/dubai-family-trip-with-free-burj-khalifa-tickets` ↔ 0100 `/dubai-travel-packages`
 - **C. Appear identical?** No.
 - **D. Material differences:** trip length 2 Nights / 3 Days vs 3 Nights / 4 Days; different day-by-day plans; different inclusions.
-- **E. Suggested:** **KEEP**. Different trip length; each can carry its own Tour No.
+- **E. Suggested:** **KEEP**. Different trip length; each can carry its own Package ID
 
 ### 2.36 0099 Best Dubai Tour ↔ 0100 Dubai Travel Packages
 
@@ -551,7 +551,7 @@ Write one of these in the **Owner Decision** column of the decision table (secti
 - **B. Overlaps with:** 0099 `/best-dubai-tour` ↔ 0101 `/deluxe-tour-to-dubai-4n5d`
 - **C. Appear identical?** No.
 - **D. Material differences:** trip length 3 Nights / 4 Days vs 4 Nights / 5 Days; different day-by-day plans; different inclusions.
-- **E. Suggested:** **KEEP**. Different trip length; each can carry its own Tour No.
+- **E. Suggested:** **KEEP**. Different trip length; each can carry its own Package ID
 
 ### 2.38 0099 Best Dubai Tour ↔ 0102 Standard Tour to Dubai
 
@@ -561,7 +561,7 @@ Write one of these in the **Owner Decision** column of the decision table (secti
 - **B. Overlaps with:** 0099 `/best-dubai-tour` ↔ 0102 `/standard-tour-to-dubai-4n5d`
 - **C. Appear identical?** No.
 - **D. Material differences:** trip length 3 Nights / 4 Days vs 4 Nights / 5 Days; different day-by-day plans; different inclusions.
-- **E. Suggested:** **KEEP**. Different trip length; each can carry its own Tour No.
+- **E. Suggested:** **KEEP**. Different trip length; each can carry its own Package ID
 
 ### 2.39 0100 Dubai Travel Packages ↔ 0101 Deluxe Tour to Dubai
 
@@ -571,7 +571,7 @@ Write one of these in the **Owner Decision** column of the decision table (secti
 - **B. Overlaps with:** 0100 `/dubai-travel-packages` ↔ 0101 `/deluxe-tour-to-dubai-4n5d`
 - **C. Appear identical?** No.
 - **D. Material differences:** trip length 3 Nights / 4 Days vs 4 Nights / 5 Days; different day-by-day plans; different inclusions.
-- **E. Suggested:** **KEEP**. Different trip length; each can carry its own Tour No.
+- **E. Suggested:** **KEEP**. Different trip length; each can carry its own Package ID
 
 ### 2.40 0100 Dubai Travel Packages ↔ 0102 Standard Tour to Dubai
 
@@ -581,7 +581,7 @@ Write one of these in the **Owner Decision** column of the decision table (secti
 - **B. Overlaps with:** 0100 `/dubai-travel-packages` ↔ 0102 `/standard-tour-to-dubai-4n5d`
 - **C. Appear identical?** No.
 - **D. Material differences:** trip length 3 Nights / 4 Days vs 4 Nights / 5 Days; different day-by-day plans; different inclusions.
-- **E. Suggested:** **KEEP**. Different trip length; each can carry its own Tour No.
+- **E. Suggested:** **KEEP**. Different trip length; each can carry its own Package ID
 
 ### 2.41 0101 Deluxe Tour to Dubai ↔ 0102 Standard Tour to Dubai
 
@@ -596,7 +596,7 @@ Write one of these in the **Owner Decision** column of the decision table (secti
 ## 2b. Other records to check (not flagged as overlaps)
 
 **Page-data problems.**
-- The Tour No. does not depend on these fields, so numbering can go ahead.
+- The Package ID does not depend on these fields, so numbering can go ahead.
 - Correcting them later does not change the number.
 - Where a problem changes *which trip the page is*, it is marked REVIEW.
 
@@ -620,7 +620,7 @@ Write one of these in the **Owner Decision** column of the decision table (secti
 | 0083 | Munnar Alleppey Tour Package (`/munnar-alleppey-kovalam-06-days`) | no day-by-day itinerary on the page | KEEP (correct page data) |
 | 0091 | Ooty Mysore tour (`/ooty-mysore-04-days`) | URL says 4 days but the page says 5 Nights / 6 Days; itinerary lists 4 days but the page says 6 days | KEEP (correct page data) |
 
-**Same or near-same titles.** These are different trips (different lengths or places) with names that are hard to tell apart. Consider adding the length or route to the name. Renaming never changes the Tour No.
+**Same or near-same titles.** These are different trips (different lengths or places) with names that are hard to tell apart. Consider adding the length or route to the name. Renaming never changes the Package ID
 
 | Titles | Tours |
 |---|---|
@@ -702,7 +702,7 @@ Write one of these in the **Owner Decision** column of the decision table (secti
 
 Every merge or retirement is recorded with these fields:
 
-| Old package | Old Tour No. (if assigned) | Retained package | Final Tour No. | Redirect / archive |
+| Old package | Old Package ID (if assigned) | Retained package | Final Package ID | Redirect / archive |
 |---|---|---|---|---|
 | `slug:…` | — (none assigned yet) | `slug:…` | the retained tour's number | 301 from the old URL to the retained tour; old record kept as archived |
 
@@ -717,7 +717,7 @@ Every merge or retirement is recorded with these fields:
 ## 5. After approval: migration plan (not run)
 
 1. **Freeze.** Your decisions are copied into the CSV (APPROVED / MERGED / RETIRED / PENDING) and committed. That commit is the approval record.
-2. **Interim registry.** In `tour-registry.json`:
+2. **Interim registry.** In `package-registry.json`:
    - APPROVED rows change from `proposed` to `approved`;
    - MERGED and RETIRED rows are recorded with their disposition;
    - PENDING rows stay `proposed`, so they get no public number.
@@ -727,38 +727,39 @@ Every merge or retirement is recorded with these fields:
    - The counter is locked with `SELECT … FOR UPDATE`; it never uses `MAX()+1`.
    - Safeguards:
      - unique and four-digit constraints;
-     - an append-only `tour_number_registry` as the audit trail;
+     - an append-only `package_id_registry` as the audit trail;
      - `package_audit` rows for each change.
    - **Rollback:** run on a copy first. If any check fails, the transaction is rolled back and nothing is kept. After a successful run, the pre-migration database backup is kept until you sign off.
-5. **Retest** (section 6). Then Tour No. goes live with the next approved deployment.
+5. **Retest** (section 6). Then Package ID goes live with the next approved deployment.
 
 ## 6. Tests to run after assignment
 
 | Check | How it is tested |
 |---|---|
-| All active tours have a unique Tour No.; no duplicates | tools/tests/tour_registry_test.php (registry integrity); DB unique constraint |
+| All active tours have a unique Package ID; no duplicates | tools/tests/package_registry_test.php (registry integrity); DB unique constraint |
 | Retired numbers stay reserved | registry_test.php: retire 0001, next package gets 0003 |
-| Name, URL, price and itinerary changes do not change the Tour No. | registry_test.php (rename, slug change, new rate version); an extra check will compare the approved snapshot |
-| Search by Tour No. works | tour.js: "0002" and "Tour No. 0002" open the tour |
-| Enquiry, WhatsApp and itinerary show the Tour No. | tour.js (live mode once approved) |
-| CRM and payment payloads carry the Tour No. | registry_test.php: enquiry, payment and booking rows |
+| Name, URL, price and itinerary changes do not change the Package ID | registry_test.php (rename, slug change, new rate version); an extra check will compare the approved snapshot |
+| Search by Package ID works | tour.js: "0002" and "Package ID 0002" open the tour |
+| Enquiry, WhatsApp and itinerary show the Package ID | tour.js (live mode once approved) |
+| CRM and payment payloads carry the Package ID | registry_test.php: enquiry, payment and booking rows |
 | Historical records stay traceable | registry_test.php: payment keeps name, rate and number after a rename |
 | No public inventory counts | counts.py page scan |
 
 ## 7. Gate items still open (need your go-ahead; not built at this stage)
 
-**Offer codes (gate items 11 and 16)**
-- There are no offers yet, so enquiries do not carry an Offer Code.
-- Proposed design:
-  - a separate `offers` table with its own sequence, `OF-0001` onwards, never shared with Tour No.;
-  - an `offer_tours` link table, so one tour can have many offers;
+**Offer packages and offer codes (gate items 11 and 16)**
+- **Offer packages** (a package sold as an offer) get a Package ID from the **same single sequence** as domestic, international and special packages, so no two packages ever share an ID.
+- **Offer codes** (a discount or promotion applied to a package) are a different thing. If you use them, they need their own format so they are never confused with a Package ID. Proposed:
+  - an `offers` table with codes `OF-0001` onwards;
+  - an `offer_packages` link table, so one package can have several offers;
   - `offer_code` stored on enquiry, quotation, payment and booking records, so history keeps the offer that applied.
+- There are no offers yet, so enquiries do not carry an offer code. Not built until you confirm you want promo codes.
 
 **Selected add-ons (gate item 11)**
 - No add-ons are defined yet.
 - Proposed: optional add-ons attached to a rate version (`package_rate_items`, kind `addon`), with the selected ones sent in the enquiry.
 
-**Tour No. prominence (gate item 9):** verified. The label is a small uppercase line (13 px); the tour name is the 40 px heading.
+**Where the Package ID shows (owner decision, 30 Sep):** only in the itinerary header on the package page. It is not shown on cards, the title area, breadcrumbs or search suggestions. It is carried in enquiry emails, WhatsApp messages and CRM, quotation and payment records.
 
-**Search by Tour No. (gate item 10):** verified. The search redirects (302) to the tour's own canonical URL, and `/tours?…` search URLs are noindex. No duplicate indexable URLs are created.
+**Search by Package ID (gate item 10):** verified. The search redirects (302) to the tour's own canonical URL, and `/tours?…` search URLs are noindex. No duplicate indexable URLs are created.
 

@@ -19,4 +19,4 @@ config.local.php
 !docs/package-registry/schema-draft.sql
 *.sql.gz
 hgt-config.php
-public_html/include/data/.preview-tour-numbers
+public_html/include/data/.preview-package-ids
