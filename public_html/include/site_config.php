@@ -75,6 +75,16 @@ if (!defined('HG_SITE_CONFIG')) {
         if ($trimmed === '') {
             return is_file($root . '/index.php');
         }
+        // Destination pages /tours/{key} are routed to tours.php (no file per destination).
+        if (preg_match('#^tours/([a-z0-9-]+)$#', $trimmed, $m)) {
+            $dest = json_decode((string) @file_get_contents($root . '/include/data/destinations.json'), true);
+            foreach ((isset($dest['groups']) ? $dest['groups'] : array()) as $g) {
+                if ($g['key'] === $m[1]) {
+                    return true;
+                }
+            }
+            return false;
+        }
         return is_file($root . '/' . $trimmed . '.php')
             || is_file($root . '/' . $trimmed . '/index.php')
             || (strpos(basename($trimmed), '.') !== false && is_file($root . '/' . $trimmed));

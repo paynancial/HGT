@@ -36,7 +36,7 @@ NOT_PACKAGES = {
     'honeymoon-holiday', 'pilgrim-holidays', 'adventure-holiday', 'kashmir-tour', 'leh-ladakh',
     'uttarakhand-tour', 'chardham-yatra', 'amarnath-ji-yatra', 'darjeeling-sikkim', 'delight-full-himachal',
     'exotic-kerala', 'royal-rajasthan', 'amazing-goa', 'dream-dubai', 'sizzling-singapore',
-    'thriller-thailand', 'dubai-travel-packages', 'chardham-package', 'ooty-mysore-coorg',
+    'thriller-thailand', 'ooty-mysore-coorg',
     'customized-holidays', 'faqs', 'india-tours', 'tours',
 }
 
@@ -131,14 +131,37 @@ PLACES = ['Srinagar', 'Gulmarg', 'Pahalgam', 'Sonmarg', 'Doodhpathri', 'Yusmarg'
           'Uttarkashi', 'Guptkashi', 'Yamunotri', 'Gangotri', 'Kedarnath', 'Badrinath', 'Gangtok', 'Darjeeling', 'Pelling',
           'Kalimpong', 'Lachung', 'Lachen', 'Munnar', 'Thekkady', 'Alleppey', 'Kovalam', 'Kanyakumari', 'Cochin',
           'Trivandrum', 'Ooty', 'Mysore', 'Coorg', 'Kodaikanal', 'Wayanad', 'Bangalore', 'Goa', 'Dubai', 'Abu Dhabi',
-          'Singapore', 'Kuala Lumpur', 'Pattaya', 'Bangkok', 'Maldives']
+          'Singapore', 'Kuala Lumpur', 'Pattaya', 'Phuket', 'Bangkok', 'Maldives']
 ALIASES = {'Pahalgam': r'pahal?gam|phalgam', 'Sonmarg': r'sona?marg', 'Jim Corbett': r'corbett',
            'Alleppey': r'alleppey|alappuzha', 'Cochin': r'cochin|kochi', 'Trivandrum': r'trivand', 'Wayanad': r'wayan?a?d',
            'Bangalore': r'bang?alore', 'Dharamshala': r'dharam?shala|dharmshala', 'Thekkady': r'thekk?e?a?dy',
            'Amritsar': r'amr?i?r?t?sar'}
 
 
+# Lines that sit under a page's "Inclusion" tab but are clearly not inclusions.
+# They are moved (never reworded) and recorded in 'corrections'.
+MISFILED = [
+    (r'\(except inclusion\)|^air/? ?train fare|cost incidental', 'exclusions'),
+    (r'we required full amount|^mode of payment|booking voucher', 'booking'),
+]
+
+
+def reclassify(p):
+    keep, moved = [], []
+    for line in p['inclusions']:
+        dest = next((d for rx, d in MISFILED if re.search(rx, line.strip(), re.I)), None)
+        if dest:
+            p[dest].append(line)
+            moved.append(f'moved from inclusions to {dest}: {line[:70]}')
+        else:
+            keep.append(line)
+    p['inclusions'] = keep
+    p['corrections'] = moved
+    return p
+
+
 def enrich(p):
+    reclassify(p)
     head = ' '.join([p['title'], p['name'], p['slug'].replace('-', ' '), p['cities']] + [d['title'] for d in p['itinerary']])
     places = []
     for pl in PLACES:

@@ -233,9 +233,10 @@ if (!defined('HG_UI_CORE')) {
             return '<img class="' . hg_e($cls) . '" src="/' . hg_e($path) . '" alt="' . hg_e($alt) . '" width="' . (int) $width
                 . '" height="' . (int) $height . '"' . ($eager ? ' fetchpriority="high"' : ' loading="lazy"') . ' decoding="async">';
         }
-        $label = HG_DEV_MODE ? '<span class="hg-ph__label">Image: ' . hg_e($path !== '' ? basename($path) : 'to be supplied') . '</span>' : '';
+        // Blank until the owner adds the photo (the expected file is kept in data-image for the team).
+        $label = '';
         $a11y = $alt === '' ? 'aria-hidden="true"' : 'role="img" aria-label="' . hg_e($alt) . '"';
-        return '<div class="' . hg_e($cls) . ' hg-ph" ' . $a11y . ' style="aspect-ratio:' . (int) $width . '/' . (int) $height . '">'
+        return '<div class="' . hg_e($cls) . ' hg-ph" data-image="' . hg_e($path) . '" ' . $a11y . ' style="aspect-ratio:' . (int) $width . '/' . (int) $height . '">'
             . '<svg class="hg-ph__icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M6 38l11-14 8 9 6-7 11 12z" fill="currentColor" opacity=".55"/><circle cx="34" cy="14" r="5" fill="currentColor" opacity=".55"/></svg>'
             . $label . '</div>';
     }
@@ -324,7 +325,10 @@ if (!defined('HG_UI_CORE')) {
     <meta property="og:locale" content="en_IN">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="theme-color" content="#0A163D">
-    <link rel="icon" type="image/png" href="/assets/img/favicon.png">
+    <link rel="icon" href="/favicon.ico" sizes="48x48">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/brand/favicon-32.png">
+    <link rel="apple-touch-icon" href="/assets/brand/apple-touch-icon.png">
+    <link rel="manifest" href="/assets/brand/site.webmanifest">
     <link rel="preload" href="/assets/fonts/hg/plus-jakarta-sans-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/assets/fonts/hg/plus-jakarta-sans-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="/assets/fonts/hg/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>

@@ -65,6 +65,7 @@
    "Once we receive the amount will issue a booking voucher"
   ],
   "warnings": [],
+  "corrections": [],
   "places": [
    "Srinagar",
    "Sonmarg"
@@ -148,6 +149,7 @@
    "Once we receive the amount will issue a booking voucher"
   ],
   "warnings": [],
+  "corrections": [],
   "places": [
    "Srinagar",
    "Sonmarg"
@@ -239,6 +241,7 @@
    "Once we receive the amount will issue a booking voucher"
   ],
   "warnings": [],
+  "corrections": [],
   "places": [
    "Srinagar",
    "Pahalgam"
@@ -325,6 +328,7 @@
    "Once we receive the amount will issue a booking voucher"
   ],
   "warnings": [],
+  "corrections": [],
   "places": [
    "Srinagar",
    "Gulmarg",
@@ -384,6 +388,7 @@
   "terms": [],
   "booking": [],
   "warnings": [],
+  "corrections": [],
   "places": [
    "Dalhousie",
    "Dharamshala",
@@ -433,10 +438,7 @@
   ],
   "inclusions": [
    "To book and confirm your tour we request you to deposit 35% Of the total Package amount, as an advance, balance amount to be paid before Departure.",
-   "For Air/ Train Tickets we required Full amount.",
-   "MODE OF PAYMENT : Net Banking / IMPS / NEFT / CHEQUE/ GPAY/ PHONE PAY/ UPI /SCANQR CODE / PAYTM – WE DO NOT ACCEPT CASH.",
-   "Check in / Check out time as per hotel policy. (as per availability)",
-   "Once we receive the amount will issue a booking voucher"
+   "Check in / Check out time as per hotel policy. (as per availability)"
   ],
   "exclusions": [
    "To book and confirm your tour we request you to deposit 35% Of the total Package amount, as an advance, balance amount to be paid before Departure.",
@@ -457,9 +459,17 @@
    "For Air/ Train Tickets we required Full amount.",
    "MODE OF PAYMENT : Net Banking / IMPS / NEFT / CHEQUE/ GPAY/ PHONE PAY/ UPI /SCANQR CODE / PAYTM – WE DO NOT ACCEPT CASH.",
    "Check in / Check out time as per hotel policy. (as per availability)",
+   "Once we receive the amount will issue a booking voucher",
+   "For Air/ Train Tickets we required Full amount.",
+   "MODE OF PAYMENT : Net Banking / IMPS / NEFT / CHEQUE/ GPAY/ PHONE PAY/ UPI /SCANQR CODE / PAYTM – WE DO NOT ACCEPT CASH.",
    "Once we receive the amount will issue a booking voucher"
   ],
   "warnings": [],
+  "corrections": [
+   "moved from inclusions to booking: For Air/ Train Tickets we required Full amount.",
+   "moved from inclusions to booking: MODE OF PAYMENT : Net Banking / IMPS / NEFT / CHEQUE/ GPAY/ PHONE PAY/",
+   "moved from inclusions to booking: Once we receive the amount will issue a booking voucher"
+  ],
   "places": [
    "Dalhousie",
    "Dharamshala",
@@ -520,6 +530,7 @@
   "terms": [],
   "booking": [],
   "warnings": [],
+  "corrections": [],
   "places": [
    "Dalhousie",
    "Dharamshala",
@@ -573,6 +584,7 @@
   "terms": [],
   "booking": [],
   "warnings": [],
+  "corrections": [],
   "places": [
    "Ooty",
    "Mysore",
@@ -649,6 +661,7 @@
   ],
   "booking": [],
   "warnings": [],
+  "corrections": [],
   "places": [
    "Mysore",
    "Coorg",
@@ -723,6 +736,7 @@
    "Rates are valid till 30TH September 2018 except 20th December till 10th January (high peak dates)."
   ],
   "warnings": [],
+  "corrections": [],
   "places": [
    "Dubai"
   ],
@@ -789,6 +803,7 @@
    "Cancelled 7 or lesser days prior: 100% of booking value"
   ],
   "warnings": [],
+  "corrections": [],
   "places": [
    "Dubai"
   ],
@@ -885,6 +900,7 @@
    "Also do read booking procedure which is given in every package detail."
   ],
   "warnings": [],
+  "corrections": [],
   "places": [
    "Manali",
    "Kullu"
@@ -974,6 +990,7 @@
    "Rates are valid till 30th September 2018 except 20th December till 10th January (high peak dates)."
   ],
   "warnings": [],
+  "corrections": [],
   "places": [
    "Shimla",
    "Manali"
@@ -1030,6 +1047,7 @@
   "warnings": [
    "no day-by-day itinerary on the page"
   ],
+  "corrections": [],
   "places": [
    "Shimla"
   ],
@@ -1104,6 +1122,7 @@
    "Rates are valid till 30th September 2018 except 20th December till 10th January (high peak dates)."
   ],
   "warnings": [],
+  "corrections": [],
   "places": [
    "Shimla"
   ],
@@ -1182,6 +1201,7 @@
    "Rates are valid till 30th September 2018 except 20th December till 10th January (high peak dates)."
   ],
   "warnings": [],
+  "corrections": [],
   "places": [
    "Shimla",
    "Amritsar",
@@ -1259,6 +1279,7 @@
    "Rates are valid till 30th September 2018 except 20th December till 10th January (high peak dates)."
   ],
   "warnings": [],
+  "corrections": [],
   "places": [
    "Leh"
   ],
@@ -1365,6 +1386,7 @@
    "Once we receive the amount will issue a booking voucher"
   ],
   "warnings": [],
+  "corrections": [],
   "places": [
    "Haridwar",
    "Barkot",
@@ -1479,6 +1501,7 @@
   "warnings": [
    "URL says \"from Delhi\" but day 1 does not start there"
   ],
+  "corrections": [],
   "places": [
    "Rishikesh",
    "Haridwar",
@@ -1592,6 +1615,7 @@
    "Once we receive the amount will issue a booking voucher"
   ],
   "warnings": [],
+  "corrections": [],
   "places": [
    "Rishikesh",
    "Haridwar",
@@ -1610,6 +1634,96 @@
   "hotel": "Deluxe",
   "meals": "Breakfast & dinner",
   "transfers": "Private cab"
+ },
+ {
+  "slug": "chardham-package",
+  "url": "/chardham-package",
+  "title": "Chardham Package 12 Days Ex Delhi Tour",
+  "name": "Chardham Package 12 Days Ex Delhi Tour",
+  "page_title": "Chardham Package 12 Days Ex Delhi Tour 11 Nights / 12 Days | Holiday Guru Travel",
+  "description": "Experience the ultimate spiritual journey with our 11-night, 12-day Char Dham package. Visit Yamunotri, Gangotri, Kedarnath, and Badrinath with expert guides, comfortable stays, and seamless travel arrangements.",
+  "duration": "11 Nights / 12 Days",
+  "nights": 11,
+  "days": 12,
+  "cities": "-> Haridwar - 1Day, Barkot - 1Day, Uttarkashi - 1Day, Guptkashi - 1Day, Kedarnath - 1Day, Rudraprayag - 1Day, Badrinath - 1Day,\nRudraprayag - 1Day, Haridwar - 1Day, Haridwar - 2Day, Delhi - 1Day",
+  "image": "",
+  "group": "char-dham",
+  "departure": null,
+  "pilgrimage": true,
+  "itinerary": [
+   {
+    "title": "Day 1 : (Haridwar)Delhi to Haridwar (230 kms/6hrs).",
+    "text": "Begin your drive to Haridwar form Delhi. On reaching Haridwar, check-in to your hotel. In the sunset, visit the Har- Ki- Pauri to attend the Ganga Aarti. Afterward, go back to the hotel for dinner and have a relaxed stay at nights"
+   },
+   {
+    "title": "Day 2 : (Barkot)Haridwar to Barkot (205 Km / 7 to 8 Hours).",
+    "text": "This daybreak, you leave for Barkot / Jankichatti. Barkot is an attractive hill-station which is placed on the foot of Yamunotri. As you drive during Mussoorie, you can visit the well-known Kempty Falls on your way. On arrival at Barkot, check-in to your hotel or camp. Relax of the day and refresh for the Yatra of Yamunotri the next day. Dinner and Overnight stay at Barkot."
+   },
+   {
+    "title": "Day 3 : (Uttarkashi)Barkot to Yamunotri to Barkot (48 Km / 2 Hours or start trek)",
+    "text": "After breakfast, leave for Hanumanchatti (40 Km), Janki Chatti (8 km). Here you will start the Yatra of Yamunotri. You have a choice of hiring palki or a horse for your trek. On entrance by afternoon in Yamunotri take holy dip in Yamuna River and perform Pooja. Go back through the same way back to Barkot; check in at Hotel or Camp. Dinner and Overnight stay at hotel in Barkot."
+   },
+   {
+    "title": "Day 4 : (Guptkashi)Barkot to Uttarkashi (85 Km/ 3 Hours Journey).",
+    "text": "After breakfast check out from the Barkot hotel and drive to Uttarkashi. On the entrance check in into the hotel. Uttarkashi is positioned on the banks of river Bhagirathi and is famous for its historical monuments, Temples and Ashrams. In the sunset, Visit the well-known Vishwanath Temple. Dinner and Overnight stay at Uttarkashi."
+   },
+   {
+    "title": "Day 5 : (Kedarnath)Uttarkashi to Gangotri to Uttarkashi (100 Km / 3 to 4 Hours)",
+    "text": "Early daybreak breakfast at hotel and drive to Gangotri. Upon entrance at Gangotri take a holy dip in the sacred river Ganges which is also called Bhagirathi at its origin. Visit the Gangotri Temple. After performing Pooja Late afternoon drive back to Uttarkashi. Dinner and Overnight stay at Uttarkashi."
+   },
+   {
+    "title": "Day 6 : (Rudraprayag)Uttarkashi to Guptkashi (240 Km / 9 to 10 Hours)",
+    "text": "Depart for your next destination, Guptkashi after having your breakfast early in the daybreak. On reaching, check-in to the hotel. Guptkashi is placed at a distance of 47 km from the holy shrine, Kedarnath. The town holds immense religious importance as it houses well-known ancient temples like Vishwanath Temple and Ardhnareshwar Temple. Have your dinner and stay overnight in the hotel or camp"
+   },
+   {
+    "title": "Day 7 : (Badrinath)Guptkashi to Sonprayag to Kedarnath (30 Km + 20 Km trek)",
+    "text": "Early sunrise after breakfast check out from the hotel and drive to Sonprayag. From where, you will start your 20 km trek to Kedarnath. On arrival check in at Govt. Camps or Lodges. Dinner and Overnight at Govt. Camps or Lodges."
+   },
+   {
+    "title": "Day 8 : (Rudraprayag)Kedarnath to Sonprayag to Guptkashi / Rudraprayag (20 Km trek + 30 Km / 52 Kms drive)",
+    "text": "Early sunrise you get up before dawn and after taking bath you are at the temple by 4:45 am for the 'Abhishek' to Kedarnath Shiva. After darshan and puja you come out of the temple and go back to the Govt. Camps / Lodges. Afterward you will begin the go back trek of 20 km from Kedarnath to Sonprayag. The vehicles wait for you in Sonprayag Car Parking and drive to your hotel (Guptkashi / Rudraprayag). Dinner and Overnight at Guptkashi / Rudraprayag"
+   },
+   {
+    "title": "Day 9 : (Haridwar)Rudraprayag / Guptkashi to Joshimath to Badrinath (190 Km 0r 240 Kms / 8to 9 Hours)",
+    "text": "This sunrise, you check out of the hotel at 08:00 am and drive to Badrinath via Joshimath. After having your breakfast in the daybreak, check out of the hotel and start driving towards your next destination, Badrinath through Joshimath. On the arrival check in to the hotel. Next to go to Tapt Kund, take bath and after that go to the temple. Devoted to Lord Vishnu, the temple of Shri Badrinath Ji. Afterward back to hotel. Dinner and Overnight stay at hotel."
+   },
+   {
+    "title": "Day 10 : (Haridwar)Badrinath to Joshimath to Rudraprayag / Birahi / Srinagar (165 Km / 5 to 6 Hours)",
+    "text": "This sunrise, visit Badrinath Temple for Darshan. Later, go back to the hotel for breakfast. After breakfast, you can leave for going to places of interest at Badrinath such as Mana Village, Vyas Gufa, Ganesh Gufa, and Mata Murti temple. In the daylight, check out from the hotel and head towards Rudraprayag through Joshimath. On the way visit Karanprayag. Rudraprayag holds great spiritual importance. Also, the town features stunning natural attractiveness and tranquility. On reaching Rudraprayag, check-in to the hotel. You can relax for the rest of the day or travel around the loveliness of Rudraprayag. Have your dinner and stay overnight at the hotel."
+   },
+   {
+    "title": "Day 11 : (Haridwar)Birahi / Srinagar / Rudraprayag to Rishikesh to Haridwar (160 Km / 5 to 6 Hours)",
+    "text": "Early morning, after breakfast, you drive downhill to Rishikesh a religious city and the Yoga capital of the world. On reaching Rishikesh, going to places of interest. Visit Ram Jhula and Laxman Jhula. Sunset drive to Haridwar. On arrival check in at hotel. Dinner and Overnight stay at hotel."
+   },
+   {
+    "title": "Day 12 : (Delhi)Haridwar to Delhi (230 Km / 6 to 7 Hours)",
+    "text": "Morning breakfast at hotel, and you are on your last day of this Char Dham Yatra Package. Drive back to Delhi. On reaching Delhi transfer to Railway Station / Airport."
+   }
+  ],
+  "inclusions": [],
+  "exclusions": [],
+  "terms": [],
+  "booking": [],
+  "warnings": [],
+  "corrections": [],
+  "places": [
+   "Srinagar",
+   "Rishikesh",
+   "Haridwar",
+   "Barkot",
+   "Uttarkashi",
+   "Guptkashi",
+   "Yamunotri",
+   "Gangotri",
+   "Kedarnath",
+   "Badrinath"
+  ],
+  "features": [
+   "Pilgrimage"
+  ],
+  "hotel": "",
+  "meals": "",
+  "transfers": ""
  },
  {
   "slug": "chardham-yatra-by-helicopter",
@@ -1664,6 +1778,7 @@
   "terms": [],
   "booking": [],
   "warnings": [],
+  "corrections": [],
   "places": [
    "Guptkashi",
    "Yamunotri",
@@ -1776,6 +1891,7 @@
    "Once we receive the amount will issue a booking voucher"
   ],
   "warnings": [],
+  "corrections": [],
   "places": [
    "Rishikesh",
    "Haridwar",
@@ -1846,6 +1962,7 @@
   "terms": [],
   "booking": [],
   "warnings": [],
+  "corrections": [],
   "places": [
    "Munnar",
    "Thekkady",
@@ -1928,6 +2045,7 @@
    "# Booking Voucher Once we receive the amount will issue a booking voucher"
   ],
   "warnings": [],
+  "corrections": [],
   "places": [
    "Nainital",
    "Jim Corbett"
@@ -1989,6 +2107,7 @@
   "terms": [],
   "booking": [],
   "warnings": [],
+  "corrections": [],
   "places": [
    "Nainital",
    "Mussoorie",
@@ -2045,6 +2164,7 @@
   "terms": [],
   "booking": [],
   "warnings": [],
+  "corrections": [],
   "places": [
    "Gangtok",
    "Darjeeling"
@@ -2122,6 +2242,7 @@
    "Once we receive the amount will issue a booking voucher"
   ],
   "warnings": [],
+  "corrections": [],
   "places": [
    "Gangtok",
    "Darjeeling"
@@ -2173,6 +2294,7 @@
   "terms": [],
   "booking": [],
   "warnings": [],
+  "corrections": [],
   "places": [
    "Gangtok",
    "Darjeeling"
@@ -2250,6 +2372,7 @@
    "Once we receive the amount will issue a booking voucher"
   ],
   "warnings": [],
+  "corrections": [],
   "places": [
    "Darjeeling",
    "Kalimpong"
@@ -2335,6 +2458,7 @@
    "Once we receive the amount will issue a booking voucher"
   ],
   "warnings": [],
+  "corrections": [],
   "places": [
    "Gangtok",
    "Darjeeling",
@@ -2437,6 +2561,7 @@
    "Once we receive the amount will issue a booking voucher"
   ],
   "warnings": [],
+  "corrections": [],
   "places": [
    "Gangtok",
    "Darjeeling",
@@ -2535,6 +2660,7 @@
    "Once we receive the amount will issue a booking voucher"
   ],
   "warnings": [],
+  "corrections": [],
   "places": [
    "Gangtok",
    "Darjeeling",
@@ -2621,6 +2747,7 @@
    "Once we receive the amount will issue a booking voucher"
   ],
   "warnings": [],
+  "corrections": [],
   "places": [
    "Gangtok",
    "Darjeeling",
@@ -2694,6 +2821,7 @@
    "Rates are valid till 30th September 2018 except 20th December till 10th January (high peak dates)."
   ],
   "warnings": [],
+  "corrections": [],
   "places": [
    "Goa"
   ],
@@ -2769,6 +2897,7 @@
    "Please note, we have allocation from the hotels mentioned. However in the rare event of any of the above mentioned hotels or room category booked not becoming available at the time of reconfirmation of the reservations, we shall book alternate accommodation at a similar or next best available hotel and shall pass on the difference of rates (supplement/reduction whatever applicable) to you."
   ],
   "warnings": [],
+  "corrections": [],
   "places": [
    "Dubai"
   ],
@@ -2860,6 +2989,7 @@
    "Rates are valid till 30th September 2018 except 20th December till 10th January (high peak dates)."
   ],
   "warnings": [],
+  "corrections": [],
   "places": [
    "Leh",
    "Nubra",
@@ -2944,6 +3074,7 @@
    "Once we receive the amount will issue a booking voucher"
   ],
   "warnings": [],
+  "corrections": [],
   "places": [
    "Haridwar",
    "Guptkashi",
@@ -3036,6 +3167,7 @@
    "Once we receive the amount will issue a booking voucher"
   ],
   "warnings": [],
+  "corrections": [],
   "places": [
    "Haridwar",
    "Guptkashi",
@@ -3089,6 +3221,64 @@
   "terms": [],
   "booking": [],
   "warnings": [],
+  "corrections": [],
+  "places": [
+   "Dubai"
+  ],
+  "features": [],
+  "hotel": "",
+  "meals": "",
+  "transfers": ""
+ },
+ {
+  "slug": "dubai-travel-packages",
+  "url": "/dubai-travel-packages",
+  "title": "Dubai Travel Packages",
+  "name": "Dubai Travel Packages",
+  "page_title": "Dubai Travel Packages 3 Nights / 4 Days | Holiday Guru Travel",
+  "description": "Explore the best of Dubai with our customized travel packages. Get affordable deals on flights, hotels, and sightseeing tours. Book your Dubai trip now and create unforgettable memories",
+  "duration": "3 Nights / 4 Days",
+  "nights": 3,
+  "days": 4,
+  "cities": "Dubai-4Day",
+  "image": "",
+  "group": "dubai",
+  "departure": null,
+  "pilgrimage": false,
+  "itinerary": [
+   {
+    "title": "Day 1 : (Dubai)Arrival in Dubai",
+    "text": "Upon your arrival at the Airport Arrival Terminal, you will be greeted by our representative holding a signage card with your name written on it. You will then be transferred to your designated hotel for check-in, giving you a chance to relax and unwind for the day."
+   },
+   {
+    "title": "Day 2 : (Dubai)Dubai City Exploration, Dubai Mall, and Burj Khalifa Summit",
+    "text": "Start with breakfast and then embark on a half-day city tour in Dubai, starting with the Dubai Museum (entry ticket not included), housed in the historic Al Fahidi Fort. Discover the glitzy side of Dubai with visits to the iconic Burj Al Arab Hotel, Palm Island, and the Atlantis Hotel. Take a drive along Sheik Zayed Road, surrounded by towering skyscrapers. Visit the Dubai Mall, one of the world's largest shopping centers with over 1200 stores. Then, head to the summit of the Burj Khalifa, the world's tallest tower. Experience the thrill of a high-speed elevator ride to the 124th Floor, offering unobstructed 360-degree views of the city, desert, and ocean through floor-to-ceiling glass walls. Spend half an hour at the top and come down to enjoy the Dubai Fountains' captivating shows starting at 7 pm. Return to your hotel for a good night's rest."
+   },
+   {
+    "title": "Day 3 : (Dubai)Evening Desert Safari With Dinner",
+    "text": "Experience the thrill of an Evening Desert Safari in Dubai. You'll be picked up from your hotel for a round trip adventure into the Arabian desert. Enjoy sand boarding, camel riding, dune bashing, and henna painting. Capture stunning sunset views. End the night with a mesmerizing belly dancing show under the stars, along with a delectable BBQ dinner (including unlimited soft drinks) and the option for shisha smoking at an additional cost. Return to your hotel for a peaceful sleep."
+   },
+   {
+    "title": "Day 4 : (Dubai)Evening Dhow Cruise",
+    "text": "After breakfast, embark on a unique experience with a dhow cruise along Dubai Creek. This historic waterway divides the city into Bur Dubai and Deira, lined with exquisite buildings. The dhow, a traditional Bedouin boat, has been transformed into a restaurant. Enjoy a welcome drink upon arrival and savor delicious barbecued dishes as you cruise along. Choose between the air-conditioned lower deck and the open-air upper deck for your delightful journey. Finally, return to your hotel for your last night in Dubai."
+   }
+  ],
+  "inclusions": [
+   "Hotel",
+   "Sightseeing",
+   "Transfer",
+   "Meal"
+  ],
+  "exclusions": [
+   "Travel Insurance",
+   "Airfare",
+   "Entrance Fees and Excursions",
+   "Personal Expenses"
+  ],
+  "terms": [],
+  "booking": [],
+  "warnings": [],
+  "corrections": [],
   "places": [
    "Dubai"
   ],
@@ -3167,6 +3357,7 @@
    "Also do read booking procedure which is given in every package detail."
   ],
   "warnings": [],
+  "corrections": [],
   "places": [
    "Goa"
   ],
@@ -3238,6 +3429,7 @@
    "Rates are valid till 30th September 2018 except 20th December till 10th January (high peak dates)."
   ],
   "warnings": [],
+  "corrections": [],
   "places": [
    "Goa"
   ],
@@ -3310,6 +3502,7 @@
    "Rates are valid till 30th September 2018 except 20th December till 10th January (high peak dates)."
   ],
   "warnings": [],
+  "corrections": [],
   "places": [
    "Goa"
   ],
@@ -3360,6 +3553,7 @@
   "terms": [],
   "booking": [],
   "warnings": [],
+  "corrections": [],
   "places": [
    "Gangtok",
    "Pelling"
@@ -3451,6 +3645,7 @@
    "Once we receive the amount will issue a booking voucher"
   ],
   "warnings": [],
+  "corrections": [],
   "places": [
    "Gangtok",
    "Darjeeling",
@@ -3547,6 +3742,7 @@
    "Once we receive the amount will issue a booking voucher"
   ],
   "warnings": [],
+  "corrections": [],
   "places": [
    "Gangtok",
    "Darjeeling",
@@ -3608,6 +3804,7 @@
   "terms": [],
   "booking": [],
   "warnings": [],
+  "corrections": [],
   "places": [
    "Gangtok",
    "Pelling",
@@ -3692,6 +3889,7 @@
   "terms": [],
   "booking": [],
   "warnings": [],
+  "corrections": [],
   "places": [
    "Katra",
    "Shimla",
@@ -3780,6 +3978,7 @@
    "# Booking Voucher Once we receive the amount will issue a booking voucher"
   ],
   "warnings": [],
+  "corrections": [],
   "places": [
    "Mussoorie",
    "Jim Corbett",
@@ -3858,6 +4057,7 @@
    "# Once we receive the amount will issue a booking voucher"
   ],
   "warnings": [],
+  "corrections": [],
   "places": [
    "Mussoorie",
    "Rishikesh",
@@ -3933,6 +4133,7 @@
    "# Once we receive the amount will issue a booking voucher"
   ],
   "warnings": [],
+  "corrections": [],
   "places": [
    "Rishikesh",
    "Haridwar"
@@ -3986,6 +4187,7 @@
   "terms": [],
   "booking": [],
   "warnings": [],
+  "corrections": [],
   "places": [
    "Mussoorie",
    "Jim Corbett",
@@ -4050,6 +4252,7 @@
   "terms": [],
   "booking": [],
   "warnings": [],
+  "corrections": [],
   "places": [
    "Nainital",
    "Mussoorie",
@@ -4112,6 +4315,7 @@
   "terms": [],
   "booking": [],
   "warnings": [],
+  "corrections": [],
   "places": [
    "Nainital",
    "Mussoorie",
@@ -4199,6 +4403,7 @@
    "Rates are valid till 30th September 2018 except 20th December till 10th January (high peak dates)."
   ],
   "warnings": [],
+  "corrections": [],
   "places": [
    "Leh",
    "Nubra",
@@ -4293,6 +4498,7 @@
    "Once we receive the amount will issue a booking voucher"
   ],
   "warnings": [],
+  "corrections": [],
   "places": [
    "Gangtok",
    "Darjeeling",
@@ -4355,6 +4561,7 @@
   "terms": [],
   "booking": [],
   "warnings": [],
+  "corrections": [],
   "places": [
    "Munnar",
    "Thekkady",
@@ -4427,6 +4634,7 @@
   "terms": [],
   "booking": [],
   "warnings": [],
+  "corrections": [],
   "places": [
    "Maldives"
   ],
@@ -4513,6 +4721,7 @@
    "The holiday guru travel deducts processing charges from the refund to be paid to the Guest."
   ],
   "warnings": [],
+  "corrections": [],
   "places": [
    "Manali",
    "Kullu"
@@ -4570,6 +4779,7 @@
   "terms": [],
   "booking": [],
   "warnings": [],
+  "corrections": [],
   "places": [
    "Manali",
    "Dharamshala",
@@ -4624,8 +4834,6 @@
    "Entry tickets, Camera fees, Heater Charges",
    "Any optional trips other than Specified in the itinerary.",
    "Personal Expense Like, clothes, shopping, medical kit, adventure activities.",
-   "Air/train Fare or any other local transportation. (Except Inclusion)",
-   "Cost incidental to any changes in the itinerary/stay on flight cancellation, due to bad weather, ill health, road blocks or other any factor beyond control.",
    "Gst Extra 5% on GST BILL."
   ],
   "exclusions": [
@@ -4636,7 +4844,9 @@
    "Personal Expense Like, clothes, shopping, medical kit, adventure activities.",
    "Air/train Fare or any other local transportation. (Except Inclusion)",
    "Cost incidental to any changes in the itinerary/stay on flight cancellation, due to bad weather, ill health, road blocks or other any factor beyond control.",
-   "Gst Extra 5% on GST BILL."
+   "Gst Extra 5% on GST BILL.",
+   "Air/train Fare or any other local transportation. (Except Inclusion)",
+   "Cost incidental to any changes in the itinerary/stay on flight cancellation, due to bad weather, ill health, road blocks or other any factor beyond control."
   ],
   "terms": [
    "Rooms will be subject to availability.",
@@ -4669,6 +4879,10 @@
    "Also do read booking procedure which is given in every package detail."
   ],
   "warnings": [],
+  "corrections": [
+   "moved from inclusions to exclusions: Air/train Fare or any other local transportation. (Except Inclusion)",
+   "moved from inclusions to exclusions: Cost incidental to any changes in the itinerary/stay on flight cancell"
+  ],
   "places": [
    "Manali",
    "Kullu",
@@ -4747,6 +4961,7 @@
   "warnings": [
    "duration says 5 days but the itinerary has 3 days"
   ],
+  "corrections": [],
   "places": [
    "Munnar",
    "Alleppey",
@@ -4814,6 +5029,7 @@
   "warnings": [
    "no day-by-day itinerary on the page"
   ],
+  "corrections": [],
   "places": [
    "Munnar",
    "Alleppey",
@@ -4903,6 +5119,7 @@
    "Also do read booking procedure which is given in every package detail."
   ],
   "warnings": [],
+  "corrections": [],
   "places": [
    "Munnar",
    "Alleppey",
@@ -4962,10 +5179,8 @@
   ],
   "inclusions": [
    "# To book and confirm your tour we request you to deposit 35% Of the total Package amount, as an advance, balance amount to be paid before Departure.",
-   "# For Air/ Train Tickets we required Full amount.",
    "# MODE OF PAYMENT : Net Banking / IMPS / NEFT / CHEQUE/ GPAY/ PHONE PAY/ UPI /SCANQR CODE / PAYTM – WE DO NOT ACCEPT CASH.",
-   "# Check-in/Check-out Check in / Check out time as per hotel policy. (as per availability)",
-   "# Booking Voucher Once we receive the amount will issue a booking voucher"
+   "# Check-in/Check-out Check in / Check out time as per hotel policy. (as per availability)"
   ],
   "exclusions": [
    "# To book and confirm your tour we request you to deposit 35% Of the total Package amount, as an advance, balance amount to be paid before Departure.",
@@ -4986,9 +5201,15 @@
    "# For Air/ Train Tickets we required Full amount.",
    "# MODE OF PAYMENT : Net Banking / IMPS / NEFT / CHEQUE/ GPAY/ PHONE PAY/ UPI /SCANQR CODE / PAYTM – WE DO NOT ACCEPT CASH.",
    "# Check-in/Check-out Check in / Check out time as per hotel policy. (as per availability)",
+   "# Booking Voucher Once we receive the amount will issue a booking voucher",
+   "# For Air/ Train Tickets we required Full amount.",
    "# Booking Voucher Once we receive the amount will issue a booking voucher"
   ],
   "warnings": [],
+  "corrections": [
+   "moved from inclusions to booking: # For Air/ Train Tickets we required Full amount.",
+   "moved from inclusions to booking: # Booking Voucher Once we receive the amount will issue a booking vouc"
+  ],
   "places": [
    "Munnar",
    "Thekkady",
@@ -5086,6 +5307,7 @@
    "Also do read booking procedure which is given in every package detail."
   ],
   "warnings": [],
+  "corrections": [],
   "places": [
    "Munnar",
    "Thekkady",
@@ -5149,6 +5371,7 @@
   "terms": [],
   "booking": [],
   "warnings": [],
+  "corrections": [],
   "places": [
    "Munnar",
    "Thekkady",
@@ -5228,6 +5451,7 @@
    "Rates are not valid on long weekend, 20th December till 10th January (high peak dates)."
   ],
   "warnings": [],
+  "corrections": [],
   "places": [
    "Munnar",
    "Thekkady",
@@ -5274,6 +5498,7 @@
   "terms": [],
   "booking": [],
   "warnings": [],
+  "corrections": [],
   "places": [
    "Mussoorie"
   ],
@@ -5366,6 +5591,7 @@
    "Once we receive the amount will issue a booking voucher"
   ],
   "warnings": [],
+  "corrections": [],
   "places": [
    "Nainital",
    "Mussoorie",
@@ -5416,6 +5642,7 @@
   "terms": [],
   "booking": [],
   "warnings": [],
+  "corrections": [],
   "places": [
    "Mussoorie",
    "Jim Corbett"
@@ -5506,6 +5733,7 @@
    "Once we receive the amount will issue a booking voucher"
   ],
   "warnings": [],
+  "corrections": [],
   "places": [
    "Nainital",
    "Mussoorie",
@@ -5570,6 +5798,7 @@
   "terms": [],
   "booking": [],
   "warnings": [],
+  "corrections": [],
   "places": [
    "Nainital",
    "Mussoorie",
@@ -5618,6 +5847,7 @@
   "terms": [],
   "booking": [],
   "warnings": [],
+  "corrections": [],
   "places": [
    "Mysore",
    "Coorg",
@@ -5681,6 +5911,7 @@
   "terms": [],
   "booking": [],
   "warnings": [],
+  "corrections": [],
   "places": [
    "Ooty",
    "Mysore",
@@ -5730,6 +5961,7 @@
   "terms": [],
   "booking": [],
   "warnings": [],
+  "corrections": [],
   "places": [
    "Mysore",
    "Wayanad",
@@ -5804,6 +6036,7 @@
    "# Once we receive the amount will issue a booking voucher"
   ],
   "warnings": [],
+  "corrections": [],
   "places": [
    "Nainital"
   ],
@@ -5878,6 +6111,7 @@
   "warnings": [
    "duration says 5 days but the itinerary has 3 days"
   ],
+  "corrections": [],
   "places": [
    "Nainital",
    "Jim Corbett",
@@ -5931,6 +6165,7 @@
   "terms": [],
   "booking": [],
   "warnings": [],
+  "corrections": [],
   "places": [
    "Nainital",
    "Jim Corbett",
@@ -5994,6 +6229,7 @@
   "terms": [],
   "booking": [],
   "warnings": [],
+  "corrections": [],
   "places": [
    "Nainital",
    "Jim Corbett",
@@ -6046,6 +6282,7 @@
   "terms": [],
   "booking": [],
   "warnings": [],
+  "corrections": [],
   "places": [
    "Nainital",
    "Jim Corbett",
@@ -6109,6 +6346,7 @@
   "terms": [],
   "booking": [],
   "warnings": [],
+  "corrections": [],
   "places": [
    "Nainital",
    "Jim Corbett",
@@ -6169,6 +6407,7 @@
   "terms": [],
   "booking": [],
   "warnings": [],
+  "corrections": [],
   "places": [
    "Nainital",
    "Jim Corbett",
@@ -6234,6 +6473,7 @@
   "terms": [],
   "booking": [],
   "warnings": [],
+  "corrections": [],
   "places": [
    "Nainital",
    "Jim Corbett",
@@ -6286,6 +6526,7 @@
   "warnings": [
    "duration says 6 days but the itinerary has 4 days"
   ],
+  "corrections": [],
   "places": [
    "Ooty",
    "Mysore",
@@ -6375,6 +6616,7 @@
    "Rates are valid till 30th September 2018 except 20th December till 10th January (high peak dates)."
   ],
   "warnings": [],
+  "corrections": [],
   "places": [
    "Leh",
    "Nubra",
@@ -6468,6 +6710,7 @@
    "Rates are valid till 30th September 2018 except 20th December till 10th January (high peak dates)."
   ],
   "warnings": [],
+  "corrections": [],
   "places": [
    "Leh",
    "Nubra",
@@ -6572,9 +6815,11 @@
    "Package rates are valid for the selected travel dates only and for the room category and other services, specified."
   ],
   "warnings": [],
+  "corrections": [],
   "places": [
    "Singapore",
    "Kuala Lumpur",
+   "Phuket",
    "Bangkok"
   ],
   "features": [],
@@ -6658,6 +6903,7 @@
    "Once we receive the amount will issue a booking voucher"
   ],
   "warnings": [],
+  "corrections": [],
   "places": [
    "Shimla",
    "Manali",
@@ -6742,6 +6988,7 @@
   ],
   "booking": [],
   "warnings": [],
+  "corrections": [],
   "places": [
    "Shimla",
    "Manali",
@@ -6807,6 +7054,7 @@
   "terms": [],
   "booking": [],
   "warnings": [],
+  "corrections": [],
   "places": [
    "Shimla",
    "Manali",
@@ -6907,6 +7155,7 @@
    "Once we receive the amount will issue a booking voucher"
   ],
   "warnings": [],
+  "corrections": [],
   "places": [
    "Shimla",
    "Manali",
@@ -6993,6 +7242,7 @@
    "Package rates are valid for the selected travel dates only and for the room category and other services, specified."
   ],
   "warnings": [],
+  "corrections": [],
   "places": [
    "Singapore",
    "Kuala Lumpur"
@@ -7073,6 +7323,7 @@
    "Rates are valid till 30th September 2018 except 20th December till 10th January (high peak dates)."
   ],
   "warnings": [],
+  "corrections": [],
   "places": [
    "Leh",
    "Pangong"
@@ -7156,6 +7407,7 @@
    "Once we receive the amount will issue a booking voucher"
   ],
   "warnings": [],
+  "corrections": [],
   "places": [
    "Srinagar",
    "Gulmarg",
@@ -7223,6 +7475,7 @@
   "warnings": [
    "no day-by-day itinerary on the page"
   ],
+  "corrections": [],
   "places": [
    "Srinagar",
    "Gulmarg",
@@ -7277,6 +7530,7 @@
   "terms": [],
   "booking": [],
   "warnings": [],
+  "corrections": [],
   "places": [
    "Srinagar",
    "Gulmarg",
@@ -7375,6 +7629,7 @@
    "Once we receive the amount will issue a booking voucher"
   ],
   "warnings": [],
+  "corrections": [],
   "places": [
    "Srinagar",
    "Gulmarg",
@@ -7461,6 +7716,7 @@
    "Once we receive the amount will issue a booking voucher"
   ],
   "warnings": [],
+  "corrections": [],
   "places": [
    "Srinagar",
    "Gulmarg"
@@ -7550,6 +7806,7 @@
    "Once we receive the amount will issue a booking voucher"
   ],
   "warnings": [],
+  "corrections": [],
   "places": [
    "Srinagar",
    "Gulmarg",
@@ -7630,6 +7887,7 @@
    "Please note, we have allocation from the hotels mentioned. However in the rare event of any of the above mentioned hotels or room category booked not becoming available at the time of reconfirmation of the reservations, we shall book alternate accommodation at a similar or next best available hotel and shall pass on the difference of rates (supplement/reduction whatever applicable) to you."
   ],
   "warnings": [],
+  "corrections": [],
   "places": [
    "Dubai"
   ],
@@ -7695,6 +7953,7 @@
   ],
   "booking": [],
   "warnings": [],
+  "corrections": [],
   "places": [
    "Goa"
   ],
@@ -7798,6 +8057,7 @@
    "Package rates are valid for the selected travel dates only and for the room category and other services, specified."
   ],
   "warnings": [],
+  "corrections": [],
   "places": [
    "Singapore",
    "Kuala Lumpur",
@@ -7881,6 +8141,7 @@
    "Refund strictly as per the cancellation policy is given."
   ],
   "warnings": [],
+  "corrections": [],
   "places": [
    "Singapore"
   ],
@@ -7923,6 +8184,7 @@
   "terms": [],
   "booking": [],
   "warnings": [],
+  "corrections": [],
   "places": [
    "Mussoorie",
    "Rishikesh"
@@ -8016,6 +8278,7 @@
   "warnings": [
    "duration says 10 days but the itinerary has 7 days"
   ],
+  "corrections": [],
   "places": [
    "Mussoorie",
    "Rishikesh",

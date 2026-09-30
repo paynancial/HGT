@@ -1,333 +1,64 @@
-<!doctype html>
-<html class="no-js" lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Car Rental Services from Delhi</title>
-    <meta name="author" content="Holiday Guru Travel">
-    <meta name="description" content="Experience personalized travel services with our expert consultants. We offer customized tour packages, efficient travel coordination, and trusted travel solutions. Get in touch with us to plan your dream trip!">
-    <meta name="keywords" content="travel services, tour packages, travel coordination, trusted travel solutions, customized travel, holiday planning, travel consultants">
-    <meta name="robots" content="INDEX,FOLLOW">
-    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
-    <link rel="canonical" href="https://holidaygurutravel.in/service">
-    <meta property="og:site_name" content="Holiday Guru Travel" />
-    <meta property="og:description" content="Experience personalized travel services with our expert consultants. We offer customized tour packages, efficient travel coordination, and trusted travel solutions. Get in touch with us to plan your dream trip!" />
-    <?php
-    include "include/header.php";
-    ?>
-    <style>
-        .checklist ul li {
-            text-align:justify;
-            font-size:15px;
-        }
-    </style>
-    <div class="breadcumb-wrapper" data-bg-src="assets/img/breadcumb-bg.jpg">
-        <div class="container">
-            <div class="breadcumb-content">
-                <h1 class="breadcumb-title">Car Rental Services from Delhi</h1>
-                <ul class="breadcumb-menu">
-                    <li><a href="/">Home</a></li>
-                    <li>Services</li>
-                </ul>
-            </div>
+<?php
+// Car rental service page (Phase 1). Vehicle list from the previous page; the old
+// per-km rates had no date or validity, so rates are quoted on request until the
+// owner publishes current rates (pricing rule: never show unconfirmed prices).
+require __DIR__ . '/include/ui/core.php';
+
+$fleet = array(
+    'Mini & sedan cars' => array('AC Swift Dzire (4+1 driver)', 'AC Hyundai Xcent (4+1 driver)', 'AC Chevrolet Sail (4+1 driver)', 'AC Honda Amaze (4+1 driver)', 'AC Toyota Etios (4+1 driver)', 'AC Maruti Suzuki Ciaz (4+1 driver)', 'AC Toyota Corolla (4+1 driver)', 'AC Honda City (4+1 driver)', 'AC Hyundai Verna (4+1 driver)'),
+    'SUVs' => array('AC Chevrolet Enjoy (7+1 driver)', 'AC Chevrolet Tavera (9+1 driver)', 'AC Toyota Innova (7+1 driver)', 'AC Toyota Innova Crysta (7+1 driver)'),
+    'AC Winger / Force Traveller' => array('AC 9-seater Tata Winger (9+1 driver)', 'AC 13-seater Tata Winger (13+1 driver)', '13-seater AC Force Traveller (13+1 driver)', '17-seater AC Force Traveller (17+1 driver)', '26-seater AC Force Traveller (26+1 driver)'),
+    'AC luxury tempo traveller' => array('15-seater AC luxury Force Traveller (15+1 driver)', '18-seater AC luxury Force Traveller (18+1 driver)'),
+    'Non-AC bus / tourist coach' => array('21-seater mini bus (21+1 driver)', '35-seater coach (35+1 driver)', '42-seater bus (42+1 driver)'),
+    'AC luxury bus / tourist coach' => array('AC 41-seater + 14 sleeper', '45-seater AC Volvo bus (45+1 driver)'),
+);
+$faqs = array(
+    array('Where do you provide cabs from?', '<p>From Delhi and Haridwar, including airport and railway station pick-ups, for local use and outstation trips such as Himachal and the Char Dham Yatra.</p>'),
+    array('How is the rental charged?', '<p>Rates depend on the vehicle, the route, the number of days and the season. Local use is typically quoted per 80 km / 8 hours and outstation trips per km with a daily minimum. Ask us for the current rate for your trip.</p>'),
+    array('Can I book a tempo traveller or bus for a group?', '<p>Yes — from 9-seater Tata Wingers and Force Travellers to 45-seater AC Volvo coaches.</p>'),
+    array('Is the driver included?', '<p>Yes. Every vehicle comes with a driver; seating shown is passengers plus the driver.</p>'),
+);
+
+hg_layout_start(array(
+    'title' => 'Car Rental Services from Delhi | Holiday Guru Travel',
+    'description' => 'Hire a car, SUV, tempo traveller or bus with driver from Delhi and Haridwar for local use, airport transfers, Himachal trips and the Char Dham Yatra. Ask for the current rate.',
+    'path' => '/service',
+    'breadcrumbs' => array(array('Home', '/'), array('Car rental', null)),
+    'schema' => array(hg_faq_schema($faqs)),
+));
+?>
+<section class="hg-pagehead" aria-labelledby="page-title">
+    <div class="hg-container">
+        <p class="hg-eyebrow">Services</p>
+        <h1 class="hg-h1" id="page-title">Car rental services from Delhi</h1>
+        <p class="hg-lead">Sedans, SUVs, tempo travellers and buses with driver — for airport and station pick-ups, local use, and outstation trips from Delhi and Haridwar to Himachal and the Char Dham Yatra.</p>
+        <div class="hg-pagehead__actions">
+            <a class="hg-btn hg-btn--primary" href="#rental-enquiry">Get a rental quote</a>
+            <a class="hg-btn hg-btn--outline" href="<?= hg_e(hg_whatsapp_href("Hi Holiday Guru Travel,\nI would like a quote for a car rental.")) ?>" target="_blank" rel="noopener"><?= hg_icon('whatsapp') ?>WhatsApp us</a>
         </div>
     </div>
-    <section class="space">
-        
-            <div class="container">
-                <div class="row">
-                    <div class="col-xl-12">
-                        <!-- Single -->
-                        <div class="mb-3" style="text-align:justify;">
-                            <h5 class="title font-600">Holiday Guru Travel Car Rental….!!!</h5>
-                            <!-- Single Listing -->
-                            <div class="checklist"><ul>
-                                <li> Sanitized Cab with All Safety Measures 
-Are you looking for car rentals to go nearby Want to hire Sedan, SUVs to make your trip memorable and adventurous? Seeking for options to travel in groups in tempo traveller or AC/Non AC buses and explore the beauty around? Holiday Guru Travel is the one stop platform, providing Holiday Guru Travel along with impeccable car rental services from Delhi  & Haridwar.  To Himachal  & Chardham yatra We have a wide network, connectivity and a large array of fleet of vehicles suiting diverse need of clients in the best possible manner.
+</section>
 
-                                </li>
-                                <li>
-                                    
-                                   We understand that when it comes to hiring a car, the primary concern of everyone is the quality and condition of that vehicle. We do ensure that all vehicles are in best condition and in best possible interest of the people. The car rentals are provided for around and outside of Odisha, airport, railway station and more at affordable prices. If you do have any personalized requirement, do feel free to contact us and we will serve the best of the industry. Proffering 24*7 car hire services, do go through the type of vehicle and their pricing and let us know the requirement at its earliest so that we can book in the meanwhile. Happy holidaying!
-
-                                </li>
-                                
-                                
-                            </ul></div>
-                        </div>
-                        <!-- Single -->
-                        <div class="mb-3">
-                            <h5 class="title font-600">MINI & SEDAN CARS</h5>
-                            <div class="table-responsive">
-                              <table class="table table-striped table-bordered">
-  <thead>
-    <tr>
-      <th>VARIANTS OF VEHICLE</th>
-      <th>80KM/8HRS(RS.)</th>
-      <th>EXTRA HRS (RS.)</th>
-      <th>EXTRA KM(RS.)</th>
-      <th>PER KM (RS.)(MINIMUM 200 KM PER DAY)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>AC SWIFT DZIRE (4+1 DRIVER)</td>
-      <td>1650</td>
-      <td>130</td>
-      <td>13</td>
-      <td>13</td>
-    </tr>
-    <tr>
-      <td>AC HYUNDAI XCENT (4+1 DRIVER)</td>
-      <td>1650</td>
-      <td>130</td>
-      <td>13</td>
-      <td>13</td>
-    </tr>
-    <tr>
-      <td>AC CHEVROLET SAIL(4+1 DRIVER)</td>
-      <td>1650</td>
-      <td>130</td>
-      <td>13</td>
-      <td>13</td>
-    </tr>
-    <tr>
-      <td>AC HONDA AMAZE (4+1 DRIVER)</td>
-      <td>1850</td>
-      <td>150</td>
-      <td>15</td>
-      <td>15</td>
-    </tr>
-    <tr>
-      <td>AC TOYOTA ETIOS (4+1 DRIVER)</td>
-      <td>1850</td>
-      <td>150</td>
-      <td>15</td>
-      <td>15</td>
-    </tr>
-    <tr>
-      <td>AC MARUTI SUZUKI CIAZ (4+1 DRIVER)</td>
-      <td>1850</td>
-      <td>150</td>
-      <td>15</td>
-      <td>15</td>
-    </tr>
-    <tr>
-      <td>AC COROLLA (4+1 DRIVER)</td>
-      <td>1850</td>
-      <td>150</td>
-      <td>15</td>
-      <td>15</td>
-    </tr>
-    <tr>
-      <td>AC HONDA CITY (4+1 DRIVER)</td>
-      <td>2450</td>
-      <td>200</td>
-      <td>20</td>
-      <td>20</td>
-    </tr>
-    <tr>
-      <td>AC HYUNDAI VERNA (4+1 DRIVER)</td>
-      <td>2450</td>
-      <td>200</td>
-      <td>20</td>
-      <td>20</td>
-    </tr>
-  </tbody>
-</table>
-                            </div>
-                            <!-- Single Listing -->
-                           
-                        </div>
-                        <!-- Single -->
-                        <div class="mb-3">
-                            <h5 class="title font-600">SUVS CARS</h5>
-                            <div class="table-responsive">
-                                <table class="table table-striped table-bordered">
-  <thead>
-    <tr>
-      <th>VARIANTS OF VEHICLE</th>
-      <th>80KM/8HRS (RS.)</th>
-      <th>EXTRA HRS (RS.)</th>
-      <th>EXTRA KM (RS.)</th>
-      <th>PER KM (RS.) (MINIMUM 200 KM PER DAY)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>AC CHEVROLET ENJOY (7+1 DRIVER)</td>
-      <td>2000</td>
-      <td>150</td>
-      <td>14</td>
-      <td>14</td>
-    </tr>
-    <tr>
-      <td>AC CHEVROLET TAVERA (9+1 DRIVER)</td>
-      <td>2200</td>
-      <td>180</td>
-      <td>16</td>
-      <td>16</td>
-    </tr>
-    <tr>
-      <td>AC TOYOTA INNOVA (7+1 DRIVER)</td>
-      <td>2200</td>
-      <td>200</td>
-      <td>18</td>
-      <td>18</td>
-    </tr>
-    <tr>
-      <td>AC INNOVA CRYSTA (7+1 DRIVER)</td>
-      <td>2550</td>
-      <td>250</td>
-      <td>22</td>
-      <td>22</td>
-    </tr>
-  </tbody>
-</table>
-                            </div>
-                        </div>
-                        <!-- Single -->
-                        <div class="mb-3">
-                            <h5 class="title font-600">AC WINGER / TRAVELLER</h5>
-                            <div class="table-responsive">
-                                <table class="table table-striped table-bordered">
-  <thead>
-    <tr>
-      <th>VARIANTS OF VEHICLE</th>
-      <th>80KM/8HRS (RS.)</th>
-      <th>EXTRA HRS (RS.)</th>
-      <th>EXTRA KM (RS.)</th>
-      <th>PER KM (RS.) (MINIMUM 200 KM PER DAY)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>AC 9 SEATER TATA WINGER (9+1 DRIVER)</td>
-      <td colspan="4">PRICE ON DEMAND</td>
-      
-    </tr>
-    <tr>
-      <td>AC 13 SEATER TATA WINGER (13+1 DRIVER)</td>
-      <td colspan="4"></td>
-      
-    </tr>
-    <tr>
-      <td>13 SEATER AC FORCE TRAVELLER (13+1 DRIVER)</td>
-      <td colspan="4"></td>
-      
-    </tr>
-    <tr>
-      <td>17 SEATER AC FORCE TRAVELLER (17+1 DRIVER)</td>
-      <td colspan="4"></td>
-      
-    </tr>
-    <tr>
-      <td>26 SEATER AC FORCE TRAVELLER (26+1 DRIVER)</td>
-      <td colspan="4"></td>
-      
-    </tr>
-  </tbody>
-</table></div>
-                        </div>
-                        <!-- Single -->
-                        <div class="mb-3">
-                            <h5 class="title font-600">AC LUXURY TEMPO TRAVELLER</h5>
-                            <div class="table-responsive">
-                               <table class="table table-striped table-bordered">
-  <thead>
-    <tr>
-      <th>VARIANTS OF VEHICLE</th>
-      <th>80KM/8HRS(RS.)</th>
-      <th>EXTRA HRS (RS.)</th>
-      <th>EXTRA KM(RS.)</th>
-      <th>PER KM (RS.)(MINIMUM 200 KM PER DAY)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>15 SEATER AC LUXURY FORCE TRAVELLER (15+1 DRIVER)</td>
-      <td colspan="4"></td>
-      
-    </tr>
-    <tr>
-      <td>18 SEATER AC LUXURY FORCE TRAVELLER (18+1 DRIVER)</td>
-      <td colspan="4">PRICE ON DEMAND</td>
-      
-    </tr>
-  </tbody>
-</table> 
-                                
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <h5 class="title font-600">NON-AC BUS / TOURIST COACH</h5>
-                            <div class="table-responsive">
-                               <table class="table table-striped table-bordered">
-  <thead>
-    <tr>
-      <th>VARIANTS OF VEHICLE</th>
-      <th>80KM/8HRS(RS.)</th>
-      <th>EXTRA HRS (RS.)</th>
-      <th>EXTRA KM(RS.)</th>
-      <th>PER KM (RS.)(MINIMUM 200 KM PER DAY)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>21 SEATER MINI BUS (21+1 DRIVER)</td>
-      <td colspan="4"></td>
-     
-    </tr>
-    <tr>
-      <td>35 SEATER COACH (35+1 DRIVER)</td>
-      <td colspan="4">PRICE ON DEMAND</td>
-     
-    </tr>
-    <tr>
-      <td>42 SEATER BUS (42+1 DRIVER)</td>
-      <td colspan="4"></td>
-      
-    </tr>
-  </tbody>
-</table>
-                                
-                            </div>
-                        </div>
-                        <div class="mb-3">
-                            <h5 class="title font-600">AC LUXURY BUS / AC TOURIST COACH</h5>
-                            <div class="table-responsive">
-                               <table class="table table-bordered table-striped">
-  <thead>
-    <tr>
-      <th>VARIANTS OF VEHICLE</th>
-      <th>80KM/8HRS (RS.)</th>
-      <th>EXTRA HRS (RS.)</th>
-      <th>EXTRA KM (RS.)</th>
-      <th>PER KM (RS.) (MINIMUM 200 KM PER DAY)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>AC 41 SEATER + 14 SLEEPER</td>
-      <td colspan="4">PRICE ON DEMAND</td>
-      
-    </tr>
-    <tr>
-      <td>45 SEATER AC VOLVO BUS (45+1 DRIVER)</td>
-      <td colspan="4"></td>
-      
-    </tr>
-  </tbody>
-</table>
-                                
-                            </div>
-                        </div>
-                    </div>
+<section class="hg-section hg-section--tight" aria-labelledby="fleet-title">
+    <div class="hg-container hg-layout">
+        <div>
+            <h2 class="hg-h2" id="fleet-title">Our fleet</h2>
+            <p class="hg-muted">All vehicles are air-conditioned unless marked non-AC, and come with a driver. Rates depend on the vehicle, route, days and season, and are quoted for your trip.</p>
+            <div class="hg-grid hg-grid--2">
+                <?php foreach ($fleet as $cat => $list) { ?>
+                <div class="hg-card">
+                    <h3><?= hg_icon('car') ?> <?= hg_e($cat) ?></h3>
+                    <ul class="hg-checks"><?php foreach ($list as $v) { ?><li><?= hg_e($v) ?></li><?php } ?></ul>
+                    <p class="hg-muted" style="margin-top:12px;font-size:14px"><strong>Rate:</strong> on request</p>
                 </div>
+                <?php } ?>
             </div>
-        
-    </section>
-    
-     <?php
-    include "include/footer.php";
-    ?>
+            <h2 class="hg-h2" style="margin-top:40px">Questions</h2>
+            <?= hg_faq($faqs) ?>
+        </div>
+        <aside class="hg-layout__side" id="rental-enquiry">
+            <div class="hg-sidecard"><?= hg_enquiry_form('rental-form', 'Get a rental quote', array('enquiry_type' => 'Car rental'), true) ?></div>
+        </aside>
+    </div>
+</section>
+<?php hg_layout_end(); ?>

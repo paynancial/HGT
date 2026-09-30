@@ -417,7 +417,7 @@
 
 @media (max-width: 1023px) {
     :root { --hg-header-h: 64px; --hg-sticky: 64px; }
-    .hg-utility__left li:nth-child(2), .hg-utility__right li:nth-child(-n+4) { display: none; }
+    .hg-utility__left li:nth-child(2), .hg-utility__right li:nth-child(-n+2) { display: none; }
     .hg-header__inner { gap: 8px; }
     .hg-header__menu, .hg-header__searchbtn, .hg-header__login { display: inline-flex; }
     .hg-header__logo img { width: 104px; }
@@ -862,7 +862,7 @@ html.hg-sheet-open .hg-bottombar, html.hg-sheet-open .hg-support { display: none
 /* ---------- Header alignment (owner review 2026-09-30) ---------- */
 /* The nav list is a <ul>; the generic ".hg-body ul" margin reset was cancelling
    the container's auto margins, pinning the menu to the left edge. */
-.hg-body .hg-nav__list { margin-left: auto; margin-right: auto; }
+.hg-body .hg-nav__list { margin: 0 auto; } /* no generic list margins: they leaked a 16px gap under the header */
 @media (min-width: 1024px) { .hg-body .hg-nav__list { padding-left: var(--hg-gutter); padding-right: var(--hg-gutter); } }
 @media (min-width: 1024px) {
     /* first menu label lines up with the logo and the breadcrumb */
@@ -933,3 +933,19 @@ html.hg-sheet-open .hg-bottombar, html.hg-sheet-open .hg-support { display: none
     .hg-mega__cols--4 .hg-mega__col { padding-bottom: 0; }
 }
 .hg-hsearch:focus-within { box-shadow: 0 0 0 3px rgba(254, 127, 22, .18); border-color: var(--hg-orange); }
+
+/* Menu tabs: one weight for all seven tabs */
+@media (min-width: 1024px) { .hg-nav__link, .hg-nav__trigger { font-weight: 600; } }
+/* Image placeholders: blank until photos are added, with a soft hover */
+.hg-ph .hg-ph__icon { opacity: .35; transition: opacity .2s ease-out, transform .3s ease-out; }
+.hg-ph { transition: filter .2s ease-out; }
+a:hover .hg-ph, .hg-pcard:hover .hg-ph, .hg-rcard:hover .hg-ph, .hg-dcard:hover .hg-ph { filter: brightness(.97); }
+a:hover .hg-ph .hg-ph__icon, .hg-pcard:hover .hg-ph__icon, .hg-rcard:hover .hg-ph__icon, .hg-dcard:hover .hg-ph__icon { opacity: .5; transform: scale(1.06); }
+@media (prefers-reduced-motion: reduce) { .hg-ph, .hg-ph .hg-ph__icon { transition: none; } }
+
+/* Keep the footer's last row clear of the fixed "Need help?" button (bottom-right) */
+@media (min-width: 576px) { .hg-body .hg-footer__bottom .container { padding-right: calc(var(--hg-gutter) + 190px); } }
+@media (max-width: 575px) { .hg-body .hg-footer__bottom { padding-bottom: 84px; } }
+.hg-sitemap__list { margin: 0 0 24px !important; padding-left: 1.1em !important; font-size: 14.5px; }
+.hg-sitemap__list li { margin-bottom: 6px; }
+.hg-policy h2 { margin-top: 28px; }

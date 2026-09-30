@@ -44,6 +44,7 @@ try {
 $content = null;
 if ($group && !empty($group['content'])) {
     $content = include __DIR__ . '/include/content/' . basename($group['content']) . '.php';
+    if (empty($content['image'])) $content['image'] = $group['image'];
 }
 
 /* ---------- Scope and filters ---------- */
@@ -179,10 +180,10 @@ if ($group) {
     $title = 'Search holiday packages | Holiday Guru Travel';
     $desc = 'Search ' . count($all) . ' holiday packages across India and abroad by destination, duration and departure city.';
 }
-$indexable = $group && $content && $content['status'] === 'approved' && !$hasParams && !$loadError;
+$indexable = $group && $content && in_array($content['status'], array('review', 'approved'), true) && !$hasParams && !$loadError;
 $crumbs = array(array('Home', '/'));
 if ($group) {
-    $crumbs[] = $group['region'] === 'india' ? array('India', '/domestic-holidays') : array('International', '/international-holidays');
+    $crumbs[] = $group['region'] === 'india' ? array('Domestic', '/domestic-holidays') : array('International', '/international-holidays');
 }
 $crumbs[] = array($group ? $h1 : ($destKey !== '' ? 'Not found' : 'Holiday packages'), null);
 
@@ -477,12 +478,11 @@ $check = function ($name, $value, $label, $count, $checked) {
             <div class="hg-prose"><p><?= hg_e($c['stay']) ?></p><p><?= hg_e($c['transport']) ?></p></div>
         </section>
 
+        <?php $who = !empty($c['who']) ? $c['who'] : array(array('Families', $c['family']), array('Couples', $c['honeymoon']), array('Adventure', $c['adventure'])); ?>
         <section class="hg-answer" aria-labelledby="q-who">
-            <h3 class="hg-h3" id="q-who">Family, honeymoon and adventure trips</h3>
+            <h3 class="hg-h3" id="q-who"><?= hg_e(!empty($c['who_title']) ? $c['who_title'] : 'Family, honeymoon and adventure trips') ?></h3>
             <div class="hg-grid hg-grid--3">
-                <div class="hg-card"><h4 class="hg-h3" style="font-size:17px">Families</h4><p><?= hg_e($c['family']) ?></p></div>
-                <div class="hg-card"><h4 class="hg-h3" style="font-size:17px">Couples</h4><p><?= hg_e($c['honeymoon']) ?></p></div>
-                <div class="hg-card"><h4 class="hg-h3" style="font-size:17px">Adventure</h4><p><?= hg_e($c['adventure']) ?></p></div>
+                <?php foreach ($who as $wv) { ?><div class="hg-card"><h4 class="hg-h3" style="font-size:17px"><?= hg_e($wv[0]) ?></h4><p><?= hg_e($wv[1]) ?></p></div><?php } ?>
             </div>
         </section>
 

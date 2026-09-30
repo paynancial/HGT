@@ -151,7 +151,7 @@ if (!function_exists('hg_render_package')) {
 
         $crumbs = array(array('Home', '/'));
         if ($g) {
-            $crumbs[] = $g['region'] === 'india' ? array('India', '/domestic-holidays') : array('International', '/international-holidays');
+            $crumbs[] = $g['region'] === 'india' ? array('Domestic', '/domestic-holidays') : array('International', '/international-holidays');
             $crumbs[] = array($g['name'] . ' Tour Packages', $g['hub_url']);
         }
         $crumbs[] = array($name, null);
@@ -245,6 +245,9 @@ if (!function_exists('hg_render_package')) {
                 </li>
                 <?php } ?>
             </ol>
+            <?php if ($p['days'] && count($days) < $p['days']) { ?>
+            <p class="hg-notice" role="note">The published plan covers <?= count($days) ?> of the <?= (int) $p['days'] ?> days. Ask us for the complete day-by-day itinerary for your dates.</p>
+            <?php } ?>
             <?php } else { ?>
             <div class="hg-empty"><p>The day-by-day plan for this package is shared on request. <a href="#enquire">Ask for the itinerary</a>.</p></div>
             <?php } ?>
@@ -269,7 +272,9 @@ if (!function_exists('hg_render_package')) {
             </div>
             <div class="hg-travelnote" role="note">
                 <?= hg_icon('ticket') ?>
-                <?php if ($external) { ?>
+                <?php if (!$external && preg_match('/flight[\s-]*inclusive|with[\s-]*flights?/i', $p['slug'] . ' ' . $p['title'])) { ?>
+                <p><strong>Flights:</strong> this package’s name mentions flights, but its inclusions do not list them. Flight details and fares are confirmed with your quote. Otherwise the standard package cost excludes airfare, train fare and bus fare.</p>
+                <?php } elseif ($external) { ?>
                 <p><strong>Travel tickets in this package:</strong> <?= hg_e(implode('; ', $external)) ?>. Any other air, train or bus travel is excluded unless listed in the inclusions.</p>
                 <?php } else { ?>
                 <p><strong>Standard package cost excludes airfare, train fare and bus fare</strong> unless specifically mentioned in the package inclusions. Local transfers and sightseeing listed above are included.</p>
@@ -344,7 +349,7 @@ if (!function_exists('hg_render_package')) {
             <p class="hg-bookcard__label">Package price</p>
             <p class="hg-bookcard__price">Price on request</p>
             <p class="hg-bookcard__sub">Quoted for your dates &amp; group. <a href="#price">How it’s priced</a></p>
-            <p class="hg-bookcard__excl"><?= hg_icon('ticket') ?><?= $external ? 'Includes ' . hg_e(strtolower(implode(', ', array_keys($external)))) . ' as listed' : 'Air / train / bus fare not included' ?></p>
+            <p class="hg-bookcard__excl"><?= hg_icon('ticket') ?><?= $external ? 'Includes ' . hg_e(strtolower(implode(', ', array_keys($external)))) . ' as listed' : (preg_match('/flight[\s-]*inclusive|with[\s-]*flights?/i', $p['slug'] . ' ' . $p['title']) ? 'Flights: confirmed with your quote' : 'Air / train / bus fare not included') ?></p>
             <div class="hg-bookcard__actions">
                 <button type="button" class="hg-btn hg-btn--primary hg-btn--block" disabled aria-describedby="paynow-note" data-hg-paynow><?= hg_icon('lock') ?>Pay Now</button>
                 <a class="hg-btn hg-btn--navy hg-btn--block" href="#enquiry-form" data-hg-track="enquiry_start">Enquire Now</a>

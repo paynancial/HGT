@@ -26,6 +26,41 @@ RewriteBase /
 
 # 0. Consolidated pages (single 301 hop, also from the old .php URL)
 RewriteRule ^kashmir-tour(\.php)?/?$ /tours/kashmir [R=301,L]
+# Old destination hub pages -> destination pages /tours/{key}
+RewriteRule ^amarnath-ji-yatra(\.php)?/?$ /tours/amarnath [R=301,L]
+RewriteRule ^amazing-goa(\.php)?/?$ /tours/goa [R=301,L]
+RewriteRule ^chardham-yatra(\.php)?/?$ /tours/char-dham [R=301,L]
+RewriteRule ^darjeeling-sikkim(\.php)?/?$ /tours/sikkim-darjeeling [R=301,L]
+RewriteRule ^delight-full-himachal(\.php)?/?$ /tours/himachal [R=301,L]
+RewriteRule ^dream-dubai(\.php)?/?$ /tours/dubai [R=301,L]
+RewriteRule ^exotic-kerala(\.php)?/?$ /tours/kerala [R=301,L]
+RewriteRule ^leh-ladakh(\.php)?/?$ /tours/ladakh [R=301,L]
+RewriteRule ^ooty-mysore-coorg(\.php)?/?$ /tours/south-india [R=301,L]
+RewriteRule ^sizzling-singapore(\.php)?/?$ /tours/singapore-malaysia [R=301,L]
+RewriteRule ^uttarakhand-tour(\.php)?/?$ /tours/uttarakhand [R=301,L]
+# Old theme and listing pages without their own content -> closest live page
+RewriteRule ^pilgrim-holidays(\.php)?/?$ /religious-tour [R=301,L]
+RewriteRule ^devotional-tours-domestic(\.php)?/?$ /religious-tour [R=301,L]
+RewriteRule ^beach-holiday(\.php)?/?$ /tours/goa [R=301,L]
+RewriteRule ^hill-station-holidays(\.php)?/?$ /domestic-holidays [R=301,L]
+RewriteRule ^family-holiday(\.php)?/?$ /customized-holidays [R=301,L]
+RewriteRule ^honeymoon-holiday(\.php)?/?$ /customized-holidays [R=301,L]
+RewriteRule ^adventure-holiday(\.php)?/?$ /customized-holidays [R=301,L]
+RewriteRule ^royal-rajasthan(\.php)?/?$ /domestic-holidays [R=301,L]
+RewriteRule ^thriller-thailand(\.php)?/?$ /tours/singapore-malaysia [R=301,L]
+RewriteRule ^index2(\.php)?/?$ / [R=301,L]
+RewriteRule ^pages-[123](\.php)?/?$ /domestic-holidays [R=301,L]
+# Database-driven legacy templates (removed; query strings dropped)
+RewriteRule ^destinations(\.php)?/?$ / [R=301,L,QSD]
+RewriteRule ^destination_detail(\.php)?/?$ /tours [R=301,L,QSD]
+RewriteRule ^packages(\.php)?/?$ /tours [R=301,L,QSD]
+RewriteRule ^package-details(\.php)?/?$ /tours [R=301,L,QSD]
+RewriteRule ^themes-packages(\.php)?/?$ /religious-tour [R=301,L,QSD]
+RewriteRule ^theme-package-details(\.php)?/?$ /religious-tour [R=301,L,QSD]
+# Stray duplicate copy that shipped with the original upload
+RewriteRule ^files/public_html/uttarakhand-tour(\.php)?/?$ /tours/uttarakhand [R=301,L]
+# Template demo pages that were never part of the site
+RewriteRule ^blog(-details)?\.html$ - [R=404,L]
 
 # 0b. Package search / destination results: /tours and /tours/{destination}
 RewriteRule ^tours/$ /tours [R=301,L]

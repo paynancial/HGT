@@ -5,11 +5,11 @@
  *
  * Sources: Holiday Guru Travel's own Kashmir itineraries (distances, routes,
  * inclusions, optional costs) and well-established destination facts.
- * STATUS: draft for owner / travel-team review before the page is indexed.
+ * STATUS 'review': published; owner/travel team to review wording.
  * Last reviewed: 2026-09-29 (initial draft).
  */
 return array(
-    'status' => 'draft',
+    'status' => 'review',
     'reviewed' => '2026-09-29',
     'name' => 'Kashmir',
     'region_label' => 'India',
@@ -20,9 +20,9 @@ return array(
     'frequent' => array(
         array('5-day Srinagar, Gulmarg & Pahalgam itinerary', '/srinagar-gulmarg-pahalgam-tour-package-5-days'),
         array('Kashmir travel guide', '/travel-guide/kashmir'),
-        array('Amarnath Yatra packages', '/amarnath-ji-yatra'),
+        array('Amarnath Yatra packages', '/tours/amarnath'),
     ),
-    'more_html' => 'For month-by-month advice, how to reach and packing tips, read our <a href="/travel-guide/kashmir">Kashmir travel guide</a>. Planning the pilgrimage? See <a href="/amarnath-ji-yatra">Amarnath Yatra packages</a>.',
+    'more_html' => 'For month-by-month advice, how to reach and packing tips, read our <a href="/travel-guide/kashmir">Kashmir travel guide</a>. Planning the pilgrimage? See <a href="/tours/amarnath">Amarnath Yatra packages</a>.',
 
     'intro' => 'Kashmir tour packages combine Srinagar’s Dal Lake and Mughal gardens with day trips or stays in Gulmarg, Pahalgam and Sonmarg, plus private cab transfers from Srinagar airport. Our Kashmir itineraries run 4 to 8 days; several include a night on a houseboat, and one continues to Katra for Mata Vaishno Devi.',
 

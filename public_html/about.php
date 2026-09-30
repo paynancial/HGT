@@ -49,7 +49,7 @@ hg_layout_start(array(
     </div>
 </section>
 
-<section class="hg-section" aria-labelledby="why-title">
+<section class="hg-section" id="why-us" aria-labelledby="why-title" style="scroll-margin-top:calc(var(--hg-sticky) + 16px)">
     <div class="hg-container">
         <?= hg_section_head('Why choose us', 'How we plan your trip', '', null, 'why-title') ?>
         <div class="hg-grid hg-grid--3">

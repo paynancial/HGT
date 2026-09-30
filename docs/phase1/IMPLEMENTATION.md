@@ -98,3 +98,36 @@ Best-practices is 96 because `/assets/img/favicon.png` is missing: the image lib
 - Privacy policy text.
 - Production Core Web Vitals.
 - Owner review of draft content.
+
+## Update 2026-09-30: whole site on the new design
+
+- **Packages:** all 107 package pages use the template.
+  - `chardham-package` and `dubai-travel-packages` are now included (105 → 107).
+  - The data build moves clearly misfiled lines out of Inclusions without rewording them, and records each move in `corrections`.
+  - Pages whose itinerary is shorter than the trip show a "published plan covers N of D days" note.
+  - A package whose name mentions flights but lists none shows a "confirmed with your quote" note.
+- **Destinations:** all 13 have content in `include/content/{key}.php`, served at `/tours/{key}`.
+  - Status is `review`: the pages are published and indexed, and the owner or travel team should review the wording.
+  - The 11 old hub pages redirect (301) to them.
+- **Removed and redirected (301):**
+  - the theme pages;
+  - `pages-1/2/3` and `index2`;
+  - `royal-rajasthan` and `thriller-thailand`;
+  - the database-driven templates (`destinations`, `packages`, `package-details`, `destination_detail`, `themes-packages`, `theme-package-details`, and `include/headerwithdb.php`). The database and `admin/` are untouched;
+  - the stray duplicate `files/public_html/uttarakhand-tour.php`.
+- **Now return 404:** `blog.html` and `blog-details.html` (template demo pages).
+- **Rebuilt:** `/service` (car rental). The fleet list is kept. The old per-km rates had no date or validity, so rates show "on request" until the owner publishes current ones.
+- **New policy pages:** `/cancellation-policy`, `/refund-policy` and `/payment-policy` restate the terms printed on the packages. They are drafts (noindex) until approved.
+- **New `/sitemap`:** an HTML sitemap page. `sitemap.xml` is rebuilt with 129 URLs, all live and indexable.
+- **Header:**
+  - A single pill-shaped search field.
+  - Tabs: Domestic, International, Inbound Tours, Special Tours, Customised Tours, About Us, Contact Us.
+  - The India mega menu is grouped as North, South, East and West India.
+- **Footer:**
+  - At most 7 states and 6 countries.
+  - Company column: About Us, Why Us?, Leadership, Our Team, Blog, Career.
+  - Legal & Support column: Privacy Policy, Cancellation Policy, Refund Policy, Payment Policy, Sitemap, Disclaimer, Contact Us.
+  - The designer credit is removed.
+- **Favicon:** an HG monogram in the brand navy and orange, with sizes 16, 32 and 48 (`/favicon.ico`), 180 (Apple), and 192 and 512 (the web manifest).
+- **Image placeholders:** blank, with a soft hover, until photos are added. The expected file for each placeholder is in its `data-image` attribute.
+- **Crawl:** 0 broken links, 0 links to redirected pages, 0 `.php` links.

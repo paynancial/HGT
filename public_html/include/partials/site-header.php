@@ -54,8 +54,6 @@ $hgMegaFeature = function ($title, $text, array $links) {
         <ul class="hg-utility__right">
             <li><?= $hgSoon('Offers') ?></li>
             <li><?= $hgSoon('Blogs') ?></li>
-            <li><a href="/about">About Us</a></li>
-            <li><a href="/contact">Contact Us</a></li>
             <li><button type="button" class="hg-login-btn" data-hg-login-open><?= hg_icon('user') ?><span>Login</span></button></li>
         </ul>
     </div>
@@ -122,7 +120,7 @@ $hgMegaFeature = function ($title, $text, array $links) {
         </div>
         <ul class="hg-container hg-nav__list">
             <li class="hg-nav__item hg-nav__item--mega">
-                <button type="button" class="hg-nav__trigger" aria-expanded="false" aria-controls="mega-india" data-hg-mega>India<?= hg_icon('chevron') ?></button>
+                <button type="button" class="hg-nav__trigger" aria-expanded="false" aria-controls="mega-india" data-hg-mega>Domestic<?= hg_icon('chevron') ?></button>
                 <div class="hg-mega" id="mega-india">
                     <div class="hg-mega__grid">
                         <div class="hg-mega__cols hg-mega__cols--4">
@@ -147,8 +145,9 @@ $hgMegaFeature = function ($title, $text, array $links) {
                     </div>
                 </div>
             </li>
+            <li class="hg-nav__item"><a class="hg-nav__link" href="/india-tours">Inbound Tours</a></li>
             <li class="hg-nav__item hg-nav__item--mega">
-                <button type="button" class="hg-nav__trigger" aria-expanded="false" aria-controls="mega-spec" data-hg-mega>Speciality Tours<?= hg_icon('chevron') ?></button>
+                <button type="button" class="hg-nav__trigger" aria-expanded="false" aria-controls="mega-spec" data-hg-mega>Special Tours<?= hg_icon('chevron') ?></button>
                 <div class="hg-mega" id="mega-spec">
                     <div class="hg-mega__grid">
                         <div class="hg-mega__cols">
@@ -156,7 +155,6 @@ $hgMegaFeature = function ($title, $text, array $links) {
                                 <p class="hg-mega__head">Available now</p>
                                 <ul>
                                     <li><a href="/religious-tour"><span>Pilgrimage Tours<small>Char Dham, Amarnath, Vaishno Devi</small></span> <span class="hg-mega__count"><?= (int) $hgPilgrimCount ?> tours</span></a></li>
-                                    <li><a href="/india-tours"><span>India Tours for Foreign Travellers<small>Private tours from your arrival</small></span></a></li>
                                 </ul>
                             </div>
                             <div class="hg-mega__col">
@@ -170,12 +168,9 @@ $hgMegaFeature = function ($title, $text, array $links) {
                     </div>
                 </div>
             </li>
-            <li class="hg-nav__item"><a class="hg-nav__link" href="/customized-holidays">Customized Holidays</a></li>
-            <li class="hg-nav__item"><?= $hgSoon('Flights') ?></li>
-            <li class="hg-nav__item"><?= $hgSoon('Visa') ?></li>
-            <li class="hg-nav__item"><?= $hgSoon('Corporate Travel') ?></li>
-            <li class="hg-nav__item"><?= $hgSoon('Forex') ?></li>
-            <li class="hg-nav__item"><a class="hg-nav__link" href="/contact">Contact</a></li>
+            <li class="hg-nav__item"><a class="hg-nav__link" href="/customized-holidays">Customised Tours</a></li>
+            <li class="hg-nav__item"><a class="hg-nav__link" href="/about">About Us</a></li>
+            <li class="hg-nav__item"><a class="hg-nav__link" href="/contact">Contact Us</a></li>
         </ul>
         <div class="hg-nav__drawerfoot">
             <a class="hg-btn hg-btn--primary hg-btn--block" href="/customized-holidays">Enquire now</a>
@@ -184,7 +179,7 @@ $hgMegaFeature = function ($title, $text, array $links) {
                 <a href="<?= hg_e(hg_whatsapp_href()) ?>" target="_blank" rel="noopener"><?= hg_icon('whatsapp') ?> WhatsApp</a>
                 <a href="<?= hg_e(hg_mailto_href()) ?>"><?= hg_icon('mail') ?> Email</a>
             </div>
-            <ul class="hg-nav__secondary"><li><a href="/about">About Us</a></li><li><a href="/faqs">FAQs</a></li></ul>
+            <ul class="hg-nav__secondary"><li><a href="/faqs">FAQs</a></li></ul>
         </div>
     </nav>
     <div class="hg-nav__scrim" data-hg-menu-close hidden></div>
