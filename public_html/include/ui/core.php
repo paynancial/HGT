@@ -226,7 +226,8 @@ if (!defined('HG_UI_CORE')) {
      * in dev mode it is labelled so reviewers know an image belongs there.
      *
      * Loading (components/media-reveal.css + include/global/page-loader.php):
-     * - below the fold: loading="lazy"; $eager = true for the primary/hero image (fetchpriority="high").
+     * - below the fold: loading="lazy"; $eager = true for the primary/hero image (fetchpriority="high");
+     *   $eager = 'low' for images in view but not urgent (later hero slides: fetchpriority="low").
      * - responsive: when tools/build_images.php has made {name}-{480|960|1600}.{avif|webp} next to the
      *   original, a <picture> offers them with srcset/sizes (the original stays the fallback).
      * - reveal: inside an .hg-frame the image fades in from a slight blur once loaded (onload marks it);
@@ -239,7 +240,7 @@ if (!defined('HG_UI_CORE')) {
         $cls = trim('hg-media ' . $class);
         if ($path !== '' && is_file($file)) {
             $img = '<img class="' . hg_e($cls . ' hg-reveal') . '" src="/' . hg_e($path) . '" alt="' . hg_e($alt) . '" width="' . (int) $width
-                . '" height="' . (int) $height . '"' . ($eager ? ' fetchpriority="high"' : ' loading="lazy"') . ' decoding="async"'
+                . '" height="' . (int) $height . '"' . ($eager === 'low' ? ' fetchpriority="low"' : ($eager ? ' fetchpriority="high"' : ' loading="lazy"')) . ' decoding="async"'
                 . ' onload="this.classList.add(\'is-loaded\')" onerror="window.hgImgFail&amp;&amp;hgImgFail(this)">';
             $base = preg_replace('/\.[a-z0-9]+$/i', '', $path);
             $sources = '';

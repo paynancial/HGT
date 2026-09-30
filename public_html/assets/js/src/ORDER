@@ -11,6 +11,7 @@ ui/login-dialog.js
 ui/forms.js
 ui/section-nav.js
 ui/search-results.js
+ui/hero-slider.js
 ui/_end.js
 hg-site.js:
 site/_start.js

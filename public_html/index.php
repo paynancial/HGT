@@ -33,13 +33,25 @@ hg_layout_start(array(
 ));
 ?>
 
-<section class="hg-hero" aria-labelledby="hero-title">
-    <svg class="hg-hero__art" viewBox="0 0 640 320" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M0 300 L120 170 L175 220 L260 110 L330 190 L380 150 L470 240 L540 180 L640 260"/>
-        <path d="M230 150 l30-40 30 40M350 170 l30-20 22 18"/>
-        <path d="M60 110 C 180 40, 360 20, 520 60" stroke-dasharray="6 10"/>
-        <path d="M520 60 l26-14 -6 14 6 14z" fill="currentColor"/>
-    </svg>
+<?php
+// Homepage hero slider: owner-supplied photos (assets/img/hero, metadata stripped). Captions link only where
+// packages exist; the first slide loads with priority, the rest with low priority.
+$heroSlides = array(
+    array('assets/img/hero/taj-mahal-agra.jpg', 'The Taj Mahal in Agra seen across its long water channel and gardens', 'Taj Mahal, Agra', '', '50% 60%'),
+    array('assets/img/hero/kerala-backwaters.jpg', 'A houseboat among palm trees and pink water lilies on the Kerala backwaters', 'Kerala backwaters', '/tours/kerala', '50% 55%'),
+    array('assets/img/hero/varanasi-ganga-aarti.jpg', 'Priests performing the evening Ganga Aarti with brass lamps on the ghats of Varanasi', 'Ganga Aarti, Varanasi', '', '60% 40%'),
+    array('assets/img/hero/golden-temple-amritsar.jpg', 'The Golden Temple in Amritsar reflected in the sacred pool under a clear blue sky', 'Golden Temple, Amritsar', '/tours?destination=amritsar', '50% 50%'),
+);
+?>
+<section class="hg-hero hg-hero--slider" aria-labelledby="hero-title">
+    <div class="hg-hero__slides" data-hg-slider aria-roledescription="carousel" aria-label="Destination photos">
+        <?php foreach ($heroSlides as $i => $sl) { ?>
+        <figure class="hg-hero__slide hg-frame hg-frame--hero hg-frame--dark<?= $i === 0 ? ' is-active' : '' ?>" data-hg-slide role="group" aria-roledescription="slide" aria-label="<?= $i + 1 ?> of <?= count($heroSlides) ?>: <?= hg_e($sl[2]) ?>"<?= $i === 0 ? '' : ' aria-hidden="true"' ?> style="--hg-focus: <?= hg_e($sl[4]) ?>">
+            <?= hg_img($sl[0], $sl[1], 2400, 1350, 'hg-hero__img', $i === 0 ? true : 'low', '100vw') ?>
+            <figcaption class="hg-hero__place"><?= hg_icon('pin') ?><?php if ($sl[3]) { ?><a href="<?= hg_e($sl[3]) ?>"<?= $i === 0 ? '' : ' tabindex="-1"' ?>><?= hg_e($sl[2]) ?></a><?php } else { ?><span><?= hg_e($sl[2]) ?></span><?php } ?></figcaption>
+        </figure>
+        <?php } ?>
+    </div>
     <div class="hg-container hg-hero__inner">
         <p class="hg-eyebrow">Holiday packages across India &amp; abroad</p>
         <h1 class="hg-h1" id="hero-title">Your journey. <span>Your way.</span></h1>
@@ -54,6 +66,12 @@ hg_layout_start(array(
             <li><?= hg_icon('whatsapp') ?>24×7 support on WhatsApp</li>
             <li><?= hg_icon('pin') ?>Office in Noida</li>
         </ul>
+    </div>
+    <div class="hg-hero__controls" data-hg-slider-controls hidden>
+        <button type="button" class="hg-hero__btn" data-hg-slide-prev aria-label="Previous photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+        <span class="hg-hero__dots"><?php foreach ($heroSlides as $i => $sl) { ?><button type="button" class="hg-hero__dot" data-hg-slide-to="<?= $i ?>" aria-label="Show photo <?= $i + 1 ?>: <?= hg_e($sl[2]) ?>"<?= $i === 0 ? ' aria-current="true"' : '' ?>></button><?php } ?></span>
+        <button type="button" class="hg-hero__btn" data-hg-slide-next aria-label="Next photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+        <button type="button" class="hg-hero__btn" data-hg-slide-pause aria-label="Pause slideshow" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="hg-hero__pause" d="M9 5v14M15 5v14"/><path class="hg-hero__play" d="M8 5l11 7-11 7z"/></svg></button>
     </div>
 </section>
 
