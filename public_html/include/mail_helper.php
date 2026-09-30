@@ -22,7 +22,7 @@ if (!defined('HGT_MAIL_HELPER')) {
         $config = array(
             'smtp_host'     => getenv('HGT_SMTP_HOST') ?: 'smtp.hostinger.com',
             'smtp_port'     => (int) (getenv('HGT_SMTP_PORT') ?: 587),
-            'smtp_secure'   => getenv('HGT_SMTP_SECURE') ?: 'tls'   // STARTTLS on 587,
+            'smtp_secure'   => getenv('HGT_SMTP_SECURE') ?: 'tls',   // STARTTLS on 587
             'smtp_username' => getenv('HGT_SMTP_USERNAME') ?: 'info@holidaygurutravel.in',
             'smtp_password' => getenv('HGT_SMTP_PASSWORD') ?: '',
             'mail_from'     => getenv('HGT_MAIL_FROM') ?: 'info@holidaygurutravel.in',
