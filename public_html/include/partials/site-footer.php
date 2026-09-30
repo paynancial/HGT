@@ -54,13 +54,14 @@
         </div>
         <div class="hg-footer__bottom">
             <div class="container">
-                <div class="hg-footer__legal">
-                    <p class="hg-footer__entity"><?= hg_e(HG_LEGAL_NAME) ?><span class="hg-footer__sep" aria-hidden="true">|</span>CIN <?= hg_e(HG_CIN) ?></p>
-                    <p class="hg-footer__copy">&copy; Holiday Guru Travel<span class="hg-footer__sep" aria-hidden="true">|</span>All Rights Reserved</p>
-                </div>
-                <div class="hg-footer__meta">
-                    <button type="button" class="hg-footer-link" data-hg-consent-open>Cookie settings</button>
-                </div>
+                <p class="hg-footer__copyline">&copy; 2021&ndash;<?= date('Y') ?> <?= hg_e(HG_LEGAL_NAME) ?> All Rights Reserved.<span class="hg-footer__cin">CIN <?= hg_e(HG_CIN) ?></span></p>
+                <ul class="hg-footer__bottomlinks">
+                    <?php // Legal links appear only once each page exists and is approved (no dead links).
+                    foreach (array(array('Privacy Policy', '/privacy-policy'), array('Terms & Conditions', '/terms-and-conditions'), array('Sitemap', '/sitemap')) as $l) {
+                        if (hg_page_exists($l[1]) && (!function_exists('hg_page_status') || hg_page_status($l[1]) === 'approved')) { ?><li><a href="<?= hg_e($l[1]) ?>"><?= hg_e($l[0]) ?></a></li><?php }
+                    } ?>
+                    <li><button type="button" class="hg-footer-link" data-hg-consent-open>Cookie settings</button></li>
+                </ul>
             </div>
         </div>
     </footer>
