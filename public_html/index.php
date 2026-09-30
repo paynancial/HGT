@@ -52,7 +52,7 @@ hg_layout_start(array(
             <li><?= hg_icon('route') ?>Day-by-day itineraries</li>
             <li><?= hg_icon('check') ?>Customize any package</li>
             <li><?= hg_icon('whatsapp') ?>24×7 support on WhatsApp</li>
-            <li><?= hg_icon('shield') ?>Registered company</li>
+            <li><?= hg_icon('pin') ?>Office in Noida</li>
         </ul>
     </div>
 </section>

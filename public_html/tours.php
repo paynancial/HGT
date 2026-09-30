@@ -265,7 +265,7 @@ $resultCard = function ($p) use ($context) {
     ob_start(); ?>
 <article class="hg-rcard">
     <div class="hg-rcard__media">
-        <a href="<?= hg_e($href) ?>" tabindex="-1" aria-hidden="true"><?= hg_img($p['image'], '', 480, 340, 'hg-rcard__img') ?></a>
+        <a class="hg-frame" href="<?= hg_e($href) ?>" tabindex="-1" aria-hidden="true"><?= hg_img($p['image'], '', 480, 340, 'hg-rcard__img', false, '(max-width: 767px) 100vw, 360px') ?></a>
         <?php if ($badge) { ?><span class="hg-rcard__badge"><?= hg_e($badge) ?></span><?php } ?>
         <button type="button" class="hg-save" data-hg-save="<?= hg_e($p['slug']) ?>" aria-pressed="false" aria-label="Save <?= hg_e($p['title']) ?>"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7.5-4.6-9.6-9.3C1 8.3 3.2 4.5 7 4.5c2 0 3.4 1.1 5 3 1.6-1.9 3-3 5-3 3.8 0 6 3.8 4.6 7.2C19.5 16.4 12 21 12 21z"/></svg></button>
     </div>
@@ -297,7 +297,7 @@ $check = function ($name, $value, $label, $count, $checked) {
 ?>
 
 <section class="hg-dhero<?= $content ? '' : ' hg-dhero--plain' ?>" aria-labelledby="page-title">
-    <?php if ($content) { ?><div class="hg-dhero__bg"><?= hg_img($content['image'], '', 1600, 500, '', true) ?></div><?php } ?>
+    <?php if ($content) { ?><div class="hg-dhero__bg hg-frame hg-frame--hero hg-frame--dark"><?= hg_img($content['image'], '', 1600, 500, '', true, '100vw') ?></div><?php } ?>
     <div class="hg-container hg-dhero__inner">
         <div>
             <h1 class="hg-h1" id="page-title"><?= hg_e($h1) ?></h1>
@@ -314,7 +314,7 @@ $check = function ($name, $value, $label, $count, $checked) {
             <li><?= hg_icon('route') ?><span>Day-by-day itineraries</span></li>
             <li><?= hg_icon('check') ?><span>Customizable plans</span></li>
             <li><?= hg_icon('whatsapp') ?><span>24×7 WhatsApp support</span></li>
-            <li><?= hg_icon('shield') ?><span>Registered company</span></li>
+            <li><?= hg_icon('pin') ?><span>Office in Noida</span></li>
         </ul>
         <?php } ?>
     </div>
