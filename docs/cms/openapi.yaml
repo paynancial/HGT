@@ -1,0 +1,122 @@
+openapi: 3.0.3
+info:
+  title: Holiday Guru Travel — Tour Package CMS API
+  version: "1.0-staging"
+  description: >
+    Package ID (4 digits) is the only package identifier; there is no Tour No. Offer Codes (OF-nnnn) are separate.
+    Read endpoints need a CMS session; the enquiry intake needs X-HG-Intake-Token.
+servers:
+  - url: http://127.0.0.1:8099
+    description: Staging
+components:
+  securitySchemes:
+    session: { type: apiKey, in: cookie, name: hgcms }
+    intakeToken: { type: apiKey, in: header, name: X-HG-Intake-Token }
+  schemas:
+    PackageRef:
+      type: string
+      description: Approved Package ID (e.g. 0001) or internal reference pk-{n}
+      pattern: '^(\d{4}|pk-\d+)$'
+    Rate:
+      type: object
+      nullable: true
+      properties:
+        price_version: { type: integer }
+        base_price: { type: integer, description: Whole rupees }
+        currency: { type: string, enum: [INR] }
+        price_unit: { type: string, enum: [per person, per couple, per room, per vehicle, per day, flat fee] }
+        valid_from: { type: string, format: date }
+        valid_until: { type: string, format: date }
+        label: { type: string }
+    Package:
+      type: object
+      properties:
+        package_id: { type: string, nullable: true, pattern: '^\d{4}$' }
+        package_id_status: { type: string, enum: [approved, pending] }
+        ref: { type: string }
+        slug: { type: string }
+        name: { type: string }
+        status: { type: string, enum: [draft, in_review, approved, published, paused, archived] }
+        version: { type: integer }
+        published_version: { type: integer, nullable: true }
+        destination: { type: string }
+        days: { type: integer }
+        nights: { type: integer }
+        itinerary: { type: array, items: { type: object } }
+        rate: { $ref: '#/components/schemas/Rate' }
+        price_label: { type: string }
+        standard_statement: { type: string }
+        inclusions: { type: array, items: { type: object } }
+        exclusions: { type: array, items: { type: object } }
+        addons: { type: array, items: { type: object } }
+        offers:
+          type: array
+          items: { type: object, properties: { offer_code: { type: string, pattern: '^OF-\d{4}$' }, name: { type: string }, valid_from: { type: string }, valid_until: { type: string } } }
+        seo: { type: object }
+        aeo: { type: object }
+        faqs: { type: array, items: { type: object } }
+        cta: { type: object, properties: { enquire_now: { type: boolean }, pay_now: { type: boolean } } }
+    Error:
+      type: object
+      properties: { error: { type: string } }
+paths:
+  /api/packages:
+    get:
+      security: [ { session: [] } ]
+      parameters:
+        - { name: q, in: query, schema: { type: string }, description: 'Package ID, name, destination or Offer Code' }
+        - { name: status, in: query, schema: { type: string } }
+        - { name: dest, in: query, schema: { type: string } }
+      responses:
+        '200': { description: Search result }
+        '401': { description: Not signed in }
+  /api/packages/{ref}:
+    get:
+      security: [ { session: [] } ]
+      parameters: [ { name: ref, in: path, required: true, schema: { $ref: '#/components/schemas/PackageRef' } } ]
+      responses:
+        '200': { description: Package, content: { application/json: { schema: { $ref: '#/components/schemas/Package' } } } }
+        '404': { description: Not found, content: { application/json: { schema: { $ref: '#/components/schemas/Error' } } } }
+  /api/packages/{ref}/checklist:
+    get:
+      security: [ { session: [] } ]
+      parameters: [ { name: ref, in: path, required: true, schema: { $ref: '#/components/schemas/PackageRef' } } ]
+      responses:
+        '200': { description: Publication checklist }
+  /api/offers/{code}:
+    get:
+      security: [ { session: [] } ]
+      parameters: [ { name: code, in: path, required: true, schema: { type: string, pattern: '^OF-\d{4}$' } } ]
+      responses:
+        '200': { description: Offer with its packages }
+        '404': { description: Not found }
+  /api/enquiries:
+    post:
+      security: [ { intakeToken: [] } ]
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [name]
+              properties:
+                name: { type: string }
+                phone: { type: string }
+                email: { type: string, format: email }
+                package_slug: { type: string }
+                offer_code: { type: string }
+                addon_ids: { type: array, items: { type: integer } }
+                travel_date: { type: string, format: date }
+                adults: { type: integer }
+                children: { type: integer }
+                departure_city: { type: string }
+                message: { type: string }
+                utm_source: { type: string }
+                utm_medium: { type: string }
+                utm_campaign: { type: string }
+      responses:
+        '201': { description: 'Created: {enquiry_id, package_id|null, price_version|null, offer_code|null}' }
+        '401': { description: Wrong token }
+        '422': { description: Validation error }
+        '503': { description: Intake disabled }
